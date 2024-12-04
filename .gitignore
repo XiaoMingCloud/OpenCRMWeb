@@ -1,0 +1,56 @@
+# Node.js依赖
+node_modules/
+
+# 生成的构建文件
+dist/
+build/
+
+# 临时文件和缓存
+*.log
+*.tmp
+*.swp
+*.swo
+*.pid
+*.seed
+*.gz
+
+# 环境变量配置文件
+.env
+.env.*.local
+
+# IDE和编辑器配置文件
+.idea/
+.vscode/
+*.iml
+
+# 缓存和日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 锁文件
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 编译器输出
+*.tsbuildinfo
+
+# Mac系统文件
+.DS_Store
+
+# Windows系统文件
+Thumbs.db
+desktop.ini
+
+# 其他可能生成的文件
+coverage/
+public/static/
+*.bak
+*.orig
+*.rej
+
+# Git管理的特殊文件
+.gitattributes.lock
+.gitignore.bak
