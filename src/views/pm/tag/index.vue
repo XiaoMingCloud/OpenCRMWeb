@@ -65,7 +65,7 @@
             <i
               slot="title"
               :style="{color : item.color ? item.color : '#4AB8B8'}"
-              class="wukong wukong-subproject"/>
+              class="liujiaming liujiaming-subproject"/>
             <span
               slot="title"
               class="title">{{ item.name }}</span>
@@ -376,7 +376,7 @@ export default {
         float: none;
         margin: 0;
       }
-      .wukong-subproject {
+      .liujiaming-subproject {
         font-size: 20px;
         margin-right: 5px;
       }

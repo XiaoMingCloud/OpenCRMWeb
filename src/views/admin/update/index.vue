@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <!-- 未登录悟空账号的提示 -->
+    <!-- 未登录OpenCRM账号的提示 -->
     <div v-else class="login-box">
       <!-- 头像 -->
       <div class="face">登录</div>
@@ -48,7 +48,7 @@
         <!-- 提示 -->
         <div class="login-box-title">
           <span @click="dialogVisible = true">请点击登录</span>
-          <p>更新前需要先登录悟空账号</p>
+          <p>更新前需要先登录OpenCRM账号</p>
         </div>
       </div>
       <!-- 按钮 -->
@@ -157,11 +157,11 @@
       </div>
     </div>
 
-    <!-- 登录悟空弹窗 -->
-    <el-dialog :visible.sync="dialogVisible" title="登录悟空账号" width="500px">
+    <!-- 登录OOpenCRM弹窗 -->
+    <el-dialog :visible.sync="dialogVisible" title="登录OpenCRM账号" width="500px">
       <div slot="title" class="el-dialog__title">
-        登录悟空账号
-        <p class="description">您可以登录悟空账号来进行一键升级</p>
+        登录OpenCRM账号
+        <p class="description">您可以登录OpenCRM账号来进行一键升级</p>
       </div>
       <!-- 登录表单 -->
       <el-form
@@ -175,13 +175,13 @@
         <div class="form-item">
           <el-form-item prop="username">
             <i class="wk wk-mobile"/>账号
-            <el-input v-model="loginForm.username" placeholder="请输入您的悟空账号"/>
+            <el-input v-model="loginForm.username" placeholder="请输入您的OpenCRM账号"/>
           </el-form-item>
         </div>
         <div class="form-item password">
           <el-form-item prop="password">
             <i class="wk wk-lock"/>密码
-            <el-input v-model="loginForm.password" type="password" placeholder="请输入您的悟空账号的密码"/>
+            <el-input v-model="loginForm.password" type="password" placeholder="请输入您的OpenCRM账号的密码"/>
           </el-form-item>
         </div>
         <el-button type="primary" @click="loginHandle('loginRef')">确认登录</el-button>
@@ -228,7 +228,7 @@ export default {
     }
     return {
       isCanUpdate: false,
-      isLogin: false, // 是否登录悟空账号
+      isLogin: false, // 是否登录账号
       dialogVisible: false, // 登录弹窗
       dialogVisibleH: false, // 历史备份弹窗
       loginForm: {
@@ -237,7 +237,7 @@ export default {
       },
       loginRules: {
         username: [
-          { required: true, message: '请输入悟空账号', trigger: 'blur' }
+          { required: true, message: '请输入OpenCRM账号', trigger: 'blur' }
         ],
         password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
       },
@@ -373,7 +373,7 @@ export default {
       if (!this.isLogin) {
         this.$message({
           showClose: true,
-          message: '请登录悟空账号',
+          message: '请登录OpenCRM账号',
           type: 'warning'
         })
         return
@@ -412,7 +412,7 @@ export default {
     async updateHandle() {
       if (!this.isLogin) {
         this.$message({
-          message: '请先登录悟空账号',
+          message: '请先登录OpenCRM账号',
           type: 'warning'
         })
         return

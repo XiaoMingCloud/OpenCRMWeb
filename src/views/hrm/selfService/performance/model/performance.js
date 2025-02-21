@@ -1,8 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @LastEditors: yang
- */
+
 const statusValue = {
   1: '目标待填写',
   2: '目标待确认',

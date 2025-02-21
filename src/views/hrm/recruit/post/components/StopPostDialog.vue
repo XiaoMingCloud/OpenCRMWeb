@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-06-05 17:45:27
- * @LastEditTime: 2020-06-05 18:08:19
- * @LastEditors: yang
--->
+
 <template>
   <el-dialog
     ref="wkDialog"

@@ -97,7 +97,7 @@ export function updateProgressAPI() {
 }
 
 /**
- * 登录悟空CRM
+ * 登录OpenCRM
  * @param {*} data
  */
 export function loginWKAPI(data) {

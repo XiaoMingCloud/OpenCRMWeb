@@ -247,13 +247,13 @@ export default {
       const dataValue = `${type}.${item.fieldName}`
 
       attrs[dataKey] = dataValue
-      attrs.class = `wk-print-tag-wukong ${this.getSpanColorClass()}`
+      attrs.class = `wk-print-tag-liujiaming ${this.getSpanColorClass()}`
       attrs.contenteditable = false
       return attrs
     },
 
     getSpanNode(item, tag = '', type = this.activeTab) {
-      return `<span data-wk${tag ? `-${tag}` : ''}-tag="${type}.${item.fieldName}" class="wk-print-tag-wukong ${this.getSpanColorClass()}" contenteditable="false">{${item.name}}</span>`
+      return `<span data-wk${tag ? `-${tag}` : ''}-tag="${type}.${item.fieldName}" class="wk-print-tag-liujiaming ${this.getSpanColorClass()}" contenteditable="false">{${item.name}}</span>`
     },
 
     /**

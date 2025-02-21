@@ -1,8 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @LastEditors: yang
--->
+
 <template>
   <el-dialog
     ref="wkDialog"

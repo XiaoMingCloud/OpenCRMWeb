@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-28 17:23:39
- * @LastEditTime: 2020-06-09 20:08:20
- * @LastEditors: yang
--->
+
 <template>
   <el-popover
     v-model="popverShow"

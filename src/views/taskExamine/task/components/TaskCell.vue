@@ -73,25 +73,25 @@
         <div
           v-if="data.relationCount"
           class="img-box">
-          <i class="wukong wukong-relevance" />
+          <i class="liujiaming liujiaming-relevance" />
           <span>{{ data.relationCount }}</span>
         </div>
         <div
           v-if="data.childAllCount > 0"
           class="img-box">
-          <i class="wukong wukong-sub-task" />
+          <i class="liujiaming liujiaming-sub-task" />
           <span>{{ data.childWCCount }}/{{ data.childAllCount }}</span>
         </div>
         <div
           v-if="data.fileCount"
           class="img-box">
-          <i class="wukong wukong-file" />
+          <i class="liujiaming liujiaming-file" />
           <span>{{ data.fileCount }}</span>
         </div>
         <div
           v-if="data.commentCount"
           class="img-box">
-          <i class="wukong wukong-comment-task" />
+          <i class="liujiaming liujiaming-comment-task" />
           <span>{{ data.commentCount }}</span>
         </div>
       </div>
@@ -258,7 +258,7 @@ export default {
     .img-box {
       display: inline-block;
       margin-right: 6px;
-      .wukong {
+      .liujiaming {
         font-size: 12px;
       }
       .priority-btn {

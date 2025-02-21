@@ -501,7 +501,7 @@ export default {
           name: 'person'
         })
       } else if (command == 'help') {
-        window.open('https://www.72crm.com/help')
+        window.open('')
       } else if (command == 'logOut') {
         this.$confirm('退出登录？', '提示', {
           confirmButtonText: '确定',

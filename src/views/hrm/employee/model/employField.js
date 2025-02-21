@@ -1,10 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-06-01 18:51:07
- * @LastEditTime: 2020-06-10 10:26:24
- * @LastEditors: yang
- */
+
 // componentType 0 无需关联 1 员工 2 部门 3 志威 4 系统给用户 5 系统各部门 6 招聘渠道 7 籍贯
 // 1 text 2 textarea 3 select 4 date 5 number 6 floatnumber 7 mobile 8 file 9 checkbox
 // 10 datetime 11 email 12 address

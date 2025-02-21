@@ -80,25 +80,25 @@
         <div
           v-if="data.relationCount"
           class="img-box">
-          <i class="wukong wukong-relevance"/>
+          <i class="liujiaming liujiaming-relevance"/>
           <span>{{ data.relationCount }}</span>
         </div>
         <div
           v-if="data.childAllCount > 0"
           class="img-box">
-          <i class="wukong wukong-sub-task"/>
+          <i class="liujiaming liujiaming-sub-task"/>
           <span>{{ data.childWCCount }}/{{ data.childAllCount }}</span>
         </div>
         <div
           v-if="data.fileCount"
           class="img-box">
-          <i class="wukong wukong-file"/>
+          <i class="liujiaming liujiaming-file"/>
           <span>{{ data.fileCount }}</span>
         </div>
         <div
           v-if="data.commentCount"
           class="img-box">
-          <i class="wukong wukong-comment-task"/>
+          <i class="liujiaming liujiaming-comment-task"/>
           <span>{{ data.commentCount }}</span>
         </div>
         <div
@@ -106,7 +106,7 @@
           class="img-box">
           <i
             :style="{'color': data.isEnd == 1 && !data.checked ? 'red': '#999'}"
-            class="wukong wukong-time-task"/>
+            class="liujiaming liujiaming-time-task"/>
           <span :style="{'color': data.isEnd == 1 && !data.checked ? 'red': '#999'}">{{ data.stopTime | moment("MM-DD") }} 截止</span>
         </div>
       </div>
@@ -320,7 +320,7 @@ export default {
 .list:hover {
   background: #fafafa;
 }
-.wukong {
+.liujiaming {
   font-size: 14px;
 }
 </style>

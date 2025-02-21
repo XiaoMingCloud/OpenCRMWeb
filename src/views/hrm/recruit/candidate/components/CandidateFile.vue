@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-06-08 20:12:32
- * @LastEditTime: 2020-06-08 20:49:11
- * @LastEditors: yang
--->
+
 <template>
   <div v-loading="loading" class="file-index">
     <div class="file-index__header">

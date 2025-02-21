@@ -7,15 +7,12 @@
     <flexbox class="steps" justify="space-between">
       <div class="step">
         <div class="step-title">1.在“员工管理”点击“从组织架构中选择”</div>
-        <img width="100%" src="https://file.72crm.com/static/pc/images/hrm/tips_1.png" >
       </div>
       <div class="step">
         <div class="step-title">2.选择要添加的员工</div>
-        <img width="100%" src="https://file.72crm.com/static/pc/images/hrm/tips_2.png" >
       </div>
       <div class="step">
         <div class="step-title">3.完善员工信息后保存</div>
-        <img width="100%" src="https://file.72crm.com/static/pc/images/hrm/tips_3.png" >
       </div>
     </flexbox>
 

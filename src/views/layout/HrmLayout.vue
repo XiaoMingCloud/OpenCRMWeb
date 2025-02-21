@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-14 13:58:54
- * @LastEditTime: 2020-07-03 15:37:00
- * @LastEditors: yang
--->
+
 <template>
   <el-container>
     <el-header class="nav-container">

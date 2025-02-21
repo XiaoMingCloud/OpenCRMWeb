@@ -433,7 +433,7 @@
             :content="item.tips"
             effect="dark"
             placement="top">
-            <i class="wukong wukong-help_tips" />
+            <i class="liujiaming liujiaming-help_tips" />
           </el-tooltip>
           <template v-if="item.type == 'select'">
             <el-select
@@ -2109,14 +2109,14 @@ export default {
 
 // 提示
 // 提示标志
-.wukong-help_tips {
+.liujiaming-help_tips {
   color: #999;
   font-size: 14px;
   margin-left: 3px;
   cursor: pointer;
 }
 
-.wukong-help_tips:hover {
+.liujiaming-help_tips:hover {
   color: $xr-color-primary;
 }
 

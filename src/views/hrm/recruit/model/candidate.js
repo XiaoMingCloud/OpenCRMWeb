@@ -1,10 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-06-04 11:29:14
- * @LastEditTime: 2020-06-10 16:00:52
- * @LastEditors: yang
- */
+
 function getValueList(data) {
   const keys = Object.keys(data)
   return keys.map(key => {

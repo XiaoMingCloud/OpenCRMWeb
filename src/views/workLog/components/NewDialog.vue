@@ -73,7 +73,7 @@
                 multiple
                 accept="*.*">
                 <p>
-                  <i class="wukong wukong-file" />
+                  <i class="liujiaming liujiaming-file" />
                   添加附件
                 </p>
               </el-upload>
@@ -622,7 +622,7 @@ export default {
       margin-bottom: 20px;
       color: #2362fb;
 
-      .wukong-file {
+      .liujiaming-file {
         font-size: 13px;
       }
     }

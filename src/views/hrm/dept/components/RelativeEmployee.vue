@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-27 16:08:02
- * @LastEditTime: 2020-07-07 11:02:28
- * @LastEditors: yang
--->
+
 <template>
   <div class="relative-employee">
     <div class="relative-employee__header">

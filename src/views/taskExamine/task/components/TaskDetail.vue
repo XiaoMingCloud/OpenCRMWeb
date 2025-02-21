@@ -344,7 +344,7 @@
             <!-- 相关信息 -->
             <div class="section">
               <div class="section__hd">
-                <i class="wukong wukong-relevance" />
+                <i class="liujiaming liujiaming-relevance" />
                 <span>相关信息</span>
               </div>
               <div class="section__bd">
@@ -362,7 +362,7 @@
             <!-- 子任务 -->
             <div class="section">
               <div class="section__hd">
-                <i class="wukong wukong-sub-task" />
+                <i class="liujiaming liujiaming-sub-task" />
                 <span>子任务({{ subTaskDoneNum }}/{{ taskData.childTask.length }})</span>
               </div>
               <div class="section__bd">
@@ -453,7 +453,7 @@
             <!-- 附件 -->
             <div class="section">
               <div class="section__hd">
-                <i class="wukong wukong-file" />
+                <i class="liujiaming liujiaming-file" />
                 <span>附件</span>
                 <span v-if="fileList.length">({{ fileList.length }})</span>
               </div>

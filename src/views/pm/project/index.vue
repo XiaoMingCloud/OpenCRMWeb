@@ -556,7 +556,7 @@ export default {
 }
 
 // 项目图
-.wukong-subproject {
+.liujiaming-subproject {
   font-size: 27px;
   margin-right: 8px;
 }

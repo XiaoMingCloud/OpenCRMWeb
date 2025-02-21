@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-06-04 10:53:06
- * @LastEditTime: 2020-07-07 14:01:48
- * @LastEditors: yang
--->
+
 <template>
   <div id="employee-main-container" class="employee-index">
     <xr-header

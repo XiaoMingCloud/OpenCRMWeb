@@ -8,7 +8,7 @@
       @click.native="selectImage">
       <i
         v-if="!disabled"
-        class="wukong wukong-file f-logo" />
+        class="liujiaming liujiaming-file f-logo" />
 
       <div class="f-name">附件</div>
       <!-- <input
@@ -24,7 +24,7 @@
         v-for="(item, index) in dataValue"
         :key="index"
         class="f-item">
-        <i class="wukong wukong-file f-img" />
+        <i class="liujiaming liujiaming-file f-img" />
         <div class="f-name">{{ item | fileName }}</div>
         <div
           v-if="!disabled"

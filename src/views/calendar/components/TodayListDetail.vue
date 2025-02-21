@@ -135,7 +135,7 @@
           <div class="common-foot">
 
             <div v-if="relatedCount > 0" class="section__hd">
-              <i class="wukong wukong-relevance" />
+              <i class="liujiaming liujiaming-relevance" />
               <span>相关信息({{ relatedCount }})</span>
             </div>
 

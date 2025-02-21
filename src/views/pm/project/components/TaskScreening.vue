@@ -46,7 +46,7 @@
               v-if="val.type == 'tag'"
               :style="{color:val.color}"
               style="margin-right:10px; vertical-align: text-top;"
-              class="wukong wukong-tag"/>
+              class="liujiaming liujiaming-tag"/>
             <span>{{ val.name }}</span> -->
             <span :class="{ 'is-tag': val.type == 'tag'}" class="item-list-label">{{ val.name }}</span>
             <span class="el-icon-check rt"/>

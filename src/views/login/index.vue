@@ -1,25 +1,10 @@
 <template>
   <div
     class="login-wrapper">
-    <div class="top-nav">
-      <img
-        src="~@/assets/logo_white.png"
-        alt="">
-    </div>
     <div class="container">
       <div class="left">
-        <h1 class="title">
-          企业“销售+管理”全流程
-        </h1>
-        <h2 class="mini-title">
-          客户关系管理的前沿创新
-        </h2>
-        <div class="desc">
-          悟空CRM已涉及教育业、制造业、服务业、金融业、政府机构等10多种<br>
-          行业解决方案，全面帮助企业进行信息化建设
-        </div>
         <img
-          src="~@/assets/login/main_pic.png"
+          src=""
           alt=""
           class="main-pic">
       </div>

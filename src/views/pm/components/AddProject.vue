@@ -195,28 +195,28 @@ export default {
       coverImg: null,
       coverImgList: [
         {
-          url: 'https://file.72crm.com/static/pc/images/pm/project-cover-1.jpg'
+          url: './static/project-cover-1.jpg'
         },
         {
-          url: 'https://file.72crm.com/static/pc/images/pm/project-cover-2.jpg'
+          url: './static/project-cover-2.jpg'
         },
         {
-          url: 'https://file.72crm.com/static/pc/images/pm/project-cover-3.jpg'
+          url: './static/project-cover-2.jpg'
         },
         {
-          url: 'https://file.72crm.com/static/pc/images/pm/project-cover-4.jpg'
+          url: './static/project-cover-4.jpg'
         },
         {
-          url: 'https://file.72crm.com/static/pc/images/pm/project-cover-5.jpg'
+          url: './static/project-cover-5.jpg'
         },
         {
-          url: 'https://file.72crm.com/static/pc/images/pm/project-cover-6.jpg'
+          url: './static/project-cover-6.jpg'
         },
         {
-          url: 'https://file.72crm.com/static/pc/images/pm/project-cover-7.jpg'
+          url: './static/project-cover-7.jpg'
         },
         {
-          url: 'https://file.72crm.com/static/pc/images/pm/project-cover-8.jpg'
+          url: './static/project-cover-8.jpg'
         }
       ],
       openType: 0,

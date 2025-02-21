@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-30 15:16:52
- * @LastEditTime: 2020-05-30 15:31:56
- * @LastEditors: yang
--->
+
 <template>
   <div class="wk-file-select" @click="handleClick">
     <slot />

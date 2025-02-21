@@ -164,7 +164,7 @@ export function usersEditStatusAPI(data) {
  * 用户导入模板
  * @param {*} data
  */
-export const userImportTemplateURL = 'https://www.72crm.com/npm/static/user_import.xlsx'
+export const userImportTemplateURL = './user_import.xlsx'
 export function userImportTemplateAPI(data) {
   return request({
     url: 'adminUser/downloadExcel',

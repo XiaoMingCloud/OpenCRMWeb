@@ -1,10 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-14 13:58:52
- * @LastEditTime: 2020-07-20 17:31:55
- * @LastEditors: yang
- */
+
 import request from '@/utils/request'
 
 /**

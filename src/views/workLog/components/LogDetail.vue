@@ -72,7 +72,7 @@
           <!-- 附件 -->
           <div v-if="detail.file.length" class="section">
             <div class="section__hd">
-              <i class="wukong wukong-file" />
+              <i class="liujiaming liujiaming-file" />
               <span>附件</span>
               <span>({{ detail.file.length }})</span>
             </div>
@@ -91,7 +91,7 @@
             v-if="Object.keys(relatedListData).length > 0"
             class="section">
             <div class="section__hd">
-              <i class="wukong wukong-relevance" />
+              <i class="liujiaming liujiaming-relevance" />
               <span>相关信息</span>
             </div>
             <div class="section__bd">

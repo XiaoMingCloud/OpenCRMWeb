@@ -1,10 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-30 14:36:57
- * @LastEditTime: 2020-06-05 17:54:17
- * @LastEditors: yang
- */
+
 
 function getFields(data) {
   const tempFields = [

@@ -1,8 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @LastEditors: yang
- */
+
 const providentFundTypeValue = {
   1: '养老保险',
   2: '医疗保险',

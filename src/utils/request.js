@@ -5,10 +5,7 @@ import qs from 'qs'
 import { debounce } from 'throttle-debounce'
 import router from '../router'
 
-// 生成 requestID 的方法（可以是时间戳、UUID 或其他方式）
-const generateRequestID = () => {
-  return Date.now()
-}
+
 
 // 检查dom是否忽略
 const clearCacheEnterLogin = debounce(500, () => {
@@ -56,8 +53,6 @@ const service = axios.create({
 service.interceptors.request.use(
   config => {
     // 自动为每个请求添加 requestID 请求头
-    config.headers['Request-ID'] = generateRequestID()
-
     const flag = config.headers['Content-Type'] && config.headers['Content-Type'].indexOf('application/json') !== -1
     if (!flag) {
       const mult = config.headers['Content-Type'] && config.headers['Content-Type'].indexOf('multipart/form-data') !== -1

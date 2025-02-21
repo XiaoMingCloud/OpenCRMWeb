@@ -26,7 +26,7 @@
           @click="tagSelectClick(item, index)">
           <i
             :style="{ 'color': item.color}"
-            class="wukong wukong-black-label"/>
+            class="liujiaming liujiaming-black-label"/>
           <span class="item-label">{{ item.name }}</span>
           <span
             v-if="item.check"

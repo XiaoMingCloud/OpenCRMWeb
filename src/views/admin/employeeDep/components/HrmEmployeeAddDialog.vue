@@ -1,8 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @LastEditors: yang
--->
+
 <template>
   <el-dialog
     ref="wkDialog"
@@ -42,7 +38,7 @@
               :content="item.tips"
               effect="dark"
               placement="top">
-              <i class="wukong wukong-help_tips" />
+              <i class="liujiaming liujiaming-help_tips" />
             </el-tooltip>
             <template v-if="item.type == 'select'">
               <el-select

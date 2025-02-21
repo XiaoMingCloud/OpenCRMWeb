@@ -32,7 +32,7 @@
             class="bg-color">{{ subtasksDate | moment("YYYY-MM-DD") }}</span>
           <i
             v-else
-            class="wukong wukong-time-task"
+            class="liujiaming liujiaming-time-task"
             @click="subtasksDateFun"/>
         </div>
         <!-- 选择负责人 -->
@@ -60,7 +60,7 @@
             </template>
             <i
               v-else
-              class="wukong wukong-user" />
+              class="liujiaming liujiaming-user" />
           </div>
         </wk-user-select>
 
@@ -278,7 +278,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.wukong {
+.liujiaming {
   color: #666;
 }
 .subtasks-content {
@@ -332,7 +332,7 @@ export default {
       .bg-color {
         padding: 2px 10px;
       }
-      .wukong-time-task {
+      .liujiaming-time-task {
         margin-right: 10px;
         cursor: pointer;
         vertical-align: middle;
@@ -340,7 +340,7 @@ export default {
     }
     .select-box {
       display: inline-block;
-      .wukong-user {
+      .liujiaming-user {
         margin-right: 10px;
         cursor: pointer;
         vertical-align: middle;

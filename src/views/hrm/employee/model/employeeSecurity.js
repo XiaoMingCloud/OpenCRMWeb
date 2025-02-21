@@ -1,10 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-30 16:06:01
- * @LastEditTime: 2020-07-15 18:07:53
- * @LastEditors: yang
- */
+
 // 社保
 
 // 社保验证规则

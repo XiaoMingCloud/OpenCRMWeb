@@ -60,7 +60,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true,
       favicon: resolve('favicon.ico'),
-      title: 'wukong'
+      title: 'liujiaming'
     })
   ]
 })

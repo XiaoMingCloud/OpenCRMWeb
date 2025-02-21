@@ -1,10 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-06-04 11:29:14
- * @LastEditTime: 2020-07-18 11:09:39
- * @LastEditors: yang
- */
+
 import {
   hrmDeptQueryTreeListAPI
 } from '@/api/hrm/dept'

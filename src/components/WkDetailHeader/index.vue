@@ -1,10 +1,3 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-27 14:44:51
- * @LastEditTime: 2020-07-03 17:03:34
- * @LastEditors: yang
--->
 <template>
   <flexbox class="xr-detail-header">
     <div

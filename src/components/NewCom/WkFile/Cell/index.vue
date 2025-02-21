@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-30 14:56:51
- * @LastEditTime: 2020-07-06 19:13:41
- * @LastEditors: yang
--->
+
 <template>
   <flexbox class="wk-file-cell">
     <img

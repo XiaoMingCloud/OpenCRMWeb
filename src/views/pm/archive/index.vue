@@ -25,12 +25,12 @@
             slot-scope="slot">
             <i
               style="color:#999"
-              class="wukong wukong-subproject"/>
+              class="liujiaming liujiaming-subproject"/>
           </template>
           <template slot-scope="scope">
             <i
               :style="{'color':scope.row.color}"
-              class="wukong wukong-subproject"/>
+              class="liujiaming liujiaming-subproject"/>
           </template>
         </el-table-column>
         <el-table-column
@@ -218,7 +218,7 @@ export default {
   display: none;
 }
 
-.wukong-subproject {
+.liujiaming-subproject {
   font-size: 22px;
   display: block;
   margin-right: 5px;

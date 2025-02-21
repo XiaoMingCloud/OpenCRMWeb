@@ -1,10 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-06-04 14:52:43
- * @LastEditTime: 2020-06-10 16:35:42
- * @LastEditors: yang
--->
+
 <template>
   <xr-create
     v-loading="loading"

@@ -58,7 +58,7 @@
                   v-for="(file, index) in item.value"
                   :key="index"
                   class="f-item">
-                  <i class="wukong wukong-file f-img" />
+                  <i class="liujiaming liujiaming-file f-img" />
                   <div class="f-name">{{ file | fileName }}</div>
                   <el-button
                     type="text"
@@ -106,7 +106,7 @@
         <!-- 附件 -->
         <div v-if="fileList.length" class="section">
           <div class="section__hd">
-            <i class="wukong wukong-file" />
+            <i class="liujiaming liujiaming-file" />
             <span>附件</span>
             <span>({{ fileList.length }})</span>
           </div>
@@ -174,7 +174,7 @@
           v-if="Object.keys(relatedListData).length > 0"
           class="section">
           <div class="section__hd">
-            <i class="wukong wukong-relevance" />
+            <i class="liujiaming liujiaming-relevance" />
             <span>相关信息</span>
           </div>
           <div class="section__bd">

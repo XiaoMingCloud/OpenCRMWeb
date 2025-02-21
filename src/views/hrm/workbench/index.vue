@@ -1,8 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @LastEditors: yang
--->
+
 <template>
   <employee-workbench v-if="componentName === 'EmployeeWorkbench'" />
   <manager-workbench v-else-if="componentName === 'ManagerWorkbench'"/>

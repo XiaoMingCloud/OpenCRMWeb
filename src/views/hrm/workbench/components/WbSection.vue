@@ -1,8 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @LastEditors: yang
--->
+
 <template>
   <el-card class="wk-section">
     <div v-if="headerShow" class="wk-section__header">

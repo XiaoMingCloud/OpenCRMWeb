@@ -1,8 +1,4 @@
-<!--
- * @Description: 悟空软件
- * @Author: 悟空
- * @LastEditors: yang
--->
+
 <template>
   <div class="wb-item">
     <div class="wb-item__label">{{ label }}</div>

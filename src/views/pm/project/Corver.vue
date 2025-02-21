@@ -175,7 +175,7 @@ export default {
       }],
       isCreate: false,
       list: [],
-      defaultCorverUrl: 'https://file.72crm.com/static/pc/images/pm/project-cover-1.jpg',
+      defaultCorverUrl: './project-cover-1.jpg',
       tabName: 'all',
       tabList: [
         {

@@ -1,10 +1,4 @@
-/*
- * @Description: 悟空软件
- * @Author: 悟空
- * @Date: 2020-05-30 16:06:01
- * @LastEditTime: 2020-06-05 17:54:24
- * @LastEditors: yang
- */
+
 
 const quitTypeValue = {
   1: '主动离职',

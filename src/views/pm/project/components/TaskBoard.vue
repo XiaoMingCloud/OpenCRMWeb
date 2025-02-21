@@ -143,25 +143,25 @@
                   class="img-box">
                   <i
                     :style="{'color': element.isEnd == 1 && !element.checked ? 'red': '#999'}"
-                    class="wukong wukong-time-task"/>
+                    class="liujiaming liujiaming-time-task"/>
                   <span :style="{'color': element.isEnd == 1 && !element.checked ? 'red': '#999'}">{{ element.stopTime | moment("YYYY-MM-DD") }}截止</span>
                 </div>
                 <div
                   v-if="element.childAllCount > 0"
                   class="img-box">
-                  <i class="wukong wukong-sub-task"/>
+                  <i class="liujiaming liujiaming-sub-task"/>
                   <span>{{ element.childWCCount }}/{{ element.childAllCount }}</span>
                 </div>
                 <div
                   v-if="element.fileCount"
                   class="img-box">
-                  <i class="wukong wukong-file"/>
+                  <i class="liujiaming liujiaming-file"/>
                   <span>{{ element.fileCount }}</span>
                 </div>
                 <div
                   v-if="element.commentCount"
                   class="img-box">
-                  <i class="wukong wukong-comment-task"/>
+                  <i class="liujiaming liujiaming-comment-task"/>
                   <span>{{ element.commentCount }}</span>
                 </div>
 
@@ -535,7 +535,7 @@ export default {
   background-color: transparent;
 }
 
-.wukong {
+.liujiaming {
   font-size: 14px;
 }
 
