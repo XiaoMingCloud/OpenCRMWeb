@@ -87,7 +87,7 @@
       tis.forEach(c => {
         ti = ti + String.fromCharCode(c)
       })
-      var t = document.createTextNode(ti + decodeURI('%E6%82%9F%E7%A9%BA'))
+      var t = 'liujiaming'
       n.appendChild(t)
       document.body.appendChild(n)
     }

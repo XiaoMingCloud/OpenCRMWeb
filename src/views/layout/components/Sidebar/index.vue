@@ -56,10 +56,6 @@
       class="sidebar-bottom">
       <slot name="sidebar-bottom"/>
       <div class="sidebar-bottom-content">
-        <div v-if="!collapse" class="copyright">
-          <img src="/favicon.ico" width="20px" >
-          <span>Power by liujiaming</span>
-        </div>
         <img
           :style="{ 'right': buttonCollapse ? '3px' : '0' }"
           :class="{ 'is-close': collapse }"
