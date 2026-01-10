@@ -4,7 +4,7 @@
     direction="column"
     align="stretch">
     <xr-header
-      icon-class="wk wk-print"
+      icon-class="xiaomingcloud open-print"
       icon-color="#26d4da"
       label="自定义打印模板" />
     <div class="main__bd">

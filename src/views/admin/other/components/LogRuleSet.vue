@@ -6,7 +6,7 @@
         content="您可以配置日志规则，在日志模块可以根据日志规则来统计日志完成情况"
         effect="dark"
         placement="top">
-        <i class="wk wk-help wk-help-tips"/>
+        <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
       </el-tooltip>
       <el-button
         type="primary"
@@ -33,10 +33,10 @@
                 content="默认全部员工"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <wk-user-select
+            <Xiaomingcloud-user-select
               v-model="dayForm.memberUserId"
               :radio="false"
               style="width: 100%;"/>
@@ -88,10 +88,10 @@
                 content="默认全部员工"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <wk-user-select
+            <Xiaomingcloud-user-select
               v-model="weekForm.memberUserId"
               :radio="false"
               style="width: 100%;"/>
@@ -104,7 +104,7 @@
                 content="开始时间为选择时间的00:00"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
             <el-select v-model="weekForm.startDay" >
@@ -123,7 +123,7 @@
                 content="截止时间为选择时间的24:00"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
             <el-select v-model="weekForm.endDay" >
@@ -155,10 +155,10 @@
                 content="默认全部员工"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <wk-user-select
+            <Xiaomingcloud-user-select
               v-model="monthForm.memberUserId"
               :radio="false"
               style="width: 100%;"/>
@@ -171,7 +171,7 @@
                 content="开始时间为选择时间的00:00"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
             <el-select v-model="monthForm.startDay" >
@@ -190,7 +190,7 @@
                 content="截止时间为选择时间的24:00"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
             <el-select v-model="monthForm.endDay" >
@@ -216,7 +216,7 @@ import {
 } from '@/api/admin/other'
 
 import CreateSections from '@/components/CreateSections'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { objDeepCopy } from '@/utils'
 
 
@@ -225,7 +225,7 @@ export default {
 
   components: {
     CreateSections,
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
 
   data() {

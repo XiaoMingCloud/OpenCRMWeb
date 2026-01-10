@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -28,7 +28,7 @@
             content="计薪周期设定后将不可修改"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
           </el-tooltip>
         </el-form-item>
         <el-form-item label="对应社保自然月">
@@ -45,7 +45,7 @@
             content="请根据你工资报表月份对应的社保报表月份进行选择，例如工资报表为6月，如果要对应5月的社保报表，则选择上月"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
           </el-tooltip>
         </el-form-item>
       </el-form>

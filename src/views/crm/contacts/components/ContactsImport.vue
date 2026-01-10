@@ -10,7 +10,7 @@
           <span>{{ detail.customerName }}</span>
         </p>
         <div class="cell-bd__detail">
-          <i class="wk wk-circle-iphone" />
+          <i class="xiaomingcloud open-circle-iphone" />
           <span v-if="detail.mobile">{{ detail.mobile }}</span>
           <span v-else class="no-data">暂无电话</span>
           <div class="deal-info">
@@ -63,7 +63,7 @@ export default {
     },
 
     dealIcon() {
-      return this.isDeal ? 'wk wk-success' : 'wk wk-close'
+      return this.isDeal ? 'xiaomingcloud open-success' : 'xiaomingcloud open-close'
     },
 
     dealName() {
@@ -205,16 +205,16 @@ export default {
     background-color: #FFF4F4;
   }
 
-  .wk {
+  .Xiaomingcloud {
     font-size: 12px;
     margin-right: 3px;
   }
 
-  .wk-success {
+  .Xiaomingcloud-success {
     color: #20b559;
   }
 
-  .wk-close {
+  .Xiaomingcloud-close {
     color: #f95a5a;
   }
 }

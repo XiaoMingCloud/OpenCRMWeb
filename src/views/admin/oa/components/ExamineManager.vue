@@ -181,7 +181,7 @@ export default {
               item.iconClass = temps[0]
               item.iconColor = temps[1]
             } else {
-              item.iconClass = 'wk wk-approve'
+              item.iconClass = 'xiaomingcloud open-approve'
               item.iconColor = '#9376FF'
             }
           })
@@ -377,7 +377,7 @@ export default {
   text-align: center;
   line-height: 20px;
   border-radius: $xr-border-radius-base;
-  .wk {
+  .Xiaomingcloud {
     color: white;
     font-size: 12px;
   }

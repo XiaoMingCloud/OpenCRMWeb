@@ -11,9 +11,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-items
+        <Xiaomingcloud-form-items
           v-for="(children, index) in fieldList"
           :key="index"
           :field-from="fieldForm"
@@ -42,12 +42,12 @@
               @value-change="otherChange($event, data)"
             />
           </template>
-        </wk-form-items>
+        </Xiaomingcloud-form-items>
       </el-form>
     </create-sections>
 
     <create-sections
-      v-if="wkFlowList"
+      v-if="XiaomingcloudFlowList"
       title="审核信息">
       <template slot="header">
         <el-tooltip
@@ -55,11 +55,11 @@
           :content="flowRemarks"
           effect="dark"
           placement="top">
-          <i class="wk wk-help wk-help-tips" style="margin-left: 8px;"/>
+          <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" style="margin-left: 8px;"/>
         </el-tooltip>
       </template>
-      <wk-approval-flow-apply
-        :data="wkFlowList"
+      <Xiaomingcloud-approval-flow-apply
+        :data="XiaomingcloudFlowList"
         style="padding: 15px;"
       />
     </create-sections>
@@ -79,12 +79,12 @@ import { crmBusinessProductAPI } from '@/api/crm/business'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkFormItems from '@/components/NewCom/WkForm/WkFormItems'
+import XiaomingcloudFormItems from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItems'
 import {
   CrmRelativeCell
 } from '@/components/CreateCom'
-import WkApprovalFlowApply from '@/components/Examine/WkApprovalFlowApply'
-import WkApprovalFlowApplyMixin from '@/components/Examine/mixins/WkApprovalFlowApply'
+import XiaomingcloudApprovalFlowApply from '@/components/Examine/XiaomingcloudApprovalFlowApply'
+import XiaomingcloudApprovalFlowApplyMixin from '@/components/Examine/mixins/XiaomingcloudApprovalFlowApply'
 
 import crmTypeModel from '@/views/crm/model/crmTypeModel'
 import CustomFieldsMixin from '@/mixins/CustomFields'
@@ -100,11 +100,11 @@ export default {
     CreateSections,
     CrmRelativeCell,
     XhProduct: () => import('@/components/CreateCom/XhProduct'),
-    WkFormItems,
-    WkApprovalFlowApply
+    XiaomingcloudFormItems,
+    XiaomingcloudApprovalFlowApply
   },
 
-  mixins: [CustomFieldsMixin, WkApprovalFlowApplyMixin],
+  mixins: [CustomFieldsMixin, XiaomingcloudApprovalFlowApplyMixin],
 
   props: {
     action: {
@@ -129,7 +129,7 @@ export default {
 
       // 审批信息
       flowRemarks: '',
-      wkFlowList: null // 有值有审批流
+      XiaomingcloudFlowList: null // 有值有审批流
     }
   },
 
@@ -143,7 +143,7 @@ export default {
 
     // 确认名称
     sureBtnTitle() {
-      if (this.wkFlowList) {
+      if (this.XiaomingcloudFlowList) {
         return '提交审核'
       }
       return '保存'
@@ -289,11 +289,11 @@ export default {
           this.fieldRules = fieldRules
 
           // 审核信息
-          this.initWkFlowData({
+          this.initXiaomingcloudFlowData({
             params: { label: 1 },
             fieldForm: this.fieldForm
           }, (res) => {
-            this.wkFlowList = res.list
+            this.XiaomingcloudFlowList = res.list
             this.flowRemarks = res.resData ? res.resData.remarks : ''
           })
           this.loading = false
@@ -311,14 +311,14 @@ export default {
       const crmForm = this.$refs.crmForm
       crmForm.validate(valid => {
         if (valid) {
-          const wkFlowResult = this.validateWkFlowData(this.wkFlowList)
-          if (wkFlowResult.pass) {
+          const XiaomingcloudFlowResult = this.validateXiaomingcloudFlowData(this.XiaomingcloudFlowList)
+          if (XiaomingcloudFlowResult.pass) {
             const params = this.getSubmiteParams([].concat.apply([], this.fieldList), this.fieldForm)
             if (isDraft) {
               params.entity.checkStatus = 5
             }
-            if (wkFlowResult.data) {
-              params.examineFlowData = wkFlowResult.data
+            if (XiaomingcloudFlowResult.data) {
+              params.examineFlowData = XiaomingcloudFlowResult.data
             }
             this.submiteParams(params)
           } else {
@@ -387,7 +387,7 @@ export default {
      */
     formChange(field, index, value, valueList) {
       // 审批流逻辑
-      this.debouncedGetWkFlowList(field.field, this.fieldForm)
+      this.debouncedGetXiaomingcloudFlowList(field.field, this.fieldForm)
 
       if ([
         'select',
@@ -493,7 +493,7 @@ export default {
           discountRate: ''
         }
         this.fieldForm.money = ''
-        this.debouncedGetWkFlowList('money', this.fieldForm)
+        this.debouncedGetXiaomingcloudFlowList('money', this.fieldForm)
       } else if (field.formType === 'business') {
         if (data.value.length > 0) {
           this.getBusinessProduct(data.value[0].businessId).then(resData => {
@@ -504,12 +504,12 @@ export default {
               discountRate: businessData.discountRate
             }
             this.fieldForm.money = businessData.money || ''
-            this.debouncedGetWkFlowList('money', this.fieldForm)
+            this.debouncedGetXiaomingcloudFlowList('money', this.fieldForm)
           }).catch(() => {})
         }
       } else if (field.formType === 'product') {
         this.fieldForm.money = data.value.totalPrice || ''
-        this.debouncedGetWkFlowList('money', this.fieldForm)
+        this.debouncedGetXiaomingcloudFlowList('money', this.fieldForm)
       }
       this.$set(this.fieldForm, field.field, data.value)
       this.$refs.crmForm.validateField(field.field)
@@ -545,7 +545,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wk-form {
+.Xiaomingcloud-form {
   /deep/ .el-form-item.is-product {
     flex: 0 0 100%;
     width: 0;

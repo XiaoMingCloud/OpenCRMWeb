@@ -380,7 +380,7 @@ export default {
         } else {
           perviewFile = file
         }
-        this.$wkPreviewFile.preview({
+        this.$XiaomingcloudPreviewFile.preview({
           index: 0,
           data: [perviewFile]
         })

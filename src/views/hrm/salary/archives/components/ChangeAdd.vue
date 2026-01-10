@@ -22,7 +22,7 @@
           <el-button
             v-if="detail.isUpdate"
             class="head-handle-button xr-btn--green"
-            icon="wk wk-circle-edit"
+            icon="xiaomingcloud open-circle-edit"
             type="primary"
             @click.native="handleClick('edit')">编辑</el-button>
           <el-dropdown
@@ -287,7 +287,7 @@ export default {
       if (this.detail.isDelete) {
         temps.push({
           name: '删除',
-          icon: 'wk wk-delete',
+          icon: 'xiaomingcloud open-delete',
           command: 'delete'
         })
       }
@@ -295,7 +295,7 @@ export default {
       if (this.detail.isCancel) {
         temps.push({
           name: '取消',
-          icon: 'wk wk-icon-reply',
+          icon: 'xiaomingcloud open-icon-reply',
           command: 'cancel'
         })
       }
@@ -755,7 +755,7 @@ export default {
 }
 
 .el-dropdown-menu {
-  /deep/ .wk-icon-reply {
+  /deep/ .Xiaomingcloud-icon-reply {
     font-size: 12px;
   }
 }

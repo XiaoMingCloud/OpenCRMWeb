@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"

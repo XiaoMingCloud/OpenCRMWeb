@@ -2,7 +2,7 @@
   <flexbox justify="flex-start" class="filtrate-content">
     <flexbox justify="flex-start" class="title-box">
       <div class="icon-box">
-        <span class="wk wk-my-task icon" />
+        <span class="xiaomingcloud open-my-task icon" />
       </div>
       <span class="text">{{ title }}</span>
     </flexbox>
@@ -30,18 +30,18 @@
           :label="item.label"
           :value="item.value"/>
       </el-select>
-      <wk-dep-select
+      <Xiaomingcloud-dep-select
         v-if="dataSelect == 1"
         v-model="structuresSelectValue"
         radio
         placeholder="选择部门（默认为本部门及下属部门）"
-        class="wk-dep-select" />
+        class="Xiaomingcloud-dep-select" />
 
-      <wk-user-select
+      <Xiaomingcloud-user-select
         v-if="dataSelect == 2 && showUserSelect"
         v-model="userSelectValue"
         radio
-        class="wk-user-select"
+        class="Xiaomingcloud-user-select"
         placeholder="选择员工（默认为本人及下属）" />
 
       <!-- <el-select
@@ -114,8 +114,8 @@ import {
 import { crmBusinessStatusListAPI } from '@/api/crm/business'
 import { productCategoryIndexAPI } from '@/api/admin/crm'
 
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import TimeTypeSelect from '@/components/TimeTypeSelect'
 
 import moment from 'moment'
@@ -124,8 +124,8 @@ export default {
   name: 'FiltrateHandleView', // 筛选条件
   components: {
     TimeTypeSelect,
-    WkDepSelect,
-    WkUserSelect
+    XiaomingcloudDepSelect,
+    XiaomingcloudUserSelect
   },
   props: {
     // 模块类型  暂无意义 可不传
@@ -392,8 +392,8 @@ export default {
     margin-right: 15px;
   }
 
-  .wk-user-select,
-  .wk-dep-select {
+  .Xiaomingcloud-user-select,
+  .Xiaomingcloud-dep-select {
     text-align: left;
     width: 235px;
     margin-right: 15px;

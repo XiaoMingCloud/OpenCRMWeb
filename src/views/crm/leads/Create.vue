@@ -10,9 +10,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-items
+        <Xiaomingcloud-form-items
           v-for="(children, index) in fieldList"
           :key="index"
           :field-from="fieldForm"
@@ -30,7 +30,7 @@ import { crmLeadsSaveAPI } from '@/api/crm/leads'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkFormItems from '@/components/NewCom/WkForm/WkFormItems'
+import XiaomingcloudFormItems from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItems'
 
 import crmTypeModel from '@/views/crm/model/crmTypeModel'
 import CustomFieldsMixin from '@/mixins/CustomFields'
@@ -43,7 +43,7 @@ export default {
   components: {
     XrCreate,
     CreateSections,
-    WkFormItems
+    XiaomingcloudFormItems
   },
 
   mixins: [CustomFieldsMixin],

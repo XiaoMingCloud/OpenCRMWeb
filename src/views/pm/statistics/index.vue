@@ -1,7 +1,7 @@
 <template>
   <div class="project">
     <xr-header
-      icon-class="wk wk-results-solid"
+      icon-class="xiaomingcloud open-results-solid"
       icon-color="#2362FB"
       label="统计分析" />
     <div

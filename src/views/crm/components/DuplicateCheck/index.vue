@@ -29,7 +29,7 @@
           <el-button
             slot="append"
             type="primary"
-            icon="wk wk-search"
+            icon="xiaomingcloud open-search"
             @click.native="getList">查重</el-button>
         </el-input>
       </div>

@@ -2,7 +2,7 @@
 <template>
   <wb-section
     :des="des"
-    icon="wk wk-perform"
+    icon="xiaomingcloud open-perform"
     class="wb-perfor"
     label="绩效考核"
   >

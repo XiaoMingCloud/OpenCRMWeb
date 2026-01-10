@@ -53,7 +53,7 @@
         </template>
       </el-table-column>
     </el-table>
-    <wk-dep-user-view-dialog
+    <Xiaomingcloud-dep-user-view-dialog
       v-if="depUserViewDialogShow"
       :visible.sync="depUserViewDialogShow"
       close-on-empty-value
@@ -69,13 +69,13 @@ import {
   hrmEmployeeArchivesSetFieldAPI
 } from '@/api/admin/hrm'
 
-import WkDepUserViewDialog from '@/components/NewCom/WkUserSelect/DepDialog'
+import XiaomingcloudDepUserViewDialog from '@/components/NewCom/XiaomingcloudUserSelect/DepDialog'
 
 export default {
   // 员工档案设置
   name: 'EmployeeArchivesSet',
   components: {
-    WkDepUserViewDialog
+    XiaomingcloudDepUserViewDialog
   },
   mixins: [],
   data() {

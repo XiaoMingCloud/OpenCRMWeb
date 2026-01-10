@@ -2,7 +2,7 @@
 <template>
   <div v-loading="loading" class="main">
     <xr-header
-      icon-class="wk wk-double-gear"
+      icon-class="xiaomingcloud open-double-gear"
       icon-color="#1CBAF5"
       label="工资表设置" />
     <div class="main-body">

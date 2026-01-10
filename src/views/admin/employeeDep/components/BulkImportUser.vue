@@ -57,7 +57,7 @@
         v-else-if="stepsActive == 3"
         class="sections">
         <div class="result-info">
-          <i class="wk wk-success result-info__icon" />
+          <i class="xiaomingcloud open-success result-info__icon" />
           <p class="result-info__des">数据导入完成</p>
           <p class="result-info__detail">导入总数据<span class="result-info__detail--all">{{ resultData.totalSize }}</span>条，导入成功<span class="result-info__detail--suc"><template v-if="resultData">{{ resultData.totalSize - (resultData.errSize || 0) }}</template></span>条，导入失败<span class="result-info__detail--err">{{ resultData.errSize || 0 }}</span>条</p>
           <el-button
@@ -119,17 +119,17 @@ export default {
       stepsActive: 1,
       stepList: [
         {
-          icon: 'wk wk-upload',
+          icon: 'xiaomingcloud open-upload',
           title: '上传文件',
           status: 'wait'
         },
         {
-          icon: 'wk wk-data-import',
+          icon: 'xiaomingcloud open-data-import',
           title: '导入数据',
           status: 'wait'
         },
         {
-          icon: 'wk wk-success',
+          icon: 'xiaomingcloud open-success',
           title: '导入完成',
           status: 'wait'
         }
@@ -276,17 +276,17 @@ export default {
       this.file = { name: '' }
       this.stepList = [
         {
-          icon: 'wk wk-upload',
+          icon: 'xiaomingcloud open-upload',
           title: '上传文件',
           status: 'wait'
         },
         {
-          icon: 'wk wk-data-import',
+          icon: 'xiaomingcloud open-data-import',
           title: '导入数据',
           status: 'wait'
         },
         {
-          icon: 'wk wk-success',
+          icon: 'xiaomingcloud open-success',
           title: '导入完成',
           status: 'wait'
         }

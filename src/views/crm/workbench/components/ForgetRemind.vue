@@ -3,7 +3,7 @@
     v-loading="loading"
     class="ranking-statistics card">
     <flexbox class="card-title">
-      <span class="icon wk wk-clock" />
+      <span class="icon xiaomingcloud open-clock" />
       <div class="card-title-center text-one-ellipsis">遗忘提醒</div>
     </flexbox>
     <div class="card-desc">

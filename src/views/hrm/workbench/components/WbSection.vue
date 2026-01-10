@@ -1,10 +1,10 @@
 
 <template>
-  <el-card class="wk-section">
-    <div v-if="headerShow" class="wk-section__header">
-      <i :class="icon" class="wk-section__icon" />
-      <span class="wk-section__label">{{ label }}</span>
-      <span class="wk-section__des">{{ des }}</span>
+  <el-card class="Xiaomingcloud-section">
+    <div v-if="headerShow" class="Xiaomingcloud-section__header">
+      <i :class="icon" class="Xiaomingcloud-section__icon" />
+      <span class="Xiaomingcloud-section__label">{{ label }}</span>
+      <span class="Xiaomingcloud-section__des">{{ des }}</span>
     </div>
     <slot />
   </el-card>
@@ -25,7 +25,7 @@ export default {
     des: String,
     icon: {
       type: String,
-      default: 'wk wk-funnel-solid'
+      default: 'xiaomingcloud open-funnel-solid'
     }
   },
   data() {
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wk-section {
+.Xiaomingcloud-section {
   border: none;
   &__header {
     margin-bottom: 20px;

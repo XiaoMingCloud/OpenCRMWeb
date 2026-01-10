@@ -2,7 +2,7 @@
 <template>
   <wb-section
     class="wb-backlog"
-    icon="wk wk-message"
+    icon="xiaomingcloud open-message"
     label="待办提醒"
   >
     <flexbox class="body" wrap="wrap">

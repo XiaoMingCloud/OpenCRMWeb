@@ -23,38 +23,38 @@
         v-if="controlFlag.top"
         class="control-top control-btn"
         @click.stop="handleControl('top', $event)">
-        <i class="wk wk-icon-top" />
+        <i class="xiaomingcloud open-icon-top" />
       </div>
       <div
         v-if="controlFlag.bottom"
         class="control-bottom control-btn"
         @click.stop="handleControl('bottom', $event)">
-        <i class="wk wk-icon-top bottom" />
+        <i class="xiaomingcloud open-icon-top bottom" />
       </div>
       <div
         v-if="controlFlag.left"
         class="control-left control-btn"
         @click.stop="handleControl('left', $event)">
-        <i class="wk wk-transfer" />
+        <i class="xiaomingcloud open-transfer" />
       </div>
       <div
         v-if="controlFlag.right"
         class="control-right control-btn"
         @click.stop="handleControl('right', $event)">
-        <i class="wk wk-transfer" />
+        <i class="xiaomingcloud open-transfer" />
       </div>
       <div class="edit-box">
         <div
           v-if="controlFlag.copy"
           class="control-copy control-btn"
           @click.stop="handleControl('copy', $event)">
-          <i class="wk wk-associated" />
+          <i class="xiaomingcloud open-associated" />
         </div>
         <div
           v-if="controlFlag.delete"
           class="control-delete control-btn"
           @click.stop="handleControl('delete', $event)">
-          <i class="wk wk-s-delete" />
+          <i class="xiaomingcloud open-s-delete" />
         </div>
       </div>
     </template>
@@ -164,12 +164,12 @@ export default {
     align-items: center;
     justify-content: center;
 
-    .wk {
+    .Xiaomingcloud {
       color: #555;
       font-size: 14px;
     }
 
-    .wk-icon-top {
+    .Xiaomingcloud-icon-top {
       font-size: 12px;
       font-weight: bold;
       &.bottom {

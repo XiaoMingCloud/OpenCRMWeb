@@ -11,9 +11,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-items
+        <Xiaomingcloud-form-items
           v-for="(children, index) in fieldList"
           :key="index"
           :field-from="fieldForm"
@@ -49,7 +49,7 @@
               @value-change="otherChange($event, data)"
             />
           </template>
-        </wk-form-items>
+        </Xiaomingcloud-form-items>
     </el-form></create-sections>
 
     <create-sections title="发票信息">
@@ -126,7 +126,7 @@
     </create-sections>
 
     <create-sections
-      v-if="wkFlowList"
+      v-if="XiaomingcloudFlowList"
       title="审核信息">
       <template slot="header">
         <el-tooltip
@@ -134,11 +134,11 @@
           :content="flowRemarks"
           effect="dark"
           placement="top">
-          <i class="wk wk-help wk-help-tips" style="margin-left: 8px;"/>
+          <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" style="margin-left: 8px;"/>
         </el-tooltip>
       </template>
-      <wk-approval-flow-apply
-        :data="wkFlowList"
+      <Xiaomingcloud-approval-flow-apply
+        :data="XiaomingcloudFlowList"
         style="padding: 15px;"
       />
     </create-sections>
@@ -152,9 +152,9 @@ import { crmCustomerInvoiceInfoAPI } from '@/api/crm/customer'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkFormItems from '@/components/NewCom/WkForm/WkFormItems'
-import WkApprovalFlowApply from '@/components/Examine/WkApprovalFlowApply'
-import WkApprovalFlowApplyMixin from '@/components/Examine/mixins/WkApprovalFlowApply'
+import XiaomingcloudFormItems from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItems'
+import XiaomingcloudApprovalFlowApply from '@/components/Examine/XiaomingcloudApprovalFlowApply'
+import XiaomingcloudApprovalFlowApplyMixin from '@/components/Examine/mixins/XiaomingcloudApprovalFlowApply'
 import {
   XhInput,
   XhTextarea,
@@ -180,9 +180,9 @@ export default {
     XhDate,
     CrmRelativeCell,
     CrmRelative: () => import('@/components/CreateCom/CrmRelative'),
-    WkApprovalFlowApply,
+    XiaomingcloudApprovalFlowApply,
     XhReceivablesPlan,
-    WkFormItems
+    XiaomingcloudFormItems
   },
   filters: {
     /** 根据type 找到组件 */
@@ -200,7 +200,7 @@ export default {
       }
     }
   },
-  mixins: [CustomFieldsMixin, WkApprovalFlowApplyMixin],
+  mixins: [CustomFieldsMixin, XiaomingcloudApprovalFlowApplyMixin],
   props: {
     action: {
       type: Object,
@@ -264,7 +264,7 @@ export default {
       mailFrom: {},
       // 审批信息
       flowRemarks: '',
-      wkFlowList: null // 有值有审批流
+      XiaomingcloudFlowList: null // 有值有审批流
     }
   },
   computed: {
@@ -281,7 +281,7 @@ export default {
     },
 
     confirmButtonText() {
-      if (this.wkFlowList) {
+      if (this.XiaomingcloudFlowList) {
         return '提交审核'
       }
       return '保存'
@@ -437,11 +437,11 @@ export default {
           this.fieldRules = fieldRules
 
           // 审核信息
-          this.initWkFlowData({
+          this.initXiaomingcloudFlowData({
             params: { label: 3 },
             fieldForm: this.fieldForm
           }, res => {
-            this.wkFlowList = res.list
+            this.XiaomingcloudFlowList = res.list
             this.flowRemarks = res.resData ? res.resData.remarks : ''
           })
 
@@ -606,16 +606,16 @@ export default {
     //     this.$set(this.fieldForm, 'invoiceMoney', '')
     //     this.$set(this.fieldForm, 'contractMoney', '')
     //     this.$refs.crmForm.validateField(item.field)
-    //     this.debouncedGetWkFlowList('invoiceMoney', this.fieldForm)
+    //     this.debouncedGetXiaomingcloudFlowList('invoiceMoney', this.fieldForm)
     //   } else if (item.formType == 'contract') {
     //     const contractValue = dataValue && dataValue.length ? dataValue[0] : null
     //     this.$set(this.fieldForm, 'contractMoney', contractValue ? contractValue.money : '')
     //     this.$set(this.fieldForm, 'invoiceMoney', contractValue ? contractValue.money : '')
     //     this.$refs.crmForm.validateField(item.field)
-    //     this.debouncedGetWkFlowList('invoiceMoney', this.fieldForm)
+    //     this.debouncedGetXiaomingcloudFlowList('invoiceMoney', this.fieldForm)
     //   } else {
     //     // 审批流逻辑
-    //     this.debouncedGetWkFlowList(item.field, this.fieldForm)
+    //     this.debouncedGetXiaomingcloudFlowList(item.field, this.fieldForm)
     //   }
     // },
 
@@ -648,12 +648,12 @@ export default {
       const crmForm = this.$refs.crmForm
       crmForm.validate(valid => {
         if (valid) {
-          const wkFlowResult = this.validateWkFlowData(this.wkFlowList)
-          if (wkFlowResult.pass) {
+          const XiaomingcloudFlowResult = this.validateXiaomingcloudFlowData(this.XiaomingcloudFlowList)
+          if (XiaomingcloudFlowResult.pass) {
             const params = this.getSubmiteParams(this.baseFields, this.fieldForm)
 
-            if (wkFlowResult.data) {
-              params.examineFlowData = wkFlowResult.data
+            if (XiaomingcloudFlowResult.data) {
+              params.examineFlowData = XiaomingcloudFlowResult.data
             }
 
             const entityParams = params.entity // 系统字段
@@ -711,7 +711,7 @@ export default {
      */
     formChange(field, index, value, valueList) {
       // 审批流逻辑
-      this.debouncedGetWkFlowList(field.field, this.fieldForm)
+      this.debouncedGetXiaomingcloudFlowList(field.field, this.fieldForm)
 
       if ([
         'select',
@@ -776,12 +776,12 @@ export default {
         // this.$set(this.fieldForm, 'contractId', [])
         this.$set(this.fieldForm, 'invoiceMoney', '')
         this.$set(this.fieldForm, 'contractMoney', '')
-        this.debouncedGetWkFlowList('invoiceMoney', this.fieldForm)
+        this.debouncedGetXiaomingcloudFlowList('invoiceMoney', this.fieldForm)
       } else if (field.formType === 'contract') {
         const contractValue = data.value && data.value.length ? data.value[0] : null
         this.$set(this.fieldForm, 'contractMoney', contractValue ? contractValue.money : '')
         this.$set(this.fieldForm, 'invoiceMoney', contractValue ? contractValue.money : '')
-        this.debouncedGetWkFlowList('invoiceMoney', this.fieldForm)
+        this.debouncedGetXiaomingcloudFlowList('invoiceMoney', this.fieldForm)
       }
       this.$set(this.fieldForm, field.field, data.value)
       this.$refs.crmForm.validateField(field.field)

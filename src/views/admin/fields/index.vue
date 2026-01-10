@@ -879,7 +879,7 @@ export default {
       overflow-y: auto;
       background-color: white;
       .body-left_title {
-        .wk-icon-fields {
+        .Xiaomingcloud-icon-fields {
           margin-right: 10px;
         }
         font-weight: bold;

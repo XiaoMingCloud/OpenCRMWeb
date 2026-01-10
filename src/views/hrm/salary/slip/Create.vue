@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -12,7 +12,7 @@
       <template v-if="isNext">
         <div class="filter-header">
           <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-          <wk-popover-filter
+          <Xiaomingcloud-popover-filter
             :width="700"
             :field-from.sync="filterObj"
             :field-list="filterList"
@@ -76,7 +76,7 @@
               <el-button
                 type="text"
                 class="save-btn"
-                icon="wk wk-icon-save"
+                icon="xiaomingcloud open-icon-save"
                 @click="templateSave">保存模板</el-button>
             </div>
           </el-select>
@@ -119,8 +119,8 @@
 
                 </flexbox-item>
                 <div class="item__footer">
-                  <i class="wk wk-write" title="编辑" @click="classNameChange(item)"/>
-                  <i v-if="templateList.length > 1" class="wk wk-delete" title="删除" @click="deleteItem(item, index)"/>
+                  <i class="xiaomingcloud open-write" title="编辑" @click="classNameChange(item)"/>
+                  <i v-if="templateList.length > 1" class="xiaomingcloud open-delete" title="删除" @click="deleteItem(item, index)"/>
                   <span class="drag-handle section-handle">⋮⋮</span>
                 </div>
               </flexbox>
@@ -153,11 +153,11 @@
                       :content="subItem.remark"
                       effect="dark"
                       placement="top">
-                      <i class="wk wk-help wk-help-tips"/>
+                      <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
                     </el-tooltip>
                   </flexbox-item>
                   <div class="item__footer">
-                    <i class="wk wk-icon-draft" title="备注" alt="备注" @click="draftAdd(subItem)"/>
+                    <i class="xiaomingcloud open-icon-draft" title="备注" alt="备注" @click="draftAdd(subItem)"/>
                     <span class="drag-handle child-handle">⋮⋮</span>
                   </div>
                 </flexbox>
@@ -223,7 +223,7 @@ import {
 import Draggable from 'vuedraggable'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 import { objDeepCopy } from '@/utils'
 
 export default {
@@ -231,7 +231,7 @@ export default {
   name: 'SalarySlipCreate',
   components: {
     Draggable,
-    WkPopoverFilter
+    XiaomingcloudPopoverFilter
   },
   mixins: [ElDialogLoadingMixin],
   props: {
@@ -842,7 +842,7 @@ export default {
     border-top: 1px solid #e6e6e6;
     padding: 0 15px;
     .save-btn {
-      /deep/.wk-icon-save {
+      /deep/.Xiaomingcloud-icon-save {
         font-size: 14px;
         margin-right: 3px;
       }

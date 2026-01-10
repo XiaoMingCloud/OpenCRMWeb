@@ -91,7 +91,7 @@ export default {
       const iconList = []
       for (let index = 0; index < keys.length; index++) {
         const key = keys[index]
-        const item = { icon: `wk wk-${key}` }
+        const item = { icon: `xiaomingcloud open-${key}` }
         item.color = colors[index % 6]
         iconList.push(item)
       }
@@ -151,7 +151,7 @@ export default {
     text-align: center;
     line-height: 40px;
     border-radius: $xr-border-radius-base;
-    .wk {
+    .Xiaomingcloud {
       color: white;
       font-size: 26px;
     }

@@ -15,10 +15,10 @@
       align="stretch"
       style="padding: 0 15px;"
       class="side-detail-main">
-      <wk-detail-header
+      <Xiaomingcloud-detail-header
         :detail-value="detailData.postName"
         :show-edit="editAuth"
-        icon-class="wk wk-office"
+        icon-class="xiaomingcloud open-office"
         detail-name="职位"
         icon-bg-color="#ECEEF2"
         icon-color="#42526E"
@@ -33,7 +33,7 @@
           label="详细资料"
           name="baseInfo"
           lazy>
-          <wk-base-detail
+          <Xiaomingcloud-base-detail
             :list="baseList"
           />
         </el-tab-pane>
@@ -62,8 +62,8 @@ import {
 } from '@/api/hrm/recruit/post'
 
 import SlideView from '@/components/SlideView'
-import WkDetailHeader from '@/components/WkDetailHeader'
-import WkBaseDetail from '@/components/WkBaseDetail'
+import XiaomingcloudDetailHeader from '@/components/XiaomingcloudDetailHeader'
+import XiaomingcloudBaseDetail from '@/components/XiaomingcloudBaseDetail'
 import PostHandle from './components/PostHandle'
 import PostCreateView from './Create'
 import postModel from '../model/post'
@@ -73,8 +73,8 @@ export default {
   name: 'PostDetail',
   components: {
     SlideView,
-    WkDetailHeader,
-    WkBaseDetail,
+    XiaomingcloudDetailHeader,
+    XiaomingcloudBaseDetail,
     PostHandle,
     PostCreateView
   },
@@ -108,7 +108,7 @@ export default {
       detailData: null,
       tabCurrentName: 'baseInfo',
       dropdownItems: [{
-        icon: 'wk wk-edit',
+        icon: 'xiaomingcloud open-edit',
         label: '编辑',
         command: 'edit'
       }],

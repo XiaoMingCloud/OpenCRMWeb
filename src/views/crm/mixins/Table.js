@@ -51,12 +51,12 @@ import {
   crmInvoiceExcelAllExportAPI
 } from '@/api/crm/invoice'
 
-import WkEmpty from '@/components/WkEmpty'
+import XiaomingcloudEmpty from '@/components/XiaomingcloudEmpty'
 import CRMListHead from '../components/CRMListHead'
 import CRMTableHead from '../components/CRMTableHead'
 import FieldSet from '../components/FieldSet'
 import ApprovalFlowUpdateDialog from '@/components/ApprovalFlow/ApprovalFlowUpdateDialog'
-import WkFieldView from '@/components/NewCom/WkForm/WkFieldView'
+import XiaomingcloudFieldView from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFieldView'
 
 import {
   mapGetters
@@ -66,7 +66,7 @@ import Lockr from 'lockr'
 import { Loading } from 'element-ui'
 import CheckStatusMixin from '@/mixins/CheckStatusMixin'
 import { downloadExcelWithResData, toUnderScoreCase } from '@/utils'
-import { getFormFieldShowName } from '@/components/NewCom/WkForm/utils'
+import { getFormFieldShowName } from '@/components/NewCom/XiaomingcloudForm/utils'
 import merge from '@/utils/merge'
 import { isArray } from '@/utils/types'
 
@@ -89,9 +89,9 @@ export default {
     CRMListHead,
     CRMTableHead,
     FieldSet,
-    WkEmpty,
+    XiaomingcloudEmpty,
     ApprovalFlowUpdateDialog,
-    WkFieldView
+    XiaomingcloudFieldView
   },
 
   props: {

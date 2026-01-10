@@ -2,7 +2,7 @@
 <template>
   <wb-section
     class="wb-performance"
-    icon="wk wk-perform"
+    icon="xiaomingcloud open-perform"
     label="绩效管理"
   >
     <flexbox class="body" wrap="wrap">

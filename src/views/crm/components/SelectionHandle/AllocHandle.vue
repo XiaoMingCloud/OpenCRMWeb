@@ -14,7 +14,7 @@
         <div
           class="handle-item-name"
           style="margin-top: 8px;">请选择：</div>
-        <wk-user-select
+        <Xiaomingcloud-user-select
           v-model="userId"
           radio
           class="handle-item-content"/>
@@ -32,14 +32,14 @@
 </template>
 
 <script>
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { crmCustomerDistributeAPI } from '@/api/crm/customer'
 
 export default {
   /** 客户管理 的 勾选后的 公海分配 操作*/
   name: 'AllocHandle',
   components: {
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   mixins: [],
   props: {

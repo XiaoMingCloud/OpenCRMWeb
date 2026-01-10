@@ -119,7 +119,7 @@ export default {
           type: 1,
           module: 'crm',
           path: '/crm',
-          icon: 'wk wk-customer',
+          icon: 'xiaomingcloud open-customer',
           fontSize: '17px'
         }
       }
@@ -130,7 +130,7 @@ export default {
           type: 4,
           module: 'taskExamine',
           path: '/taskExamine',
-          icon: 'wk wk-office',
+          icon: 'xiaomingcloud open-office',
           fontSize: '16px'
         }
       }
@@ -141,7 +141,7 @@ export default {
           type: 3,
           module: 'log',
           path: '/workLog',
-          icon: 'wk wk-log',
+          icon: 'xiaomingcloud open-log',
           fontSize: '17px'
         }
       }
@@ -152,7 +152,7 @@ export default {
           type: 6,
           module: 'book',
           path: '/addressBook',
-          icon: 'wk wk-address-book',
+          icon: 'xiaomingcloud open-address-book',
           fontSize: '17px'
         }
       }
@@ -163,7 +163,7 @@ export default {
           type: 2,
           module: 'project',
           path: '/project',
-          icon: 'wk wk-project',
+          icon: 'xiaomingcloud open-project',
           fontSize: '15px'
         }
       }
@@ -174,7 +174,7 @@ export default {
           type: 5,
           path: '/bi',
           module: 'bi',
-          icon: 'wk wk-business-intelligence',
+          icon: 'xiaomingcloud open-business-intelligence',
           fontSize: '18px'
         }
       }
@@ -185,7 +185,7 @@ export default {
           type: 8,
           module: 'calendar',
           path: '/calendar/index',
-          icon: 'wk wk-calendar',
+          icon: 'xiaomingcloud open-calendar',
           fontSize: '20px'
         }
       }
@@ -196,7 +196,7 @@ export default {
           type: 11,
           module: 'hrm',
           path: '/hrm',
-          icon: 'wk wk-employees',
+          icon: 'xiaomingcloud open-employees',
           fontSize: '18px'
         }
       }
@@ -258,7 +258,7 @@ export default {
       configSetHeaderModelSortAPI(keys).then(res => {
         this.isEdit = false
         this.$store
-          .dispatch('WKHeaderModule')
+          .dispatch('XiaomingcloudHeaderModule')
           .then(res => {
             this.$message.success('操作成功')
             this.loading = false

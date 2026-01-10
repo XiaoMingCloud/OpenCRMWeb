@@ -8,10 +8,10 @@
       popper-class="no-padding-popover">
       <div class="add-node-approve">
         <div class="add-node-approve-btn" @click="selectClick('approve')">
-          <i class="wk wk-associate is-orange" />审批人
+          <i class="xiaomingcloud open-associate is-orange" />审批人
         </div>
         <div class="add-node-approve-btn" @click="selectClick('condition')">
-          <i class="wk wk-approve is-green" />条件分支
+          <i class="xiaomingcloud open-approve is-green" />条件分支
         </div>
       </div>
       <el-button slot="reference" type="primary" icon="el-icon-plus" circle/>

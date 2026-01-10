@@ -226,7 +226,7 @@ export default {
      */
     handleFile(type, item) {
       if (type === 'preview') {
-        this.$wkPreviewFile.preview({
+        this.$XiaomingcloudPreviewFile.preview({
           index: item.$index,
           data: this.list
         })

@@ -6,7 +6,7 @@
     <div class="task-filter__body">
       <el-form ref="form" label-width="80px">
         <el-form-item label="负责人">
-          <wk-user-select
+          <Xiaomingcloud-user-select
             :value="users.map(item => item.userId)"
             class="handle-item-content"
             @change="userChage"/>
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 
 import { objDeepCopy } from '@/utils'
 
@@ -58,7 +58,7 @@ export default {
   // 任务筛选
   name: 'TaskFilter',
   components: {
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   props: {
     dueDate: String,

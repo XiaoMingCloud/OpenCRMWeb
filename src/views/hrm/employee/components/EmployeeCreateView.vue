@@ -26,10 +26,10 @@
         :model="baseForm"
         :rules="baseRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top"
-        @change="wkBaseFormChange">
-        <wk-form-item
+        @change="XiaomingcloudBaseFormChange">
+        <Xiaomingcloud-form-item
           v-for="(item, index) in baseFields"
           :key="index"
           :index="index"
@@ -48,7 +48,7 @@
               @province="selectProvince($event, data, baseForm)"
               @city="selectCity($event, data, baseForm)"/>
           </template>
-        </wk-form-item>
+        </Xiaomingcloud-form-item>
       </el-form>
     </create-sections>
     <create-sections title="入职信息">
@@ -58,9 +58,9 @@
         :model="entryForm"
         :rules="entryRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-item
+        <Xiaomingcloud-form-item
           v-for="(item, index) in entryFields"
           :key="index"
           :index="index"
@@ -68,7 +68,7 @@
           :item="item"
           :disabled="item.disabled"
           style-percent="50%"
-          @change="wkEntryFormChange"
+          @change="XiaomingcloudEntryFormChange"
         >
           <template slot-scope="{ data }">
             <v-distpicker
@@ -81,7 +81,7 @@
               @city="selectCity($event, data, entryForm)"
               @area="selectArea($event, data, entryForm)"/>
           </template>
-        </wk-form-item>
+        </Xiaomingcloud-form-item>
       </el-form>
     </create-sections>
     <el-button
@@ -109,7 +109,7 @@ import {
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkFormItem from '@/components/NewCom/WkForm/WkFormItem'
+import XiaomingcloudFormItem from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItem'
 import VDistpicker from '@/components/VDistpicker'
 
 import CustomFieldsMixin from '@/mixins/CustomFields'
@@ -124,7 +124,7 @@ export default {
   components: {
     XrCreate,
     CreateSections,
-    WkFormItem,
+    XiaomingcloudFormItem,
     VDistpicker
   },
   filters: {},
@@ -419,7 +419,7 @@ export default {
     /**
      * chage
      */
-    wkEntryFormChange(item, index, value, valueList) {
+    XiaomingcloudEntryFormChange(item, index, value, valueList) {
       // 部门进行的选择
       if (item.field == 'deptId' || item.field == 'dept_id') {
         console.log('object', item, index, value, valueList)
@@ -453,7 +453,7 @@ export default {
     /**
      * 基础信息change
      */
-    wkBaseFormChange(item, index, value, valueList) {
+    XiaomingcloudBaseFormChange(item, index, value, valueList) {
       if ([
         'select',
         'checkbox'
@@ -788,7 +788,7 @@ export default {
   }
 }
 
-.wk-form {
+.Xiaomingcloud-form {
   display: flex;
   flex-wrap: wrap;
   /deep/.is-detail_table {

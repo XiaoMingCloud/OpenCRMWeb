@@ -10,9 +10,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-items
+        <Xiaomingcloud-form-items
           v-for="(children, index) in fieldList"
           :key="index"
           :field-from="fieldForm"
@@ -26,7 +26,7 @@
               @value-change="otherChange($event, data)"
             />
           </template>
-        </wk-form-items>
+        </Xiaomingcloud-form-items>
       </el-form>
     </create-sections>
 
@@ -54,7 +54,7 @@ import { crmCustomerSaveAPI } from '@/api/crm/customer'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkFormItems from '@/components/NewCom/WkForm/WkFormItems'
+import XiaomingcloudFormItems from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItems'
 
 
 import crmTypeModel from '@/views/crm/model/crmTypeModel'
@@ -72,7 +72,7 @@ export default {
   components: {
     XrCreate,
     CreateSections,
-    WkFormItems,
+    XiaomingcloudFormItems,
     XhCustomerAddress: () => import('@/components/CreateCom/XhCustomerAddress'),
     ContactsCreate
   },
@@ -313,7 +313,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wk-form {
+.Xiaomingcloud-form {
   /deep/ .el-form-item.is-map_address {
     flex: 0 0 100%;
   }

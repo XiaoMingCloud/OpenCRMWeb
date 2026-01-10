@@ -4,7 +4,7 @@
     direction="column"
     align="stretch">
     <xr-header
-      icon-class="wk wk-workbench"
+      icon-class="xiaomingcloud open-workbench"
       icon-color="#5864FF"
       label="办公审批流" />
     <div class="main__bd">

@@ -9,7 +9,7 @@
         :content="infoTips"
         effect="dark"
         placement="top">
-        <i class="wk wk-help wk-help-tips"/>
+        <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
       </el-tooltip>
     </div>
     <div class="option-bar">
@@ -53,7 +53,7 @@
             style="margin-left: 10px;"
             type="primary"
             class="filter-button el-button--margin "
-            icon="wk wk-screening"
+            icon="xiaomingcloud open-screening"
             @click="getFilterFieldInfo">高级筛选</el-button>
           <filter-form
             :field-list="filterFieldList"
@@ -65,7 +65,7 @@
           <el-button
             :disabled="!canMark"
             class="el-button--margin "
-            icon="wk wk-tag"
+            icon="xiaomingcloud open-tag"
             style="margin-left: 10px;"
             type="primary" plain @click="allMarkReadClick">全部标记已处理</el-button>
         </div>
@@ -122,7 +122,7 @@
           <template v-else-if="item.prop == 'status' && crmType === 'customer'">
             <i
               v-if="row.status == 2"
-              class="wk wk-circle-password customer-lock"/>
+              class="xiaomingcloud open-circle-password customer-lock"/>
           </template>
           <template v-else-if="item.prop == 'checkStatus'">
             <span :style="getStatusStyle(row.checkStatus)" class="status-mark"/>
@@ -131,7 +131,7 @@
           <template v-else-if="item.prop == 'invoiceType'">
             {{ fieldFormatter(row, column, row[column.property], item) }}
           </template>
-          <wk-field-view
+          <Xiaomingcloud-field-view
             v-else
             :props="item"
             :form-type="item.formType"
@@ -140,7 +140,7 @@
             <template slot-scope="{ data }">
               {{ fieldFormatter(row, column, row[column.property], item) }}
             </template>
-          </wk-field-view>
+          </Xiaomingcloud-field-view>
         </template>
       </el-table-column>
       <el-table-column :resizable="false"/>
@@ -180,7 +180,7 @@ import {
 import FilterForm from '@/views/crm/components/FilterForm'
 import FilterContent from '@/views/crm/components/FilterForm/FilterContent'
 import CRMAllDetail from '@/views/crm/components/CRMAllDetail'
-import WkFieldView from '@/components/NewCom/WkForm/WkFieldView'
+import XiaomingcloudFieldView from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFieldView'
 
 import MessageTableMixin from '../mixins/MessageTable'
 
@@ -192,12 +192,12 @@ export default {
     FilterForm,
     FilterContent,
     CRMAllDetail,
-    WkFieldView
+    XiaomingcloudFieldView
   },
 
   filters: {
     dealIcon(statu) {
-      return statu == 1 ? 'wk wk-success deal-suc' : 'wk wk-close deal-un'
+      return statu == 1 ? 'xiaomingcloud open-success deal-suc' : 'xiaomingcloud open-close deal-un'
     },
 
     dealName(statu) {
@@ -271,12 +271,12 @@ export default {
       const temps = this.showFollow ? [{
         name: '已跟进',
         type: 'follow',
-        icon: 'wk wk-edit'
+        icon: 'xiaomingcloud open-edit'
       }] : []
       temps.push({
         name: '标记已处理',
         type: 'mark-deal',
-        icon: 'wk wk-tag'
+        icon: 'xiaomingcloud open-tag'
       })
       return temps
     },
@@ -607,7 +607,7 @@ export default {
     color: white;
     margin-right: 10px;
   }
-  .wk-help {
+  .Xiaomingcloud-help {
     margin-left: 5px;
   }
 }

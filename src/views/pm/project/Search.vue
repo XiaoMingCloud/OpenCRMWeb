@@ -71,7 +71,7 @@
             <div class="label">
               成员
             </div>
-            <wk-user-select
+            <Xiaomingcloud-user-select
               :value="form.userList"
               :radio="false"
               style="width: 100%;"
@@ -194,7 +194,7 @@ import { workIndexWorkListAPI, workQueryWorkTaskListAPI } from '@/api/pm/task'
 import { workWorkCollectAPI, workWorkDeleteAPI } from '@/api/pm/project'
 import { workTasklableIndexAPI } from '@/api/pm/tag'
 
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import ProjectCell from './components/ProjectCell'
 import AddProject from '../components/AddProject'
 import TaskCell from '@/views/taskExamine/task/components/TaskCell'
@@ -203,7 +203,7 @@ import TaskDetail from '@/views/taskExamine/task/components/TaskDetail'
 export default {
   name: 'ProjectSearch',
   components: {
-    WkUserSelect,
+    XiaomingcloudUserSelect,
     ProjectCell,
     AddProject,
     TaskCell,

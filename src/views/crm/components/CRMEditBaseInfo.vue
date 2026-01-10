@@ -30,7 +30,7 @@
             {{ item.name }}
           </span>
           <template v-if="item.isEdit">
-            <wk-field
+            <Xiaomingcloud-field
               :item="item"
               :index="index"
               :field-from="editForm"
@@ -84,7 +84,7 @@
                     :value="item.value"/>
                 </el-select>
               </template>
-            </wk-field>
+            </Xiaomingcloud-field>
           </template>
           <template v-else>
             <div
@@ -128,7 +128,7 @@
               align="stretch"
               style="width: 100%;"
               class="form-item__value">
-              <wk-field-view
+              <Xiaomingcloud-field-view
                 :props="item"
                 :form-type="item.formType"
                 :value="item.value"
@@ -142,9 +142,9 @@
                   <span v-else-if="ignoreFields.includes(data.props.field) && data.props.field === 'status'">{{ getSelectShowValue(data) }}</span>
                   <span v-else @click="checkModuleDetail(data)">{{ getCommonShowValue(data) }}</span>
                 </template>
-              </wk-field-view>
+              </Xiaomingcloud-field-view>
 
-              <i v-if="getEditAuth(item)" class="wk wk-edit form-item__edit" @click.stop="editClick(item, index)" />
+              <i v-if="getEditAuth(item)" class="xiaomingcloud open-edit form-item__edit" @click.stop="editClick(item, index)" />
             </flexbox>
           </template>
         </el-form-item>
@@ -173,8 +173,8 @@ import {
   XhProuctCate,
   XhBusinessStatus
 } from '@/components/CreateCom'
-import WkFieldView from '@/components/NewCom/WkForm/WkFieldView'
-import WkField from '@/components/NewCom/WkForm/WkField'
+import XiaomingcloudFieldView from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFieldView'
+import XiaomingcloudField from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudField'
 import Sections from '../components/Sections'
 import MapView from '@/components/MapView' // 地图详情
 import FileListView from '@/components/FileListView'
@@ -183,7 +183,7 @@ import crmTypeModel from '@/views/crm/model/crmTypeModel'
 import { objDeepCopy } from '@/utils'
 import { isArray, isObject, isEmpty } from '@/utils/types'
 import { mapGetters } from 'vuex'
-import { getFormFieldShowName } from '@/components/NewCom/WkForm/utils'
+import { getFormFieldShowName } from '@/components/NewCom/XiaomingcloudForm/utils'
 import CustomFieldsMixin from '@/mixins/CustomFields'
 
 export default {
@@ -196,8 +196,8 @@ export default {
     CrmRelativeCell,
     XhProuctCate,
     XhBusinessStatus,
-    WkFieldView,
-    WkField,
+    XiaomingcloudFieldView,
+    XiaomingcloudField,
     CRMFullScreenDetail: () => import('@/components/CRMFullScreenDetail')
   },
   filters: {
@@ -812,7 +812,7 @@ export default {
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
-  .wk-field-view {
+  .Xiaomingcloud-field-view {
     width: 0;
     flex: 1;
   }

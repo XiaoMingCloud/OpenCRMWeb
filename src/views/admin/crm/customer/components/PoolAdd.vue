@@ -50,11 +50,11 @@
                       content="客户公海管理员可对客户公海客户进行领取、分配、删除、导出等操作"
                       effect="dark"
                       placement="top">
-                      <i class="wk wk-help wk-help-tips"/>
+                      <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
                     </el-tooltip>
                   </div>
                 </div>
-                <wk-user-select
+                <Xiaomingcloud-user-select
                   :radio="false"
                   v-model="baseFrom.adminUsers"
                   style="width: 100%;" />
@@ -70,11 +70,11 @@
                       content="客户公海规则对客户公海成员生效(超级管理员除外)，客户公海成员可查看以及领取公海客户"
                       effect="dark"
                       placement="top">
-                      <i class="wk wk-help wk-help-tips"/>
+                      <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
                     </el-tooltip>
                   </div>
                 </div>
-                <wk-user-dep-select
+                <Xiaomingcloud-user-dep-select
                   :user-value.sync="baseFrom.memberUsers.users"
                   :dep-value.sync="baseFrom.memberUsers.strucs"
                   style="width: 100%;" />
@@ -209,8 +209,8 @@ import CreateSections from '@/components/CreateSections'
 import {
   XhInput
 } from '@/components/CreateCom'
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import RecycleRule from './RecycleRule'
 
 export default {
@@ -220,8 +220,8 @@ export default {
     CreateView,
     CreateSections,
     XhInput,
-    WkUserSelect,
-    WkUserDepSelect,
+    XiaomingcloudUserSelect,
+    XiaomingcloudUserDepSelect,
     RecycleRule
   },
   props: {
@@ -692,7 +692,7 @@ export default {
   font-size: 12px;
   word-wrap: break-word;
   word-break: break-all;
-  .wk-help {
+  .Xiaomingcloud-help {
     margin-left: 5px;
   }
 }

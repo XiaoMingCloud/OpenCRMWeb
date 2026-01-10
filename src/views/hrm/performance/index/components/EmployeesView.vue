@@ -10,7 +10,7 @@
     @close="handleCancel">
     <div class="filter-div">
       <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-      <wk-popover-filter
+      <Xiaomingcloud-popover-filter
         :field-from.sync="filterObj"
         :field-list="filterList"
         :has-content="hasFilterContent"
@@ -91,7 +91,7 @@ import {
   hrmDeptQueryTreeListAPI
 } from '@/api/hrm/dept'
 
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 import EmployeeConfirmPerformance from '../../../selfService/performance/components/EmployeeConfirmPerformance'
 
 import { isEmpty } from '@/utils/types'
@@ -102,7 +102,7 @@ export default {
   // 绩效内员工
   name: 'EmployeesView',
   components: {
-    WkPopoverFilter,
+    XiaomingcloudPopoverFilter,
     EmployeeConfirmPerformance
   },
   mixins: [],

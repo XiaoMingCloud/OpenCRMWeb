@@ -37,8 +37,8 @@ export function filterUserLazyImg(value) {
 }
 
 /**
- * wk 10.0 iconfont 前缀
+ * Xiaomingcloud 10.0 iconfont 前缀
  */
-export function wkIconPre(name) {
-  return name.startsWith('wk') ? name : `wk wk-${name}`
+export function XiaomingcloudIconPre(name) {
+  return name.startsWith('Xiaomingcloud') ? name : `xiaomingcloud open-${name}`
 }

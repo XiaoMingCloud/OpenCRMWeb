@@ -58,7 +58,7 @@
           sortable="custom"
           show-overflow-tooltip>
           <template slot-scope="{ row, column, $index }">
-            <wk-field-view
+            <Xiaomingcloud-field-view
               :props="item"
               :form-type="item.formType"
               :value="row[column.property]"
@@ -66,7 +66,7 @@
               <template slot-scope="{ data }">
                 {{ fieldFormatter(row, column, row[column.property], item) }}
               </template>
-            </wk-field-view>
+            </Xiaomingcloud-field-view>
           </template>
         </el-table-column>
         <el-table-column/>
@@ -82,7 +82,7 @@
               @change="setSave"/>
           </template>
         </el-table-column>
-        <wk-empty
+        <Xiaomingcloud-empty
           slot="empty"
           :props="{
             buttonTitle: '新建回访',

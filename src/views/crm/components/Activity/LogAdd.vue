@@ -2,7 +2,7 @@
   <div :class="['mix-content', { 'unfold': !isUnfold }]">
     <i
       v-if="isUnfold"
-      class="wk wk-close"
+      class="xiaomingcloud open-close"
       @click="close" />
     <div
       v-if="isUnfold"
@@ -39,7 +39,7 @@
     <div :class="['i-cont', { 'unfold': !isUnfold }]">
       <i
         v-if="!isUnfold"
-        class="wk wk-write" />
+        class="xiaomingcloud open-write" />
       <el-input
         ref="textarea"
         v-model="content"
@@ -74,12 +74,12 @@
       <el-button
         type="text"
         class="handle-button"
-        icon="wk wk-picture"
+        icon="xiaomingcloud open-picture"
         @click="barClick('img')">图片</el-button>
       <el-button
         type="text"
         class="handle-button"
-        icon="wk wk-file"
+        icon="xiaomingcloud open-file"
         @click="barClick('file')">附件</el-button>
       <crm-relative
         v-if="showBusiness"
@@ -92,7 +92,7 @@
         @changeCheckout="checkRelativeInfos" />
       <el-button
         type="text"
-        icon="wk wk-associate"
+        icon="xiaomingcloud open-associate"
         class="handle-button"
         style="margin-left: 10px;"
         @click="barClick('business')">关联商机</el-button>
@@ -328,7 +328,7 @@ export default {
      * 文件上传
      */
     uploadFileRequest(file, type, result) {
-      this.$wkUploadFile.upload({
+      this.$XiaomingcloudUploadFile.upload({
         file: file,
         params: {
           type: type,
@@ -477,7 +477,7 @@ export default {
 
   .i-cont {
     padding: 8px 0px;
-    .wk-write {
+    .Xiaomingcloud-write {
       color: $xr-border-line-color;
       font-size: 15px;
     }
@@ -496,7 +496,7 @@ export default {
   border-color: #c0c4cc;
   .i-cont {
     cursor: pointer;
-    .wk-write {
+    .Xiaomingcloud-write {
       color: $xr-color-primary;
     }
 
@@ -506,7 +506,7 @@ export default {
   }
 }
 
-.wk-close {
+.Xiaomingcloud-close {
   border: 0;
   color: #d9d9d9;
   font-size: 22px;
@@ -519,7 +519,7 @@ export default {
   transform: scale(0.8);
 }
 
-.wk-close:hover {
+.Xiaomingcloud-close:hover {
   color: #2362fb;
 }
 

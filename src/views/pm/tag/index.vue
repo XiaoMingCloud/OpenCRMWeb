@@ -3,7 +3,7 @@
     <xr-header
       :icon-color="labelColor || '#4AB8B8'"
       class="xr-header"
-      icon-class="wk wk-label">
+      icon-class="xiaomingcloud open-label">
       <span slot="label">{{ labelName }}</span>
       <el-popover
         slot="label"
@@ -46,7 +46,7 @@
         </div>
         <i
           slot="reference"
-          class="wk wk-manage img-set"
+          class="xiaomingcloud open-manage img-set"
           @click="labelSetClick" />
       </el-popover>
     </xr-header>

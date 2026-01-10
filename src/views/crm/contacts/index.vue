@@ -59,7 +59,7 @@
           sortable="custom"
           show-overflow-tooltip>
           <template slot-scope="{ row, column, $index }">
-            <wk-field-view
+            <Xiaomingcloud-field-view
               :props="item"
               :form-type="item.formType"
               :value="row[column.property]"
@@ -67,7 +67,7 @@
               <template slot-scope="{ data }">
                 {{ fieldFormatter(row, column, row[column.property], item) }}
               </template>
-            </wk-field-view>
+            </Xiaomingcloud-field-view>
           </template>
         </el-table-column>
         <el-table-column/>
@@ -80,7 +80,7 @@
             <el-tooltip :content="scope.row.star == 0 ? '添加关注' : '取消关注'" effect="dark" placement="top">
               <i
                 :class="{active: scope.row.star != 0}"
-                class="wk wk-focus-on focus-icon"
+                class="xiaomingcloud open-focus-on focus-icon"
                 @click="toggleStar(scope.row)" />
             </el-tooltip>
           </template>
@@ -97,7 +97,7 @@
               @change="setSave"/>
           </template>
         </el-table-column>
-        <wk-empty
+        <Xiaomingcloud-empty
           slot="empty"
           :props="{
             buttonTitle: '新建联系人',

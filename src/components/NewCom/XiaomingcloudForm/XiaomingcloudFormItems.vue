@@ -1,0 +1,92 @@
+<template>
+  <flexbox
+    class="Xiaomingcloud-form-items"
+    align="flex-start"
+    wrap="wrap"
+    justify="flex-start">
+    <template v-for="(item, index) in fieldList">
+      <Xiaomingcloud-form-item
+        :key="index"
+        :prop-prefix="propPrefix"
+        :item="item"
+        :index="index"
+        :field-from="fieldFrom"
+        :ignore-fields="ignoreFields"
+        :disabled="item.disabled || disabled"
+        @change="fieldChange"
+      >
+        <template slot-scope="{ data, index }">
+          <slot :data="data" :index="index" />
+        </template>
+      </Xiaomingcloud-form-item>
+    </template>
+  </flexbox>
+</template>
+
+<script>
+import XiaomingcloudFormItem from './XiaomingcloudFormItem.vue'
+
+export default {
+  // 多块形式的form-item 用于字段库
+  name: 'XiaomingcloudFormItems',
+
+  components: {
+    XiaomingcloudFormItem: XiaomingcloudFormItem
+  },
+
+  props: {
+    // 表单验证前缀
+    propPrefix: {
+      type: String,
+      default: ''
+    },
+    fieldFrom: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    },
+    fieldList: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
+    // 忽略的字段直接输出
+    ignoreFields: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    },
+    disabled: Boolean
+  },
+
+  data() {
+    return {
+    }
+  },
+
+  computed: {},
+
+  watch: {},
+
+  created() {},
+
+  mounted() {},
+
+  beforeDestroy() {},
+
+  methods: {
+    fieldChange(item, index, value, valueList) {
+      this.$emit('change', item, index, value, valueList)
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.Xiaomingcloud-form-items {
+  padding: 0 12px;
+}
+</style>

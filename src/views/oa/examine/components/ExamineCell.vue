@@ -153,7 +153,7 @@ export default {
   methods: {
     // 放大图片
     imgZoom(images, k) {
-      this.$wkPreviewFile.preview({
+      this.$XiaomingcloudPreviewFile.preview({
         index: k,
         data: images
       })

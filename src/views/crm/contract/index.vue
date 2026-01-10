@@ -63,7 +63,7 @@
               <span :style="getStatusStyle(row.checkStatus)" class="status-mark"/>
               <span>{{ getStatusName(row.checkStatus) }}</span>
             </template>
-            <wk-field-view
+            <Xiaomingcloud-field-view
               v-else
               :props="item"
               :form-type="item.formType"
@@ -72,7 +72,7 @@
               <template slot-scope="{ data }">
                 {{ fieldFormatter(row, column, row[column.property], item) }}
               </template>
-            </wk-field-view>
+            </Xiaomingcloud-field-view>
           </template>
         </el-table-column>
         <el-table-column/>
@@ -88,7 +88,7 @@
               @change="setSave"/>
           </template>
         </el-table-column>
-        <wk-empty
+        <Xiaomingcloud-empty
           slot="empty"
           :props="{
             buttonTitle: '新建合同',

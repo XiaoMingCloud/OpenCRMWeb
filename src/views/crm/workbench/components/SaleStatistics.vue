@@ -3,7 +3,7 @@
     v-loading="loading"
     class="sale-statistics card">
     <flexbox class="card-title">
-      <span class="icon wk wk-target" />
+      <span class="icon xiaomingcloud open-target" />
       <div class="card-title-center text-one-ellipsis">{{ typeName }}金额目标及完成情况</div>
       <div class="card-title-right">
         <!--<span class="box">{{ filterText }}</span>

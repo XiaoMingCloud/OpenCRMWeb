@@ -7,7 +7,7 @@
       <el-page-header slot="label" :content="`${titleMonth}月发放详情`" @back="goBack"/>
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -116,7 +116,7 @@ import {
 
 import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 import SlipDetailDialog from './DetailDialog'
 
 import { mapGetters } from 'vuex'
@@ -126,7 +126,7 @@ export default {
   components: {
     XrHeader,
     XrTableHeader,
-    WkPopoverFilter,
+    XiaomingcloudPopoverFilter,
     SlipDetailDialog
   },
   data() {
@@ -177,11 +177,11 @@ export default {
         temps.push({
           label: '编辑备注',
           command: 'edit',
-          icon: 'wk wk-circle-edit'
+          icon: 'xiaomingcloud open-circle-edit'
         }, {
           label: '删除备注',
           command: 'delete',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         })
       }
       return temps

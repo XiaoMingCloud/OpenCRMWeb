@@ -15,7 +15,7 @@
       class="main">
       <flexbox class="detail-header">
         <div class="header-icon">
-          <i class="wk wk-log" />
+          <i class="xiaomingcloud open-log" />
         </div>
         <div class="header-name">日志</div>
       </flexbox>
@@ -112,7 +112,7 @@
 
           <div v-if="detail.getBulletin" class="section">
             <div class="section__hd">
-              <i class="wk wk-briefing" />
+              <i class="xiaomingcloud open-briefing" />
               <span>销售简报</span>
             </div>
             <div class="section__bd">
@@ -649,7 +649,7 @@ export default {
     border-radius: $xr-border-radius-base;
     margin-right: 20px;
     background-color: #5864ff;
-    .wk {
+    .Xiaomingcloud {
       color: white;
       font-size: 26px;
     }
@@ -700,7 +700,7 @@ export default {
       color: #333;
       font-weight: 600;
     }
-    .wk {
+    .Xiaomingcloud {
       color: #363636;
       font-size: 15px;
       margin-right: 5px;

@@ -37,7 +37,7 @@
           <el-dropdown-item
             v-for="(item, index) in moreTypes"
             :key="index"
-            :icon="item.icon | wkIconPre"
+            :icon="item.icon | XiaomingcloudIconPre"
             :command="item.type">{{ item.name }}</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -168,7 +168,7 @@ export default {
       if (command == 'out') {
         this.$emit('on-export')
       } else if (command == 'enter') {
-        this.$wkImport.import(this.crmType, {
+        this.$XiaomingcloudImport.import(this.crmType, {
           ownerSelectShow: false, // 去除选择负责人逻辑
           poolSelectShow: this.isSeas,
           userInfo: this.userInfo

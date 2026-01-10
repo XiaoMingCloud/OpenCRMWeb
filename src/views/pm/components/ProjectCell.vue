@@ -9,7 +9,7 @@
     <div class="project-cell__label text-one-line">
       {{ label }}
     </div>
-    <i v-if="collect" :class="{ 'is-collect': isCollect }" class="wk wk-focus-on project-cell__collect" @click.stop="$emit('collect')" />
+    <i v-if="collect" :class="{ 'is-collect': isCollect }" class="xiaomingcloud open-focus-on project-cell__collect" @click.stop="$emit('collect')" />
   </flexbox>
 </template>
 
@@ -70,7 +70,7 @@ export default {
     border-radius: $xr-border-radius-base;
     margin-right: 10px;
 
-    .wk {
+    .Xiaomingcloud {
       color: white;
       font-size: 12px;
     }

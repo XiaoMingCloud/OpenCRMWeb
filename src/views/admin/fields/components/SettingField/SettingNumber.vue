@@ -11,7 +11,7 @@
         effect="dark"
         popper-class="setting-number-tooltip"
         placement="top">
-        <i class="wk wk-help wk-help-tips" />
+        <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" />
       </el-tooltip>
       <template v-if="checked">
         <span>限制&nbsp;</span>

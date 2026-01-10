@@ -4,7 +4,7 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-office"
+      icon-class="xiaomingcloud open-office"
       icon-color="#2362FB"
       placeholder="请输入姓名/手机号/邮箱"
       label="候选人"
@@ -13,7 +13,7 @@
       @search="searchClick" >
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -32,7 +32,7 @@
       </template>
     </xr-header>
     <div class="crm-container">
-      <wk-border-menu
+      <Xiaomingcloud-border-menu
         :list="tabList"
         v-model="tabType"
         is-select
@@ -62,7 +62,7 @@
               class="el-dropdown-link"
             >
               <span @click="statusHandleChange(statusChangeHandles[0].command)">
-                <i class="wk wk-transfer "/>
+                <i class="xiaomingcloud open-transfer "/>
                 {{ statusChangeHandles[0].label }}
               </span>
               <el-dropdown
@@ -88,7 +88,7 @@
               <span
                 style="margin-left: 15px;"
                 class="el-dropdown-link is-more">
-                <i class="wk wk-transfer "/>
+                <i class="xiaomingcloud open-transfer "/>
                 更多操作
                 <i class="el-icon-arrow-down el-icon--right"/>
               </span>
@@ -234,12 +234,12 @@ import {
 
 import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 import CandidateCreateView from './Create'
 import CandidateDetail from './Detail'
 import FormAddDialog from '../components/FormAddDialog'
 import EmployeeCreateView from '@/views/hrm/employee/components/EmployeeCreateView'
-import WkBorderMenu from '../../components/WkBorderMenu'
+import XiaomingcloudBorderMenu from '../../components/XiaomingcloudBorderMenu'
 
 import { mapGetters } from 'vuex'
 import { objDeepCopy, timeToFormatTime } from '@/utils'
@@ -251,12 +251,12 @@ export default {
   components: {
     XrHeader,
     XrTableHeader,
-    WkPopoverFilter,
+    XiaomingcloudPopoverFilter,
     CandidateCreateView,
     CandidateDetail,
     FormAddDialog,
     EmployeeCreateView,
-    WkBorderMenu
+    XiaomingcloudBorderMenu
   },
   data() {
     return {
@@ -268,42 +268,42 @@ export default {
         firstPass: {
           label: '移动到初选通过',
           command: 'firstPass',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         },
         interview: {
           label: '安排面试',
           command: 'interview',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         },
         pass: {
           label: '移动到面试通过',
           command: 'pass',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         },
         wait: {
           label: '移动到待入职/入职',
           command: 'wait',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         },
         new: {
           label: '移动到新候选人',
           command: 'new',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         },
         offer: {
           label: '发offer',
           command: 'offer',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         },
         again: {
           label: '安排复试',
           command: 'again',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         },
         confirm: {
           label: '移动到入职',
           command: 'confirm',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         }
       },
       currentPage: 1,
@@ -411,7 +411,7 @@ export default {
           return [{
             label: '淘汰/流失',
             command: 'eliminate',
-            icon: 'wk wk-delete'
+            icon: 'xiaomingcloud open-delete'
           }]
         }
 
@@ -419,7 +419,7 @@ export default {
           return [{
             label: '恢复到新候选人',
             command: 'reset',
-            icon: 'wk wk-reset'
+            icon: 'xiaomingcloud open-reset'
           }]
         }
       }
@@ -606,15 +606,15 @@ export default {
         const temps = this.manageAuth ? [{
           label: '更改应聘职位',
           command: 'changePost',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         }, {
           label: '更改应聘渠道',
           command: 'changeChannel',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         }, {
           label: '一键清理候选人',
           command: 'clear',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         }] : []
 
         // 安排面试 增加操作
@@ -622,7 +622,7 @@ export default {
           temps.unshift({
             label: '更改面试安排',
             command: 'changeInterview',
-            icon: 'wk wk-delete'
+            icon: 'xiaomingcloud open-delete'
           })
           const obj = this.selectionList[0]
           // 1面试未完成 2面试通过 3面试未通过 4 面试取消
@@ -630,7 +630,7 @@ export default {
             temps.unshift({
               label: '取消面试',
               command: 'cancelInterview',
-              icon: 'wk wk-delete'
+              icon: 'xiaomingcloud open-delete'
             })
           }
         }
@@ -639,7 +639,7 @@ export default {
           temps.push({
             label: '删除',
             command: 'delete',
-            icon: 'wk wk-delete'
+            icon: 'xiaomingcloud open-delete'
           })
         }
 
@@ -650,7 +650,7 @@ export default {
         return [{
           label: '删除',
           command: 'delete',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         }]
       }
 
@@ -1404,7 +1404,7 @@ export default {
     }
   }
 
-  .wk-border-menu {
+  .Xiaomingcloud-border-menu {
     margin-bottom: 8px;
   }
 
@@ -1469,7 +1469,7 @@ export default {
     padding: 8px 12px;
     margin-right: 15px;
 
-    .wk-transfer {
+    .Xiaomingcloud-transfer {
       font-size: 12px;
       margin-right: 5px;
     }

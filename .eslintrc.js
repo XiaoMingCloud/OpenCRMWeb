@@ -14,7 +14,7 @@ module.exports = {
     "BMap": "readonly",
     "BMAP_STATUS_SUCCESS": "readonly",
     "fullcalendar": "readonly",
-    "WKConfig": "readonly"
+    "XiaomingcloudConfig": "readonly"
   },
 
 

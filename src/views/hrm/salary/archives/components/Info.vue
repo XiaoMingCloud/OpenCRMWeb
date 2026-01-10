@@ -8,13 +8,13 @@
       content="薪资包含此员工所关联工资表的可定薪项，数据以定薪、调薪的最新数据为准"
       effect="dark"
       placement="top">
-      <i class="wk wk-help wk-help-tips"/>
+      <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
     </el-tooltip>
     <div class="content">
       <div class="content__header">
         合计：<span>{{ total }}</span>
       </div>
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         :list="list"
       />
     </div>
@@ -27,14 +27,14 @@ import {
 } from '@/api/hrm/salary'
 
 import CreateSections from '@/components/CreateSections'
-import WkBaseDetailSection from '@/components/WkBaseDetail/WkBaseDetailSection'
+import XiaomingcloudBaseDetailSection from '@/components/XiaomingcloudBaseDetail/XiaomingcloudBaseDetailSection'
 
 export default {
   // 薪资信息
   name: 'SalaryArchivesInfo',
   components: {
     CreateSections,
-    WkBaseDetailSection
+    XiaomingcloudBaseDetailSection
   },
   props: {
     id: [String, Number]
@@ -96,7 +96,7 @@ export default {
   }
 }
 
-.wk-help-tips {
+.Xiaomingcloud-help-tips {
   margin-left: 5px;
   margin-top: 2px;
 }

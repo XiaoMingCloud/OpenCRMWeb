@@ -30,11 +30,11 @@
             :label="item.label"
             :value="item.value" />
         </el-select>
-        <wk-dep-select
+        <Xiaomingcloud-dep-select
           v-model="structuresSelectValue"
           radio
           @change="structuresValueChange" />
-        <wk-user-select
+        <Xiaomingcloud-user-select
           v-if="tabType === 'user'"
           v-model="userSelectValue"
           :props="{isList: true}"
@@ -99,7 +99,7 @@
               class="table-show-item">
               <i
                 :class="{ 'is-show': isEdit }"
-                class="wk wk-delete"
+                class="xiaomingcloud open-delete"
                 @click="deleteAchievement(scope.row, scope.$index)" />
               {{ scope.row[item.field] }}
             </div>
@@ -140,8 +140,8 @@ import {
 } from '@/api/admin/crm'
 
 
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 
 import moment from 'moment'
 import AddGoal from './AddGoal'
@@ -152,8 +152,8 @@ export default {
   name: 'TaskSetStatistics',
   components: {
     AddGoal,
-    WkDepSelect,
-    WkUserSelect
+    XiaomingcloudDepSelect,
+    XiaomingcloudUserSelect
   },
   data() {
     return {
@@ -637,8 +637,8 @@ export default {
     margin-right: 15px;
   }
 
-  .wk-user-select,
-  .wk-dep-select {
+  .Xiaomingcloud-user-select,
+  .Xiaomingcloud-dep-select {
     width: 150px;
     margin-right: 15px;
   }
@@ -683,17 +683,17 @@ export default {
   text-align: center;
 }
 
-.wk-delete {
+.Xiaomingcloud-delete {
   cursor: pointer;
   opacity: 0;
   color: #666;
 }
 
-.wk-delete.is-show {
+.Xiaomingcloud-delete.is-show {
   opacity: 1;
 }
 
-.wk-delete:hover {
+.Xiaomingcloud-delete:hover {
   color: #f56c6c;
 }
 </style>

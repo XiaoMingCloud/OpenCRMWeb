@@ -3,7 +3,7 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-payment"
+      icon-class="xiaomingcloud open-payment"
       icon-color="#2362FB"
       placeholder="请输入员工姓名/工号"
       show-search
@@ -16,12 +16,12 @@
           placement="top"
           style="margin-left: 8px;"
           content="仅展示您管理范围内的员工">
-          <i class="wk wk-help wk-help-tips"/>
+          <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
         </el-tooltip>
       </template>
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -54,14 +54,14 @@
     </xr-header>
     <div class="crm-container">
       <flexbox class="filter">
-        <wk-border-menu
+        <Xiaomingcloud-border-menu
           :list="tabLeftList"
           :is-select="!!tabLeftList.find(item => item.name == tabType)"
           v-model="tabType"
           style="flex: 6;"
           @select="tabClick"
         />
-        <wk-border-menu
+        <Xiaomingcloud-border-menu
           :list="tabCenterList"
           :is-select="!!tabCenterList.find(item => item.name == tabType)"
           v-model="tabType"
@@ -180,10 +180,10 @@ import {
 
 import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
-import WkFieldSet from '@/components/NewCom/WkFieldSet'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
+import XiaomingcloudFieldSet from '@/components/NewCom/XiaomingcloudFieldSet'
 import SalaryArchivesDetail from './Detail'
-import WkBorderMenu from '../../components/WkBorderMenu'
+import XiaomingcloudBorderMenu from '../../components/XiaomingcloudBorderMenu'
 import TemplateManageDialog from './components/TemplateManageDialog'
 import FixSalaryAdd from './components/FixAdd'
 import ChangeSalaryAdd from './components/ChangeAdd'
@@ -201,9 +201,9 @@ export default {
     XrHeader,
     XrTableHeader,
     SalaryArchivesDetail,
-    WkPopoverFilter,
-    WkFieldSet,
-    WkBorderMenu,
+    XiaomingcloudPopoverFilter,
+    XiaomingcloudFieldSet,
+    XiaomingcloudBorderMenu,
     TemplateManageDialog,
     FixSalaryAdd,
     ChangeSalaryAdd,
@@ -362,8 +362,8 @@ export default {
     headerMoreHandle() {
       const temps = []
       if (this.updateAuth) {
-        temps.push({ type: 'importFix', name: '导入定薪', icon: 'wk wk-import' })
-        temps.push({ type: 'importChange', name: '导入调薪', icon: 'wk wk-import' })
+        temps.push({ type: 'importFix', name: '导入定薪', icon: 'xiaomingcloud open-import' })
+        temps.push({ type: 'importChange', name: '导入调薪', icon: 'xiaomingcloud open-import' })
       }
       return temps
     },
@@ -374,7 +374,7 @@ export default {
       temps.push({
         label: '批量调薪',
         command: 'edit',
-        icon: 'wk wk-edit'
+        icon: 'xiaomingcloud open-edit'
       })
       return temps
     },
@@ -598,7 +598,7 @@ export default {
      */
     headerMoreHandleClick(command) {
       if (command == 'importFix') {
-        this.$wkImport.import('hrmSalaryFix', {
+        this.$XiaomingcloudImport.import('hrmSalaryFix', {
           typeName: '定薪',
           ownerSelectShow: false,
           repeatHandleShow: false,
@@ -608,7 +608,7 @@ export default {
           userInfo: this.userInfo
         })
       } else if (command == 'importChange') {
-        this.$wkImport.import('hrmSalaryChange', {
+        this.$XiaomingcloudImport.import('hrmSalaryChange', {
           typeName: '调薪',
           ownerSelectShow: false,
           repeatHandleShow: false,
@@ -722,7 +722,7 @@ export default {
 
   .filter {
     margin-bottom: 8px;
-    .wk-border-menu {
+    .Xiaomingcloud-border-menu {
       margin-left: 20px;
     }
   }

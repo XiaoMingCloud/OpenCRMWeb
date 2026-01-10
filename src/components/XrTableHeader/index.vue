@@ -14,7 +14,7 @@
         <slot name="prefix" />
         <el-button
           v-for="(item, index) in handles"
-          :icon="item.icon | wkIconPre"
+          :icon="item.icon | XiaomingcloudIconPre"
           :key="index"
           type="primary"
           @click.native="selectionBarClick(item.command)">{{ item.label }}</el-button>

@@ -14,7 +14,7 @@
       align="stretch"
       style="padding: 0 15px;"
       class="side-detail-main">
-      <wk-detail-header
+      <Xiaomingcloud-detail-header
         :dropdown-items="dropdownItems"
         @command-select="commandSelect">
         <div slot="body" class="employee-header">
@@ -34,8 +34,8 @@
               size="mini">
               <i
                 :class="{
-                  1: 'wk wk-man',
-                  2: 'wk wk-woman',
+                  1: 'xiaomingcloud open-man',
+                  2: 'xiaomingcloud open-woman',
               }[detailData.sex]" />
             </el-tag>
 
@@ -48,7 +48,7 @@
                 class="xr-tag"
                 color="#ECEEF2"
                 size="mini">
-                <i class="wk wk-icon-work-card" />{{ detailData.jobNumber|| '--' }}
+                <i class="xiaomingcloud open-icon-work-card" />{{ detailData.jobNumber|| '--' }}
               </el-tag>
             </el-tooltip>
 
@@ -61,7 +61,7 @@
                 class="xr-tag"
                 color="#ECEEF2"
                 size="mini">
-                <i class="wk wk-icon-layer" />{{ detailData.deptName || '--' }}
+                <i class="xiaomingcloud open-icon-layer" />{{ detailData.deptName || '--' }}
               </el-tag>
             </el-tooltip>
 
@@ -74,7 +74,7 @@
                 class="xr-tag"
                 color="#ECEEF2"
                 size="mini">
-                <i class="wk wk-icon-time" />{{ getEmployeeStatusName(detailData.status)|| '--' }}
+                <i class="xiaomingcloud open-icon-time" />{{ getEmployeeStatusName(detailData.status)|| '--' }}
               </el-tag>
             </el-tooltip>
 
@@ -87,7 +87,7 @@
                 class="xr-tag"
                 color="#ECEEF2"
                 size="mini">
-                <i class="wk wk-icon-status" />{{ detailData.entryTime|| '--' }}
+                <i class="xiaomingcloud open-icon-status" />{{ detailData.entryTime|| '--' }}
               </el-tag>
             </el-tooltip>
 
@@ -100,12 +100,12 @@
                 class="xr-tag"
                 color="#ECEEF2"
                 size="mini">
-                <i class="wk wk-icon-cake" />{{ detailData.age || '--' }}
+                <i class="xiaomingcloud open-icon-cake" />{{ detailData.age || '--' }}
               </el-tag>
             </el-tooltip>
           </div>
         </div>
-      </wk-detail-header>
+      </Xiaomingcloud-detail-header>
       <el-tabs
         v-model="tabCurrentName"
         class="side-detail__tabs--default">
@@ -148,7 +148,7 @@ import EmployeeMoney from './components/EmployeeMoney'
 import EmployeeFiles from './components/EmployeeFiles'
 import EmployeeHandle from './components/EmployeeHandle'
 import FormAddDialog from './components/FormAddDialog'
-import WkDetailHeader from '@/components/WkDetailHeader'
+import XiaomingcloudDetailHeader from '@/components/XiaomingcloudDetailHeader'
 
 import { timeToFormatTime } from '@/utils'
 import { employeeModel } from './model/employee'
@@ -158,7 +158,7 @@ export default {
   // 员工详情
   name: 'EmpolyeeDetail',
   components: {
-    WkDetailHeader,
+    XiaomingcloudDetailHeader,
     SlideView,
     EmployeePostInfo,
     EmployeeBaseInfo,
@@ -266,12 +266,12 @@ export default {
       //   temps.push({
       //     label: '调整离职信息',
       //     command: 'change-leave',
-      //     icon: 'wk wk-reset'
+      //     icon: 'xiaomingcloud open-reset'
       //   })
       // }
       if (this.deleteAuth) {
         temps.push({
-          icon: 'wk wk-delete',
+          icon: 'xiaomingcloud open-delete',
           label: '删除',
           command: 'delete'
         })

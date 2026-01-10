@@ -18,7 +18,7 @@
             direction="column"
             align="stretch">
             <div class="crm-create-body">
-              <wk-form
+              <Xiaomingcloud-form
                 ref="dataForm"
                 :model="crmForm"
                 :rules="dataRules"
@@ -42,14 +42,14 @@ import {
 import CreateView from '@/components/CreateView'
 import CreateSections from '@/components/CreateSections'
 
-import WkForm from '@/components/NewCom/WkForm'
+import XiaomingcloudForm from '@/components/NewCom/XiaomingcloudForm'
 
 export default {
   name: 'PreviewFieldView', // 所有新建效果的view
   components: {
     CreateView,
     CreateSections,
-    WkForm
+    XiaomingcloudForm
   },
   filters: {},
   props: {

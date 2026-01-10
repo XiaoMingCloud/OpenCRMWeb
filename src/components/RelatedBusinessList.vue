@@ -6,7 +6,7 @@
       :key="index"
       class="list-item">
       <div class="left">
-        <span :class="item.icon" class="wk icon" />
+        <span :class="item.icon" class="Xiaomingcloud icon" />
         <span>相关{{ item.label }}：</span>
       </div>
       <div class="content">
@@ -55,25 +55,25 @@ export default {
           label: '客户',
           type: 'customer',
           key: 'customerName',
-          icon: 'wk-customer'
+          icon: 'Xiaomingcloud-customer'
         },
         contacts: {
           label: '联系人',
           type: 'contacts',
           key: 'contactsName',
-          icon: 'wk-contacts'
+          icon: 'Xiaomingcloud-contacts'
         },
         business: {
           label: '商机',
           type: 'business',
           key: 'businessName',
-          icon: 'wk-business'
+          icon: 'Xiaomingcloud-business'
         },
         contract: {
           label: '合同',
           type: 'contract',
           key: 'name',
-          icon: 'wk-contract'
+          icon: 'Xiaomingcloud-contract'
         }
       }
     }

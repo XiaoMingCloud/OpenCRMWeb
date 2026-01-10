@@ -105,7 +105,7 @@ const app = {
     },
 
     // 置顶应用
-    WKHeaderModule({
+    XiaomingcloudHeaderModule({
       commit,
       state
     }) {

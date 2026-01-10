@@ -99,7 +99,7 @@
                 content="按照添加的目标确认人顺序对考核目标进行确认"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
             <flexbox
@@ -125,7 +125,7 @@
                 :prop="`targetConfirmorsList[${cIndex}].employeeId`"
                 :rules="getTypeEmployeeIdRules(confirm)"
                 label="">
-                <wk-user-select
+                <Xiaomingcloud-user-select
                   :disabled="optionsType != 10 && confirm.status == 1"
                   v-model="confirm.employeeId"
                   :options="userList"
@@ -148,7 +148,7 @@
                 content="按照添加的结果评定人顺序对考核结果进行评定"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
             <flexbox
@@ -175,7 +175,7 @@
                 :rules="getTypeWeightRules(eIndex)"
                 label="">
                 <el-input
-                  v-wk-number="'positiveInt'"
+                  v-Xiaomingcloud-number="'positiveInt'"
                   v-model="evaluator.weight"
                   :disabled="optionsType < 9"
                   style="width: 120px;"
@@ -189,7 +189,7 @@
                 :prop="`evaluatorsList[${eIndex}].employeeId`"
                 :rules="getTypeEmployeeIdRules(evaluator)"
                 label="">
-                <wk-user-select
+                <Xiaomingcloud-user-select
                   v-model="evaluator.employeeId"
                   :disabled="optionsType < 9 && evaluator.status == 1"
                   :options="userList"
@@ -212,10 +212,10 @@
                 content="考核结果确认人将对整个考核计划进行确认"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <wk-user-select
+            <Xiaomingcloud-user-select
               v-model="baseForm.resultConfirmors"
               :disabled="optionsType < 8 && resultConfirmorsDisabled"
               :options="resultUserList"
@@ -234,7 +234,7 @@
               prop="fullScore"
               label="">
               <el-input
-                v-wk-number="'positiveInt'"
+                v-Xiaomingcloud-number="'positiveInt'"
                 v-model="baseForm.fullScore"
                 :disabled="optionsType != 10"
                 style="width: 120px;"
@@ -252,10 +252,10 @@
                     <div>1.开启强制分布：结果确认人确认时，超过规定比例不能确认通过</div>
                     <div>2.不开启强制分布：结果确认人确认时，超过规定比例也能确认通过</div>
                   </div>
-                  <i class="wk wk-help wk-help-tips"/>
+                  <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
                 </el-tooltip>
             </el-form-item>
-            <div class="wk-text-tips">注：评分等级从上到下排序对应评分等级从高到底</div>
+            <div class="Xiaomingcloud-text-tips">注：评分等级从上到下排序对应评分等级从高到底</div>
             <flexbox
               v-for="(scoreLevel, sIndex) in baseForm.scoreLevelList"
               :key="sIndex"
@@ -281,7 +281,7 @@
                     :rules="getScoreRules(scoreLevel, sIndex, 'min')"
                     label="">
                     <el-input
-                      v-wk-number="'positiveInt'"
+                      v-Xiaomingcloud-number="'positiveInt'"
                       :disabled="optionsType != 10"
                       v-model="scoreLevel.minScore"
                       style="width: 120px;"
@@ -296,7 +296,7 @@
                     :rules="getScoreRules(scoreLevel, sIndex, 'max')"
                     label="">
                     <el-input
-                      v-wk-number="'positiveInt'"
+                      v-Xiaomingcloud-number="'positiveInt'"
                       :disabled="optionsType != 10"
                       v-model="scoreLevel.maxScore"
                       style="width: 120px;"
@@ -315,7 +315,7 @@
                     :rules="getProportionRules(scoreLevel, sIndex, 'min')"
                     label="">
                     <el-input
-                      v-wk-number
+                      v-Xiaomingcloud-number
                       :disabled="optionsType != 10"
                       v-model="scoreLevel.minNum"
                       style="width: 120px;"
@@ -330,7 +330,7 @@
                     :rules="getProportionRules(scoreLevel, sIndex, 'max')"
                     label="">
                     <el-input
-                      v-wk-number
+                      v-Xiaomingcloud-number
                       :disabled="optionsType != 10"
                       v-model="scoreLevel.maxNum"
                       style="width: 120px;"
@@ -364,7 +364,7 @@
                 :rules="getRangeRules()"
                 prop="employeeIds"
                 label="">
-                <wk-user-dep-select
+                <Xiaomingcloud-user-dep-select
                   :disabled="optionsType != 10"
                   :user-value.sync="baseForm.employeeIds"
                   :dep-value.sync="baseForm.deptIds"
@@ -397,9 +397,9 @@ import {
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
 
 import { objDeepCopy, floatAdd, formatTimeToTimestamp } from '@/utils'
 
@@ -409,9 +409,9 @@ export default {
   components: {
     XrCreate,
     CreateSections,
-    WkUserSelect,
-    WkUserDepSelect,
-    WkDepSelect
+    XiaomingcloudUserSelect,
+    XiaomingcloudUserDepSelect,
+    XiaomingcloudDepSelect
   },
   filters: {},
   props: {
@@ -964,7 +964,7 @@ export default {
   .el-select {
     width: 250px;
   }
-  .wk-user-select {
+  .Xiaomingcloud-user-select {
     width: 200px;
   }
 
@@ -1030,7 +1030,7 @@ export default {
   }
 }
 
-.wk-help-tips {
+.Xiaomingcloud-help-tips {
   margin-left: 3px;
 }
 
@@ -1041,7 +1041,7 @@ export default {
   }
 }
 
-.wk-text-tips {
+.Xiaomingcloud-text-tips {
   color: #ccc;
   font-size: 12px;
 }

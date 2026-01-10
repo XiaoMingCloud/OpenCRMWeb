@@ -39,7 +39,7 @@
                 placeholder="请输入内容"/>
             </template>
             <template v-else-if="item.type =='plus'">
-              <wk-user-dep-select
+              <Xiaomingcloud-user-dep-select
                 :user-value.sync="formData[item.field].staff"
                 :dep-value.sync="formData[item.field].dep"
                 style="width: 100%;"/>
@@ -63,7 +63,7 @@
 <script>
 import CreateView from '@/components/CreateView'
 
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
 // API
 import { noticeAddOrUpateAPI } from '@/api/oa/notice'
 import { formatTimeToTimestamp } from '@/utils/index'
@@ -71,7 +71,7 @@ import { formatTimeToTimestamp } from '@/utils/index'
 export default {
   components: {
     CreateView,
-    WkUserDepSelect
+    XiaomingcloudUserDepSelect
   },
   props: {
     action: {

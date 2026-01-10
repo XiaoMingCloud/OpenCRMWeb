@@ -15,7 +15,7 @@
       align="stretch"
       style="padding: 0 15px;"
       class="side-detail-main">
-      <wk-detail-header
+      <Xiaomingcloud-detail-header
         :show-edit="canEdit"
         @edit="editClick">
         <div slot="body" class="employee-header">
@@ -35,8 +35,8 @@
               size="mini">
               <i
                 :class="{
-                  1: 'wk wk-man',
-                  2: 'wk wk-woman',
+                  1: 'xiaomingcloud open-man',
+                  2: 'xiaomingcloud open-woman',
               }[detailData.sex]" />
             </el-tag>
             <el-tag
@@ -44,46 +44,46 @@
               class="xr-tag"
               color="#ECEEF2"
               size="mini">
-              <i class="wk wk-icon-work-card" />{{ detailData.jobNumber|| '--' }}
+              <i class="xiaomingcloud open-icon-work-card" />{{ detailData.jobNumber|| '--' }}
             </el-tag>
             <el-tag
               disable-transitions
               class="xr-tag"
               color="#ECEEF2"
               size="mini">
-              <i class="wk wk-icon-layer" />{{ detailData.deptName || '--' }}
+              <i class="xiaomingcloud open-icon-layer" />{{ detailData.deptName || '--' }}
             </el-tag>
             <el-tag
               disable-transitions
               class="xr-tag"
               color="#ECEEF2"
               size="mini">
-              <i class="wk wk-icon-time" />{{ getEmployeeStatusName(detailData.status)|| '--' }}
+              <i class="xiaomingcloud open-icon-time" />{{ getEmployeeStatusName(detailData.status)|| '--' }}
             </el-tag>
             <el-tag
               disable-transitions
               class="xr-tag"
               color="#ECEEF2"
               size="mini">
-              <i class="wk wk-icon-status" />{{ detailData.entryTime|| '--' }}
+              <i class="xiaomingcloud open-icon-status" />{{ detailData.entryTime|| '--' }}
             </el-tag>
             <el-tag
               disable-transitions
               class="xr-tag"
               color="#ECEEF2"
               size="mini">
-              <i class="wk wk-icon-cake" />{{ detailData.age || '--' }}
+              <i class="xiaomingcloud open-icon-cake" />{{ detailData.age || '--' }}
             </el-tag>
           </div>
         </div>
-      </wk-detail-header>
+      </Xiaomingcloud-detail-header>
       <el-tabs
         class="side-detail__tabs--default">
         <el-tab-pane
           label="社保公积金"
         >
           <div class="tab-pane-content">
-            <wk-base-detail-section
+            <Xiaomingcloud-base-detail-section
               :list="cardList"
             />
 
@@ -120,8 +120,8 @@ import {
 } from '@/api/hrm/insuranceScheme'
 
 import SlideView from '@/components/SlideView'
-import WkDetailHeader from '@/components/WkDetailHeader'
-import WkBaseDetailSection from '@/components/WkBaseDetail/WkBaseDetailSection'
+import XiaomingcloudDetailHeader from '@/components/XiaomingcloudDetailHeader'
+import XiaomingcloudBaseDetailSection from '@/components/XiaomingcloudBaseDetail/XiaomingcloudBaseDetailSection'
 import EmploySchemeEditDialog from './EmploySchemeEditDialog'
 
 import { employeeModel } from '../../employee/model/employee'
@@ -133,9 +133,9 @@ export default {
   // 员工社保详情
   name: 'EmployInsuranceSchemeDetail',
   components: {
-    WkDetailHeader,
+    XiaomingcloudDetailHeader,
     SlideView,
-    WkBaseDetailSection,
+    XiaomingcloudBaseDetailSection,
     EmploySchemeEditDialog
   },
   mixins: [],

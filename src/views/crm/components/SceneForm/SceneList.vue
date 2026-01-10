@@ -14,13 +14,13 @@
       <flexbox
         class="handle-button"
         @click.native="addScene">
-        <i class="wk wk-add handle-button-icon"/>
+        <i class="xiaomingcloud open-add handle-button-icon"/>
         <div class="handle-button-name">新建场景</div>
       </flexbox>
       <flexbox
         class="handle-button"
         @click.native="setScene">
-        <i class="wk wk-manage handle-button-icon"/>
+        <i class="xiaomingcloud open-manage handle-button-icon"/>
         <div class="handle-button-name">管理</div>
       </flexbox>
     </div>

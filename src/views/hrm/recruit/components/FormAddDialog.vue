@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -9,7 +9,7 @@
     @close="handleCancel">
     <div class="form-add-dialog-body">
       <slot name="top" />
-      <wk-form
+      <Xiaomingcloud-form
         ref="formAddForm"
         :model="editForm"
         :rules="rules"
@@ -18,7 +18,7 @@
         :validate-on-rule-change="false"
         :class="fields.length == 1 ? 'is-vertical-dialog' : 'is-dialog'"
         label-position="top"
-        @change="wkFormChange"
+        @change="XiaomingcloudFormChange"
       >
         <template slot-scope="scope">
           <!-- <slot :data="scope.data" /> -->
@@ -30,7 +30,7 @@
             @province="selectProvince($event, scope.data)"
             @city="selectCity($event, scope.data)"/>
         </template>
-      </wk-form>
+      </Xiaomingcloud-form>
       <slot />
     </div>
     <span
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import WkForm from '@/components/NewCom/WkForm'
+import XiaomingcloudForm from '@/components/NewCom/XiaomingcloudForm'
 import VDistpicker from '@/components/VDistpicker'
 
 import { objDeepCopy } from '@/utils'
@@ -56,7 +56,7 @@ export default {
   // 组织操作
   name: 'FormAddDialog',
   components: {
-    WkForm,
+    XiaomingcloudForm,
     VDistpicker
   },
   mixins: [ElDialogLoadingMixin],
@@ -132,7 +132,7 @@ export default {
     /**
      * change 事件
      */
-    wkFormChange(item, index, value, valueList) {
+    XiaomingcloudFormChange(item, index, value, valueList) {
       this.$emit('change', item, index, value, valueList, this.editForm)
     },
 

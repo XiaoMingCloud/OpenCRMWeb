@@ -2,7 +2,7 @@
 <template>
   <div class="insurance-scheme main">
     <xr-header
-      icon-class="wk wk-project"
+      icon-class="xiaomingcloud open-project"
       icon-color="#33D08F"
       label="社保方案管理" />
     <div class="main-body">

@@ -1,7 +1,7 @@
 export default {
   install(Vue, options = {}) {
     // 限制数据数值
-    Vue.directive('WkNumber', {
+    Vue.directive('XiaomingcloudNumber', {
       update(ele, { value }) {
         const el = ele.getElementsByTagName('input')[0]
         const copyValue = el.value

@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -16,7 +16,7 @@
         <el-form-item
           label="部门"
           prop="deptId">
-          <wk-dep-select
+          <Xiaomingcloud-dep-select
             v-model="fieldFrom.deptId"
             radio
             style="width: 100%;"
@@ -40,7 +40,7 @@ import {
   adminUserSetUserDeptPI
 } from '@/api/admin/employeeDep'
 
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
 
@@ -49,7 +49,7 @@ export default {
   name: 'EditDepDialog',
 
   components: {
-    WkDepSelect
+    XiaomingcloudDepSelect
   },
 
   mixins: [ElDialogLoadingMixin],

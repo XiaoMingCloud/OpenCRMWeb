@@ -7,7 +7,7 @@
     @close="close"
     @save="saveClick">
     <create-sections title="基本信息">
-      <wk-form
+      <Xiaomingcloud-form
         ref="baseForm"
         :model="baseForm"
         :rules="baseRules"
@@ -75,7 +75,7 @@
                   :rules="{ required: true, message: '请输入', trigger: 'change' }"
                   label="">
                   <el-input
-                    v-wk-number="getNumberType(scope.column.property)"
+                    v-Xiaomingcloud-number="getNumberType(scope.column.property)"
                     v-model="scope.row[scope.column.property]"
                     :disabled="getLeftInputDisabledValue(scope.column.property) "
                     placeholder="请输入"
@@ -164,7 +164,7 @@
                   :rules="{ required: true, message: '请输入', trigger: 'change' }"
                   label="">
                   <el-input
-                    v-wk-number="getNumberType(scope.column.property)"
+                    v-Xiaomingcloud-number="getNumberType(scope.column.property)"
                     v-model="scope.row[scope.column.property]"
                     :disabled="getLeftInputDisabledValue(scope.column.property) "
                     placeholder="请输入"
@@ -228,7 +228,7 @@ import {
 } from '@/api/hrm/insuranceScheme'
 
 import XrCreate from '@/components/XrCreate'
-import WkForm from '@/components/NewCom/WkForm'
+import XiaomingcloudForm from '@/components/NewCom/XiaomingcloudForm'
 import CreateSections from '@/components/CreateSections'
 
 import insuranceSchemeModel from './model/insuranceScheme'
@@ -240,7 +240,7 @@ export default {
   components: {
     XrCreate,
     CreateSections,
-    WkForm
+    XiaomingcloudForm
   },
   filters: {},
   props: {

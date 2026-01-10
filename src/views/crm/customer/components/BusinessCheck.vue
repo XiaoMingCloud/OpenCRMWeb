@@ -5,7 +5,7 @@
     xs-empty-icon="nopermission"
     xs-empty-text="暂无权限">
     <div class="header">
-      <i class="wk wk-customer" />
+      <i class="xiaomingcloud open-customer" />
       <span class="name">{{ data.row.customerName }}</span>
       <span class="detail">{{ `商机个数：（${list.length}）个` }}</span>
       <i class="el-icon-close close" @click="hidenView"/>
@@ -168,7 +168,7 @@ export default {
   }
 }
 
-.wk-customer {
+.Xiaomingcloud-customer {
   color: $xr-color-primary;
   font-size: 12px;
 }

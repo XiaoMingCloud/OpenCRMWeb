@@ -59,7 +59,7 @@
                 <template v-else-if="item.prop == 'status'">
                   <i
                     v-if="row.status == 2"
-                    class="wk wk-circle-password customer-lock"/>
+                    class="xiaomingcloud open-circle-password customer-lock"/>
                 </template>
                 <template v-else-if="item.prop == 'checkStatus'">
                   <span
@@ -68,7 +68,7 @@
                   }" class="status-mark"/>
                   <span>{{ getStatusName(row.checkStatus) }}</span>
                 </template>
-                <wk-field-view
+                <Xiaomingcloud-field-view
                   v-else
                   :props="item"
                   :form-type="item.formType"
@@ -77,7 +77,7 @@
                   <template slot-scope="{ data }">
                     {{ fieldFormatter(row, column, row[column.property], item) }}
                   </template>
-                </wk-field-view>
+                </Xiaomingcloud-field-view>
               </template>
             </el-table-column>
             <el-table-column v-if="showFillColumn" />
@@ -122,23 +122,23 @@ import { filedGetTableFieldAPI } from '@/api/crm/common'
 import crmTypeModel from '@/views/crm/model/crmTypeModel'
 import CRMAllDetail from '@/views/crm/components/CRMAllDetail'
 import RecordList from './components/RecordList'
-import WkFieldView from '@/components/NewCom/WkForm/WkFieldView'
+import XiaomingcloudFieldView from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFieldView'
 
 import { mapGetters } from 'vuex'
 import Lockr from 'lockr'
 import CheckStatusMixin from '@/mixins/CheckStatusMixin'
-import { getFormFieldShowName } from '@/components/NewCom/WkForm/utils'
+import { getFormFieldShowName } from '@/components/NewCom/XiaomingcloudForm/utils'
 
 export default {
   name: 'ReportList', // 简报列表
   components: {
     CRMAllDetail,
     RecordList,
-    WkFieldView
+    XiaomingcloudFieldView
   },
   filters: {
     dealIcon(statu) {
-      return statu == 1 ? 'wk wk-success deal-suc' : 'wk wk-close deal-un'
+      return statu == 1 ? 'xiaomingcloud open-success deal-suc' : 'xiaomingcloud open-close deal-un'
     },
 
     dealName(statu) {

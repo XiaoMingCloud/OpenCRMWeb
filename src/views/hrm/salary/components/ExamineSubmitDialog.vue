@@ -8,7 +8,7 @@
     :show-close="false"
     width="500px">
     <div class="form-add-dialog-body">
-      <wk-approval-flow-apply
+      <Xiaomingcloud-approval-flow-apply
         v-if="list"
         :data="list"
         style="padding-left: 5px;padding-top: 2px;"
@@ -26,14 +26,14 @@
 </template>
 
 <script>
-import WkApprovalFlowApply from '@/components/Examine/WkApprovalFlowApply'
+import XiaomingcloudApprovalFlowApply from '@/components/Examine/XiaomingcloudApprovalFlowApply'
 
 
 export default {
   // 发起审批
   name: 'ExamineSubmitDialog',
   components: {
-    WkApprovalFlowApply
+    XiaomingcloudApprovalFlowApply
   },
   mixins: [],
   props: {

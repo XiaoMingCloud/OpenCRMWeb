@@ -6,7 +6,7 @@ export default {
      * 审批方式
      * @param {*} data
      */
-    getWkWayShowStatus(data) {
+    getXiaomingcloudWayShowStatus(data) {
       if (!data) {
         return false
       }
@@ -23,7 +23,7 @@ export default {
     /**
      * 获取error状态
      */
-    getWkNodeErrorStatus(data) {
+    getXiaomingcloudNodeErrorStatus(data) {
       if (data.examineType === 1) {
         return data.userList.length === 0
       } else if (data.examineType === 2) {

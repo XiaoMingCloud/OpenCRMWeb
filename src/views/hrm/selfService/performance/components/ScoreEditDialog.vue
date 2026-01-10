@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -30,7 +30,7 @@
             prop="score"
             label="">
             <el-input
-              v-wk-number
+              v-Xiaomingcloud-number
               v-model="form.score">
               <template slot="append">分</template>
             </el-input>

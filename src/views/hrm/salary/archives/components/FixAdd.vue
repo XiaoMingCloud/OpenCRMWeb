@@ -17,7 +17,7 @@
           <el-button
             v-if="detail.isUpdate"
             class="head-handle-button xr-btn--green"
-            icon="wk wk-circle-edit"
+            icon="xiaomingcloud open-circle-edit"
             type="primary"
             @click.native="handleClick('edit')">编辑</el-button>
         </div>

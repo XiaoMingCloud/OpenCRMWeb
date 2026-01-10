@@ -4,7 +4,7 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-perform"
+      icon-class="xiaomingcloud open-perform"
       icon-color="#2362FB"
       label="考核计划" >
       <template slot="ft">
@@ -28,14 +28,14 @@
     </xr-header>
     <div class="main-body">
       <flexbox>
-        <wk-border-menu
+        <Xiaomingcloud-border-menu
           :list="tabLeftList"
           v-model="tabType"
           :is-select="!!tabLeftList.find(item => item.name == tabType)"
           style="flex: 1;"
           @select="refreshList"
         />
-        <wk-border-menu
+        <Xiaomingcloud-border-menu
           :list="tabRightList"
           v-model="tabType"
           :is-select="!!tabRightList.find(item => item.name == tabType)"
@@ -273,7 +273,7 @@ import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
 import EmployeesView from './components/EmployeesView'
 import PerformanceCreateView from './Create'
-import WkBorderMenu from '../../components/WkBorderMenu'
+import XiaomingcloudBorderMenu from '../../components/XiaomingcloudBorderMenu'
 
 import { timeToFormatTime } from '@/utils'
 import { mapGetters } from 'vuex'
@@ -286,7 +286,7 @@ export default {
     XrTableHeader,
     PerformanceCreateView,
     EmployeesView,
-    WkBorderMenu
+    XiaomingcloudBorderMenu
   },
   filters: {
     showTypeName(value) {
@@ -847,13 +847,13 @@ export default {
     getStepIcon(item, index) {
       // 如果有节点未完成
       if (index <= item.appraisalSteps) {
-        return 'wk wk-success'
+        return 'xiaomingcloud open-success'
       } else if (index < item.activateSteps) {
-        return 'wk wk-icon-datetime'
+        return 'xiaomingcloud open-icon-datetime'
       } else if (index === item.activateSteps) {
         return ''
       } else if (index === 4 && item.status === 4) { // 最后一个归档阶段的状态
-        return 'wk wk-success'
+        return 'xiaomingcloud open-success'
       }
       return ''
     }
@@ -886,7 +886,7 @@ export default {
     cursor: pointer;
   }
 
-  .wk-border-menu {
+  .Xiaomingcloud-border-menu {
     margin-bottom: 8px;
   }
 

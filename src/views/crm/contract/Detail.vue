@@ -96,7 +96,7 @@ import ExamineInfo from '@/components/Examine/ExamineInfo'
 import CRMAllCreate from '../components/CRMAllCreate' // 新建页面
 import DetailMixin from '../mixins/Detail'
 import { separator } from '@/filters/vueNumeralFilter/filters'
-import { getWkDateTime } from '@/utils'
+import { getXiaomingcloudDateTime } from '@/utils'
 
 export default {
   // 客户管理 的 合同详情
@@ -279,7 +279,7 @@ export default {
           this.headDetails[0].value = resData.num
           this.headDetails[1].value = resData.customerName
           this.headDetails[2].value = separator(resData.money || 0)
-          this.headDetails[3].value = getWkDateTime(resData.orderDate)
+          this.headDetails[3].value = getXiaomingcloudDateTime(resData.orderDate)
           this.headDetails[4].value = separator(resData.receivablesMoney || 0)
           this.headDetails[5].value = resData.ownerUserName
         })

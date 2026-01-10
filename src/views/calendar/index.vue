@@ -4,9 +4,9 @@
     <div class="box-left">
       <div class="left-title" >
         <img width="20px" src="@/assets/img/system/app/ce_index.png" alt="">
-        <wk-user-select
+        <Xiaomingcloud-user-select
           v-if="showUser"
-          ref="wkUserSelect"
+          ref="XiaomingcloudUserSelect"
           :value="checkedUser && checkedUser.length > 0 ? checkedUser[0].userId : ''"
           :request="subUserListIndex"
           :radio="true"
@@ -17,9 +17,9 @@
           @change="selectUser">
           <flexbox slot="reference" class="user-box">
             <span class="username">{{ checkedUser.length > 0 ?checkedUser[0].realname + '的日程': '我的日程' }}</span>
-            <span :class="{ 'is-reverse' : $refs.wkUserSelect && $refs.wkUserSelect.visible }" class="el-icon-arrow-up icon"/>
+            <span :class="{ 'is-reverse' : $refs.XiaomingcloudUserSelect && $refs.XiaomingcloudUserSelect.visible }" class="el-icon-arrow-up icon"/>
           </flexbox>
-        </wk-user-select>
+        </Xiaomingcloud-user-select>
         <span v-else class="username">我的日程</span>
       </div>
       <el-checkbox-group v-model="checkCusList" class="left-scroll">
@@ -146,7 +146,7 @@ import listPlugin from '@fullcalendar/list'
 import Schedule from './Schedule'
 import TodayListDetail from './components/TodayListDetail'
 import calendarColor from '@/views/admin/other/components/calendarColor.js'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import {
   canlendarQueryListAPI,
   canlendarQueryTypeListAPI,
@@ -169,7 +169,7 @@ export default {
     Schedule,
     CreateEvent,
     TodayListDetail,
-    WkUserSelect,
+    XiaomingcloudUserSelect,
     CRMFullScreenDetail: () =>
       import('@/components/CRMFullScreenDetail')
   },
@@ -267,7 +267,7 @@ export default {
       return systemUserQueryAuthUserList
     },
     showUserPover() {
-      return this.$refs.wkUserSelect && this.$refs.wkUserSelect.visible
+      return this.$refs.XiaomingcloudUserSelect && this.$refs.XiaomingcloudUserSelect.visible
     }
   },
   watch: {

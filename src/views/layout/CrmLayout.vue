@@ -21,7 +21,7 @@
               :key="index"
               @click="addSkip(item)">
               <i
-                :class="['wk', 'wk-' + item.icon]"/><span>{{ item.label }}</span></p>
+                :class="['Xiaomingcloud', 'Xiaomingcloud-' + item.icon]"/><span>{{ item.label }}</span></p>
           </div>
         </div>
       </sidebar>

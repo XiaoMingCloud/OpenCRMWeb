@@ -15,7 +15,7 @@
           placement="top-start">
           <div class="name">{{ name }}</div>
         </el-tooltip><slot name="name" />
-          <el-button-group v-if="pageList && pageList.length > 1" class="wk-header-page-btn">
+          <el-button-group v-if="pageList && pageList.length > 1" class="Xiaomingcloud-header-page-btn">
             <el-button icon="el-icon-arrow-left" @click="$emit('pageChange', 'left')"/>
             <el-button icon="el-icon-arrow-right" @click="$emit('pageChange', 'right')"/>
           </el-button-group>
@@ -26,20 +26,20 @@
           v-if="showTransfer"
           class="head-handle-button"
           type="primary"
-          icon="wk wk-transfer"
+          icon="xiaomingcloud open-transfer"
           @click.native="handleTypeClick('transfer')">转移</el-button>
 
         <el-button
           v-if="showEdit"
           class="head-handle-button xr-btn--green"
-          icon="wk wk-circle-edit"
+          icon="xiaomingcloud open-circle-edit"
           type="primary"
           @click.native="handleTypeClick('edit')">编辑</el-button>
 
         <el-button
           v-if="showGet"
           class="head-handle-button"
-          icon="wk wk-receive"
+          icon="xiaomingcloud open-receive"
           type="primary"
           @click.native="handleTypeClick('get')">领取</el-button>
 
@@ -47,14 +47,14 @@
           v-if="showAlloc"
           class="head-handle-button xr-btn--green"
           type="primary"
-          icon="wk wk-alloc"
+          icon="xiaomingcloud open-alloc"
           @click.native="handleTypeClick('alloc')">分配</el-button>
 
         <el-button
           v-if="showDealStatus"
           class="head-handle-button"
           type="primary"
-          icon="wk wk-success"
+          icon="xiaomingcloud open-success"
           @click.native="handleTypeClick('deal_status')">更改成交状态</el-button>
 
         <el-dropdown
@@ -68,7 +68,7 @@
             <el-dropdown-item
               v-for="(item, index) in permissionMoreTypes"
               :key="index"
-              :icon="item.icon | wkIconPre"
+              :icon="item.icon | XiaomingcloudIconPre"
               :command="item.type">{{ item.name }}</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -692,7 +692,7 @@ export default {
 </script>
 
 <style lang="scss">
-.wk-header-page-btn {
+.Xiaomingcloud-header-page-btn {
   flex-shrink: 0;
   margin-left: 8px;
   .el-button + .el-button {

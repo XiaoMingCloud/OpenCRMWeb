@@ -93,7 +93,7 @@ import { crmReceivablesPlanFileListAPI } from '@/api/crm/receivablesPlan'
 import { crmReturnVisitFileAPI } from '@/api/crm/visit'
 import { crmInvoiceFileListAPI } from '@/api/crm/invoice'
 
-import { fileSize, canPreviewFile, wkPreviewFile, downloadFileWithBuffer } from '@/utils'
+import { fileSize, canPreviewFile, XiaomingcloudPreviewFile, downloadFileWithBuffer } from '@/utils'
 import { debounce } from 'throttle-debounce'
 
 export default {
@@ -207,7 +207,7 @@ export default {
         var params = {}
         params.batchId = this.detail.batchId
         params.file = file
-        this.$wkUploadFile.upload({
+        this.$XiaomingcloudUploadFile.upload({
           file: file,
           params: {
             batchId: this.detail.batchId
@@ -232,9 +232,9 @@ export default {
     handleFile(type, item) {
       if (type === 'preview') {
         if (canPreviewFile(item.row.name)) {
-          wkPreviewFile(item.row.url, item.row.name)
+          XiaomingcloudPreviewFile(item.row.url, item.row.name)
         } else {
-          this.$wkPreviewFile.preview({
+          this.$XiaomingcloudPreviewFile.preview({
             index: item.$index,
             data: this.list
           })

@@ -20,7 +20,7 @@
                 <div class="hello">
                   {{ headData.timeLabel }}，{{ nickName }}
                   <span class="status">
-                    <span :class="userDoneStatus.icon" class="icon wk" />
+                    <span :class="userDoneStatus.icon" class="icon Xiaomingcloud" />
                     <span>{{ userDoneStatus.label }}</span>
                   </span>
                 </div>
@@ -31,7 +31,7 @@
 
               <div class="statistics">
                 <div class="title">
-                  <!-- <span class="icon wk wk-task" /> -->
+                  <!-- <span class="icon xiaomingcloud open-task" /> -->
                   <span>本月完成日志</span>
                 </div>
                 <div class="info">
@@ -54,7 +54,7 @@
           <create-log v-if="showAdd" ref="createLog" class="add-card card" @update="addLogSuccess" @completeSelect="completeSelect" />
 
           <flexbox class="filter-control card">
-            <wk-user-dep-select
+            <Xiaomingcloud-user-dep-select
               v-if="showUserSelect"
               :user-value.sync="filterForm.createUserId"
               :dep-value.sync="filterForm.deptIds"
@@ -167,7 +167,7 @@ import ReportMenu from './components/ReportMenu'
 import LogItem from './components/LogItem'
 import CreateLog from './components/CreateLog'
 import LogComDetail from './components/LogComDetail' // 日志完成 情况详情
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
 import CRMAllDetail from '@/views/crm/components/CRMAllDetail'
 import NewDialog from './components/NewDialog'
 import TimeTypeSelect from '@/components/TimeTypeSelect'
@@ -185,7 +185,7 @@ export default {
     LogItem,
     CreateLog,
     LogComDetail,
-    WkUserDepSelect,
+    XiaomingcloudUserDepSelect,
     CRMAllDetail,
     NewDialog,
     TimeTypeSelect,
@@ -325,7 +325,7 @@ export default {
 
     userDoneStatus() {
       return {
-        icon: this.headData.nowNum > 0 ? 'wk-success' : 'wk-close',
+        icon: this.headData.nowNum > 0 ? 'Xiaomingcloud-success' : 'Xiaomingcloud-close',
         label: this.headData.nowNum > 0 ? '今天日志已完成' : '今天日志还未完成'
       }
     },

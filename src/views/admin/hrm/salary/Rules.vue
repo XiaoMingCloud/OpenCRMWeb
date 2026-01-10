@@ -2,7 +2,7 @@
 <template>
   <div class="main">
     <xr-header
-      icon-class="wk wk-double-gear"
+      icon-class="xiaomingcloud open-double-gear"
       icon-color="#1CBAF5"
       label="薪资设置" />
     <div class="main-body">
@@ -413,7 +413,7 @@ export default {
   display: none;
 }
 
-.wk-help-tips {
+.Xiaomingcloud-help-tips {
   margin-left: 3px;
 }
 </style>

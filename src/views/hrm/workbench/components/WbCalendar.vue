@@ -2,7 +2,7 @@
 <template>
   <wb-section
     v-loading="loading"
-    icon="wk wk-calendar"
+    icon="xiaomingcloud open-calendar"
     class="wb-calendar"
     label="日程"
   >
@@ -20,7 +20,7 @@
         <div>{{ lunarInfo.ncWeek }}</div>
         <div>{{ `${lunarInfo.IMonthCn}${lunarInfo.IDayCn}` }}</div>
       </div>
-      <el-button class="board-add" type="text" icon="wk wk-add" @click="addClick">添加备忘录</el-button>
+      <el-button class="board-add" type="text" icon="xiaomingcloud open-add" @click="addClick">添加备忘录</el-button>
     </flexbox>
 
     <div class="list">
@@ -38,7 +38,7 @@
               @click="checkDetail(item)"
             >{{ item.content }}</div>
           </el-tooltip>
-          <i v-if="item.type == 1" class="wk wk-icon-bin list__delete" @click="deleteItem(item)" />
+          <i v-if="item.type == 1" class="xiaomingcloud open-icon-bin list__delete" @click="deleteItem(item)" />
         </flexbox>
         <div class="list__more">
           <el-button v-if="!allShow && memoList.length > 4" type="text" @click="allShowClick">查看更多事项<i class="el-icon-d-arrow-right"/></el-button>
@@ -72,7 +72,7 @@ import {
 import moment from 'moment'
 
 import WbSection from './WbSection'
-import Calendar from './WkCalendar'
+import Calendar from './XiaomingcloudCalendar'
 import calendar from './calendar.js'
 import MemoAddDialog from './MemoAddDialog'
 import EmployeeDetail from '../../employee/EmployeeDetail'

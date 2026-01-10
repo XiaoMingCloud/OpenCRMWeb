@@ -2,7 +2,7 @@
   <div class="wrapper">
     <xr-header
       style="padding: 0px 15px 15px 0;"
-      icon-class="wk wk-subordinate"
+      icon-class="xiaomingcloud open-subordinate"
       icon-color="#2362FB"
       ft-top="0"
       placeholder="请输入组织部门名称"
@@ -16,7 +16,7 @@
           placement="top"
           style="margin-left: 8px;"
           content="仅展示您管理范围内的员工">
-          <i class="wk wk-help wk-help-tips"/>
+          <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
         </el-tooltip>
       </template>
       <template slot="ft">
@@ -27,10 +27,10 @@
           @click="createClick">新建组织</el-button>
         <el-radio-group v-model="showType" size="small">
           <el-radio-button label="table">
-            <i class="wk wk-table"/>
+            <i class="xiaomingcloud open-table"/>
           </el-radio-button>
           <el-radio-button label="tree">
-            <i class="wk wk-org"/>
+            <i class="xiaomingcloud open-org"/>
           </el-radio-button>
         </el-radio-group>
       </template>
@@ -53,7 +53,7 @@
       <div
         v-else
         :style="{height: `${tableHeight}px`}"
-        class="wk-org-tree">
+        class="Xiaomingcloud-org-tree">
         <vue2-org-tree
           :data="orgTreeData"
           :label-class-name="orgTreeClass"
@@ -291,7 +291,7 @@ export default {
     padding: 7px 15px;
   }
 
-  .wk-org-tree {
+  .Xiaomingcloud-org-tree {
     overflow: auto;
   }
 }

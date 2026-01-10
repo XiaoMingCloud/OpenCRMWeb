@@ -4,7 +4,7 @@
     <template v-if="listShow">
       <xr-header
         style="padding: 0px 15px 15px 0;"
-        icon-class="wk wk-social"
+        icon-class="xiaomingcloud open-social"
         icon-color="#2362FB"
         ft-top="0"
         label="社保管理" >
@@ -43,7 +43,7 @@
       </div>
     </template>
 
-    <wk-steps-explain-view
+    <Xiaomingcloud-steps-explain-view
       v-if="stepsExplainShow"
       :title="explainTitle"
       :steps="explainSteps"
@@ -68,7 +68,7 @@ import {
 } from '@/api/hrm/salaryConfig'
 
 import XrHeader from '@/components/XrHeader'
-import WkStepsExplainView from '../components/WkStepsExplainView'
+import XiaomingcloudStepsExplainView from '../components/XiaomingcloudStepsExplainView'
 import MonthSetDialog from './components/MonthSetDialog'
 import StatisticsCard from './components/StatisticsCard'
 
@@ -78,7 +78,7 @@ export default {
   name: 'InsuranceSchemeIndex',
   components: {
     XrHeader,
-    WkStepsExplainView,
+    XiaomingcloudStepsExplainView,
     MonthSetDialog,
     StatisticsCard
   },

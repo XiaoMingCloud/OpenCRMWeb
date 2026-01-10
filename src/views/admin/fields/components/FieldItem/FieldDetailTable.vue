@@ -60,7 +60,7 @@
 
       <div v-if="!isEmpty" class="add-btn">
         <el-button type="text">
-          <i class="wk wk-l-plus" />
+          <i class="xiaomingcloud open-l-plus" />
           {{ field.remark || '' }}
         </el-button>
       </div>
@@ -188,7 +188,7 @@ export default {
     align-items: center;
     justify-content: flex-end;
     padding-right: 10px;
-    .wk-l-plus {
+    .Xiaomingcloud-l-plus {
       font-size: 12px;
     }
   }

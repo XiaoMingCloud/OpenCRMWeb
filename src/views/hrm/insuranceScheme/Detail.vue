@@ -13,13 +13,13 @@
             placement="top"
             style="margin-left: 8px;"
             content="仅展示您管理范围内的员工">
-            <i class="wk wk-help wk-help-tips"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
           </el-tooltip>
         </template>
       </el-page-header>
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -134,7 +134,7 @@ import {
 
 import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 import StatisticsCard from './components/StatisticsCard'
 import EmployInsuranceSchemeDetail from './components/EmployInsuranceSchemeDetail'
 import EmploySchemeEditDialog from './components/EmploySchemeEditDialog'
@@ -147,7 +147,7 @@ export default {
   components: {
     XrHeader,
     XrTableHeader,
-    WkPopoverFilter,
+    XiaomingcloudPopoverFilter,
     StatisticsCard,
     EmployInsuranceSchemeDetail,
     EmploySchemeEditDialog,
@@ -238,11 +238,11 @@ export default {
         temps.push({
           label: '参保方案',
           command: 'security',
-          icon: 'wk wk-approval-9'
+          icon: 'xiaomingcloud open-approval-9'
         }, {
           label: '停止参保',
           command: 'stop',
-          icon: 'wk wk-remove'
+          icon: 'xiaomingcloud open-remove'
         })
       }
       return temps

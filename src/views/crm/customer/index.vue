@@ -75,7 +75,7 @@
             slot="header"
             slot-scope="slot">
             <i
-              class="wk wk-business"
+              class="xiaomingcloud open-business"
               style="cursor: not-allowed; color: #9DA9C2;"/>
           </template>
           <template slot-scope="scope">
@@ -94,7 +94,7 @@
               <i
                 slot="reference"
                 :style="{'opacity' :scope.row.businessCount > 0 ? 1 : 0}"
-                class="wk wk-business"
+                class="xiaomingcloud open-business"
                 style="color: #FC6E51"
                 @click="businessCheckClick($event, scope)"/>
             </el-popover>
@@ -117,9 +117,9 @@
             <template v-else-if="item.prop == 'status'">
               <i
                 v-if="row.status == 2"
-                class="wk wk-circle-password customer-lock"/>
+                class="xiaomingcloud open-circle-password customer-lock"/>
             </template>
-            <wk-field-view
+            <Xiaomingcloud-field-view
               v-else
               :props="item"
               :form-type="item.formType"
@@ -128,7 +128,7 @@
               <template slot-scope="{ data }">
                 {{ fieldFormatter(row, column, row[column.property], item) }}
               </template>
-            </wk-field-view>
+            </Xiaomingcloud-field-view>
           </template>
         </el-table-column>
         <el-table-column/>
@@ -141,7 +141,7 @@
             <el-tooltip :content="scope.row.star == 0 ? '添加关注' : '取消关注'" effect="dark" placement="top">
               <i
                 :class="{active: scope.row.star != 0}"
-                class="wk wk-focus-on focus-icon"
+                class="xiaomingcloud open-focus-on focus-icon"
                 @click="toggleStar(scope.row)" />
             </el-tooltip>
           </template>
@@ -158,7 +158,7 @@
               @change="setSave"/>
           </template>
         </el-table-column>
-        <wk-empty
+        <Xiaomingcloud-empty
           slot="empty"
           :props="{
             buttonTitle: '新建客户',
@@ -219,7 +219,7 @@ export default {
   },
   filters: {
     dealIcon(statu) {
-      return statu == 1 ? 'wk wk-success deal-suc' : 'wk wk-close deal-un'
+      return statu == 1 ? 'xiaomingcloud open-success deal-suc' : 'xiaomingcloud open-close deal-un'
     },
 
     dealName(statu) {

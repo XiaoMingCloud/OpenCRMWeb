@@ -51,19 +51,19 @@ export default {
       desList: [{
         title: '我的档案',
         des: '云存储个人基本信息，岗位信息等资料，支持自助修改个人信息。',
-        icon: 'wk wk-archive'
+        icon: 'xiaomingcloud open-archive'
       }, {
         title: '绩效管理',
         des: '员工填写绩效目标与存档，灵活调整进度；绩效相关跟进人一键确认目标，评定结果。',
-        icon: 'wk wk-perform'
+        icon: 'xiaomingcloud open-perform'
       }, {
         title: '我的社保',
         des: 'HR生成每月社保报表，员工端同步更新，各险种缴纳清晰可查。',
-        icon: 'wk wk-social'
+        icon: 'xiaomingcloud open-social'
       }, {
         title: '我的工资条',
         des: '员工可在此查收HR发送的工资条，查看后系统自动返回查看状态。',
-        icon: 'wk wk-icon-slip'
+        icon: 'xiaomingcloud open-icon-slip'
       }]
     }
   },

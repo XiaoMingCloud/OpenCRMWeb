@@ -7,7 +7,7 @@
       <el-page-header slot="label" :content="topData.month ? `${topData.month}月薪资详情` : '薪资详情'" @back="goBack"/>
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -98,7 +98,7 @@ import {
 import XrHeader from '@/components/XrHeader'
 import StatisticsCard from '../insuranceScheme/components/StatisticsCard'
 import ExamineProgressDialog from './components/ExamineProgressDialog'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 
 import { mapGetters } from 'vuex'
 
@@ -108,7 +108,7 @@ export default {
     XrHeader,
     StatisticsCard,
     ExamineProgressDialog,
-    WkPopoverFilter
+    XiaomingcloudPopoverFilter
   },
   data() {
     return {

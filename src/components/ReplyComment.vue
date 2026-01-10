@@ -21,7 +21,7 @@
           <emoji @select="selectEmoji" />
           <i
             slot="reference"
-            class="wk wk-expression smiling-img" />
+            class="xiaomingcloud open-expression smiling-img" />
         </el-popover>
         <div class="btn-box">
           <el-button

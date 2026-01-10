@@ -4,7 +4,7 @@ $darkBlueColor: #15388b;
 $lineColor: #b2b2b2;
 $backgroundColor: #f5f6f9;
 
-.wk-approve-flow-wrap {
+.Xiaomingcloud-approve-flow-wrap {
   width: 100%;
   background-color: $backgroundColor;
   overflow: auto;
@@ -22,7 +22,7 @@ $backgroundColor: #f5f6f9;
   }
 }
 
-.wk-approve-flow {
+.Xiaomingcloud-approve-flow {
   display: inline-block;
   position: relative;
   width: 100%;
@@ -79,7 +79,7 @@ $backgroundColor: #f5f6f9;
   }
 
   // 节点
-  .wk-node {
+  .Xiaomingcloud-node {
     display: inline-flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -216,7 +216,7 @@ $backgroundColor: #f5f6f9;
   }
 
   // 条件节点
-  .wk-conditon-node {
+  .Xiaomingcloud-conditon-node {
     display: inline-flex;
     width: 100%;
     &-wrap {
@@ -449,7 +449,7 @@ $backgroundColor: #f5f6f9;
   }
 
   // 结束节点
-  .wk-end-node {
+  .Xiaomingcloud-end-node {
     .circle {
       width: 6px;
       height: 6px;

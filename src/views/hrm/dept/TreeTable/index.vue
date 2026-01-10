@@ -23,8 +23,8 @@
           <i v-else class="el-icon-caret-bottom"/>
         </span>
         {{ scope.row[column.value] }}<template v-if="index === 0">
-          <i v-if="scope.row.deptType == 1" class="wk wk-subordinate tree-icon"/>
-          <i v-if="scope.row.deptType == 2" class="wk wk-customer-solid tree-icon"/>
+          <i v-if="scope.row.deptType == 1" class="xiaomingcloud open-subordinate tree-icon"/>
+          <i v-if="scope.row.deptType == 2" class="xiaomingcloud open-customer-solid tree-icon"/>
         </template>
       </template>
       <template slot="header" slot-scope="{ column, $index }">
@@ -34,7 +34,7 @@
             content="当前部门人数（包含下级部门总人数）"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
           </el-tooltip>
         </template>
 

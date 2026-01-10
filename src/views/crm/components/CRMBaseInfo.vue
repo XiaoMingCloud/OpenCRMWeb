@@ -134,7 +134,7 @@ import CheckStatusMixin from '@/mixins/CheckStatusMixin'
 
 import { separator } from '@/filters/vueNumeralFilter/filters'
 import { isObject } from '@/utils/types'
-import { getWkDateTime } from '@/utils'
+import { getXiaomingcloudDateTime } from '@/utils'
 
 export default {
   // 客户管理 的 基本信息
@@ -256,7 +256,7 @@ export default {
             if (item.formType === 'floatnumber') {
               item.value = separator(item.value)
             } else if (item.formType === 'date') {
-              item.value = getWkDateTime(item.value)
+              item.value = getXiaomingcloudDateTime(item.value)
             }
             if (item.sysInformation == 1) {
               systemList.push(item)

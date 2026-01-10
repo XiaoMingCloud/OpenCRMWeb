@@ -23,7 +23,7 @@
             class="head-img" />
           <i
             v-else
-            class="wk wk-multi-user user-icon head-img" />
+            class="xiaomingcloud open-multi-user user-icon head-img" />
           <el-progress
             :percentage="progressValue"
             :format="progressFormat" />
@@ -51,7 +51,7 @@
             />
             <el-button
               slot="reference"
-              icon="wk wk-screening"
+              icon="xiaomingcloud open-screening"
               @click="taskFilterShow = true">筛选</el-button>
           </el-popover>
 

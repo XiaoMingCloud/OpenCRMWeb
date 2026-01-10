@@ -3,7 +3,7 @@
   <el-card class="statistics-card">
     <flexbox>
       <div v-if="titleShow" class="card-item is-first">
-        <i v-if="iconShow" class="wk wk-results-solid card-item__icon" />
+        <i v-if="iconShow" class="xiaomingcloud open-results-solid card-item__icon" />
         <span class="card-item__title">{{ title }}</span>
       </div>
       <div

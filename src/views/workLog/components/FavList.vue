@@ -4,7 +4,7 @@
       :class="{'is-fav': isFavour}"
       class="good-btn"
       @click="faveClick">
-      <i class="wk wk-good" />
+      <i class="xiaomingcloud open-good" />
     </div>
     <template v-if="data && data.length > 0">
       <div class="fav-user">

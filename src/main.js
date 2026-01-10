@@ -7,8 +7,8 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 // 配置信息
 import config from '@/config'
-window.WKConfig = config
-Vue.prototype.WKConfig = config
+window.XiaomingcloudConfig = config
+Vue.prototype.XiaomingcloudConfig = config
 
 import ElementUI from 'element-ui'
 Vue.use(ElementUI)
@@ -60,12 +60,12 @@ Vue.component('xr-avatar', XrAvatar)
 
 import FileUpload from '@/components/FileUpload/index.js'
 Vue.use(FileUpload)
-import WkFileSelect from '@/components/NewCom/WkFile/Select/main.js'
-Vue.use(WkFileSelect)
-import WkPreviewFile from '@/components/WkPreviewFile/main.js'
-Vue.use(WkPreviewFile)
-import WkImport from '@/components/WkImport/main.js'
-Vue.use(WkImport)
+import XiaomingcloudFileSelect from '@/components/NewCom/XiaomingcloudFile/Select/main.js'
+Vue.use(XiaomingcloudFileSelect)
+import XiaomingcloudPreviewFile from '@/components/XiaomingcloudPreviewFile/main.js'
+Vue.use(XiaomingcloudPreviewFile)
+import XiaomingcloudImport from '@/components/XiaomingcloudImport/main.js'
+Vue.use(XiaomingcloudImport)
 
 /** 懒加载图片 */
 import VueSrc from './directives/src'

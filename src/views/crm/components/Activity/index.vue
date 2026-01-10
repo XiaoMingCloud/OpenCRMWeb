@@ -12,7 +12,7 @@
           :key="index"
           :class="{ 'is-select' : handleType === item.type }"
           type="primary"
-          icon="wk wk-add"
+          icon="xiaomingcloud open-add"
           @click="handleClick(item.type)">
           {{ item.label }}
         </el-button>
@@ -64,7 +64,7 @@
             @command="handleSelectClick">
             <span class="el-dropdown-link">
               <i
-                :class="['wk', 'dropdown-icon', 'wk-' + activityType.icon]"
+                :class="['Xiaomingcloud', 'dropdown-icon', 'Xiaomingcloud-' + activityType.icon]"
                 :style="{ backgroundColor: activityType.color }" />{{ activityType.label }}<i class="el-icon-arrow-down el-icon--right" />
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -72,7 +72,7 @@
                 v-for="(item, index) in typeList"
                 :key="index"
                 :command="item"> <i
-                  :class="['wk', 'dropdown-icon', 'wk-' + item.icon]"
+                  :class="['Xiaomingcloud', 'dropdown-icon', 'Xiaomingcloud-' + item.icon]"
                   :style="{ backgroundColor: item.color }" />{{ item.label }}</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
@@ -100,7 +100,7 @@
                 @crm-detail="checkCRMDetail"
                 @delete="logCellDelete"
                 @edit="logCellEdit"/>
-              <i class="wk wk-message log-cell__mark" />
+              <i class="xiaomingcloud open-message log-cell__mark" />
             </div>
             <div
               v-else

@@ -58,7 +58,7 @@
                     <div class="employee-item__value">{{ getEmployeeNames(detailData.resultConfirmors) }}</div>
                   </div>
                 </div>
-                <wk-circle-tag
+                <Xiaomingcloud-circle-tag
                   :label="getEmployeeLabelName()"
                   :des="detailData.status == 6 ? `${detailData.score}分` : ''"
                   :bold="detailData.status == 6"
@@ -116,7 +116,7 @@
                           :rules="getScoreRules()"
                           label="">
                           <el-input
-                            v-wk-number
+                            v-Xiaomingcloud-number
                             v-model="item.score"
                             type="text"
                             @blur="scoreInputBlur"/>
@@ -223,7 +223,7 @@
                           :rules="getScoreRules()"
                           label="">
                           <el-input
-                            v-wk-number
+                            v-Xiaomingcloud-number
                             v-model="item.score"
                             type="text"
                             @blur="scoreInputBlur"/>
@@ -286,7 +286,7 @@
                       prop="score"
                       label="">
                       <el-input
-                        v-wk-number
+                        v-Xiaomingcloud-number
                         v-model="form.score"
                         type="text"
                         @input="debouncedQueryLevelByScore"/>
@@ -390,7 +390,7 @@ import {
 import PerformanceHistory from './PerformanceHistory'
 import ScheduleEditDialog from './ScheduleEditDialog'
 import RejectDialog from './RejectDialog'
-import WkCircleTag from '@/views/hrm/performance/employee/components/WkCircleTag'
+import XiaomingcloudCircleTag from '@/views/hrm/performance/employee/components/XiaomingcloudCircleTag'
 import Reminder from '@/components/Reminder'
 import performanceModel from '../model/performance'
 import { floatAdd } from '@/utils'
@@ -406,7 +406,7 @@ export default {
     ScheduleEditDialog,
     RejectDialog,
     Reminder,
-    WkCircleTag
+    XiaomingcloudCircleTag
   },
   props: {
     nextList: Array,
@@ -1145,7 +1145,7 @@ export default {
     opacity: 0.6;
   }
 
-  .wk-circle-tag {
+  .Xiaomingcloud-circle-tag {
     flex-shrink: 0;
   }
 }

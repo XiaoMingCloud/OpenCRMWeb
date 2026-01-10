@@ -1,19 +1,19 @@
 <template>
   <div v-loading="loading" :key="updateKey">
-    <wk-custom-base-detail
+    <Xiaomingcloud-custom-base-detail
       :list="baseList">
       <template slot="data" slot-scope="{ data }">{{ data.value }}</template>
       <el-button v-if="editAuth" slot="more" type="text" @click="baseCommandSelect('edit')">编辑</el-button>
-    </wk-custom-base-detail>
+    </Xiaomingcloud-custom-base-detail>
 
-    <wk-custom-base-detail
+    <Xiaomingcloud-custom-base-detail
       :dropdown-items="communicationDropdownItems"
       :list="communicationList"
       @top-command-select="communicationCommandSelect"
     />
     <create-sections
       title="教育经历">
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in educationList"
         :dropdown-items="dropdownItems"
         :key="index"
@@ -29,7 +29,7 @@
 
     <create-sections
       title="工作经历">
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in workList"
         :dropdown-items="dropdownItems"
         :key="index"
@@ -45,7 +45,7 @@
 
     <create-sections
       title="证书/证件">
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in certificateList"
         :dropdown-items="dropdownItems"
         :key="index"
@@ -61,7 +61,7 @@
 
     <create-sections
       title="培训经历">
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in trainingList"
         :dropdown-items="dropdownItems"
         :key="index"
@@ -77,7 +77,7 @@
 
     <create-sections
       title="联系人">
-      <wk-custom-base-detail-section
+      <Xiaomingcloud-custom-base-detail-section
         v-for="(item, index) in contactsList"
         :dropdown-items="dropdownItems"
         :key="index"
@@ -144,11 +144,11 @@ import {
   hrmEmployeeFieldVerifyAPI
 } from '@/api/hrm/employee'
 
-import WkBaseDetail from '@/components/WkBaseDetail'
-import WkCustomBaseDetail from '@/components/WkBaseDetail/CustomIndex'
+import XiaomingcloudBaseDetail from '@/components/XiaomingcloudBaseDetail'
+import XiaomingcloudCustomBaseDetail from '@/components/XiaomingcloudBaseDetail/CustomIndex'
 import CreateSections from '@/components/CreateSections'
-import WkBaseDetailSection from '@/components/WkBaseDetail/WkBaseDetailSection'
-import WkCustomBaseDetailSection from '@/components/WkBaseDetail/WkCustomBaseDetailSection'
+import XiaomingcloudBaseDetailSection from '@/components/XiaomingcloudBaseDetail/XiaomingcloudBaseDetailSection'
+import XiaomingcloudCustomBaseDetailSection from '@/components/XiaomingcloudBaseDetail/XiaomingcloudCustomBaseDetailSection'
 import FormAddDialog from './FormAddDialog'
 import CustomFormAddDialog from './CustomFormAddDialog'
 
@@ -168,12 +168,12 @@ export default {
   // 基本信息
   name: 'EmployeeBaseInfo',
   components: {
-    WkBaseDetail,
+    XiaomingcloudBaseDetail,
     CreateSections,
-    WkBaseDetailSection,
+    XiaomingcloudBaseDetailSection,
     FormAddDialog,
-    WkCustomBaseDetail,
-    WkCustomBaseDetailSection,
+    XiaomingcloudCustomBaseDetail,
+    XiaomingcloudCustomBaseDetailSection,
     CustomFormAddDialog
   },
   filters: {},
@@ -1036,7 +1036,7 @@ export default {
   padding: 11px 12px;
 }
 
-.wk-base-detail-section + .wk-base-detail-section {
+.Xiaomingcloud-base-detail-section + .Xiaomingcloud-base-detail-section {
   border-top: 1px solid $xr-border-color-base;
 }
 

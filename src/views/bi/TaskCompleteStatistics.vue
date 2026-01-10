@@ -5,7 +5,7 @@
     <flexbox class="handle-bar">
       <flexbox justify="flex-start" class="title-box">
         <div class="icon-box">
-          <span class="wk wk-my-task icon" />
+          <span class="xiaomingcloud open-my-task icon" />
         </div>
         <span class="text">业绩目标完成情况</span>
       </flexbox>
@@ -32,16 +32,16 @@
           :label="item.label"
           :value="item.value"/>
       </el-select>
-      <wk-dep-select
+      <Xiaomingcloud-dep-select
         v-if="dataSelect == 1"
         v-model="deptSelectValue"
         radio
-        class="wk-dep-select" />
-      <wk-user-select
+        class="Xiaomingcloud-dep-select" />
+      <Xiaomingcloud-user-select
         v-else
         v-model="userSelectValue"
         radio
-        class="wk-user-select" />
+        class="Xiaomingcloud-user-select" />
       <!-- <el-select
         v-model="structuresSelectValue"
         placeholder="选择部门"
@@ -113,8 +113,8 @@
 import { adminStructuresSubIndexAPI, userListAPI } from '@/api/common'
 import { biAchievementStatisticsAPI, biAchievementStatisticsExportAPI } from '@/api/bi/bi'
 
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 
 import moment from 'moment'
 import BaseMixin from './mixins/Base'
@@ -127,8 +127,8 @@ export default {
   /** 业绩目标完成情况 */
   name: 'TaskCompleteStatistics',
   components: {
-    WkDepSelect,
-    WkUserSelect
+    XiaomingcloudDepSelect,
+    XiaomingcloudUserSelect
   },
   mixins: [BaseMixin, SortMixin],
   data() {
@@ -572,8 +572,8 @@ export default {
     margin-right: 15px;
   }
 
-  .wk-user-select,
-  .wk-dep-select {
+  .Xiaomingcloud-user-select,
+  .Xiaomingcloud-dep-select {
     text-align: left;
     width: 120px;
     margin-right: 15px;

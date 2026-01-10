@@ -4,7 +4,7 @@
     direction="column"
     align="stretch">
     <xr-header
-      icon-class="wk wk-enterprise"
+      icon-class="xiaomingcloud open-enterprise"
       icon-color="#2362FB"
       label="企业首页" />
     <div

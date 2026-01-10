@@ -25,7 +25,7 @@
               @click="checkHistoryClick">查看以往日志</el-button>
           </div>
           <div class="comment-status">
-            <span class="icon wk wk-task" />
+            <span class="icon xiaomingcloud open-task" />
             <span>{{ getCategory(data.categoryId) }}-{{ data.replyNum === 0 ? '未点评' : '已点评' }}</span>
             <span :class="{active: data.replyNum !== 0}" class="dot" />
           </div>
@@ -122,12 +122,12 @@
         ref="favBtn"
         :type="data.isFavour ? 'primary' : ''"
         style="margin-left: 10px;"
-        icon="wk wk-good"
+        icon="xiaomingcloud open-good"
         class="fav-btn"
         @click="favourClick">赞{{ `${data.favourUser.length > 0 ? `(${data.favourUser.length})` : ''}` }}</el-button>
       <el-button
         type="primary"
-        icon="wk wk-message"
+        icon="xiaomingcloud open-message"
         class="replay-btn"
         @click="replayClick">{{ '评论' + (replyTotal > 0 ? `(${replyTotal})` : '') }}</el-button>
     </div>

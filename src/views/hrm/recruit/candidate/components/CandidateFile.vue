@@ -2,7 +2,7 @@
 <template>
   <div v-loading="loading" class="file-index">
     <div class="file-index__header">
-      <wk-file-select
+      <Xiaomingcloud-file-select
         v-if="detail"
         style="display: inline-block;"
         multiple
@@ -11,7 +11,7 @@
         <el-button
           icon="el-icon-plus"
           type="primary">上传材料附件</el-button>
-      </wk-file-select>
+      </Xiaomingcloud-file-select>
 
     </div>
     <el-table
@@ -85,15 +85,15 @@ import {
 import {
   hrmRecruitCandidateQueryFileAPI
 } from '@/api/hrm/recruit/candidate'
-import WkFileSelect from '@/components/NewCom/WkFile/Select'
+import XiaomingcloudFileSelect from '@/components/NewCom/XiaomingcloudFile/Select'
 
-import { fileSize, canPreviewFile, wkPreviewFile, downloadFileWithBuffer } from '@/utils'
+import { fileSize, canPreviewFile, XiaomingcloudPreviewFile, downloadFileWithBuffer } from '@/utils'
 import { debounce } from 'throttle-debounce'
 
 export default {
   name: 'CandidateFile',
   components: {
-    WkFileSelect
+    XiaomingcloudFileSelect
   },
   props: {
     id: [String, Number],
@@ -155,7 +155,7 @@ export default {
     uploadFile(files, event) {
       for (let index = 0; index < files.length; index++) {
         const file = files[index]
-        this.$wkUploadFile.upload({
+        this.$XiaomingcloudUploadFile.upload({
           request: adminFileUploadAPI,
           file: file,
           params: {
@@ -184,9 +184,9 @@ export default {
     handleFile(type, item) {
       if (type === 'preview') {
         if (canPreviewFile(item.row.name)) {
-          wkPreviewFile(item.row.url, item.row.name)
+          XiaomingcloudPreviewFile(item.row.url, item.row.name)
         } else {
-          this.$wkPreviewFile.preview({
+          this.$XiaomingcloudPreviewFile.preview({
             index: item.$index,
             data: this.list
           })

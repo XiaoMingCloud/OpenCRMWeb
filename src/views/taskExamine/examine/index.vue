@@ -290,7 +290,7 @@ export default {
             return iconItem
           })
           this.selectList.unshift({
-            icon: 'wk wk-approve',
+            icon: 'xiaomingcloud open-approve',
             color: '#9376FF',
             command: '',
             label: '全部审批'

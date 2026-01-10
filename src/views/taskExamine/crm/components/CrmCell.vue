@@ -32,7 +32,7 @@
 
         <flexbox class="examine-content">
           <i
-            :class="['wk', 'examine-content__hd', `wk-${iconObj.icon}`]"
+            :class="['Xiaomingcloud', 'examine-content__hd', `Xiaomingcloud-${iconObj.icon}`]"
             :style="{ backgroundColor: iconObj.color}" />
           <div class="examine-content__bd">
             <div>
@@ -57,7 +57,7 @@
               align="stretch"
               class="relate-cell">
               <div class="relate-cell__hd">
-                <i class="wk wk-contacts" />
+                <i class="xiaomingcloud open-contacts" />
                 <span>{{ `相关${relateData.typeName}` }}：</span>
               </div>
               <div class="relate-cell__bd">
@@ -76,13 +76,13 @@
       <el-button
         v-if="canCheck"
         class="xr-btn--red handle-button"
-        icon="wk wk-close"
+        icon="xiaomingcloud open-close"
         type="primary"
         @click="handleClick('reject')">拒绝</el-button>
       <el-button
         v-if="canCheck"
         class="xr-btn--green handle-button"
-        icon="wk wk-success"
+        icon="xiaomingcloud open-success"
         type="primary"
         @click.native="handleClick('pass')">通过</el-button>
       <el-dropdown
@@ -97,7 +97,7 @@
           <el-dropdown-item
             v-for="(item, index) in moreTypes"
             :key="index"
-            :icon="item.icon | wkIconPre"
+            :icon="item.icon | XiaomingcloudIconPre"
             :command="item.type">{{ item.name }}</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>

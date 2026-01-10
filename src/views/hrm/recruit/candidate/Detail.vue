@@ -15,7 +15,7 @@
       align="stretch"
       style="padding: 0 15px;"
       class="side-detail-main">
-      <wk-detail-header
+      <Xiaomingcloud-detail-header
         :show-edit="manageAuth"
         @edit="editClick"
         @command-select="commandSelect"
@@ -36,8 +36,8 @@
               size="mini">
               <i
                 :class="{
-                  1: 'wk wk-man',
-                  2: 'wk wk-woman',
+                  1: 'xiaomingcloud open-man',
+                  2: 'xiaomingcloud open-woman',
               }[detailData.sex]" />
             </el-tag>
             <el-tooltip
@@ -49,7 +49,7 @@
                 class="xr-tag"
                 color="#ECEEF2"
                 size="mini">
-                <i class="wk wk-icon-cap-outline" />{{ fieldFormatter(detailData, 'education') || '--' }}
+                <i class="xiaomingcloud open-icon-cap-outline" />{{ fieldFormatter(detailData, 'education') || '--' }}
               </el-tag>
             </el-tooltip>
 
@@ -62,7 +62,7 @@
                 class="xr-tag"
                 color="#ECEEF2"
                 size="mini">
-                <i class="wk wk-icon-tool-cabinet" />{{ detailData.workTime|| '--' }}
+                <i class="xiaomingcloud open-icon-tool-cabinet" />{{ detailData.workTime|| '--' }}
               </el-tag>
             </el-tooltip>
 
@@ -75,7 +75,7 @@
                 class="xr-tag"
                 color="#ECEEF2"
                 size="mini">
-                <i class="wk wk-icon-mobile" />{{ detailData.mobile || '--' }}
+                <i class="xiaomingcloud open-icon-mobile" />{{ detailData.mobile || '--' }}
               </el-tag>
             </el-tooltip>
 
@@ -90,12 +90,12 @@
                 size="mini">
                 <i
                   style="font-size: 14px;"
-                  class="wk wk-icon-email-outline" />{{ detailData.email|| '--' }}
+                  class="xiaomingcloud open-icon-email-outline" />{{ detailData.email|| '--' }}
               </el-tag>
             </el-tooltip>
           </div>
         </div>
-      </wk-detail-header>
+      </Xiaomingcloud-detail-header>
       <el-tabs
         v-model="tabCurrentName"
         style="flex: 1"
@@ -104,7 +104,7 @@
           label="详细资料"
           name="baseInfo"
           lazy>
-          <wk-base-detail
+          <Xiaomingcloud-base-detail
             :list="baseList"
           />
         </el-tab-pane>
@@ -142,8 +142,8 @@ import {
 } from '@/api/hrm/recruit/candidate'
 
 import SlideView from '@/components/SlideView'
-import WkDetailHeader from '@/components/WkDetailHeader'
-import WkBaseDetail from '@/components/WkBaseDetail'
+import XiaomingcloudDetailHeader from '@/components/XiaomingcloudDetailHeader'
+import XiaomingcloudBaseDetail from '@/components/XiaomingcloudBaseDetail'
 import CandidateHandle from './components/CandidateHandle'
 import CandidateFile from './components/CandidateFile'
 import CandidateCreateView from './Create'
@@ -156,8 +156,8 @@ export default {
   name: 'CandidateDetail',
   components: {
     SlideView,
-    WkDetailHeader,
-    WkBaseDetail,
+    XiaomingcloudDetailHeader,
+    XiaomingcloudBaseDetail,
     CandidateHandle,
     CandidateFile,
     CandidateCreateView
@@ -192,7 +192,7 @@ export default {
       detailData: null,
       tabCurrentName: 'baseInfo',
       dropdownItems: [{
-        icon: 'wk wk-edit',
+        icon: 'xiaomingcloud open-edit',
         label: '编辑',
         command: 'edit'
       }],

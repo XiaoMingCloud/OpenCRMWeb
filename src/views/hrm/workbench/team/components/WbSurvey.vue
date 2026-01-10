@@ -1,7 +1,7 @@
 
 <template>
   <wb-section
-    icon="wk wk-s-seas"
+    icon="xiaomingcloud open-s-seas"
     class="wb-survey"
     label="团队概况"
   >

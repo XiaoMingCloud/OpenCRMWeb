@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <xr-header
-      icon-class="wk wk-s-seas"
+      icon-class="xiaomingcloud open-s-seas"
       icon-color="#487DFF"
       label="客户公海规则设置" />
     <div class="main-body">

@@ -26,7 +26,7 @@
 <!--          {{ userData.mobile }}-->
 <!--        </p>-->
 <!--        <p>-->
-<!--          <i class="wk wk-icon-email-outline"/>-->
+<!--          <i class="xiaomingcloud open-icon-email-outline"/>-->
 <!--          {{ userData.email }}-->
 <!--        </p>-->
 <!--      </div>-->
@@ -170,13 +170,13 @@
 <!--      >-->
 <!--        <div class="form-item">-->
 <!--          <el-form-item prop="username">-->
-<!--            <i class="wk wk-mobile"/>账号-->
+<!--            <i class="xiaomingcloud open-mobile"/>账号-->
 <!--            <el-input v-model="loginForm.username" placeholder="请输入您的OpenCRM账号"/>-->
 <!--          </el-form-item>-->
 <!--        </div>-->
 <!--        <div class="form-item password">-->
 <!--          <el-form-item prop="password">-->
-<!--            <i class="wk wk-lock"/>密码-->
+<!--            <i class="xiaomingcloud open-lock"/>密码-->
 <!--            <el-input v-model="loginForm.password" type="password" placeholder="请输入您的OpenCRM账号的密码"/>-->
 <!--          </el-form-item>-->
 <!--        </div>-->
@@ -194,7 +194,7 @@
 <!--  crmBackupDatabaseAPI,-->
 <!--  crmUpdateAPI,-->
 <!--  updateProgressAPI,-->
-<!--  loginWKAPI-->
+<!--  loginXiaomingcloudAPI-->
 <!--} from '@/api/admin/update'-->
 
 <!--import Reminder from '@/components/Reminder'-->
@@ -292,7 +292,7 @@
 <!--            username: this.loginForm.username,-->
 <!--            password: this.loginForm.password-->
 <!--          }-->
-<!--          loginWKAPI(param).then(res => {-->
+<!--          loginXiaomingcloudAPI(param).then(res => {-->
 <!--            const { data } = res-->
 <!--            if (res.code === 0) {-->
 <!--              this.userData = data-->

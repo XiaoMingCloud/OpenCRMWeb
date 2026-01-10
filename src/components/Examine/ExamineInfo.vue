@@ -10,7 +10,7 @@
       <div class="approval-flow__hd--left">
         <span
           class="flow-title">
-          <i class="wk wk-approve" />审批流信息
+          <i class="xiaomingcloud open-approve" />审批流信息
         </span>
 
         <el-popover
@@ -34,17 +34,17 @@
         <el-button
           v-if="examineInfo.isCheck == 1"
           class="xr-btn--green"
-          icon="wk wk-success"
+          icon="xiaomingcloud open-success"
           @click="examineHandle(1)">通过</el-button>
         <el-button
           v-if="examineInfo.isCheck == 1"
           class="xr-btn--red"
-          icon="wk wk-close"
+          icon="xiaomingcloud open-close"
           @click="examineHandle(2)">拒绝</el-button>
         <el-button
           v-if="examineInfo.isRecheck == 1"
           class="xr-btn--primary"
-          icon="wk wk-reset"
+          icon="xiaomingcloud open-reset"
           @click="examineHandle(4)">撤回</el-button>
       </div>
     </flexbox>

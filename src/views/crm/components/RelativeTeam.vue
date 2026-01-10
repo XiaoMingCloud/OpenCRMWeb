@@ -58,7 +58,7 @@
             style="margin-left: 3px;"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
           </el-tooltip>
 
         </template>
@@ -90,14 +90,14 @@
               content="支持查看详细资料、添加和查看活动中所有跟进记录"
               effect="dark"
               placement="top">
-              <i class="wk wk-help wk-help-tips"/>
+              <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
             </el-tooltip></el-radio>
             <el-radio :label="2">读写<el-tooltip
               style="margin-left: 3px;"
               content="支持编辑和查看详细资料、可以添加和查看活动中所有跟进记录"
               effect="dark"
               placement="top">
-              <i class="wk wk-help wk-help-tips"/>
+              <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
             </el-tooltip></el-radio>
           </el-radio-group>
         </flexbox>

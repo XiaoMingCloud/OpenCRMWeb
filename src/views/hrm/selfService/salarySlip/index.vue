@@ -3,12 +3,12 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-icon-slip"
+      icon-class="xiaomingcloud open-icon-slip"
       icon-color="#2362FB"
       label="我的工资条" >
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -48,7 +48,7 @@
                 :content="childField.remark"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
           </el-table-column>
@@ -64,7 +64,7 @@ import {
 } from '@/api/hrm/selfService/salarySlip'
 
 import XrHeader from '@/components/XrHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 
 import { mapGetters } from 'vuex'
 
@@ -74,7 +74,7 @@ export default {
 
   components: {
     XrHeader,
-    WkPopoverFilter
+    XiaomingcloudPopoverFilter
   },
 
   props: {},

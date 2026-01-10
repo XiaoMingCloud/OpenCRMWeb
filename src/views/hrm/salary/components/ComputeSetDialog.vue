@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -22,10 +22,10 @@
           class="row-btn"
           type="text"
           @click="downloadTemp('attendance')">下载考勤导入模板</el-button></div>
-        <wk-file-select
+        <Xiaomingcloud-file-select
           @change="fileSelect(arguments[0],arguments[1], 'attendance')">
           <el-button class="row-btn" type="text">{{ getAttendanceBtnName() }}</el-button>
-        </wk-file-select>
+        </Xiaomingcloud-file-select>
       </flexbox>
       <div class="row">
         <flexbox>
@@ -37,20 +37,20 @@
             class="row-btn"
             type="text"
             @click="downloadTemp('additional')">下载导入模板</el-button></div>
-          <wk-file-select
+          <Xiaomingcloud-file-select
             @change="fileSelect(arguments[0],arguments[1], 'additional')">
             <el-button class="row-btn" type="text">{{ getAdditionalBtnName() }}</el-button>
-          </wk-file-select>
+          </Xiaomingcloud-file-select>
         </flexbox>
         <flexbox class="row-children">
           <div class="row-label">截止上月个税累计<el-button
             class="row-btn"
             type="text"
             @click="downloadTemp('lastMonth')">下载导入模板</el-button></div>
-          <wk-file-select
+          <Xiaomingcloud-file-select
             @change="fileSelect(arguments[0],arguments[1], 'lastMonth')">
             <el-button class="row-btn" type="text">{{ getLastMonthBtnName() }}</el-button>
-          </wk-file-select>
+          </Xiaomingcloud-file-select>
         </flexbox>
       </div>
     </div>
@@ -76,7 +76,7 @@ import {
 } from '@/api/hrm/salary'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
-import WkFileSelect from '@/components/NewCom/WkFile/Select'
+import XiaomingcloudFileSelect from '@/components/NewCom/XiaomingcloudFile/Select'
 
 import { downloadExcelWithResData, verifyFileTypeWithFileName } from '@/utils'
 
@@ -84,7 +84,7 @@ export default {
   // 核算工资
   name: 'ComputeSetDialog',
   components: {
-    WkFileSelect
+    XiaomingcloudFileSelect
   },
   mixins: [ElDialogLoadingMixin],
   props: {
@@ -257,7 +257,7 @@ export default {
       font-size: 13px;
     }
 
-    .wk-file-select {
+    .Xiaomingcloud-file-select {
       max-width: 120px;
     }
   }

@@ -8,7 +8,7 @@
           width="170"
           @select="radioMenuSelect">
           <flexbox slot="reference" class="user-box">
-            <i v-if="avatarData.showIcon" class="wk wk-multi-user user-icon" />
+            <i v-if="avatarData.showIcon" class="xiaomingcloud open-multi-user user-icon" />
             <xr-avatar
               v-else
               :name="avatarData.realname"
@@ -25,7 +25,7 @@
           @change="timeTypeChange"/>
         <el-button
           class="sort-btn"
-          icon="wk wk-manage"
+          icon="xiaomingcloud open-manage"
           @click="setSortShow = true" />
       </flexbox>
     </div>
@@ -34,7 +34,7 @@
         v-loading="loading"
         class="brief-box">
         <div class="brief-title">
-          <span class="icon wk wk-briefing" />
+          <span class="icon xiaomingcloud open-briefing" />
           <span class="text">销售简报</span>
         </div>
         <div class="brief">
@@ -48,7 +48,7 @@
               <div
                 :style="{backgroundColor: item.color}"
                 class="icon-box">
-                <span :class="item.icon" class="icon wk" />
+                <span :class="item.icon" class="icon Xiaomingcloud" />
               </div>
               <div class="info">
                 <div class="title">
@@ -186,14 +186,14 @@ export default {
   data() {
     return {
       briefList: [
-        { label: '新增客户(人)', title: '新增客户', type: 'customer', labelValue: 2, field: 'customerCount', icon: 'wk-customer', num: '', rate: '', status: '', color: '#2362FB' },
-        { label: '新增联系人(人)', title: '新增联系人', type: 'contacts', labelValue: 3, field: 'contactsCount', icon: 'wk-contacts', num: '', rate: '', status: '', color: '#27BA4A' },
-        { label: '新增商机(个)', title: '新增商机', type: 'business', labelValue: 5, field: 'businessCount', icon: 'wk-business', num: '', rate: '', status: '', color: '#FB9323' },
-        { label: '新增合同(个)', title: '新增合同', type: 'contract', labelValue: 6, field: 'contractCount', icon: 'wk-contract', num: '', rate: '', status: '', color: '#4A5BFD' },
-        { label: '合同金额(元)', title: '合同金额', type: 'contract', labelValue: 6, field: 'contractMoney', icon: 'wk-receivables', num: '', rate: '', status: '', color: '#19B5F6' },
-        { label: '商机金额(元)', title: '商机金额', type: 'business', labelValue: 5, field: 'businessMoney', icon: 'wk-icon-opportunities', num: '', rate: '', status: '', color: '#AD5CFF' },
-        { label: '回款金额(元)', title: '回款金额', type: 'receivables', labelValue: 7, field: 'receivablesMoney', icon: 'wk-receivables', num: '', rate: '', status: '', color: '#FFB940' },
-        { label: '新增跟进记录(条)', title: '新增跟进记录', type: 'record', labelValue: '', field: 'recordCount', icon: 'wk-record', num: '', rate: '', status: '', color: '#4A5BFD' }
+        { label: '新增客户(人)', title: '新增客户', type: 'customer', labelValue: 2, field: 'customerCount', icon: 'Xiaomingcloud-customer', num: '', rate: '', status: '', color: '#2362FB' },
+        { label: '新增联系人(人)', title: '新增联系人', type: 'contacts', labelValue: 3, field: 'contactsCount', icon: 'Xiaomingcloud-contacts', num: '', rate: '', status: '', color: '#27BA4A' },
+        { label: '新增商机(个)', title: '新增商机', type: 'business', labelValue: 5, field: 'businessCount', icon: 'Xiaomingcloud-business', num: '', rate: '', status: '', color: '#FB9323' },
+        { label: '新增合同(个)', title: '新增合同', type: 'contract', labelValue: 6, field: 'contractCount', icon: 'Xiaomingcloud-contract', num: '', rate: '', status: '', color: '#4A5BFD' },
+        { label: '合同金额(元)', title: '合同金额', type: 'contract', labelValue: 6, field: 'contractMoney', icon: 'Xiaomingcloud-receivables', num: '', rate: '', status: '', color: '#19B5F6' },
+        { label: '商机金额(元)', title: '商机金额', type: 'business', labelValue: 5, field: 'businessMoney', icon: 'Xiaomingcloud-icon-opportunities', num: '', rate: '', status: '', color: '#AD5CFF' },
+        { label: '回款金额(元)', title: '回款金额', type: 'receivables', labelValue: 7, field: 'receivablesMoney', icon: 'Xiaomingcloud-receivables', num: '', rate: '', status: '', color: '#FFB940' },
+        { label: '新增跟进记录(条)', title: '新增跟进记录', type: 'record', labelValue: '', field: 'recordCount', icon: 'Xiaomingcloud-record', num: '', rate: '', status: '', color: '#4A5BFD' }
       ],
       rangeOptions: [
         { label: '仅本人', command: 1 },

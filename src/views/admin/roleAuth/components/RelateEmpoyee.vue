@@ -14,7 +14,7 @@
         <div
           class="handle-item-name"
           style="margin-top: 8px;">选择员工：</div>
-        <wk-user-select
+        <Xiaomingcloud-user-select
           :radio="false"
           v-model="selectUsers"
           class="handle-item-content"/>
@@ -33,13 +33,13 @@
 
 <script>
 import { adminRoleRelatedUserAPI } from '@/api/admin/role'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 
 export default {
   /** 关联员工*/
   name: 'RelateEmpoyee',
   components: {
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   mixins: [],
   props: {

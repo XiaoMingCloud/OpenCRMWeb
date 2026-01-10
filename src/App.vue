@@ -21,7 +21,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-      this.$wkPreviewFile.closeViewer() // 切换页面隐藏图片预览
+      this.$XiaomingcloudPreviewFile.closeViewer() // 切换页面隐藏图片预览
     }
   },
   mounted() {

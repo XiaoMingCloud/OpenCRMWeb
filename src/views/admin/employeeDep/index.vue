@@ -4,7 +4,7 @@
       :content.sync="searchInput"
       placeholder="请输入员工名称/手机号"
       show-search
-      icon-class="wk wk-s-seas"
+      icon-class="xiaomingcloud open-s-seas"
       icon-color="#26D4DA"
       label="员工与部门管理"
       @search="headerSearch">
@@ -63,7 +63,7 @@
                   class="node-data">
                   <i
                     v-if="node.level == 1"
-                    class="wk wk-department" />
+                    class="xiaomingcloud open-department" />
                   <span
                     v-else
                     class="node-data__mark" />
@@ -72,7 +72,7 @@
                   <i
                     v-if="node.childNodes && node.childNodes.length"
                     :class="{ 'is-close': !node.expanded }"
-                    class="wk wk-up-unfold" />
+                    class="xiaomingcloud open-up-unfold" />
                 </flexbox>
               </el-tree>
             </div>
@@ -93,7 +93,7 @@
               :content="currentMenuData.tips"
               effect="dark"
               placement="top">
-              <i class="wk wk-help wk-help-tips"/>
+              <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
             </el-tooltip>
             <reminder
               v-if="currentMenuData && currentMenuData.type && currentMenuData.type == 'all'"
@@ -138,7 +138,7 @@
                 <el-dropdown-item
                   v-for="(item, index) in strucMoreOptions"
                   :key="index"
-                  :icon="item.icon | wkIconPre"
+                  :icon="item.icon | XiaomingcloudIconPre"
                   :command="item.type">{{ item.name }}</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
@@ -151,7 +151,7 @@
           <flexbox class="selection-items-box">
             <el-button
               v-for="(item, index) in selectionInfo"
-              :icon="item.icon | wkIconPre"
+              :icon="item.icon | XiaomingcloudIconPre"
               :key="index"
               type="primary"
               @click.native="selectionBarClick(item.type)">{{ item.name }}</el-button>
@@ -248,7 +248,7 @@
       <flexbox
         class="nav-dialog-div">
         <label>部门负责人：</label>
-        <wk-user-select
+        <Xiaomingcloud-user-select
           v-model="depOwnerUserId"
           radio
         />
@@ -376,7 +376,7 @@
                   @click="getSmsCode">
                   <div class="btn-content">
                     <template v-if="codeTime === codeSecond">
-                      <!--<span class="icon wk wk-shouji" />-->
+                      <!--<span class="icon xiaomingcloud open-shouji" />-->
                       <span>获取验证码</span>
                     </template>
                     <template v-else>
@@ -447,13 +447,13 @@
             </el-select>
           </template>
           <template v-else-if="item.type == 'user'">
-            <wk-user-select
+            <Xiaomingcloud-user-select
               v-model="formInline[item.field]"
               radio
             />
           </template>
           <template v-else-if="item.type == 'structure'">
-            <wk-dep-select
+            <Xiaomingcloud-dep-select
               v-model="formInline[item.field]"
               radio
               @change="depChange"
@@ -555,8 +555,8 @@ import SlideVerify from '@/components/SlideVerify'
 import HrmEmployeeAddDialog from './components/HrmEmployeeAddDialog'
 import EditRoleDialog from './components/EditRoleDialog'
 import EditDepDialog from './components/EditDepDialog'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
 
 import { chinaMobileRegex, objDeepCopy } from '@/utils'
 
@@ -572,14 +572,14 @@ export default {
     HrmEmployeeAddDialog,
     EditRoleDialog,
     EditDepDialog,
-    WkUserSelect,
-    WkDepSelect
+    XiaomingcloudUserSelect,
+    XiaomingcloudDepSelect
   },
   data() {
     return {
       employeeMenu: [
         {
-          icon: 'wk wk-employees',
+          icon: 'xiaomingcloud open-employees',
           label: '所有员工',
           type: 'all',
           field: 'allUserCount',
@@ -587,7 +587,7 @@ export default {
           tips: '未添加部门和角色的员工无法正常登录系统'
         },
         {
-          icon: 'wk wk-new-employee',
+          icon: 'xiaomingcloud open-new-employee',
           label: '新加入的员工',
           type: 'new',
           field: 'addNewlyCount',
@@ -595,7 +595,7 @@ export default {
           tips: '入职7天内的员工'
         },
         {
-          icon: 'wk wk-active-employee',
+          icon: 'xiaomingcloud open-active-employee',
           label: '激活员工',
           type: 'active',
           field: 'activateCount',
@@ -603,7 +603,7 @@ export default {
           tips: '已经登录系统的员工'
         },
         {
-          icon: 'wk wk-inactive-employee',
+          icon: 'xiaomingcloud open-inactive-employee',
           label: '未激活员工',
           type: 'inactive',
           field: 'inactiveCount',
@@ -611,7 +611,7 @@ export default {
           tips: '未登录过系统的员工'
         },
         {
-          icon: 'wk wk-disable-employees',
+          icon: 'xiaomingcloud open-disable-employees',
           label: '停用员工',
           type: 'disable',
           field: 'disableCount',
@@ -822,12 +822,12 @@ export default {
           {
             name: '禁用',
             type: 'lock',
-            icon: 'wk wk-remove'
+            icon: 'xiaomingcloud open-remove'
           },
           {
             name: '激活',
             type: 'unlock',
-            icon: 'wk wk-activation'
+            icon: 'xiaomingcloud open-activation'
           }
         ]
       }
@@ -838,17 +838,17 @@ export default {
             {
               name: '编辑',
               type: 'edit',
-              icon: 'wk wk-edit'
+              icon: 'xiaomingcloud open-edit'
             },
             {
               name: '重置密码',
               type: 'reset',
-              icon: 'wk wk-circle-password'
+              icon: 'xiaomingcloud open-circle-password'
             },
             {
               name: '重置登录账号',
               type: 'resetName',
-              icon: 'wk wk-reset'
+              icon: 'xiaomingcloud open-reset'
             }
           ])
         } else {
@@ -856,7 +856,7 @@ export default {
             {
               name: '重置密码',
               type: 'reset',
-              icon: 'wk wk-circle-password'
+              icon: 'xiaomingcloud open-circle-password'
             }
           ])
         }
@@ -867,13 +867,13 @@ export default {
           temps.push({
             name: '复制角色',
             type: 'copyRole',
-            icon: 'wk wk-icon-double-note'
+            icon: 'xiaomingcloud open-icon-double-note'
           })
         }
         temps.push({
           name: '编辑角色',
           type: 'editRole',
-          icon: 'wk wk-edit'
+          icon: 'xiaomingcloud open-edit'
         })
       }
 
@@ -881,7 +881,7 @@ export default {
         temps.push({
           name: '重置部门',
           type: 'editDep',
-          icon: 'wk wk-employees'
+          icon: 'xiaomingcloud open-employees'
         })
       }
 
@@ -1866,8 +1866,8 @@ export default {
   .el-select {
     display: block;
   }
-  .wk-dep-select,
-  .wk-user-select {
+  .Xiaomingcloud-dep-select,
+  .Xiaomingcloud-user-select {
     width: 100%;
   }
 }
@@ -1901,7 +1901,7 @@ export default {
 .nav-dialog-div {
   .el-input,
   .el-select,
-  .wk-user-select {
+  .Xiaomingcloud-user-select {
     flex: 1;
   }
 }
@@ -1925,13 +1925,13 @@ export default {
     position: relative;
     border-radius: $xr-border-radius-base;
 
-    .wk {
+    .Xiaomingcloud {
       font-size: 14px;
       color: #8a94a6;
       flex-shrink: 0;
     }
 
-    .wk-department {
+    .Xiaomingcloud-department {
       margin-right: 8px;
     }
 
@@ -1952,12 +1952,12 @@ export default {
       margin-right: 8px;
     }
 
-    .wk-up-unfold {
+    .Xiaomingcloud-up-unfold {
       margin-left: 8px;
       transition: transform 0.3s;
     }
 
-    .wk-up-unfold.is-close {
+    .Xiaomingcloud-up-unfold.is-close {
       transform: rotateZ(180deg);
     }
     // .node-label-set {

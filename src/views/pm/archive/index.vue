@@ -1,7 +1,7 @@
 <template>
   <div class="archive-project">
     <xr-header
-      icon-class="wk wk-archive"
+      icon-class="xiaomingcloud open-archive"
       icon-color="#19b5f6"
       label="归档项目统计" />
     <div

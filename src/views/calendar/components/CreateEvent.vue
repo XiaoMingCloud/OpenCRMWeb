@@ -56,7 +56,7 @@
               placeholder="选择日期"/>
           </el-form-item>
           <el-form-item label="参与人员" prop="ownerUserIds">
-            <wk-user-select
+            <Xiaomingcloud-user-select
               v-model="form.ownerUserIds"
               :radio="false"
               style="display: inline-block;width: 430px;"/>
@@ -135,7 +135,7 @@
 
 </template>
 <script>
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import RelatedBusiness from '@/components/RelatedBusiness'
 import Repeat from './Repeat'
 import { mapGetters } from 'vuex'
@@ -146,7 +146,7 @@ import {
 } from '@/api/calendar'
 export default {
   components: {
-    WkUserSelect,
+    XiaomingcloudUserSelect,
     RelatedBusiness,
     Repeat
   },

@@ -12,7 +12,7 @@
 
     <section class="section">
       <section-head
-        icon-class="wk wk-label"
+        icon-class="xiaomingcloud open-label"
         label="标签看板" />
 
       <draggable
@@ -26,7 +26,7 @@
           :label="item.name"
           :icon-color="item.color"
           :collect="false"
-          icon-class="wk wk-label"
+          icon-class="xiaomingcloud open-label"
           @click.native="enterDetail(item)" />
       </draggable>
     </section>
@@ -140,8 +140,8 @@ export default {
       const contentDom = document.querySelector('.el-drawer__body')
       if (!contentDom ||
          contentDom.contains(e.target) ||
-         (e.target.className && e.target.className.indexOf('wk-label') != -1) ||
-         (e.target.innerHTML && e.target.innerHTML.indexOf('wk-label') != -1)) return
+         (e.target.className && e.target.className.indexOf('Xiaomingcloud-label') != -1) ||
+         (e.target.innerHTML && e.target.innerHTML.indexOf('Xiaomingcloud-label') != -1)) return
       this.handleClose()
     }
   }

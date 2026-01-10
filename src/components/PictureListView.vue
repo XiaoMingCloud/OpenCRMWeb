@@ -28,7 +28,7 @@ export default {
   methods: {
     // 放大图片
     imgZoom(val, k) {
-      this.$wkPreviewFile.preview({
+      this.$XiaomingcloudPreviewFile.preview({
         index: k,
         data: val.map(function(item, index, array) {
           return {

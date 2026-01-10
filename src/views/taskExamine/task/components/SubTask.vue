@@ -36,7 +36,7 @@
             @click="subtasksDateFun"/>
         </div>
         <!-- 选择负责人 -->
-        <wk-user-select
+        <Xiaomingcloud-user-select
           :value="mainUser ? mainUser.userId : ''"
           :request="ownerListRequest"
           :params="ownerListParams"
@@ -62,7 +62,7 @@
               v-else
               class="liujiaming liujiaming-user" />
           </div>
-        </wk-user-select>
+        </Xiaomingcloud-user-select>
 
       </flexbox>
     </div>
@@ -71,14 +71,14 @@
 
 <script>
 import { workSubTaskAddAPI, workSubTaskUpdateAPI } from '@/api/pm/projectTask'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { workWorkOwnerListAPI } from '@/api/pm/project'
 
 import { mapGetters } from 'vuex'
 
 export default {
   components: {
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   props: {
     taskData: {

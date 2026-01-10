@@ -19,7 +19,7 @@ import {
 } from '@/api/crm/message'
 
 import CheckStatusMixin from '@/mixins/CheckStatusMixin'
-import { getFormFieldShowName } from '@/components/NewCom/WkForm/utils'
+import { getFormFieldShowName } from '@/components/NewCom/XiaomingcloudForm/utils'
 import { mapGetters } from 'vuex'
 
 export default {

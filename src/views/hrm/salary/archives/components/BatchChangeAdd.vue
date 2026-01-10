@@ -14,7 +14,7 @@
         <el-form-item prop="range">
           <template slot="label">调薪员工<span style="color:#999;">（所选对象调薪细则、原因、生效日期将相同）</span>
           </template>
-          <wk-user-dep-select
+          <Xiaomingcloud-user-dep-select
             :user-value.sync="ruleForm.range.employeeIds"
             :dep-value.sync="ruleForm.range.deptIds"
             :props="{dataType: 'hrm'}"
@@ -30,7 +30,7 @@
                 3、调薪计算示例：<br >
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按比例调薪：基本工资=2000，调薪比例=10%，调薪后=2000+2000X10%=2200<br >
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;按金额调薪：基本工资=2000，调薪金额=100，调薪后=2000+100=2100</div>
-              <i class="wk wk-help wk-help-tips" style="margin-left: 3px;"/>
+              <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" style="margin-left: 3px;"/>
             </el-tooltip>
           </template>
           <el-radio-group v-model="ruleForm.type">
@@ -113,7 +113,7 @@ import {
 
 
 import XrCreate from '@/components/XrCreate'
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
 
 import archivesModel from '../model/archives'
 
@@ -123,7 +123,7 @@ export default {
 
   components: {
     XrCreate,
-    WkUserDepSelect
+    XiaomingcloudUserDepSelect
   },
 
   mixins: [],
@@ -374,7 +374,7 @@ export default {
 }
 
 .item-width,
-.wk-user-dep-select,
+.Xiaomingcloud-user-dep-select,
 .el-textarea {
   width: calc(50% - 40px);
 }

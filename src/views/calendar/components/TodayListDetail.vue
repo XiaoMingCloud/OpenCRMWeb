@@ -53,7 +53,7 @@
               <template v-else-if="item.prop == 'status' && crmType === 'customer'">
                 <i
                   v-if="scope.row.status == 2"
-                  class="wk wk-circle-password customer-lock"/>
+                  class="xiaomingcloud open-circle-password customer-lock"/>
               </template>
               <template v-else-if="item.prop == 'checkStatus'">
                 <span :style="getStatusStyle(scope.row.checkStatus)" class="status-mark"/>
@@ -86,7 +86,7 @@
           <flexbox class="common-header">
             <flexbox class="header-left">
               <span class="time-circle">
-                <span class="wk wk-l-time"/>
+                <span class="xiaomingcloud open-l-time"/>
               </span>
 
               <div class="time-text">
@@ -226,7 +226,7 @@ export default {
   },
   filters: {
     dealIcon(statu) {
-      return statu == 1 ? 'wk wk-success deal-suc' : 'wk wk-close deal-un'
+      return statu == 1 ? 'xiaomingcloud open-success deal-suc' : 'xiaomingcloud open-close deal-un'
     },
 
     dealName(statu) {
@@ -829,7 +829,7 @@ export default {
        background-color: #F7AD3D;
        padding-left: 9px;
        line-height: 30px;
-     .wk{
+     .Xiaomingcloud{
        color: #fff;
        }
     }

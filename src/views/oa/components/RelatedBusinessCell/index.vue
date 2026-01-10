@@ -1,7 +1,7 @@
 <template>
   <flexbox class="cell">
     <div class="cell-head">
-      <i :class="type | wkIconPre" />
+      <i :class="type | XiaomingcloudIconPre" />
       <span>
         {{ `相关${typeName}-` }}
       </span>

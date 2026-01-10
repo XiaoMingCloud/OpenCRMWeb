@@ -3,7 +3,7 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-archive"
+      icon-class="xiaomingcloud open-archive"
       icon-color="#2362FB"
       label="我的档案" />
     <el-tabs

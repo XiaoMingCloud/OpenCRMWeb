@@ -31,11 +31,11 @@
           @handle="detailHeadHandle"
           @close="hideView">
           <template slot="name">
-            <i v-if="detailData.status == 2" class="wk wk-circle-password" />
+            <i v-if="detailData.status == 2" class="xiaomingcloud open-circle-password" />
             <el-tooltip v-if="!isSeasDetail" :content="detailData.star == 0 ? '添加关注' : '取消关注'" effect="dark" placement="top">
               <i
                 :class="{active: detailData.star != 0}"
-                class="wk wk-focus-on focus-icon"
+                class="xiaomingcloud open-focus-on focus-icon"
                 @click="toggleStar()" />
             </el-tooltip>
           </template>
@@ -391,7 +391,7 @@ export default {
           } else {
             dealItem.showIcon = true
             if (this.detailData.dealStatus == 1) {
-              dealItem.icon = 'wk wk-success deal-suc'
+              dealItem.icon = 'xiaomingcloud open-success deal-suc'
               dealItem.style = {
                 fontSize: '14px',
                 color: '#20b559',
@@ -399,7 +399,7 @@ export default {
               }
               dealItem.value = '已成交'
             } else {
-              dealItem.icon = 'wk wk-close deal-un'
+              dealItem.icon = 'xiaomingcloud open-close deal-un'
               dealItem.style = {
                 fontSize: '14px',
                 color: '#f95a5a',
@@ -469,7 +469,7 @@ export default {
   opacity: 0;
 }
 
-.wk-circle-password  {
+.Xiaomingcloud-circle-password  {
   background-color: #f56c6c;
   color: white;
   margin-left: 5px;

@@ -82,7 +82,7 @@
             content="配置表单布局，可以单行多字段排布"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips" style="margin-left: 3px;"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" style="margin-left: 3px;"/>
           </el-tooltip>
         </div>
         <el-radio-group

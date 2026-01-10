@@ -10,7 +10,7 @@
         {{ item.name }}
       </div>
       <div class="detail-cell__value">
-        <wk-field-view
+        <Xiaomingcloud-field-view
           :props="item"
           :form-type="item.formType"
           :value="item.value"
@@ -22,23 +22,23 @@
             <span v-else-if="data.formType === 'receivables_plan'">{{ detail ? detail.planNum : '' }}</span>
             <span v-else>{{ getCommonShowValue(data) }}</span>
           </template>
-        </wk-field-view>
+        </Xiaomingcloud-field-view>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import WkFieldView from '@/components/NewCom/WkForm/WkFieldView'
+import XiaomingcloudFieldView from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFieldView'
 
 import { isArray, isObject } from '@/utils/types'
-import { getFormFieldShowName } from '@/components/NewCom/WkForm/utils'
+import { getFormFieldShowName } from '@/components/NewCom/XiaomingcloudForm/utils'
 
 export default {
   //  重要信息 中的列表展示
   name: 'ImportInfo',
   components: {
-    WkFieldView
+    XiaomingcloudFieldView
   },
   props: {
     list: Array,

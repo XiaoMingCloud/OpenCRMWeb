@@ -2,7 +2,7 @@ import { filedValidatesAPI } from '@/api/crm/common'
 
 import { isArray, isEmpty, isObject } from '@/utils/types'
 import { objDeepCopy } from '@/utils'
-import GenerateRulesMixin from '@/components/NewCom/WkForm/GenerateRules'
+import GenerateRulesMixin from '@/components/NewCom/XiaomingcloudForm/GenerateRules'
 
 export default {
   mixins: [GenerateRulesMixin],

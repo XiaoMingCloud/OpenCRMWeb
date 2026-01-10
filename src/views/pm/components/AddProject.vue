@@ -53,8 +53,8 @@
               @click.native="corverSelect(item)">
               <img v-src="item.url" class="cover-img">
               <span class="cover-mark">
-                <i class="wk wk-success cover-select" />
-                <i v-if="item.custom" class="wk wk-close cover-delete" @click.stop="corverDelete" />
+                <i class="xiaomingcloud open-success cover-select" />
+                <i v-if="item.custom" class="xiaomingcloud open-close cover-delete" @click.stop="corverDelete" />
               </span>
             </flexbox-item>
             <flexbox-item

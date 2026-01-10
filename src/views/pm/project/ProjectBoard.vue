@@ -11,7 +11,7 @@
       placeholder="请输入内容"/>
     <section class="section">
       <section-head
-        icon-class="wk wk-focus-on"
+        icon-class="xiaomingcloud open-focus-on"
         label="加星标的看板" />
 
       <project-cell
@@ -21,14 +21,14 @@
         :label="item.name"
         :icon-color="item.color"
         is-collect
-        icon-class="wk wk-project"
+        icon-class="xiaomingcloud open-project"
         @click.native="enterDetail(item)"
         @collect="collectClick(item)" />
     </section>
 
     <section class="section">
       <section-head
-        icon-class="wk wk-project"
+        icon-class="xiaomingcloud open-project"
         label="项目看板" />
 
       <draggable
@@ -42,7 +42,7 @@
           :label="item.name"
           :icon-color="item.color"
           :is-collect="item.collect == 1"
-          icon-class="wk wk-project"
+          icon-class="xiaomingcloud open-project"
           @click.native="enterDetail(item)"
           @collect="collectClick(item)" />
       </draggable>

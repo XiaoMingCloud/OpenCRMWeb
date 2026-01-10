@@ -6,7 +6,7 @@
     @close="close"
     @save="saveClick">
     <create-sections title="基本信息">
-      <wk-form
+      <Xiaomingcloud-form
         ref="baseForm"
         :model="baseForm"
         :rules="baseRules"
@@ -42,7 +42,7 @@
               :value="item.value"/>
           </el-select>
         </template>
-      </wk-form>
+      </Xiaomingcloud-form>
     </create-sections>
   </xr-create>
 </template>
@@ -60,12 +60,12 @@ import {
 } from '@/api/hrm/employeePost'
 
 import XrCreate from '@/components/XrCreate'
-import WkForm from '@/components/NewCom/WkForm'
+import XiaomingcloudForm from '@/components/NewCom/XiaomingcloudForm'
 import CreateSections from '@/components/CreateSections'
 import candidateModel from '../model/candidate'
 
 import { objDeepCopy } from '@/utils'
-import GenerateRulesMixin from '@/components/NewCom/WkForm/GenerateRules'
+import GenerateRulesMixin from '@/components/NewCom/XiaomingcloudForm/GenerateRules'
 
 export default {
   // 岗位创建
@@ -73,7 +73,7 @@ export default {
   components: {
     XrCreate,
     CreateSections,
-    WkForm
+    XiaomingcloudForm
   },
   filters: {},
   mixins: [GenerateRulesMixin],

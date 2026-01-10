@@ -10,7 +10,7 @@
     <div class="handle-box">
       <flexbox class="handle-item">
         <div class="handle-item-name">变更负责人为：</div>
-        <wk-user-select
+        <Xiaomingcloud-user-select
           v-model="ownerUserId"
           radio
           class="handle-item-content"/>
@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { crmCustomerTransferAPI } from '@/api/crm/customer'
 import { crmContactsTransferAPI } from '@/api/crm/contacts'
 import { crmBusinessTransferAPI } from '@/api/crm/business'
@@ -87,7 +87,7 @@ export default {
   /** 客户管理 的 勾选后的 转移 操作*/
   name: 'TransferHandle',
   components: {
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   mixins: [],
   props: {

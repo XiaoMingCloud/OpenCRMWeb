@@ -2,7 +2,7 @@
   <section
     class="c-cont">
     <flexbox class="c-header">
-      <i :class="['wk', `wk-${type}`]" />
+      <i :class="['Xiaomingcloud', `Xiaomingcloud-${type}`]" />
       <div class="c-name">{{ typeName }}</div>
     </flexbox>
     <div class="c-body">
@@ -93,7 +93,7 @@ export default {
     font-size: 13px;
     color: #333;
 
-    .wk {
+    .Xiaomingcloud {
       font-size: 14px;
       color: #333;
       margin-right: 8px;

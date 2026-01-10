@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :title="businessTitle"
     :visible.sync="businessDialogVisible"
     :before-close="businessClose"

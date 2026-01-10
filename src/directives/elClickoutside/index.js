@@ -2,7 +2,7 @@ import Vue from 'vue'
 import { on } from '@/utils/dom'
 
 const nodeList = []
-const ctx = '@@wkClickoutsideContext'
+const ctx = '@@XiaomingcloudClickoutsideContext'
 
 let startClick
 let seed = 0

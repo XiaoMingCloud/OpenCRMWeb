@@ -12,7 +12,7 @@
       <xr-header
         style="padding: 0px 15px 15px 0;"
         ft-top="0"
-        icon-class="wk wk-payment"
+        icon-class="xiaomingcloud open-payment"
         icon-color="#2362FB"
         label="薪资管理" >
         <template slot="label">
@@ -20,13 +20,13 @@
             content="首次计薪，请先录入基础工资数据。以后计薪无需重复录入"
             effect="dark"
             placement="top">
-            <i style="margin-left: 8px;" class="wk wk-help wk-help-tips"/>
+            <i style="margin-left: 8px;" class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
           </el-tooltip>
           <span v-if="startEndTimeValue" class="time-label">（{{ startEndTimeValue }}）</span>
         </template>
         <template slot="ft">
           <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-          <wk-popover-filter
+          <Xiaomingcloud-popover-filter
             :width="popoverFilterWidth"
             :field-from.sync="filterObj"
             :field-list="filterList"
@@ -116,7 +116,7 @@
       </div>
     </template>
 
-    <wk-steps-explain-view
+    <Xiaomingcloud-steps-explain-view
       v-if="stepsExplainShow"
       :title="explainTitle"
       :steps="explainSteps"
@@ -191,8 +191,8 @@ import {
 
 import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
-import WkStepsExplainView from '../components/WkStepsExplainView'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
+import XiaomingcloudStepsExplainView from '../components/XiaomingcloudStepsExplainView'
 import MonthSetDialog from './components/MonthSetDialog'
 import OpenSetDialog from './components/OpenSetDialog'
 import ComputeSetDialog from './components/ComputeSetDialog'
@@ -206,15 +206,15 @@ import SalarySlipCreate from './slip/Create'
 import { mapGetters } from 'vuex'
 import { isEmpty } from '@/utils/types'
 import moment from 'moment'
-import WkApprovalFlowApplyMixin from '@/components/Examine/mixins/WkApprovalFlowApply'
+import XiaomingcloudApprovalFlowApplyMixin from '@/components/Examine/mixins/XiaomingcloudApprovalFlowApply'
 
 export default {
   name: 'SalaryIndex',
   components: {
     XrHeader,
     XrTableHeader,
-    WkPopoverFilter,
-    WkStepsExplainView,
+    XiaomingcloudPopoverFilter,
+    XiaomingcloudStepsExplainView,
     MonthSetDialog,
     OpenSetDialog,
     ComputeSetDialog,
@@ -225,7 +225,7 @@ export default {
     Reminder,
     SalarySlipCreate
   },
-  mixins: [WkApprovalFlowApplyMixin],
+  mixins: [XiaomingcloudApprovalFlowApplyMixin],
   data() {
     return {
       loading: false, // 加载动画
@@ -479,12 +479,12 @@ export default {
 
     getExamineData(lastData) {
       // 审核信息
-      this.initWkFlowData({
+      this.initXiaomingcloudFlowData({
         params: { label: 4 }, // 4 薪资
         fieldForm: lastData
       }, (res) => {
         this.examineData = res.resData
-        // this.wkFlowList = res.list
+        // this.XiaomingcloudFlowList = res.list
         // this.flowRemarks = res.resData ? res.resData.remarks : ''
       })
     },
@@ -668,16 +668,16 @@ export default {
     examineSubmitClick(list) {
       this.loading = true
 
-      const wkFlowResult = this.validateWkFlowData(list)
+      const XiaomingcloudFlowResult = this.validateXiaomingcloudFlowData(list)
 
-      if (wkFlowResult.pass) {
+      if (XiaomingcloudFlowResult.pass) {
         const params = {
           srecordId: this.lastData.srecordId,
           checkStatus: this.lastData.checkStatus,
           examineRecordId: this.lastData.examineRecordId
         }
-        if (wkFlowResult.data) {
-          params.examineFlowData = wkFlowResult.data
+        if (XiaomingcloudFlowResult.data) {
+          params.examineFlowData = XiaomingcloudFlowResult.data
         }
         hrmSalaryMonthRecordSubmitExamineAPI(params).then(res => {
           this.lastData = null

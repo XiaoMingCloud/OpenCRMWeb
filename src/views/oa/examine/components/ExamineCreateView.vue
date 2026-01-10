@@ -11,9 +11,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-items
+        <Xiaomingcloud-form-items
           v-for="(children, index) in fieldList"
           :key="index"
           :field-from="fieldForm"
@@ -32,7 +32,7 @@
               @value-change="otherChange($event, data)"
             />
           </template>
-        </wk-form-items>
+        </Xiaomingcloud-form-items>
       </el-form>
     </create-sections>
 
@@ -86,7 +86,7 @@
       @value-change="relativeValueChange"/>
     <!-- 审核信息 -->
     <create-sections
-      v-if="wkFlowList"
+      v-if="XiaomingcloudFlowList"
       title="审核信息">
       <template slot="header">
         <el-tooltip
@@ -94,11 +94,11 @@
           :content="flowRemarks"
           effect="dark"
           placement="top">
-          <i class="wk wk-help wk-help-tips" style="margin-left: 8px;"/>
+          <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" style="margin-left: 8px;"/>
         </el-tooltip>
       </template>
-      <wk-approval-flow-apply
-        :data="wkFlowList"
+      <Xiaomingcloud-approval-flow-apply
+        :data="XiaomingcloudFlowList"
         style="padding: 15px;"
       />
     </create-sections>
@@ -115,9 +115,9 @@ import CreateSections from '@/components/CreateSections'
 import XhExpenses from './XhExpenses' // 报销事项
 import XhLeaves from './XhLeaves' // 出差事项
 import RelatedBusiness from './RelatedBusiness'
-import WkApprovalFlowApply from '@/components/Examine/WkApprovalFlowApply'
-import WkApprovalFlowApplyMixin from '@/components/Examine/mixins/WkApprovalFlowApply'
-import WkFormItems from '@/components/NewCom/WkForm/WkFormItems'
+import XiaomingcloudApprovalFlowApply from '@/components/Examine/XiaomingcloudApprovalFlowApply'
+import XiaomingcloudApprovalFlowApplyMixin from '@/components/Examine/mixins/XiaomingcloudApprovalFlowApply'
+import XiaomingcloudFormItems from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItems'
 
 import { isEmpty } from '@/utils/types'
 import CustomFieldsMixin from '@/mixins/CustomFields'
@@ -137,11 +137,11 @@ export default {
     XhExpenses,
     XhLeaves,
     RelatedBusiness,
-    WkApprovalFlowApply,
-    WkFormItems
+    XiaomingcloudApprovalFlowApply,
+    XiaomingcloudFormItems
   },
   filters: {},
-  mixins: [CustomFieldsMixin, WkApprovalFlowApplyMixin],
+  mixins: [CustomFieldsMixin, XiaomingcloudApprovalFlowApplyMixin],
   props: {
     // 类型ID
     categoryId: {
@@ -184,7 +184,7 @@ export default {
       fileList: [],
       // 审批信息
       flowRemarks: '',
-      wkFlowList: null, // 有值有审批流
+      XiaomingcloudFlowList: null, // 有值有审批流
       relatedBusinessInfo: {} // 相关信息信息
     }
   },
@@ -228,7 +228,7 @@ export default {
      */
     formChange(field, index, value, valueList) {
       // 审批流逻辑
-      this.debouncedGetWkFlowList(field.field, this.fieldForm)
+      this.debouncedGetXiaomingcloudFlowList(field.field, this.fieldForm)
 
       if ([
         'select',
@@ -285,11 +285,11 @@ export default {
           }
 
           // 审核信息
-          this.initWkFlowData({
+          this.initXiaomingcloudFlowData({
             params: { label: 0, examineId: this.categoryId },
             fieldForm: this.fieldForm // 该对象没有需要适配
           }, res => {
-            this.wkFlowList = res.list
+            this.XiaomingcloudFlowList = res.list
             this.flowRemarks = res.resData ? res.resData.remarks : ''
           })
           this.loading = false
@@ -513,8 +513,8 @@ export default {
       const crmForm = this.$refs.crmForm
       crmForm.validate(valid => {
         if (valid) {
-          const wkFlowResult = this.validateWkFlowData(this.wkFlowList)
-          if (wkFlowResult.pass) {
+          const XiaomingcloudFlowResult = this.validateXiaomingcloudFlowData(this.XiaomingcloudFlowList)
+          if (XiaomingcloudFlowResult.pass) {
             const params = {
               oaExamine: { categoryId: this.categoryId },
               oaExamineRelation: {},
@@ -522,8 +522,8 @@ export default {
               oaExamineTravelList: []
             }
             this.getSubmiteParams([].concat.apply([], this.fieldList), params)
-            if (wkFlowResult.data) {
-              params.examineFlowData = wkFlowResult.data
+            if (XiaomingcloudFlowResult.data) {
+              params.examineFlowData = XiaomingcloudFlowResult.data
             }
             this.submiteParams(params)
           } else {
@@ -626,7 +626,7 @@ export default {
         } else {
           perviewFile = file
         }
-        this.$wkPreviewFile.preview({
+        this.$XiaomingcloudPreviewFile.preview({
           index: 0,
           data: [perviewFile]
         })
@@ -858,7 +858,7 @@ export default {
   padding: 0 20px;
 }
 
-.wk-form {
+.Xiaomingcloud-form {
   /deep/ .el-form-item {
     &.is-business_cause,
     &.is-examine_cause {

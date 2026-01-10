@@ -29,7 +29,7 @@
 </template>
 
 <script type="text/javascript">
-import { downloadFile, getFileIconWithSuffix, fileSize, canPreviewFile, wkPreviewFile } from '@/utils'
+import { downloadFile, getFileIconWithSuffix, fileSize, canPreviewFile, XiaomingcloudPreviewFile } from '@/utils'
 import { crmFileDeleteAPI } from '@/api/common'
 
 export default {
@@ -94,9 +94,9 @@ export default {
      */
     previewClick() {
       if (canPreviewFile(this.data.name)) {
-        wkPreviewFile(this.data.filePath || this.data.url, this.data.name)
+        XiaomingcloudPreviewFile(this.data.filePath || this.data.url, this.data.name)
       } else {
-        this.$wkPreviewFile.preview({
+        this.$XiaomingcloudPreviewFile.preview({
           index: this.cellIndex || 0,
           data: this.list.map(function(item) {
             return {

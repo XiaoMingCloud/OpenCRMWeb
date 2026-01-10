@@ -14,7 +14,7 @@
         <div
           :style="{ backgroundColor: detailIcon.color }"
           class="header-icon">
-          <i :class="['wk', 'wk-' + detailIcon.icon]" />
+          <i :class="['Xiaomingcloud', 'Xiaomingcloud-' + detailIcon.icon]" />
         </div>
         <div class="header-name">{{ categoryName }}</div>
       </flexbox>
@@ -74,7 +74,7 @@
               class="b-cell-b">
               <div class="b-cell-name">{{ item.name }}</div>
               <div class="b-cell-value">
-                <wk-field-view
+                <Xiaomingcloud-field-view
                   :props="item"
                   :form-type="item.formType"
                   :value="item.value"
@@ -82,7 +82,7 @@
                   <template slot-scope="{ data }">
                     {{ getCommonShowValue(item) }}
                   </template>
-                </wk-field-view>
+                </Xiaomingcloud-field-view>
               </div>
             </div>
           </flexbox-item>
@@ -218,11 +218,11 @@ import SlideView from '@/components/SlideView'
 import ExamineInfo from '@/components/Examine/ExamineInfo'
 import RelatedBusinessCell from '@/views/oa/components/RelatedBusinessCell'
 import FileCell from '@/views/oa/components/FileCell'
-import WkFieldView from '@/components/NewCom/WkForm/WkFieldView'
+import XiaomingcloudFieldView from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFieldView'
 
 import { downloadFile, fileSize } from '@/utils'
 import ExamineMixin from '@/views/taskExamine/examine/components/ExamineMixin'
-import { getFormFieldShowName } from '@/components/NewCom/WkForm/utils'
+import { getFormFieldShowName } from '@/components/NewCom/XiaomingcloudForm/utils'
 import CustomFieldsMixin from '@/mixins/CustomFields'
 
 export default {
@@ -235,7 +235,7 @@ export default {
     CRMFullScreenDetail: () =>
       import('@/components/CRMFullScreenDetail'),
     FileCell,
-    WkFieldView
+    XiaomingcloudFieldView
   },
   filters: {
     fileName(file) {
@@ -417,7 +417,7 @@ export default {
     handleFile(type, files, index) {
       if (type === 'preview') {
         if (files && files.length > 0) {
-          this.$wkPreviewFile.preview({
+          this.$XiaomingcloudPreviewFile.preview({
             index: index,
             data: files
           })
@@ -431,7 +431,7 @@ export default {
      * 放大图片
      */
     imgZoom(images, k) {
-      this.$wkPreviewFile.preview({
+      this.$XiaomingcloudPreviewFile.preview({
         index: k,
         data: images
       })
@@ -493,7 +493,7 @@ export default {
     line-height: 40px;
     border-radius: $xr-border-radius-base;
     margin-right: 20px;
-    .wk {
+    .Xiaomingcloud {
       color: white;
       font-size: 26px;
     }
@@ -621,7 +621,7 @@ export default {
       color: #333;
       font-weight: 600;
     }
-    .wk {
+    .Xiaomingcloud {
       color: #363636;
       font-size: 15px;
       margin-right: 5px;

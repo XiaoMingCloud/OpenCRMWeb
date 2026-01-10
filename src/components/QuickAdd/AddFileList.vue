@@ -1,7 +1,7 @@
 <template>
   <section class="file-cont">
     <flexbox class="f-header">
-      <i class="wk wk-file"/>
+      <i class="xiaomingcloud open-file"/>
       <div class="f-name">附件</div>
     </flexbox>
     <div class="f-body">
@@ -61,7 +61,7 @@ export default {
     padding: 8px 0 15px;
     color: #333;
     font-size: 13px;
-    .wk {
+    .Xiaomingcloud {
       font-size: 13px;
       margin-right: 8px;
     }

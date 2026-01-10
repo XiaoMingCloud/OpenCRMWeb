@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -34,7 +34,7 @@
               :rules="{ required: true, message: '请输入', trigger: 'change' }"
               :label="getProjectName(item)">
               <el-input
-                v-wk-number="'positive3Float'"
+                v-Xiaomingcloud-number="'positive3Float'"
                 v-model="item.defaultAmount"
                 type="text"/>
             </el-form-item>
@@ -49,7 +49,7 @@
                 :rules="{ required: true, message: '请输入', trigger: 'change' }"
                 :label="getProjectName(item)">
                 <el-input
-                  v-wk-number="'positive3Float'"
+                  v-Xiaomingcloud-number="'positive3Float'"
                   v-model="item.defaultAmount"
                   type="text"/>
               </el-form-item>
@@ -67,7 +67,7 @@
               :rules="{ required: true, message: '请输入', trigger: 'change' }"
               :label="`${getProjectName(item)}公司金额`">
               <el-input
-                v-wk-number="'positive3Float'"
+                v-Xiaomingcloud-number="'positive3Float'"
                 v-model="item.corporateAmount"
                 type="text"/>
             </el-form-item>
@@ -76,7 +76,7 @@
               :rules="{ required: true, message: '请输入', trigger: 'change' }"
               :label="`${getProjectName(item)}个人金额`">
               <el-input
-                v-wk-number="'positive3Float'"
+                v-Xiaomingcloud-number="'positive3Float'"
                 v-model="item.personalAmount"
                 type="text"/>
             </el-form-item>
@@ -91,7 +91,7 @@
               :rules="{ required: true, message: '请输入', trigger: 'change' }"
               :label="`${getProjectName(item)}公司金额`">
               <el-input
-                v-wk-number="'positive3Float'"
+                v-Xiaomingcloud-number="'positive3Float'"
                 v-model="item.corporateAmount"
                 type="text"/>
             </el-form-item>
@@ -100,7 +100,7 @@
               :rules="{ required: true, message: '请输入', trigger: 'change' }"
               :label="`${getProjectName(item)}个人金额`">
               <el-input
-                v-wk-number="'positive3Float'"
+                v-Xiaomingcloud-number="'positive3Float'"
                 v-model="item.personalAmount"
                 type="text"/>
             </el-form-item>

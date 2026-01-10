@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <xr-header
-      icon-class="wk wk-approve"
+      icon-class="xiaomingcloud open-approve"
       icon-color="#FFB940"
       label="业务审批流" />
     <div class="main-body">

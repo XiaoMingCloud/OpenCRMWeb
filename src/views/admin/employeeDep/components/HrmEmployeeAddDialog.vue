@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -9,7 +9,7 @@
     :show-close="false"
     width="700px">
     <div class="form-add-dialog-body">
-      <wk-dep-user-view
+      <Xiaomingcloud-dep-user-view
         v-if="step == 0"
         :props="{
           value: 'employeeId',
@@ -25,7 +25,7 @@
           :model="form"
           :validate-on-rule-change="false"
           :rules="rules"
-          class="wk-form is-two-columns">
+          class="Xiaomingcloud-form is-two-columns">
           <el-form-item
             v-for="(item, index) in fieldList"
             :label="item.value"
@@ -53,13 +53,13 @@
               </el-select>
             </template>
             <template v-else-if="item.type == 'user'">
-              <wk-user-select
+              <Xiaomingcloud-user-select
                 v-model="form[item.field]"
                 radio
               />
             </template>
             <template v-else-if="item.type == 'structure'">
-              <wk-dep-select
+              <Xiaomingcloud-dep-select
                 v-model="form[item.field]"
                 radio
                 @change="depChange"
@@ -136,9 +136,9 @@ import {
   hrmEmployeeQueryByUserDeptAPI
 } from '@/api/hrm/employee'
 
-import WkDepUserView from '@/components/NewCom/WkUserSelect/Dep'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
+import XiaomingcloudDepUserView from '@/components/NewCom/XiaomingcloudUserSelect/Dep'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
 import { objDeepCopy } from '@/utils'
@@ -147,9 +147,9 @@ export default {
   // 人资添加
   name: 'HrmEmployeeAddDialog',
   components: {
-    WkDepUserView,
-    WkUserSelect,
-    WkDepSelect
+    XiaomingcloudDepUserView,
+    XiaomingcloudUserSelect,
+    XiaomingcloudDepSelect
   },
   mixins: [ElDialogLoadingMixin],
   props: {
@@ -319,7 +319,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '@/styles/wk-form.scss';
+@import '@/styles/Xiaomingcloud-form.scss';
 .form-add-dialog-body {
   overflow-y: auto;
   overflow-x: hidden;
@@ -332,8 +332,8 @@ export default {
     }
   }
 
-  .wk-dep-select,
-  .wk-user-select {
+  .Xiaomingcloud-dep-select,
+  .Xiaomingcloud-user-select {
     width: 100%;
     display: inline-block;
   }

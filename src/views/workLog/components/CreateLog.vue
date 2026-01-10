@@ -21,7 +21,7 @@
       class="complete-btn"
       @click="completeClick">
       <i
-        class="wk wk-log complete-btn__icon"
+        class="xiaomingcloud open-log complete-btn__icon"
         style="color: #2362FB " />
       <span class="complete-btn__name">{{ activeMap[activeTab] }}完成情况<span class="value">{{ completeInfo.completeNum }}</span>/<span class="value">{{ completeInfo.totalNum }}</span></span>
     </span>
@@ -32,7 +32,7 @@
           justify="flex-start"
           class="box"
           @click.native="showMore = true">
-          <span class="wk wk-write icon" />
+          <span class="xiaomingcloud open-write icon" />
           <span class="info">请输入日志内容</span>
         </flexbox>
       </div>
@@ -55,7 +55,7 @@
             placeholder="请输入内容" />
         </el-form-item>
         <span
-          class="wk wk-close close-icon"
+          class="xiaomingcloud open-close close-icon"
           @click="showMore = false" />
       </el-form>
 
@@ -82,13 +82,13 @@
         <div
           class="control-item"
           @click="barClick('img')">
-          <span class="icon wk wk-picture" />
+          <span class="icon xiaomingcloud open-picture" />
           <span>图片</span>
         </div>
         <div
           class="control-item"
           @click="barClick('file')">
-          <span class="icon wk wk-file" />
+          <span class="icon xiaomingcloud open-file" />
           <span>附件</span>
         </div>
         <el-popover
@@ -114,7 +114,7 @@
             slot="reference"
             class="control-item"
             @click="barClick('relate')">
-            <span class="icon wk wk-associated" />
+            <span class="icon xiaomingcloud open-associated" />
             <span>关联业务</span>
           </div>
         </el-popover>
@@ -416,7 +416,7 @@ export default {
      * 文件上传
      */
     uploadFileRequest(file, type, result) {
-      this.$wkUploadFile.upload({
+      this.$XiaomingcloudUploadFile.upload({
         file: file,
         params: {
           type: type,

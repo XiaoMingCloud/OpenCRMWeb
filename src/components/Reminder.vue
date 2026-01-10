@@ -3,7 +3,7 @@
     <flexbox
       align="stretch"
       class="reminder-body">
-      <i class="wk wk-warning reminder-icon"/>
+      <i class="xiaomingcloud open-warning reminder-icon"/>
       <div
         :style="{'font-size': fontSize + 'px'}"
         class="reminder-content"

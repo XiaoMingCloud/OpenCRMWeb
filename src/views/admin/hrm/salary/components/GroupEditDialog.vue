@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -25,10 +25,10 @@
                 content="选择部门，即所选部门整体人员均适用本薪资组，新增员工自动关联；选择员工，即按个人为单位"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <wk-user-dep-select
+            <Xiaomingcloud-user-dep-select
               :user-value.sync="form.employeeIds"
               :dep-value.sync="form.deptIds"
               :props="{
@@ -83,7 +83,7 @@ import {
 } from '@/api/admin/hrm'
 
 import CreateSections from '@/components/CreateSections'
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
 
@@ -92,7 +92,7 @@ export default {
   name: 'GroupEditDialog',
   components: {
     CreateSections,
-    WkUserDepSelect
+    XiaomingcloudUserDepSelect
   },
   mixins: [ElDialogLoadingMixin],
   props: {
@@ -231,7 +231,7 @@ export default {
     margin-left: 30px;
   }
 
-  .wk-help-tips {
+  .Xiaomingcloud-help-tips {
     margin-left: 3px;
   }
 }

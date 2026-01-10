@@ -74,7 +74,7 @@ export default {
 
   filters: {
     crmIconClass(type) {
-      return `wk wk-${crmTypeModel.convertTypeToKey(type)}`
+      return `xiaomingcloud open-${crmTypeModel.convertTypeToKey(type)}`
     },
 
     crmName(type) {

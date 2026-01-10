@@ -2,7 +2,7 @@
   <el-container
     v-loading="loading"
     :class="{ 'is-perview': isPreview }"
-    class="wk-print-container">
+    class="Xiaomingcloud-print-container">
     <el-header >
       <template v-if="isPreview">
         <el-button type="primary" @click="handleClick('download')">{{ `${perviewTypeName} 下载` }}</el-button>
@@ -42,7 +42,7 @@
         <div class="main-content">
           <iframe
             v-show="isPreview"
-            id="wkPrint"
+            id="XiaomingcloudPrint"
             :height="iframeHeight"
             :src="iframeUrl"
             style="width: 100%;margin-top: 54px;"
@@ -55,7 +55,7 @@
             ref="editor" :toolbar="[]" v-model="content" :init="{
               statusbar: false,
               plugins: 'print autoresize',
-              extended_valid_elements: 'span[class|title|wktag|style|contenteditable]',
+              extended_valid_elements: 'span[class|title|Xiaomingcloudtag|style|contenteditable]',
               content_style: ' body {padding: 60px !important;width: 595px; margin: 0 auto;} p { margin: 5px 0;}',
           }" class="rich-txt" />
         </div>
@@ -261,7 +261,7 @@ export default {
       if (type == 'goback') {
         this.isPreview = false
       } else if (type == 'print') {
-        document.getElementById('wkPrint').contentWindow.print() // 调用浏览器的打印功能打印指定区域
+        document.getElementById('XiaomingcloudPrint').contentWindow.print() // 调用浏览器的打印功能打印指定区域
         this.savePrintRecord()
       } else if (type == 'download') {
         if (this.srcData) {
@@ -286,7 +286,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wk-print-container {
+.Xiaomingcloud-print-container {
   .el-header {
     background-color: white;
     box-shadow: 0px 1px 2px #dbdbdb;

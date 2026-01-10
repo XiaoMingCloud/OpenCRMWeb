@@ -21,7 +21,7 @@
         <el-menu-item
           ref="navManagerMenu"
           index="other">
-          <i class="wk wk-grid" />
+          <i class="xiaomingcloud open-grid" />
         </el-menu-item>
       </el-menu>
     </div>
@@ -31,7 +31,7 @@
       :hidden="!unreadNums.announceCount || unreadNums.announceCount == 0"
       :max="99">
       <i
-        class="wk wk-announcement"
+        class="xiaomingcloud open-announcement"
         @click="checkMessageDetail(true)"/>
     </el-badge>
 
@@ -40,7 +40,7 @@
       :hidden="!unreadNums.allCount || unreadNums.allCount == 0"
       :max="99">
       <i
-        class="wk wk-bell"
+        class="xiaomingcloud open-bell"
         @click="checkMessageDetail(false)"/>
     </el-badge>
 
@@ -75,7 +75,7 @@
           :icon="item.icon"
           :disabled="item.disabled"
         >{{ item.label }}</el-dropdown-item>
-        <!-- <div v-if="manage && !isNewest" class="wk-update-tips">有新版本<el-badge is-dot><el-button type="primary" round @click="updateClick">更新</el-button></el-badge></div> -->
+        <!-- <div v-if="manage && !isNewest" class="Xiaomingcloud-update-tips">有新版本<el-badge is-dot><el-button type="primary" round @click="updateClick">更新</el-button></el-badge></div> -->
         <div
           v-if="manage"
           class="handel-box">
@@ -166,22 +166,22 @@ export default {
         command: 'baseInfo',
         divided: false,
         label: '基本信息',
-        icon: 'wk wk-user'
+        icon: 'xiaomingcloud open-user'
       }, {
         command: 'help',
         divided: true,
         label: '帮助中心',
-        icon: 'wk wk-help'
+        icon: 'xiaomingcloud open-help'
       }, {
         command: 'logOut',
         divided: false,
         label: '退出登录',
-        icon: 'wk wk-logout'
+        icon: 'xiaomingcloud open-logout'
       }, {
         command: 'version',
         divided: false,
-        label: `版本 ${WKConfig.version}`,
-        icon: 'wk wk-version',
+        label: `版本 ${XiaomingcloudConfig.version}`,
+        icon: 'xiaomingcloud open-version',
         disabled: true
       }]
     },
@@ -193,7 +193,7 @@ export default {
           type: 1,
           module: 'crm',
           path: '/crm',
-          icon: 'wk wk-customer',
+          icon: 'xiaomingcloud open-customer',
           fontSize: '17px'
         }
       }
@@ -204,7 +204,7 @@ export default {
           type: 4,
           module: 'taskExamine',
           path: '/taskExamine',
-          icon: 'wk wk-office',
+          icon: 'xiaomingcloud open-office',
           fontSize: '16px'
         }
       }
@@ -215,7 +215,7 @@ export default {
           type: 3,
           module: 'log',
           path: '/workLog',
-          icon: 'wk wk-log',
+          icon: 'xiaomingcloud open-log',
           fontSize: '17px'
         }
       }
@@ -226,7 +226,7 @@ export default {
           type: 6,
           module: 'book',
           path: '/addressBook',
-          icon: 'wk wk-address-book',
+          icon: 'xiaomingcloud open-address-book',
           fontSize: '17px'
         }
       }
@@ -237,7 +237,7 @@ export default {
           type: 2,
           module: 'project',
           path: '/project',
-          icon: 'wk wk-project',
+          icon: 'xiaomingcloud open-project',
           fontSize: '15px'
         }
       }
@@ -248,7 +248,7 @@ export default {
           type: 5,
           path: '/bi',
           module: 'bi',
-          icon: 'wk wk-business-intelligence',
+          icon: 'xiaomingcloud open-business-intelligence',
           fontSize: '18px'
         }
       }
@@ -259,7 +259,7 @@ export default {
           type: 8,
           module: 'calendar',
           path: '/calendar/index',
-          icon: 'wk wk-calendar',
+          icon: 'xiaomingcloud open-calendar',
           fontSize: '20px'
         }
       }
@@ -270,7 +270,7 @@ export default {
           type: 11,
           module: 'hrm',
           path: '/hrm',
-          icon: 'wk wk-employees'
+          icon: 'xiaomingcloud open-employees'
         }
       }
 
@@ -291,10 +291,10 @@ export default {
         } else {
           if (!this.moduleAuth) {
             this.$store.dispatch('QueryModules').then(() => {
-              this.$store.dispatch('WKHeaderModule')
+              this.$store.dispatch('XiaomingcloudHeaderModule')
             }).catch(() => {})
           } else {
-            this.$store.dispatch('WKHeaderModule')
+            this.$store.dispatch('XiaomingcloudHeaderModule')
           }
         }
       },
@@ -341,7 +341,7 @@ export default {
     getHeaderModule() {
       if (!this.headerModule) {
         this.$store
-          .dispatch('WKHeaderModule')
+          .dispatch('XiaomingcloudHeaderModule')
           .then(res => {
             this.getTopHeaderModule()
           })
@@ -728,8 +728,8 @@ export default {
 }
 
 // 系统消息
-.wk-announcement,
-.wk-bell {
+.Xiaomingcloud-announcement,
+.Xiaomingcloud-bell {
   color: #9DA9C2;
   cursor: pointer;
   font-size: 20px;
@@ -739,8 +739,8 @@ export default {
   margin-right: 20px;
 }
 
-.wk-announcement:hover,
-.wk-bell:hover {
+.Xiaomingcloud-announcement:hover,
+.Xiaomingcloud-bell:hover {
   color: $xr-color-primary;
 }
 
@@ -762,7 +762,7 @@ export default {
   }
 }
 
-.wk-update-tips {
+.Xiaomingcloud-update-tips {
   font-size: 12px;
   text-align: center;
   color: #bbb;

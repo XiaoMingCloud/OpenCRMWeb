@@ -12,7 +12,7 @@ export default {
         }
       } else {
         return {
-          icon: 'wk wk-approve',
+          icon: 'xiaomingcloud open-approve',
           color: '#9376FF'
         }
       }

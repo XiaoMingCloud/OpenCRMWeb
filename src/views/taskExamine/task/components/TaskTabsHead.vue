@@ -6,7 +6,7 @@
     <span
       slot="left"
       class="task-title">
-      <i class="wk wk-task" />{{ title }}
+      <i class="xiaomingcloud open-task" />{{ title }}
     </span>
     <el-button
       slot="right"

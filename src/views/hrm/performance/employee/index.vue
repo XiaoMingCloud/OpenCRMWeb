@@ -4,7 +4,7 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-perform"
+      icon-class="xiaomingcloud open-perform"
       icon-color="#2362FB"
       placeholder="请输入员工姓名"
       label="绩效档案"
@@ -13,7 +13,7 @@
       @search="searchClick" >
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -85,7 +85,7 @@ import {
 } from '@/api/hrm/dept'
 
 import XrHeader from '@/components/XrHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 import EmployeePerformanceDetail from './EmployeePerformanceDetail'
 
 import { mapGetters } from 'vuex'
@@ -96,7 +96,7 @@ export default {
   name: 'EmployeeIndex',
   components: {
     XrHeader,
-    WkPopoverFilter,
+    XiaomingcloudPopoverFilter,
     EmployeePerformanceDetail
   },
   data() {

@@ -1,11 +1,11 @@
 <template>
   <div v-loading="loading" :key="updateKey">
-    <wk-custom-base-detail
+    <Xiaomingcloud-custom-base-detail
       :list="postList">
       <template slot="data" slot-scope="{ data }">{{ data.value }}</template>
       <el-button v-if="editAuth" slot="more" type="text" @click="postCommandSelect('edit')">编辑</el-button>
-    </wk-custom-base-detail>
-    <wk-base-detail
+    </Xiaomingcloud-custom-base-detail>
+    <Xiaomingcloud-base-detail
       v-if="leaveList.length > 0"
       :dropdown-items="dropdownItems"
       :list="leaveList"
@@ -46,8 +46,8 @@ import {
   hrmEmployeeFieldVerifyAPI
 } from '@/api/hrm/employee'
 
-import WkBaseDetail from '@/components/WkBaseDetail'
-import WkCustomBaseDetail from '@/components/WkBaseDetail/CustomIndex'
+import XiaomingcloudBaseDetail from '@/components/XiaomingcloudBaseDetail'
+import XiaomingcloudCustomBaseDetail from '@/components/XiaomingcloudBaseDetail/CustomIndex'
 import FormAddDialog from './FormAddDialog'
 import CustomFormAddDialog from './CustomFormAddDialog'
 
@@ -62,8 +62,8 @@ export default {
   // 岗位信息
   name: 'EmployeePostInfo',
   components: {
-    WkBaseDetail,
-    WkCustomBaseDetail,
+    XiaomingcloudBaseDetail,
+    XiaomingcloudCustomBaseDetail,
     FormAddDialog,
     CustomFormAddDialog
   },

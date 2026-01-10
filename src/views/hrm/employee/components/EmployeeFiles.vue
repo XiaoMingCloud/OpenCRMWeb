@@ -37,12 +37,12 @@
                       v-if="item.count > 0"
                       class="handle-item"
                       @click="previewDetail(bigItem, bigIndex, item, index)">
-                      <i class="wk wk-icon-eye-solid" />
+                      <i class="xiaomingcloud open-icon-eye-solid" />
                     </span>
                     <span
                       class="handle-item"
                       @click="checkDetail(bigItem, bigIndex, item, index)">
-                      <i class="wk wk-folder" />
+                      <i class="xiaomingcloud open-folder" />
                     </span>
                   </div>
                 </div>
@@ -88,7 +88,7 @@
                   action="http"
                   drag
                   multiple>
-                  <i class="wk wk-icon-upload upload-icon" />
+                  <i class="xiaomingcloud open-icon-upload upload-icon" />
                   <div class="upload-name">点击或拖拽上传</div>
                 </el-upload>
               </div>
@@ -116,7 +116,7 @@
                       <span
                         class="handle-item"
                         @click="previewFile(item, index)" >
-                        <i class="wk wk-icon-eye-solid" />
+                        <i class="xiaomingcloud open-icon-eye-solid" />
                       </span>
                     </div>
                   </div>
@@ -134,14 +134,14 @@
                     @blur="editInputBlur"/>
                   <i
                     v-if="editAuth"
-                    class="wk wk-edit footer-item"
+                    class="xiaomingcloud open-edit footer-item"
                     @click="handleDetailItemClick('edit',item, index)" />
                   <i
                     v-if="editAuth"
-                    class="wk wk-s-delete footer-item"
+                    class="xiaomingcloud open-s-delete footer-item"
                     @click="handleDetailItemClick('delete',item, index)" />
                   <i
-                    class="wk wk-b-download footer-item"
+                    class="xiaomingcloud open-b-download footer-item"
                     @click="handleDetailItemClick('download',item, index)" />
                 </flexbox>
               </div>
@@ -237,55 +237,55 @@ export default {
       this.baseList = [
         {
           name: '身份证原件照片',
-          icon: 'wk wk-icon-credentials',
+          icon: 'xiaomingcloud open-icon-credentials',
           count: 0,
           subType: 11
         },
         {
           name: '学历证明',
-          icon: 'wk wk-icon-medal',
+          icon: 'xiaomingcloud open-icon-medal',
           count: 0,
           subType: 12
         },
         {
           name: '个人证件照',
-          icon: 'wk wk-icon-my',
+          icon: 'xiaomingcloud open-icon-my',
           count: 0,
           subType: 13
         },
         {
           name: '身份证复印件',
-          icon: 'wk wk-icon-copy',
+          icon: 'xiaomingcloud open-icon-copy',
           count: 0,
           subType: 14
         },
         {
           name: '工资银行卡',
-          icon: 'wk wk-icon-bankcard',
+          icon: 'xiaomingcloud open-icon-bankcard',
           count: 0,
           subType: 15
         },
         {
           name: '社保卡',
-          icon: 'wk wk-icon-license',
+          icon: 'xiaomingcloud open-icon-license',
           count: 0,
           subType: 16
         },
         {
           name: '公积金卡',
-          icon: 'wk wk-icon-home',
+          icon: 'xiaomingcloud open-icon-home',
           count: 0,
           subType: 17
         },
         {
           name: '获奖证书',
-          icon: 'wk wk-icon-barrage',
+          icon: 'xiaomingcloud open-icon-barrage',
           count: 0,
           subType: 18
         },
         {
           name: '其他',
-          icon: 'wk wk-icon-setup',
+          icon: 'xiaomingcloud open-icon-setup',
           count: 0,
           subType: 19
         }
@@ -294,43 +294,43 @@ export default {
       this.recordList = [
         {
           name: '劳动合同',
-          icon: 'wk wk-icon-star-contract',
+          icon: 'xiaomingcloud open-icon-star-contract',
           count: 0,
           subType: 21
         },
         {
           name: '入职简历',
-          icon: 'wk wk-icon-personal-data',
+          icon: 'xiaomingcloud open-icon-personal-data',
           count: 0,
           subType: 22
         },
         {
           name: '入职登记表',
-          icon: 'wk wk-icon-handle-log',
+          icon: 'xiaomingcloud open-icon-handle-log',
           count: 0,
           subType: 23
         },
         {
           name: '入职体检单',
-          icon: 'wk wk-icon-health-data',
+          icon: 'xiaomingcloud open-icon-health-data',
           count: 0,
           subType: 24
         },
         {
           name: '上家公司离职证明',
-          icon: 'wk wk-icon-bevel-contract',
+          icon: 'xiaomingcloud open-icon-bevel-contract',
           count: 0,
           subType: 25
         },
         {
           name: '转正申请表',
-          icon: 'wk wk-icon-contract',
+          icon: 'xiaomingcloud open-icon-contract',
           count: 0,
           subType: 26
         },
         {
           name: '其他',
-          icon: 'wk wk-icon-setup',
+          icon: 'xiaomingcloud open-icon-setup',
           count: 0,
           subType: 27
         }
@@ -339,19 +339,19 @@ export default {
       this.leaveList = [
         {
           name: '离职审批',
-          icon: 'wk wk-icon-seal',
+          icon: 'xiaomingcloud open-icon-seal',
           count: 0,
           subType: 31
         },
         {
           name: '离职证明',
-          icon: 'wk wk-icon-forbid-user',
+          icon: 'xiaomingcloud open-icon-forbid-user',
           count: 0,
           subType: 32
         },
         {
           name: '其他',
-          icon: 'wk wk-icon-setup',
+          icon: 'xiaomingcloud open-icon-setup',
           count: 0,
           subType: 33
         }
@@ -387,7 +387,7 @@ export default {
     /** 附件上传 */
     fileUpload(val) {
       // val.file
-      this.$wkUploadFile.upload({
+      this.$XiaomingcloudUploadFile.upload({
         request: adminFileUploadAPI,
         file: val.file
       }).then(completeData => {
@@ -425,7 +425,7 @@ export default {
           var previewList = res.data.map(element => {
             return element.file
           })
-          this.$wkPreviewFile.preview({
+          this.$XiaomingcloudPreviewFile.preview({
             index: 0,
             data: previewList
           })
@@ -526,7 +526,7 @@ export default {
       var previewList = this.detailList.map(element => {
         return element.file
       })
-      this.$wkPreviewFile.preview({
+      this.$XiaomingcloudPreviewFile.preview({
         index: index,
         data: previewList
       })

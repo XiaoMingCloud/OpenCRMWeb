@@ -15,9 +15,9 @@
       align="stretch"
       style="padding: 0 15px 15px;"
       class="side-detail-main">
-      <wk-detail-header
+      <Xiaomingcloud-detail-header
         :detail-value="detailData.employeeName"
-        icon-class="wk wk-office"
+        icon-class="xiaomingcloud open-office"
         detail-name="姓名"
         icon-bg-color="#ECEEF2"
         icon-color="#42526E"
@@ -33,7 +33,7 @@
             <div v-for="(item, subIndex) in list" :key="subIndex" class="times-section__item">
               <flexbox class="times">
                 <div class="times__line"/>
-                <wk-circle-tag
+                <Xiaomingcloud-circle-tag
                   :label="getEmployeeLabelName(item)"
                   :des="item.status == 6 ? `${item.score}分` : ''"
                   :bold="item.status == 6"
@@ -98,8 +98,8 @@ import {
 } from '@/api/hrm/performance'
 
 import SlideView from '@/components/SlideView'
-import WkDetailHeader from '@/components/WkDetailHeader'
-import WkCircleTag from './components/WkCircleTag'
+import XiaomingcloudDetailHeader from '@/components/XiaomingcloudDetailHeader'
+import XiaomingcloudCircleTag from './components/XiaomingcloudCircleTag'
 
 import { isEmpty } from '@/utils/types'
 import { timeToFormatTime } from '@/utils'
@@ -111,8 +111,8 @@ export default {
   name: 'EmployeePerformanceDetail',
   components: {
     SlideView,
-    WkDetailHeader,
-    WkCircleTag,
+    XiaomingcloudDetailHeader,
+    XiaomingcloudCircleTag,
     EmployeeConfirmPerformance
   },
   props: {
@@ -323,7 +323,7 @@ export default {
     background-color: #E6E6E6;
   }
 
-  .wk-circle-tag {
+  .Xiaomingcloud-circle-tag {
     flex-shrink: 0;
   }
 }

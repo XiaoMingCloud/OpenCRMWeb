@@ -19,7 +19,7 @@
           </el-tab-pane>
         </el-tabs>
         <!-- <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -150,7 +150,7 @@ import {
 
 import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 
 import { mapGetters } from 'vuex'
 import { isEmpty } from '@/utils/types'
@@ -164,7 +164,7 @@ export default {
   components: {
     XrHeader,
     XrTableHeader,
-    WkPopoverFilter,
+    XiaomingcloudPopoverFilter,
     EmployeeEditPerformance,
     EmployeeConfirmPerformance,
     ConfirmResultView

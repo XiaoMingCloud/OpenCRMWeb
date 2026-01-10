@@ -3,7 +3,7 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-schedule"
+      icon-class="xiaomingcloud open-schedule"
       icon-color="#2362FB"
       placeholder="请输入员工姓名/工号"
       label="打卡记录"
@@ -12,7 +12,7 @@
       @search="searchClick" >
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -88,7 +88,7 @@ import {
 
 
 import XrHeader from '@/components/XrHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 
 import moment from 'moment'
 import { mapGetters } from 'vuex'
@@ -99,7 +99,7 @@ export default {
   name: 'ClockIndex',
   components: {
     XrHeader,
-    WkPopoverFilter
+    XiaomingcloudPopoverFilter
   },
   data() {
     return {
@@ -151,7 +151,7 @@ export default {
     headerMoreHandle() {
       const temps = []
       if (this.hrm.attendance && this.hrm.attendance.excelexport) {
-        temps.push({ type: 'export', name: '导出', icon: 'wk wk-export' })
+        temps.push({ type: 'export', name: '导出', icon: 'xiaomingcloud open-export' })
       }
       return temps
     },

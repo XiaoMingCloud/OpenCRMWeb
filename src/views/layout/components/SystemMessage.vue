@@ -79,7 +79,7 @@
                 icon="el-icon-check"
                 command="read">{{ `全部${currentMenu.label == 'all' ? '' : currentMenu.name}标记为已读` }}</el-dropdown-item>
               <el-dropdown-item
-                icon="wk wk-s-delete"
+                icon="xiaomingcloud open-s-delete"
                 command="delete">{{ `删除${currentMenu.name}已读消息` }}</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>

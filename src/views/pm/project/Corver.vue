@@ -1,7 +1,7 @@
 <template>
   <div class="corver">
     <xr-header
-      icon-class="wk wk-project"
+      icon-class="xiaomingcloud open-project"
       icon-color="#4AB8B8"
       placeholder="请输入项目/任务/描述"
       label="项目"
@@ -67,11 +67,11 @@
                     <div :title="childItem.name" class="title text-one-line">{{ childItem.name }}</div>
                     <i
                       v-if="childItem.authList && childItem.authList.project && childItem.authList.project.setWork"
-                      class="wk wk-circle-edit"
+                      class="xiaomingcloud open-circle-edit"
                       @click.stop="editProjectClick(childItem)"/>
                     <i
                       :class="{ 'is-collect': childItem.collect == 1 }"
-                      class="wk wk-focus-on"
+                      class="xiaomingcloud open-focus-on"
                       @click.stop="collectClick(childItem)" />
                   </div>
                   <div class="cover-content-item__content-shadow"/>
@@ -83,7 +83,7 @@
                 @click="createProjectClick">
                 <div class="content-cross__content">
                   <flexbox justify="center" align="center" orient="vertical">
-                    <i class="wk wk-l-plus" />
+                    <i class="xiaomingcloud open-l-plus" />
                     <div>创建项目</div>
                   </flexbox>
                 </div>
@@ -106,7 +106,7 @@
                 :collect-show="false"
                 @click.native="createProjectClick">
                 <div slot="header" class="project-cell__add">
-                  <i class="wk wk-l-plus" />
+                  <i class="xiaomingcloud open-l-plus" />
                 </div>
                 <span slot="body" class="project-cell__add--title">创建新项目</span>
               </project-cell>
@@ -507,11 +507,11 @@ export default {
           }
         }
 
-        .wk-focus-on.is-collect {
+        .Xiaomingcloud-focus-on.is-collect {
           color: #F7AD3D;
         }
 
-        .wk-circle-edit {
+        .Xiaomingcloud-circle-edit {
           visibility: hidden;
         }
       }
@@ -531,7 +531,7 @@ export default {
 
 
       &:hover {
-        .wk-circle-edit {
+        .Xiaomingcloud-circle-edit {
           visibility: visible;
         }
       }
@@ -599,7 +599,7 @@ export default {
 
       .vux-flexbox {
         height: 100%;
-        .wk-l-plus {
+        .Xiaomingcloud-l-plus {
           display: inline-block;
           font-size: 16px;
         }

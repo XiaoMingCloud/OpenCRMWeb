@@ -70,7 +70,7 @@ export default {
   methods: {
     selectImage() {
       if (!this.disabled) {
-        this.$wkFile.select().then(ev => {
+        this.$XiaomingcloudFile.select().then(ev => {
           this.xhUploadFile(ev)
         })
       }
@@ -92,7 +92,7 @@ export default {
     },
     // 发送请求
     sendFileRequest(file, result) {
-      this.$wkUploadFile.upload({
+      this.$XiaomingcloudUploadFile.upload({
         file: file,
         params: {
           batchId: this.batchId

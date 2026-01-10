@@ -84,7 +84,7 @@
                 <el-button
                   type="text"
                   class="add-btn"
-                  icon="wk wk-add">添加成员</el-button>
+                  icon="xiaomingcloud open-add">添加成员</el-button>
               </div>
             </members-dep>
 

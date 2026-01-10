@@ -24,7 +24,7 @@
         <flexbox
           class="handle-button"
           @click.native="setClick">
-          <i class="wk wk-manage handle-button-icon"/>
+          <i class="xiaomingcloud open-manage handle-button-icon"/>
           <div class="handle-button-name">管理</div>
         </flexbox>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -16,7 +16,7 @@
           3、若选择部门，该部门所有员工的角色将相同，<br >
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可保存后再对员工独立调整。
         </div>
-        <i class="wk wk-help wk-help-tips" style="margin-left: 3px;"/>
+        <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" style="margin-left: 3px;"/>
       </el-tooltip>
     </div>
     <el-form
@@ -26,7 +26,7 @@
       label-width="100px"
       label-position="top">
       <el-form-item v-if="userShow" label="选择员工和部门" prop="userIds">
-        <wk-user-dep-select
+        <Xiaomingcloud-user-dep-select
           :user-value.sync="ruleForm.userIds"
           :dep-value.sync="ruleForm.deptIds"
           style="width: 100%;"
@@ -56,7 +56,7 @@ import {
 import { adminRoleGetRoleListAPI } from '@/api/admin/employeeDep'
 
 import RoleEmployeeSelect from './RoleEmployeeSelect'
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
 
@@ -65,7 +65,7 @@ export default {
   name: 'EditRoleDialog',
   components: {
     RoleEmployeeSelect,
-    WkUserDepSelect
+    XiaomingcloudUserDepSelect
   },
   mixins: [ElDialogLoadingMixin],
   props: {

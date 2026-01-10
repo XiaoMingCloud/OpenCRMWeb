@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <xr-header
-      icon-class="wk wk-record"
+      icon-class="xiaomingcloud open-record"
       icon-color="#2362FB"
       label="系统操作日志" />
     <div class="main-body">
@@ -13,7 +13,7 @@
           range-separator="-"
           start-placeholder="开始时间"
           end-placeholder="结束时间"/>
-        <wk-user-select
+        <Xiaomingcloud-user-select
           :radio="false"
           v-model="userList"
           placeholder="选择人员" />
@@ -73,7 +73,7 @@ import {
 } from '@/api/admin/log'
 
 import XrHeader from '@/components/XrHeader'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { Loading } from 'element-ui'
 
 import HandleLogMixin from './mixins/HandleLog'
@@ -84,7 +84,7 @@ export default {
   name: 'SysHandleLog',
   components: {
     XrHeader,
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   mixins: [HandleLogMixin],
   data() {
@@ -211,7 +211,7 @@ export default {
     margin: 0 20px;
   }
 
-  .wk-user-select,
+  .Xiaomingcloud-user-select,
   .el-select {
     margin-right: 20px;
   }

@@ -1,13 +1,13 @@
 <template>
   <div v-loading="loading">
-    <wk-reminder :content="reminderContent" style="margin: -15px 10px 10px;"/>
-    <wk-custom-base-detail
+    <Xiaomingcloud-reminder :content="reminderContent" style="margin: -15px 10px 10px;"/>
+    <Xiaomingcloud-custom-base-detail
       :list="baseList">
       <template slot="data" slot-scope="{ data }">{{ data.value }}</template>
       <el-button v-if="baseEditAuth" slot="more" type="text" @click="baseCommandSelect('edit')">编辑</el-button>
-    </wk-custom-base-detail>
+    </Xiaomingcloud-custom-base-detail>
 
-    <wk-custom-base-detail
+    <Xiaomingcloud-custom-base-detail
       :dropdown-items="communicationDropdownItems"
       :list="communicationList"
       @top-command-select="communicationCommandSelect"
@@ -15,7 +15,7 @@
     <create-sections
       title="教育经历">
       <div v-if="educationList.length === 0" class="empty-text">暂无数据</div>
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in educationList"
         v-else
         :key="index"
@@ -26,7 +26,7 @@
     <create-sections
       title="工作经历">
       <div v-if="workList.length === 0" class="empty-text">暂无数据</div>
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in workList"
         v-else
         :key="index"
@@ -37,7 +37,7 @@
     <create-sections
       title="证书/证件">
       <div v-if="certificateList.length === 0" class="empty-text">暂无数据</div>
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in certificateList"
         v-else
         :key="index"
@@ -48,7 +48,7 @@
     <create-sections
       title="培训经历">
       <div v-if="trainingList.length === 0" class="empty-text">暂无数据</div>
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in trainingList"
         v-else
         :key="index"
@@ -60,7 +60,7 @@
       title="联系人">
       <div v-if="contactsList.length === 0" class="empty-text">暂无数据</div>
       <template v-else>
-        <wk-custom-base-detail-section
+        <Xiaomingcloud-custom-base-detail-section
           v-for="(item, index) in contactsList"
           :key="index"
           :list="item"
@@ -102,14 +102,14 @@ import {
   hrmEmployeeArchivesPersonalAPI
 } from '@/api/hrm/selfService/myArchives'
 
-import WkBaseDetail from '@/components/WkBaseDetail'
-import WkCustomBaseDetail from '@/components/WkBaseDetail/CustomIndex'
+import XiaomingcloudBaseDetail from '@/components/XiaomingcloudBaseDetail'
+import XiaomingcloudCustomBaseDetail from '@/components/XiaomingcloudBaseDetail/CustomIndex'
 import CreateSections from '@/components/CreateSections'
-import WkBaseDetailSection from '@/components/WkBaseDetail/WkBaseDetailSection'
-import WkCustomBaseDetailSection from '@/components/WkBaseDetail/WkCustomBaseDetailSection'
+import XiaomingcloudBaseDetailSection from '@/components/XiaomingcloudBaseDetail/XiaomingcloudBaseDetailSection'
+import XiaomingcloudCustomBaseDetailSection from '@/components/XiaomingcloudBaseDetail/XiaomingcloudCustomBaseDetailSection'
 import FormAddDialog from '@/views/hrm/employee/components/FormAddDialog'
 import CustomFormAddDialog from '@/views/hrm/employee/components/CustomFormAddDialog'
-import WkReminder from '@/components/Reminder'
+import XiaomingcloudReminder from '@/components/Reminder'
 
 import CustomFieldsMixin from '@/mixins/CustomFields'
 import { isEmpty, isArray } from '@/utils/types'
@@ -128,13 +128,13 @@ export default {
   // 基本信息
   name: 'EmployeeBaseInfo',
   components: {
-    WkBaseDetail,
+    XiaomingcloudBaseDetail,
     CreateSections,
-    WkBaseDetailSection,
+    XiaomingcloudBaseDetailSection,
     FormAddDialog,
-    WkReminder,
-    WkCustomBaseDetail,
-    WkCustomBaseDetailSection,
+    XiaomingcloudReminder,
+    XiaomingcloudCustomBaseDetail,
+    XiaomingcloudCustomBaseDetailSection,
     CustomFormAddDialog
   },
   filters: {},
@@ -654,7 +654,7 @@ export default {
   padding: 11px 12px;
 }
 
-.wk-base-detail-section + .wk-base-detail-section {
+.Xiaomingcloud-base-detail-section + .Xiaomingcloud-base-detail-section {
   border-top: 1px solid $xr-border-color-base;
 }
 

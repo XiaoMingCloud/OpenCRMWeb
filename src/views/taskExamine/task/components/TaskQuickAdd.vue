@@ -9,7 +9,7 @@
     class="task-quick-add">
     <i
       v-if="isUnfold"
-      class="wk wk-close"
+      class="xiaomingcloud open-close"
       @click="addClose" />
     <el-input
       ref="input"
@@ -28,7 +28,7 @@
         type="date"
         value-format="yyyy-MM-dd"
         placeholder="" />
-      <wk-user-select
+      <Xiaomingcloud-user-select
         :value="mainUser ? mainUser.userId : ''"
         radio
         style="height: auto !important;"
@@ -38,7 +38,7 @@
           class="select-user">
           <i
             v-if="!createMainUser"
-            class="wk wk-persons add-info__btn add-info__interval" />
+            class="xiaomingcloud open-persons add-info__btn add-info__interval" />
           <xr-avatar
             v-else
             :name="createMainUser.realname"
@@ -46,7 +46,7 @@
             :src="createMainUser.img"
             class="add-info__interval" />
         </div>
-      </wk-user-select>
+      </Xiaomingcloud-user-select>
 
       <i
         class="el-icon-more add-info__btn add-info__interval"
@@ -61,7 +61,7 @@
     <el-button
       v-debounce="send"
       v-else
-      icon="wk wk-top"
+      icon="xiaomingcloud open-top"
       class="send-btn"
       type="primary">发布</el-button>
 
@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { setTaskAPI } from '@/api/task/task'
 
 import TaskCreate from '../Create'
@@ -92,7 +92,7 @@ export default {
   // 任务快捷添加
   name: 'TaskQuickAdd',
   components: {
-    WkUserSelect,
+    XiaomingcloudUserSelect,
     TaskCreate
   },
   props: {
@@ -376,7 +376,7 @@ export default {
 }
 
 // 关闭按钮
-.wk-close {
+.Xiaomingcloud-close {
   border: 0;
   color: #d9d9d9;
   font-size: 22px;
@@ -389,7 +389,7 @@ export default {
   transform: scale(0.8);
 }
 
-.wk-close:hover {
+.Xiaomingcloud-close:hover {
   color: #2362fb;
 }
 </style>

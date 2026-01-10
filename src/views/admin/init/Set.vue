@@ -1,7 +1,7 @@
 <template>
   <div v-loading="loading" class="init-set">
     <xr-header
-      icon-class="wk wk-results-solid"
+      icon-class="xiaomingcloud open-results-solid"
       icon-color="#2362FB" >
       <template slot="label">初始化数据<span class="label-des">（试用OpenCRM后需要删除测试数据，正式管理企业信息）</span></template>
     </xr-header>

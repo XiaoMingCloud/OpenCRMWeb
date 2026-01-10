@@ -3,7 +3,7 @@
     v-loading="loading"
     class="ranking-statistics card">
     <flexbox class="card-title">
-      <span class="icon wk wk-hollow-results" />
+      <span class="icon xiaomingcloud open-hollow-results" />
       <div class="card-title-center text-one-ellipsis">排行榜</div>
       <div class="card-title-right">
         <el-dropdown

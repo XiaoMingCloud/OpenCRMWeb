@@ -16,7 +16,7 @@
             content="已成交是指客户状态为“已成交”"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
         </el-tooltip></el-checkbox>
         <el-checkbox
           v-if="businessHandleShow"
@@ -247,7 +247,7 @@ export default {
   margin-bottom: 8px;
 }
 
-.wk-help {
+.Xiaomingcloud-help {
   margin-left: 5px;
 }
 </style>

@@ -35,7 +35,7 @@
       <el-table-column label="售价">
         <template slot-scope="scope">
           <el-input
-            v-wk-number
+            v-Xiaomingcloud-number
             v-model="scope.row.salesPrice"
             placeholder="请输入"
             type="number"
@@ -45,7 +45,7 @@
       <el-table-column label="数量">
         <template slot-scope="scope">
           <el-input
-            v-wk-number
+            v-Xiaomingcloud-number
             v-model="scope.row.num"
             type="number"
             placeholder="请输入"
@@ -55,7 +55,7 @@
       <el-table-column label="折扣（%）">
         <template slot-scope="scope">
           <el-input
-            v-wk-number
+            v-Xiaomingcloud-number
             v-model="scope.row.discount"
             placeholder="请输入"
             type="number"
@@ -74,7 +74,7 @@
     <flexbox class="handle-footer">
       <div class="discount-title">整单折扣（%）：</div>
       <el-input
-        v-wk-number
+        v-Xiaomingcloud-number
         v-model="discountRate"
         style="width: 80px"
         placeholder="请输入"
@@ -83,7 +83,7 @@
       <div class="total-info">已选中产品：
         <span class="info-yellow">{{ productList.length }}</span>&nbsp;种&nbsp;&nbsp;总金额：
         <el-input
-          v-wk-number
+          v-Xiaomingcloud-number
           v-model="totalPrice"
           style="width: 120px"
           placeholder="请输入"

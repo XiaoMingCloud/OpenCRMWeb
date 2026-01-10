@@ -2,7 +2,7 @@
   <div v-loading="loading">
     <create-sections
       title="合同信息">
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         v-for="(item, index) in contractList"
         :dropdown-items="dropdownItems"
         :key="index"
@@ -10,14 +10,14 @@
         @command-select="commandSelect($event, index)"
       >
         <div style="flex: 0 0 80%;">
-          <wk-file-cell
+          <Xiaomingcloud-file-cell
             v-for="(file, fileIndex) in contractBaseList[index].fileList"
             :key="fileIndex"
             :data="file"
             :list="contractBaseList[index].fileList"
             :index="fileIndex" />
         </div>
-      </wk-base-detail-section>
+      </Xiaomingcloud-base-detail-section>
       <el-button
         v-if="editAuth"
         class="base-add-button"
@@ -36,14 +36,14 @@
       @change="formAddDialogChange"
     >
       <div class="contract-files">
-        <wk-file-select
+        <Xiaomingcloud-file-select
           style="display: inline-block;"
           multiple
           @change="fileSelect"
         >
           <el-button type="text">添加合同附件</el-button>
-        </wk-file-select>
-        <wk-file-cell
+        </Xiaomingcloud-file-select>
+        <Xiaomingcloud-file-cell
           v-for="(file, fileIndex) in fileList"
           :key="fileIndex"
           :data="file"
@@ -69,9 +69,9 @@ import {
 } from '@/api/admin/file'
 
 import CreateSections from '@/components/CreateSections'
-import WkFileSelect from '@/components/NewCom/WkFile/Select'
-import WkFileCell from '@/components/NewCom/WkFile/Cell'
-import WkBaseDetailSection from '@/components/WkBaseDetail/WkBaseDetailSection'
+import XiaomingcloudFileSelect from '@/components/NewCom/XiaomingcloudFile/Select'
+import XiaomingcloudFileCell from '@/components/NewCom/XiaomingcloudFile/Cell'
+import XiaomingcloudBaseDetailSection from '@/components/XiaomingcloudBaseDetail/XiaomingcloudBaseDetailSection'
 import FormAddDialog from './FormAddDialog'
 
 import employeeContract from '../model/employeeContract'
@@ -81,10 +81,10 @@ export default {
   name: 'EmployeeContract',
   components: {
     CreateSections,
-    WkBaseDetailSection,
+    XiaomingcloudBaseDetailSection,
     FormAddDialog,
-    WkFileSelect,
-    WkFileCell
+    XiaomingcloudFileSelect,
+    XiaomingcloudFileCell
   },
   props: {
     id: [String, Number]
@@ -287,7 +287,7 @@ export default {
      * 文件上传
      */
     uploadFileRequest(file) {
-      this.$wkUploadFile.upload({
+      this.$XiaomingcloudUploadFile.upload({
         request: adminFileUploadAPI,
         file: file,
         params: {
@@ -315,7 +315,7 @@ export default {
   padding: 11px 12px;
 }
 
-.wk-base-detail-section + .wk-base-detail-section {
+.Xiaomingcloud-base-detail-section + .Xiaomingcloud-base-detail-section {
   border-top: 1px solid $xr-border-color-base;
 }
 

@@ -7,8 +7,8 @@
       配置基础信息
     </div>
     <create-sections title="基础信息">
-      <wk-form
-        ref="wkBaseFrom"
+      <Xiaomingcloud-form
+        ref="XiaomingcloudBaseFrom"
         :model="fieldsForm"
         :rules="fieldsRules"
         :field-from="fieldsForm"
@@ -17,7 +17,7 @@
         @change="formChange"
       >
         <template slot-scope="{ data, index }">
-          <wk-user-dep-select
+          <Xiaomingcloud-user-dep-select
             v-if="data && data.formType == 'userDep'"
             :user-value.sync="fieldsForm.userList"
             :dep-value.sync="fieldsForm.deptList"
@@ -28,22 +28,22 @@
             <slot :data="data" />
           </template>
         </template>
-      </wk-form>
+      </Xiaomingcloud-form>
     </create-sections>
   </el-card>
 </template>
 <script type="text/javascript">
 
 import CreateSections from '@/components/CreateSections'
-import WkForm from '@/components/NewCom/WkForm'
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
+import XiaomingcloudForm from '@/components/NewCom/XiaomingcloudForm'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
 
 export default {
   name: 'BaseInfoSet',
   components: {
     CreateSections,
-    WkForm,
-    WkUserDepSelect
+    XiaomingcloudForm,
+    XiaomingcloudUserDepSelect
   },
   props: {
     fields: Array,
@@ -57,7 +57,7 @@ export default {
   },
   computed: {
     form() {
-      return this.$refs.wkBaseFrom.instance
+      return this.$refs.XiaomingcloudBaseFrom.instance
     }
   },
   mounted() {
@@ -101,8 +101,8 @@ export default {
     //  */
     // getSubmiteParams() {
     //   var params = {}
-    //   for (let index = 0; index < this.wkBaseFrom.crmFields.length; index++) {
-    //     const element = this.wkBaseFrom.crmFields[index]
+    //   for (let index = 0; index < this.XiaomingcloudBaseFrom.crmFields.length; index++) {
+    //     const element = this.XiaomingcloudBaseFrom.crmFields[index]
     //     // 关联产品数据需要特殊拼接
     //     if (element.key === 'dept') {
     //       if (element.value['users']) {
@@ -137,7 +137,7 @@ export default {
     font-weight: bold;
   }
 
-  .wk-form {
+  .Xiaomingcloud-form {
     /deep/ .el-form-item.is-textarea {
       flex: 0 0 100%;
     }

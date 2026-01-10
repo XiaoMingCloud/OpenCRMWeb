@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -27,7 +27,7 @@
                 content="工资发放方式将影响计税周期和报税"
                 effect="dark"
                 placement="top">
-                <i class="wk wk-help wk-help-tips"/>
+                <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
             <el-radio-group
@@ -190,7 +190,7 @@ export default {
     }
   }
 
-  .wk-help-tips {
+  .Xiaomingcloud-help-tips {
     margin-left: 3px;
   }
 }

@@ -6,7 +6,7 @@
     @close="close"
     @save="saveClick">
     <create-sections title="基本信息">
-      <wk-form
+      <Xiaomingcloud-form
         ref="baseForm"
         :model="baseForm"
         :rules="baseRules"
@@ -27,8 +27,8 @@
             change-on-select/>
           <div
             v-else-if="data && data.formType == 'salary'"
-            class="wk-range-select">
-            <flexbox class="wk-range-select__top">
+            class="Xiaomingcloud-range-select">
+            <flexbox class="Xiaomingcloud-range-select__top">
               <el-input-number
                 v-model="baseForm.minSalary"
                 :disabled="baseForm.noLimitsalary"
@@ -62,8 +62,8 @@
           </div>
           <div
             v-else-if="data && data.formType == 'age'"
-            class="wk-range-select">
-            <flexbox class="wk-range-select__top">
+            class="Xiaomingcloud-range-select">
+            <flexbox class="Xiaomingcloud-range-select__top">
               <el-input-number
                 :disabled="baseForm.noLimitAge"
                 v-model="baseForm.minAge"
@@ -85,7 +85,7 @@
               @change="ageCheckBoxChange" >不限</el-checkbox>
           </div>
         </template>
-      </wk-form>
+      </Xiaomingcloud-form>
     </create-sections>
   </xr-create>
 </template>
@@ -98,7 +98,7 @@ import {
 } from '@/api/hrm/recruit/post'
 
 import XrCreate from '@/components/XrCreate'
-import WkForm from '@/components/NewCom/WkForm'
+import XiaomingcloudForm from '@/components/NewCom/XiaomingcloudForm'
 import CreateSections from '@/components/CreateSections'
 import VDistpicker from '@/components/VDistpicker'
 import postModel from '../model/post'
@@ -113,7 +113,7 @@ export default {
   components: {
     XrCreate,
     CreateSections,
-    WkForm,
+    XiaomingcloudForm,
     VDistpicker
   },
   filters: {},
@@ -324,7 +324,7 @@ export default {
   }
 }
 
-.wk-range-select {
+.Xiaomingcloud-range-select {
   &__top {
     .range-separator {
       margin: 0 10px;

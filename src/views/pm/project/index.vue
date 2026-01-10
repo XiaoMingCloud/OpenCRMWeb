@@ -6,7 +6,7 @@
       <xr-header
         :icon-color="projectColor || '#4AB8B8'"
         class="xr-header"
-        icon-class="wk wk-project">
+        icon-class="xiaomingcloud open-project">
         <span slot="label">{{ projectName }}</span>
         <el-popover
           v-if="showSet"
@@ -50,7 +50,7 @@
           </div>
           <i
             slot="reference"
-            class="wk wk-manage set-img" />
+            class="xiaomingcloud open-manage set-img" />
         </el-popover>
 
         <!-- 人员列表 -->
@@ -58,7 +58,7 @@
           slot="ft"
           class="ft-btn"
           @click="membersShow = true">
-          <i class="wk wk-s-seas ft-img" />
+          <i class="xiaomingcloud open-s-seas ft-img" />
           <span class="ft-label">成员管理</span>
         </span>
         <span
@@ -66,7 +66,7 @@
           slot="ft"
           class="ft-btn"
           @click="screeningShow = true">
-          <i class="wk wk-screening ft-img" />
+          <i class="xiaomingcloud open-screening ft-img" />
           <span class="ft-label">任务筛选</span>
         </span>
 

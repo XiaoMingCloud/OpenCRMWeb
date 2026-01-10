@@ -26,7 +26,7 @@
       <flexbox align="stretch" class="map-content--title">
         <flexbox-item>
           <div class="title--position">
-            <span class="wk wk-icon-position"/>
+            <span class="xiaomingcloud open-icon-position"/>
             <el-tooltip :content="address" class="item" effect="dark" placement="top-start">
               <span class="title--address">{{ address }}</span>
             </el-tooltip>
@@ -60,7 +60,7 @@
                 v-if="showCustomContent"
                 class="type-content-custom">
                 <el-input
-                  v-wk-number="'positiveInt'"
+                  v-Xiaomingcloud-number="'positiveInt'"
                   v-model="mapData.radius">
                   <template slot="append">米</template>
                 </el-input>
@@ -105,7 +105,7 @@
                 :style="{backgroundColor: item.customerId === currentId ? '#f7f7f7' : ''}"
                 class="map-info--box"
                 @click="selectAddress(item)">
-                <span class="wk wk-icon-location"/>
+                <span class="xiaomingcloud open-icon-location"/>
                 <div class="map-box--content">
                   <div class="map-info--name">
                     <el-tooltip :content="item.customerName" class="item" effect="dark" placement="top-start">
@@ -544,7 +544,7 @@ export default {
   width: 100%;
   .title--position {
     display: inline-block;
-    /deep/.wk-icon-position {
+    /deep/.Xiaomingcloud-icon-position {
       color: #2362FB;
       display: inline-block;
       vertical-align: top;
@@ -639,7 +639,7 @@ export default {
     padding-bottom: 10px;
     border-bottom: 1px solid #e4e4e4;
   }
-  .wk-icon-location {
+  .Xiaomingcloud-icon-location {
     color: red;
     display: inline-block;
     margin-right: 10px;

@@ -4,7 +4,7 @@
     direction="column"
     align="stretch">
     <xr-header
-      icon-class="wk wk-airplane"
+      icon-class="xiaomingcloud open-airplane"
       icon-color="#5864FF"
       label="市场活动表单设置" />
     <div class="main__bd">

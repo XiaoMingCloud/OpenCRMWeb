@@ -18,7 +18,7 @@
               full: Boolean(form.username),
               focus: focusKey === 'username'
             }"
-            class="form-icon wk wk-user" />-->
+            class="form-icon xiaomingcloud open-user" />-->
         </el-input>
       </el-form-item>
       <el-form-item>

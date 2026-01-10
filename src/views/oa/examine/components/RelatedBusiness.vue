@@ -11,7 +11,7 @@
     <span
       slot="reference"
       class="add-btn" @click="showRelative = true">
-      <i class="wk wk-l-plus" />
+      <i class="xiaomingcloud open-l-plus" />
       <span class="label">关联业务</span>
     </span>
     <div class="related-business">
@@ -127,7 +127,7 @@ $btn-b-hover-color: #eff4ff;
   padding: 3px 10px;
   cursor: pointer;
 
-  .wk-l-plus {
+  .Xiaomingcloud-l-plus {
     font-size: 12px;
   }
 }

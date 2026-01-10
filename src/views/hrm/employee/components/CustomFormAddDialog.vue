@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -13,9 +13,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-item
+        <Xiaomingcloud-form-item
           v-for="(item, index) in fieldList"
           :key="index"
           :index="index"
@@ -35,7 +35,7 @@
               @province="selectProvince($event, data)"
               @city="selectCity($event, data)"/>
           </template>
-        </wk-form-item>
+        </Xiaomingcloud-form-item>
       </el-form>
       <slot />
     </div>
@@ -55,7 +55,7 @@ import {
   hrmEmployeeFieldVerifyAPI
 } from '@/api/hrm/employee'
 
-import WkFormItem from '@/components/NewCom/WkForm/WkFormItem'
+import XiaomingcloudFormItem from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItem'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
 import CustomFieldsMixin from '@/mixins/CustomFields'
@@ -66,7 +66,7 @@ export default {
   // 自定义字段弹窗新建
   name: 'CustomFormAddDialog',
   components: {
-    WkFormItem,
+    XiaomingcloudFormItem,
     VDistpicker
   },
   mixins: [ElDialogLoadingMixin, CustomFieldsMixin],
@@ -233,7 +233,7 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 55vh;
-  .wk-form {
+  .Xiaomingcloud-form {
     display: flex;
     flex-wrap: wrap;
     /deep/.is-detail_table {

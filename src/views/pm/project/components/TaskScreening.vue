@@ -40,7 +40,7 @@
               v-if="val.type == 'tag'"
               :style="{ backgroundColor: val.color }"
               class="tag-icon">
-              <i class="wk wk-label" />
+              <i class="xiaomingcloud open-label" />
             </span>
             <!-- <i
               v-if="val.type == 'tag'"
@@ -389,7 +389,7 @@ export default {
         border-radius: $xr-border-radius-base;
         margin-right: 10px;
 
-        .wk {
+        .Xiaomingcloud {
           color: white;
           font-size: 12px;
         }

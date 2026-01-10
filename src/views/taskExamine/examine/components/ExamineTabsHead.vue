@@ -10,7 +10,7 @@
       @command="handleSelectClick">
       <span class="el-dropdown-link">
         <i
-          :class="['wk', 'dropdown-icon', 'wk-' + currentValue.icon]"
+          :class="['Xiaomingcloud', 'dropdown-icon', 'Xiaomingcloud-' + currentValue.icon]"
           :style="{ backgroundColor: currentValue.color }" />{{ currentValue.label }}<i class="el-icon-arrow-down el-icon--right" />
       </span>
       <el-dropdown-menu slot="dropdown">
@@ -18,7 +18,7 @@
           v-for="(item, index) in selectList"
           :key="index"
           :command="item"> <i
-            :class="['wk', 'dropdown-icon', item.icon]"
+            :class="['Xiaomingcloud', 'dropdown-icon', item.icon]"
             :style="{ backgroundColor: item.color }" />{{ item.label }}</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -78,7 +78,7 @@ export default {
         this.selectList && this.selectList.length
           ? this.selectList[0]
           : {
-            icon: 'wk wk-approve',
+            icon: 'xiaomingcloud open-approve',
             color: '#9376FF',
             command: 'all',
             label: '全部审批'

@@ -111,7 +111,7 @@ import {
   crmReceivablesPlanDeleteAPI
 } from '@/api/crm/receivables'
 /** 注意  需要删除接口 */
-import { objDeepCopy, getWkDateTime } from '@/utils'
+import { objDeepCopy, getXiaomingcloudDateTime } from '@/utils'
 import CheckStatusMixin from '@/mixins/CheckStatusMixin'
 import { separator } from '@/filters/vueNumeralFilter/filters'
 import { getPermissionByKey } from '@/utils'
@@ -250,7 +250,7 @@ export default {
           this.loading = false
           const list = res.data.list || []
           list.forEach(item => {
-            item.returnDate = getWkDateTime(item.returnDate)
+            item.returnDate = getXiaomingcloudDateTime(item.returnDate)
           })
           this.palnList = list
         })

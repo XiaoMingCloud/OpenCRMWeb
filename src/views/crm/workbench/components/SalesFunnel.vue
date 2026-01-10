@@ -3,7 +3,7 @@
     v-loading="loading"
     class="sales-funnel card">
     <flexbox class="card-title">
-      <span class="icon wk wk-funnel" />
+      <span class="icon xiaomingcloud open-funnel" />
       <div class="card-title-center text-one-ellipsis">
         销售漏斗
         <template v-if="businessId">

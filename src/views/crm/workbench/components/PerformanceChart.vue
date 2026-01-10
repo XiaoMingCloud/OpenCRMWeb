@@ -3,7 +3,7 @@
     v-loading="loading"
     class="performance-chart card">
     <flexbox class="card-title">
-      <span class="icon wk wk-performance" />
+      <span class="icon xiaomingcloud open-performance" />
       <div class="card-title-center text-one-ellipsis">
         业绩指标完成率 ({{ optionName }})
       </div>

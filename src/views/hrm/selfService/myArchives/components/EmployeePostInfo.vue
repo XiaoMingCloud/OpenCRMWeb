@@ -1,8 +1,8 @@
 <template>
   <div v-loading="loading">
-    <wk-custom-base-detail
+    <Xiaomingcloud-custom-base-detail
       :list="postList"/>
-    <wk-base-detail
+    <Xiaomingcloud-base-detail
       v-if="leaveList.length > 0"
       :list="leaveList"
     />
@@ -15,8 +15,8 @@ import {
   hrmEmployeeArchivesPostAPI
 } from '@/api/hrm/selfService/myArchives'
 
-import WkBaseDetail from '@/components/WkBaseDetail'
-import WkCustomBaseDetail from '@/components/WkBaseDetail/CustomIndex'
+import XiaomingcloudBaseDetail from '@/components/XiaomingcloudBaseDetail'
+import XiaomingcloudCustomBaseDetail from '@/components/XiaomingcloudBaseDetail/CustomIndex'
 
 import employeePost from '@/views/hrm/employee/model/employeePost'
 import { objDeepCopy } from '@/utils'
@@ -28,8 +28,8 @@ export default {
   // 岗位信息
   name: 'EmployeePostInfo',
   components: {
-    WkBaseDetail,
-    WkCustomBaseDetail
+    XiaomingcloudBaseDetail,
+    XiaomingcloudCustomBaseDetail
   },
   mixins: [CustomFieldsMixin],
   props: {},

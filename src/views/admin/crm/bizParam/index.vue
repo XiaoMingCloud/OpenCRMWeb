@@ -1,7 +1,7 @@
 <template>
   <div class="system-customer">
     <xr-header
-      icon-class="wk wk-s-seas"
+      icon-class="xiaomingcloud open-s-seas"
       icon-color="#487DFF"
       label="业务参数设置" />
     <div class="customer-content">

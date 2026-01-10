@@ -2,7 +2,7 @@
   <div :class="{ 'is-close': collapse }" class="menu-item-content">
     <i
       v-if="icon"
-      :class="['wk', `wk-${icon}`]"/>
+      :class="['Xiaomingcloud', `Xiaomingcloud-${icon}`]"/>
     <span class="side-bar-label">{{ title }}</span>
     <span v-if="count">({{ count }})</span>
     <el-badge
@@ -63,7 +63,7 @@ export default {
   }
 }
 
-.wk {
+.Xiaomingcloud {
   margin-right: 8px;
 }
 

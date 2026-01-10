@@ -2,7 +2,7 @@
 <template>
   <wb-section
     :des="des"
-    icon="wk wk-office"
+    icon="xiaomingcloud open-office"
     class="wb-recruit"
     label="招聘动态"
   >

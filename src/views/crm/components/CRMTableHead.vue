@@ -31,7 +31,7 @@
         v-if="showFilterView"
         type="primary"
         class="filter-button"
-        icon="wk wk-screening"
+        icon="xiaomingcloud open-screening"
         @click="showFilterClick">高级筛选</el-button>
       <el-button
         v-if="sortData && sortData.order && sortData.column"
@@ -58,7 +58,7 @@
         <el-button
           v-for="(item, index) in getSelectionHandleItemsInfo()"
           v-show="whetherTypeShowByPermision(item.type)"
-          :icon="item.icon | wkIconPre"
+          :icon="item.icon | XiaomingcloudIconPre"
           :key="index"
           type="primary"
           @click.native="selectionBarClick(item.type)">{{ item.name }}</el-button>

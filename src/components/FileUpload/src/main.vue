@@ -10,7 +10,7 @@
         </div>
       </flexbox>
       <div v-show="isUnfold" class="file-upload__body">
-        <wk-upload-cell
+        <Xiaomingcloud-upload-cell
           v-for="(item, index) in uploadList"
           :key="index"
           :index="index"
@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import WkUploadCell from './WkUploadCell'
+import XiaomingcloudUploadCell from './XiaomingcloudUploadCell'
 
 export default {
   // 文件上传
   name: 'FileUpload',
   components: {
-    WkUploadCell
+    XiaomingcloudUploadCell
   },
   props: {},
   data() {
@@ -186,7 +186,7 @@ export default {
     overflow-y: auto;
     padding: 10px;
 
-    .wk-upload-cell + .wk-upload-cell {
+    .Xiaomingcloud-upload-cell + .Xiaomingcloud-upload-cell {
       margin-top: 10px;
     }
   }

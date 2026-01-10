@@ -3,7 +3,7 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-user"
+      icon-class="xiaomingcloud open-user"
       icon-color="#2362FB"
       placeholder="请输入员工姓名"
       show-search
@@ -16,12 +16,12 @@
           placement="top"
           style="margin-left: 8px;"
           content="仅展示您管理范围内的员工">
-          <i class="wk wk-help wk-help-tips"/>
+          <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
         </el-tooltip>
       </template>
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -60,21 +60,21 @@
     </xr-header>
     <div class="crm-container">
       <flexbox class="filter">
-        <wk-border-menu
+        <Xiaomingcloud-border-menu
           :list="tabLeftList"
           :is-select="!!tabLeftList.find(item => item.name == tabType)"
           v-model="tabType"
           style="flex: 6;"
           @select="tabClick"
         />
-        <wk-border-menu
+        <Xiaomingcloud-border-menu
           :list="tabCenterList"
           :is-select="!!tabCenterList.find(item => item.name == tabType)"
           v-model="tabType"
           style="flex: 2;"
           @select="tabClick"
         />
-        <wk-border-menu
+        <Xiaomingcloud-border-menu
           :list="tabRightList"
           :is-select="!!tabRightList.find(item => item.name == tabType)"
           v-model="tabType"
@@ -160,7 +160,7 @@
           <template
             slot="header"
             slot-scope="slot">
-            <wk-field-set
+            <Xiaomingcloud-field-set
               :loading="fieldSetLoading"
               :fields="setFieldList"
               @save="fieldSetSave"/>
@@ -249,15 +249,15 @@ import {
 
 import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
-import WkFieldSet from '@/components/NewCom/WkFieldSet'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
+import XiaomingcloudFieldSet from '@/components/NewCom/XiaomingcloudFieldSet'
 import EmployeeCreateView from './components/EmployeeCreateView'
 import EmployeeDetail from './EmployeeDetail'
 import FormAddDialog from './components/FormAddDialog'
 import UpdateSchemeDialog from './components/UpdateSchemeDialog'
 import GiveUpLeaveDialog from './components/GiveUpLeaveDialog'
 import DepAddEmployDialog from './components/DepAddEmployDialog' // 从系统管理导入员工
-import WkBorderMenu from '../components/WkBorderMenu'
+import XiaomingcloudBorderMenu from '../components/XiaomingcloudBorderMenu'
 
 import { mapGetters } from 'vuex'
 import { employeeModel, educationModel, officialModel, changePostModel } from './model/employee'
@@ -272,13 +272,13 @@ export default {
     XrTableHeader,
     EmployeeCreateView,
     EmployeeDetail,
-    WkPopoverFilter,
-    WkFieldSet,
+    XiaomingcloudPopoverFilter,
+    XiaomingcloudFieldSet,
     FormAddDialog,
     UpdateSchemeDialog,
     GiveUpLeaveDialog,
     DepAddEmployDialog,
-    WkBorderMenu
+    XiaomingcloudBorderMenu
   },
   data() {
     return {
@@ -505,11 +505,11 @@ export default {
     headerMoreHandle() {
       const temps = []
       if (this.excelimportAuth) {
-        temps.push({ type: 'import', name: '导入', icon: 'wk wk-import' })
+        temps.push({ type: 'import', name: '导入', icon: 'xiaomingcloud open-import' })
       }
 
       if (this.excelexportAuth) {
-        temps.push({ type: 'export', name: '导出', icon: 'wk wk-export' })
+        temps.push({ type: 'export', name: '导出', icon: 'xiaomingcloud open-export' })
       }
 
       return temps
@@ -522,7 +522,7 @@ export default {
         temps.push({
           label: '删除',
           command: 'delete',
-          icon: 'wk wk-delete'
+          icon: 'xiaomingcloud open-delete'
         })
       }
 
@@ -530,7 +530,7 @@ export default {
         temps.push({
           label: '参保方案',
           command: 'security',
-          icon: 'wk wk-approval-9'
+          icon: 'xiaomingcloud open-approval-9'
         })
       }
 
@@ -538,7 +538,7 @@ export default {
         temps.push({
           label: '导出选中',
           command: 'export',
-          icon: 'wk wk-export'
+          icon: 'xiaomingcloud open-export'
         })
       }
       return temps
@@ -964,7 +964,7 @@ export default {
           this.loading = false
         })
       } else if (command == 'import') {
-        this.$wkImport.import('hrm', {
+        this.$XiaomingcloudImport.import('hrm', {
           ownerSelectShow: false,
           repeatRuleShow: false,
           importRequest: hrmEmployeeUploadExportAPI, // 导入请求
@@ -986,7 +986,7 @@ export default {
           dropdownItems.push({
             label: '确认入职',
             command: 'confirm',
-            icon: 'wk wk-activation'
+            icon: 'xiaomingcloud open-activation'
           })
         }
       } else if (data.entryStatus == 4) {
@@ -995,7 +995,7 @@ export default {
           dropdownItems.push({
             label: '再入职',
             command: 'again',
-            icon: 'wk wk-approval-17'
+            icon: 'xiaomingcloud open-approval-17'
           })
         }
       } else {
@@ -1005,7 +1005,7 @@ export default {
             dropdownItems.push({
               label: '办理转正',
               command: 'official',
-              icon: 'wk wk-transfer'
+              icon: 'xiaomingcloud open-transfer'
             })
           }
         }
@@ -1015,7 +1015,7 @@ export default {
           dropdownItems.push({
             label: '调整部门/岗位',
             command: 'change-post',
-            icon: 'wk wk-employees'
+            icon: 'xiaomingcloud open-employees'
           })
         }
 
@@ -1023,7 +1023,7 @@ export default {
           dropdownItems.push({
             label: '晋升/降级',
             command: 'change-level',
-            icon: 'wk wk-approval-12'
+            icon: 'xiaomingcloud open-approval-12'
           })
         }
 
@@ -1033,7 +1033,7 @@ export default {
             dropdownItems.push({
               label: '参保方案',
               command: 'security',
-              icon: 'wk wk-approval-9'
+              icon: 'xiaomingcloud open-approval-9'
             })
           }
         }
@@ -1044,7 +1044,7 @@ export default {
             dropdownItems.push({
               label: '放弃离职',
               command: 'give-up-leave',
-              icon: 'wk wk-reset'
+              icon: 'xiaomingcloud open-reset'
             })
           }
         } else {
@@ -1052,7 +1052,7 @@ export default {
             dropdownItems.push({
               label: '办理离职',
               command: 'leave',
-              icon: 'wk wk-approval-16'
+              icon: 'xiaomingcloud open-approval-16'
             })
           }
         }
@@ -1062,7 +1062,7 @@ export default {
       // dropdownItems.push({
       //   label: '删除',
       //   command: 'delete',
-      //   icon: 'wk wk-reset'
+      //   icon: 'xiaomingcloud open-reset'
       // })
 
 
@@ -1127,7 +1127,7 @@ export default {
       // dropdownItems.push({
       //   label: '删除',
       //   command: 'delete',
-      //   icon: 'wk wk-reset'
+      //   icon: 'xiaomingcloud open-reset'
       // })
 
 
@@ -1364,7 +1364,7 @@ export default {
 
   .filter {
     margin-bottom: 8px;
-    .wk-border-menu {
+    .Xiaomingcloud-border-menu {
       margin-left: 20px;
     }
   }

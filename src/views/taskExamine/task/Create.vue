@@ -5,7 +5,7 @@
     @close="close"
     @save="saveClick">
     <create-sections title="基本信息">
-      <wk-form
+      <Xiaomingcloud-form
         ref="crmForm"
         :model="fieldForm"
         :rules="fieldRules"
@@ -30,7 +30,7 @@
                 <span
                   slot="editIndex"
                   class="add-btn">
-                  <i class="wk wk-l-plus" />
+                  <i class="xiaomingcloud open-l-plus" />
                   <span class="label">标签</span>
                 </span>
               </tag-index>
@@ -85,7 +85,7 @@
               <span
                 class="add-btn"
                 @click="addSubtasks = false">
-                <i class="wk wk-l-plus" />
+                <i class="xiaomingcloud open-l-plus" />
                 <span class="label">子任务</span>
               </span>
             </div>
@@ -113,13 +113,13 @@
               multiple
               list-type="picture">
               <span class="add-btn">
-                <i class="wk wk-l-plus" />
+                <i class="xiaomingcloud open-l-plus" />
                 <span class="label">附件</span>
               </span>
             </el-upload>
           </template>
         </template>
-      </wk-form>
+      </Xiaomingcloud-form>
     </create-sections>
 
     <c-r-m-full-screen-detail
@@ -134,7 +134,7 @@ import { setTaskAPI } from '@/api/task/task'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkForm from '@/components/NewCom/WkForm'
+import XiaomingcloudForm from '@/components/NewCom/XiaomingcloudForm'
 import TagIndex from './components/Tag/TagIndex'
 import RelatedBusiness from '@/components/RelatedBusiness'
 import SubTask from './components/SubTask'
@@ -152,7 +152,7 @@ export default {
   components: {
     XrCreate,
     CreateSections,
-    WkForm,
+    XiaomingcloudForm,
     TagIndex,
     RelatedBusiness,
     CRMFullScreenDetail: () =>
@@ -439,7 +439,7 @@ export default {
      * 附件
      */
     httpRequest(val) {
-      this.$wkUploadFile.upload({
+      this.$XiaomingcloudUploadFile.upload({
         file: val.file,
         params: {
           batchId: this.batchId
@@ -473,7 +473,7 @@ export default {
 <style lang="scss" scoped>
 @import './components/taskDetail';
 
-.wk-form {
+.Xiaomingcloud-form {
   /deep/ .el-form-item {
     &.is-relatedBusiness,
     &.is-tag,

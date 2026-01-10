@@ -9,7 +9,7 @@
 
     <flexbox align="center" class="box">
       <flexbox-item class="default-val" />
-      <span class="wk wk-icon-location" />
+      <span class="xiaomingcloud open-icon-location" />
     </flexbox>
 
   </field-wrapper>
@@ -38,7 +38,7 @@ export default {
   border-radius: $xr-border-radius-base;
   background: white;
   padding: 0 10px;
-  .wk-icon-location {
+  .Xiaomingcloud-icon-location {
     color: #999999;
   }
 }

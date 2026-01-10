@@ -23,13 +23,13 @@
             <span
               class="reply-btn"
               @click="handleToReply(index)">
-              <i class="wk wk-icon-reply" />
+              <i class="xiaomingcloud open-icon-reply" />
               <span>回复</span>
             </span>
             <span
               class="delete-btn"
               @click="handleToDelete(item, index)">
-              <i class="wk wk-s-delete"/>
+              <i class="xiaomingcloud open-s-delete"/>
               <span>删除</span>
             </span>
           </div>
@@ -64,11 +64,11 @@
               </div>
               <div class="control">
                 <span class="reply-btn" @click="handleToReply(index, childIndex)">
-                  <i class="wk wk-icon-reply" />
+                  <i class="xiaomingcloud open-icon-reply" />
                   <span>回复</span>
                 </span>
                 <span class="delete-btn" @click="handleToDelete(child, index, childIndex)">
-                  <i class="wk wk-s-delete" />
+                  <i class="xiaomingcloud open-s-delete" />
                   <span>删除</span>
                 </span>
               </div>

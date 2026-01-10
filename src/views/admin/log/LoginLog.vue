@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <xr-header
-      icon-class="wk wk-record"
+      icon-class="xiaomingcloud open-record"
       icon-color="#2362FB"
       label="登录日志" />
     <div class="main-body">
@@ -13,7 +13,7 @@
           range-separator="-"
           start-placeholder="开始时间"
           end-placeholder="结束时间"/>
-        <wk-user-select
+        <Xiaomingcloud-user-select
           :radio="false"
           v-model="userList"
           placeholder="选择人员" />
@@ -63,7 +63,7 @@ import {
 } from '@/api/admin/log'
 
 import XrHeader from '@/components/XrHeader'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { Loading } from 'element-ui'
 
 import { downloadExcelWithResData } from '@/utils'
@@ -73,7 +73,7 @@ export default {
   name: 'LoginLog',
   components: {
     XrHeader,
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   mixins: [],
   data() {
@@ -250,7 +250,7 @@ export default {
     margin: 0 20px;
   }
 
-  .wk-user-select {
+  .Xiaomingcloud-user-select {
     margin-right: 20px;
   }
 }

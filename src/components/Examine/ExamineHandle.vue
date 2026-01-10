@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :title="title"
     :append-to-body="true"
     :close-on-click-modal="false"

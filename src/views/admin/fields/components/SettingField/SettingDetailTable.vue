@@ -18,13 +18,13 @@
           <div class="option-item__name">{{ item.name }}</div>
           <el-button
             type="text"
-            class="option-item__icon wk wk-write"
+            class="option-item__icon xiaomingcloud open-write"
             @click="handleEdit(index)" />
           <el-button
             type="text"
-            class="option-item__icon wk wk-icon-bin"
+            class="option-item__icon xiaomingcloud open-icon-bin"
             @click="handleDelete(index)" />
-          <div class="option-item__icon drag-hook wk wk-grid" />
+          <div class="option-item__icon drag-hook xiaomingcloud open-grid" />
         </flexbox>
       </draggable>
     </div>
@@ -44,7 +44,7 @@
           effect="dark"
           popper-class="setting-number-tooltip"
           placement="top">
-          <i class="wk wk-help wk-help-tips" />
+          <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" />
         </el-tooltip>
       </div>
       <el-radio-group v-model="field.precisions">

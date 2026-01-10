@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible.sync="visible"
     :title="title"
     :append-to-body="true"
@@ -14,7 +14,7 @@
         <div
           class="handle-item-name"
           style="margin-top: 8px;">适用范围：</div>
-        <wk-user-dep-select
+        <Xiaomingcloud-user-dep-select
           :user-value.sync="users"
           :dep-value.sync="strucs"
           style="width: 100%;"
@@ -50,14 +50,14 @@
 <script>
 import { crmSettingCustomerConfigSetAPI } from '@/api/admin/crm'
 
-import WkUserDepSelect from '@/components/NewCom/WkUserDepSelect'
+import XiaomingcloudUserDepSelect from '@/components/NewCom/XiaomingcloudUserDepSelect'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
 
 export default {
   name: 'EditCustomerLimit',
   components: {
-    WkUserDepSelect
+    XiaomingcloudUserDepSelect
   },
   mixins: [ElDialogLoadingMixin],
   props: {

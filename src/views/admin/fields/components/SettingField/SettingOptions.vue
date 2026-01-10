@@ -13,10 +13,10 @@
           v-model="item.value"
           @change="handleChange">
           <flexbox v-if="optionsEditAuth" slot="suffix">
-            <div class="el-input__icon drag-hook wk wk-grid" />
+            <div class="el-input__icon drag-hook xiaomingcloud open-grid" />
             <el-button
               type="text"
-              class="el-input__icon wk wk-icon-bin"
+              class="el-input__icon xiaomingcloud open-icon-bin"
               @click="handleDelete(index)" />
           </flexbox>
         </el-input>
@@ -32,7 +32,7 @@
         <flexbox v-if="optionsEditAuth" slot="suffix">
           <el-button
             type="text"
-            class="el-input__icon wk wk-icon-bin"
+            class="el-input__icon xiaomingcloud open-icon-bin"
             @click="handleDelete(-1)" />
         </flexbox>
       </el-input>
@@ -355,7 +355,7 @@ export default {
   }
 
   &.other-item {
-    .wk-icon-bin {
+    .Xiaomingcloud-icon-bin {
       cursor: pointer;
     }
   }

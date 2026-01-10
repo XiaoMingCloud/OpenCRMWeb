@@ -143,7 +143,7 @@ const perfectRouter = function(authInfo, result) {
             redirect = element.redirect
           }
 
-          if (authInfo.wkFirstModel && !topRedirect) {
+          if (authInfo.XiaomingcloudFirstModel && !topRedirect) {
             const modelName = {
               crm: 'crm',
               taskExamine: 'taskExamine',
@@ -153,7 +153,7 @@ const perfectRouter = function(authInfo, result) {
               bi: 'bi',
               calendar: 'calendar',
               hrm: 'hrm'
-            }[authInfo.wkFirstModel]
+            }[authInfo.XiaomingcloudFirstModel]
             if (modelName == mainRouter.type) {
               topRedirect = element.redirect
             }

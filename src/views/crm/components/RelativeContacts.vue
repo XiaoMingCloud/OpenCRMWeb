@@ -76,7 +76,7 @@
             <span
               v-if="contactsId == scope.row.contactsId"
               class="chief">
-            <i class="wk wk-success" />首要联系人</span>
+            <i class="xiaomingcloud open-success" />首要联系人</span>
             <el-button
               v-else-if="!isSeas"
               class="set-chief-btn"

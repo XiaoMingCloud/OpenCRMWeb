@@ -53,7 +53,7 @@
                   :rules="getWeightRules(form)"
                   label="">
                   <el-input
-                    v-wk-number
+                    v-Xiaomingcloud-number
                     :disabled="form.isEmpWeight == 1"
                     v-model="fixItem.weight"
                     :placeholder="form.isEmpWeight == 1 ? '员工填写权限占比' : '请输入权重信息'"
@@ -134,7 +134,7 @@
                   :rules="getWeightRules()"
                   label="">
                   <el-input
-                    v-wk-number
+                    v-Xiaomingcloud-number
                     v-model="fixItem.weight"
                     placeholder="请输入权重信息"
                     type="text">

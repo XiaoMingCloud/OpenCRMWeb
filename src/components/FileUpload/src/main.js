@@ -10,7 +10,7 @@ UploadFile.install = (Vue) => {
   document.body.appendChild(instance.$el)
 
 
-  Vue.prototype.$wkUploadFile = instance
+  Vue.prototype.$XiaomingcloudUploadFile = instance
 }
 
 export default UploadFile

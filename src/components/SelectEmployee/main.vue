@@ -3,7 +3,7 @@
     <div class="select-input">
       <slot name="tabs" />
       <!-- 搜索员工列表 -->
-      <wk-user-dep
+      <Xiaomingcloud-user-dep
         ref="userDep"
         :radio="radio"
         :user-value="userDataValue"
@@ -47,14 +47,14 @@
 <script>
 import { userListAPI, depListAPI } from '@/api/common'
 
-import WkUserDep from '@/components/NewCom/WkUserDepSelect/src/WkUserDep'
+import XiaomingcloudUserDep from '@/components/NewCom/XiaomingcloudUserDepSelect/src/XiaomingcloudUserDep'
 
 import { valueEquals } from 'element-ui/lib/utils/util'
 
 export default {
   name: 'EmployeeDepartment',
   components: {
-    WkUserDep
+    XiaomingcloudUserDep
   },
   props: {
     radio: {

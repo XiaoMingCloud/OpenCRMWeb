@@ -3,7 +3,7 @@ import { roleListAPI } from '@/api/admin/employeeDep'
 export default {
   data() {
     return {
-      wkRoleOption: []
+      XiaomingcloudRoleOption: []
     }
   },
 
@@ -155,13 +155,13 @@ export default {
      */
     getRoleList() {
       return new Promise((resolve, reject) => {
-        if (this.wkRoleOption.length > 0) {
-          resolve(this.wkRoleOption)
+        if (this.XiaomingcloudRoleOption.length > 0) {
+          resolve(this.XiaomingcloudRoleOption)
         } else {
           roleListAPI()
             .then(res => {
-              this.wkRoleOption = res.data || []
-              resolve(this.wkRoleOption)
+              this.XiaomingcloudRoleOption = res.data || []
+              resolve(this.XiaomingcloudRoleOption)
             })
             .catch(() => {})
         }

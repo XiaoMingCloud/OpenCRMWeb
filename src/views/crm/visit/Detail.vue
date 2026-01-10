@@ -167,7 +167,7 @@ export default {
      * 预览图片
      */
     previewImage(list, index) {
-      this.$wkPreviewFile.preview({
+      this.$XiaomingcloudPreviewFile.preview({
         index: index,
         data: list
       })

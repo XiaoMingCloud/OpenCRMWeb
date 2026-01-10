@@ -100,23 +100,23 @@ export default {
      */
     getStatusIcon(status) {
       if (status == 0) {
-        return 'wk wk-time'
+        return 'xiaomingcloud open-time'
       } else if (status == 1) {
-        return 'wk wk-success'
+        return 'xiaomingcloud open-success'
       } else if (status == 2) {
-        return 'wk wk-close'
+        return 'xiaomingcloud open-close'
       } else if (status == 3) {
-        return 'wk wk-time'
+        return 'xiaomingcloud open-time'
       } else if (status == 4) {
-        return 'wk wk-reset'
+        return 'xiaomingcloud open-reset'
       } else if (status == 5) {
-        return 'wk wk-time'
+        return 'xiaomingcloud open-time'
       } else if (status == 6) {
-        return 'wk wk-l-plus'
+        return 'xiaomingcloud open-l-plus'
       } else if (status == 8) {
-        return 'wk wk-invalid'
+        return 'xiaomingcloud open-invalid'
       } else if (status == 10) {
-        return 'wk wk-success'
+        return 'xiaomingcloud open-success'
       }
       return ''
     },

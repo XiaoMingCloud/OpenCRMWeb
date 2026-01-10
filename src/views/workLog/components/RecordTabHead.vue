@@ -6,7 +6,7 @@
     <span
       slot="left"
       class="title">
-      <i class="wk wk-message" />跟进记录（{{ count }}）
+      <i class="xiaomingcloud open-message" />跟进记录（{{ count }}）
     </span>
   </base-tabs-head>
 </template>

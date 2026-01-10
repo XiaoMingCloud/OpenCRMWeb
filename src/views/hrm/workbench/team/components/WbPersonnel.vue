@@ -1,6 +1,6 @@
 <template>
   <wb-section
-    icon="wk wk-s-seas"
+    icon="xiaomingcloud open-s-seas"
     class="wb-personnel"
     label="我的团队"
   >

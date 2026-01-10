@@ -14,7 +14,7 @@
       class="main">
       <flexbox class="detail-header">
         <div class="header-icon">
-          <i class="wk wk-log" />
+          <i class="xiaomingcloud open-log" />
         </div>
         <div class="header-name">公告</div>
         <el-dropdown
@@ -26,7 +26,7 @@
             <el-dropdown-item
               v-for="(item, index) in moreTypes"
               :key="index"
-              :icon="item.icon | wkIconPre"
+              :icon="item.icon | XiaomingcloudIconPre"
               :command="item.type">{{ item.name }}</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
@@ -198,7 +198,7 @@ export default {
     border-radius: $xr-border-radius-base;
     margin-right: 20px;
     background-color: #5864ff;
-    .wk {
+    .Xiaomingcloud {
       color: white;
       font-size: 26px;
     }

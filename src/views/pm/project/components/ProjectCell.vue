@@ -16,18 +16,18 @@
       <i
         v-if="deleteShow"
         title="移至回收站"
-        class="wk wk-s-delete"
+        class="xiaomingcloud open-s-delete"
         @click.stop="handleClick('delete')"/>
       <i
         v-if="editShow"
         title="编辑"
-        class="wk wk-circle-edit"
+        class="xiaomingcloud open-circle-edit"
         @click.stop="handleClick('edit')"/>
       <i
         v-if="collectShow"
         :class="{ 'is-collect': data.collect == 1 }"
         title="删除"
-        class="wk wk-focus-on"
+        class="xiaomingcloud open-focus-on"
         @click.stop="handleClick('collect')" />
     </div>
   </flexbox>
@@ -117,7 +117,7 @@ export default {
       color: $xr-color-primary;
     }
 
-    .wk-focus-on.is-collect {
+    .Xiaomingcloud-focus-on.is-collect {
       color: #F7AD3D;
     }
   }

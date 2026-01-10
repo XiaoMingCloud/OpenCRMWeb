@@ -124,7 +124,7 @@
                 <template v-else-if="formItem.formType === 'date' || formItem.formType === 'datetime'">
                   <el-date-picker
                     v-show="formItem.type === 14"
-                    :ref="`wkDatePicker${index}`"
+                    :ref="`XiaomingcloudDatePicker${index}`"
                     v-model="formItem.range"
                     :picker-options="getPickerOptions(formItem, index)"
                     :type="formItem.formType === 'date' ? 'daterange' : 'datetimerange'"
@@ -154,12 +154,12 @@
                     :label="item.name"
                     :value="item.statusId"/>
                 </el-select>
-                <wk-user-select
+                <Xiaomingcloud-user-select
                   v-else-if="formItem.formType === 'user' || formItem.formType === 'single_user'"
                   :radio="false"
                   v-model="formItem.value"
                   @change="userDepChange(formItem, arguments[0], arguments[1])"/>
-                <wk-dep-select
+                <Xiaomingcloud-dep-select
                   v-else-if="formItem.formType === 'structure'"
                   :radio="false"
                   v-model="formItem.value"
@@ -182,7 +182,7 @@
                   @province="selectProvince($event,formItem)"
                   @city="selectCity($event,formItem)"
                   @area="selectArea($event,formItem)"/>
-                <wk-position
+                <Xiaomingcloud-position
                   v-else-if="formItem.formType == 'position'"
                   :show-detail="false"
                   :props="{ checkStrictly: true }"
@@ -241,10 +241,10 @@
 
 <script>
 import { XhProuctCate } from '@/components/CreateCom'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
 import VDistpicker from '@/components/VDistpicker'
-import WkPosition from '@/components/NewCom/WkPosition'
+import XiaomingcloudPosition from '@/components/NewCom/XiaomingcloudPosition'
 
 import { objDeepCopy } from '@/utils'
 import AdvancedFilterMixin from '@/mixins/AdvancedFilter'
@@ -257,11 +257,11 @@ import { isEmpty } from '@/utils/types'
 export default {
   name: 'Index',
   components: {
-    WkUserSelect,
+    XiaomingcloudUserSelect,
     XhProuctCate,
     VDistpicker,
-    WkDepSelect,
-    WkPosition
+    XiaomingcloudDepSelect,
+    XiaomingcloudPosition
   },
   mixins: [AdvancedFilterMixin],
   props: {
@@ -798,7 +798,7 @@ export default {
      * 聚焦datepicker
      */
     dateRangeSelect(formItem, index) {
-      const datePicker = this.$refs[`wkDatePicker${index}`][0]
+      const datePicker = this.$refs[`XiaomingcloudDatePicker${index}`][0]
       this.$nextTick(() => {
         datePicker.focus()
         datePicker.pickerVisible = true

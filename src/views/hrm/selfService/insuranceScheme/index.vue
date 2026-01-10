@@ -3,7 +3,7 @@
   <div v-loading="loading" class="wrapper">
     <xr-header
       style="padding: 0px 15px 15px 0;"
-      icon-class="wk wk-social"
+      icon-class="xiaomingcloud open-social"
       icon-color="#2362FB"
       ft-top="0"
       label="社保管理" >

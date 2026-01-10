@@ -45,7 +45,7 @@ export default {
 
     iconClass() {
       const temps = this.dataValue.split(',')
-      return temps.length > 1 ? temps[0] : 'wk wk-approve'
+      return temps.length > 1 ? temps[0] : 'xiaomingcloud open-approve'
     },
 
     selectIcon() {
@@ -95,7 +95,7 @@ export default {
   line-height: 36px;
   border-radius: $xr-border-radius-base;
   margin-right: 30px;
-  .wk {
+  .Xiaomingcloud {
     color: white;
     font-size: 22px;
   }

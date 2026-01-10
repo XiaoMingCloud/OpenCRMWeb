@@ -63,7 +63,7 @@
     </template>
 
     <template v-else-if="type === 'position'">
-      <wk-distpicker
+      <Xiaomingcloud-distpicker
         v-model="selectedMapValue"
         :hide-area="field.precisions >= 3"
         :only-province="field.precisions === 4"
@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import WkDistpicker from '@/components/NewCom/WkDistpicker'
+import XiaomingcloudDistpicker from '@/components/NewCom/XiaomingcloudDistpicker'
 
 import { isObject, isEmpty, isArray } from '@/utils/types'
 import { regexIsCRMMobile, regexIsCRMEmail, objDeepCopy } from '@/utils'
@@ -93,7 +93,7 @@ import { getFieldAuth } from '../../utils'
 export default {
   name: 'SettingDefault',
   components: {
-    WkDistpicker
+    XiaomingcloudDistpicker
   },
   props: {
     field: {

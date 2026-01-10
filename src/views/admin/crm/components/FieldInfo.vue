@@ -174,7 +174,7 @@
         :content="hiddenTips"
         effect="dark"
         placement="top">
-        <i class="wk wk-help wk-help-tips"/>
+        <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
       </el-tooltip>
     </div> -->
   </div>

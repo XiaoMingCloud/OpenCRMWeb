@@ -32,7 +32,7 @@
             <el-button
               v-if="isArchive"
               class="xr-btn--primary"
-              icon="wk wk-activation"
+              icon="xiaomingcloud open-activation"
               type="primary"
               @click="activateTask">激活</el-button>
             <span
@@ -41,7 +41,7 @@
             <el-button
               v-if="isRecycle && getPermission('restoreTask')"
               class="xr-btn--primary"
-              icon="wk wk-activation"
+              icon="xiaomingcloud open-activation"
               type="primary"
               @click="recoverTask">恢复</el-button>
             <el-button
@@ -53,7 +53,7 @@
             <el-button
               v-if="showArchiveBtn && getPermission('archiveTask')"
               class="xr-btn--green"
-              icon="wk wk-archive"
+              icon="xiaomingcloud open-archive"
               type="primary"
               @click="moreArchive">归档</el-button>
             <el-dropdown
@@ -63,7 +63,7 @@
               <el-button icon="el-icon-more" />
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item
-                  :icon="'delete' | wkIconPre"
+                  :icon="'delete' | XiaomingcloudIconPre"
                   command="delete">删除</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
@@ -132,7 +132,7 @@
             </flexbox>
           </flexbox-item>
           <flexbox-item>
-            <wk-user-select
+            <Xiaomingcloud-user-select
               :value="taskData.mainUser ? taskData.mainUser.userId : ''"
               :request="ownerListRequest"
               :params="ownerListParams"
@@ -146,7 +146,7 @@
                 class="head-btn">
                 <i
                   v-if="!taskData.mainUser"
-                  class="wk wk-l-plus head-btn__icon is-null" />
+                  class="xiaomingcloud open-l-plus head-btn__icon is-null" />
                 <xr-avatar
                   v-else
                   :name="taskData.mainUser ? taskData.mainUser.realname : ''"
@@ -164,13 +164,13 @@
                   class="el-icon-close head-btn__close"
                   @click="submiteMainUser(null)" />
               </flexbox>
-            </wk-user-select>
+            </Xiaomingcloud-user-select>
           </flexbox-item>
           <flexbox-item>
             <flexbox class="head-btn">
               <i
                 :class="[ taskData.startTime ? 'is-valve' : 'is-null']"
-                class="wk wk-l-time head-btn__icon" />
+                class="xiaomingcloud open-l-time head-btn__icon" />
               <el-date-picker
                 v-model="taskData.startTime"
                 :clearable="false"
@@ -195,7 +195,7 @@
             <flexbox class="head-btn">
               <i
                 :class="[ taskData.stopTime ? 'is-valve' : 'is-null']"
-                class="wk wk-l-minus head-btn__icon" />
+                class="xiaomingcloud open-l-minus head-btn__icon" />
               <el-date-picker
                 v-model="taskData.stopTime"
                 :clearable="false"
@@ -264,7 +264,7 @@
                   @popoverSubmit="editOwnerList">
                   <i
                     slot="membersDep"
-                    class="wk wk-l-plus participant-add" />
+                    class="xiaomingcloud open-l-plus participant-add" />
                 </members-dep>
               </flexbox>
             </flexbox-item>
@@ -284,7 +284,7 @@
                   <span
                     slot="editIndex"
                     class="add-btn">
-                    <i class="wk wk-l-plus" />
+                    <i class="xiaomingcloud open-l-plus" />
                     <span class="label">标签</span>
                   </span>
                 </tag-index>
@@ -297,7 +297,7 @@
             <!-- 描述 -->
             <div class="section">
               <div class="section__hd">
-                <i class="wk wk-write" />
+                <i class="xiaomingcloud open-write" />
                 <span>描述</span>
               </div>
               <div class="section__bd description">
@@ -314,7 +314,7 @@
                       v-if="getPermission('setTaskDescription')"
                       class="add-btn"
                       @click="addDescriptionShow = true">
-                      <i class="wk wk-l-plus" />
+                      <i class="xiaomingcloud open-l-plus" />
                       <span class="label">描述</span>
                     </span>
                   </div>
@@ -436,7 +436,7 @@
                       <span
                         class="add-btn"
                         @click="addSubtasks = false">
-                        <i class="wk wk-l-plus" />
+                        <i class="xiaomingcloud open-l-plus" />
                         <span class="label">子任务</span>
                       </span>
                     </div>
@@ -475,7 +475,7 @@
                   multiple
                   list-type="picture">
                   <span class="add-btn">
-                    <i class="wk wk-l-plus" />
+                    <i class="xiaomingcloud open-l-plus" />
                     <span class="label">附件</span>
                   </span>
                 </el-upload>
@@ -596,7 +596,7 @@ import SubTask from './SubTask'
 import Emoji from '@/components/Emoji'
 // 相关信息 - 选中列表
 import RelatedBusiness from '@/components/RelatedBusiness'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import FileCell from '@/views/oa/components/FileCell'
 import { mapGetters } from 'vuex'
 import CommentList from '@/components/CommentList'
@@ -617,7 +617,7 @@ export default {
       import('@/components/CRMFullScreenDetail'),
     SubTask,
     FileCell,
-    WkUserSelect,
+    XiaomingcloudUserSelect,
     CommentList,
     ReplyComment
   },
@@ -1074,7 +1074,7 @@ export default {
     },
     // 附件 -- 上传
     httpRequest(val) {
-      this.$wkUploadFile.upload({
+      this.$XiaomingcloudUploadFile.upload({
         file: val.file,
         params: {
           batchId: this.taskData.batchId
@@ -1872,12 +1872,12 @@ export default {
   }
 
   // 有值效果
-  .wk-l-time.is-valve {
+  .Xiaomingcloud-l-time.is-valve {
     background-color: #f7ad3d;
     color: white;
   }
 
-  .wk-l-minus.is-valve {
+  .Xiaomingcloud-l-minus.is-valve {
     background-color: #f56c6c;
     color: white;
   }
@@ -1936,7 +1936,7 @@ export default {
       color: #333;
       font-weight: 600;
     }
-    .wk {
+    .Xiaomingcloud {
       color: #363636;
       font-size: 15px;
       margin-right: 5px;

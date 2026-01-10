@@ -44,72 +44,72 @@ export default {
     typeObj() {
       const typesObj = {
         leads: {
-          icon: 'wk wk-leads',
+          icon: 'xiaomingcloud open-leads',
           color: '#6995FF',
           type: 'leads'
         },
         customer: {
-          icon: 'wk wk-customer',
+          icon: 'xiaomingcloud open-customer',
           color: '#6995FF',
           type: 'customer'
         },
         contacts: {
-          icon: 'wk wk-contacts',
+          icon: 'xiaomingcloud open-contacts',
           color: '#6995FF',
           type: 'contacts'
         },
         business: {
-          icon: 'wk wk-business',
+          icon: 'xiaomingcloud open-business',
           color: '#6995FF',
           type: 'business'
         },
         contract: {
-          icon: 'wk wk-contract',
+          icon: 'xiaomingcloud open-contract',
           color: '#6995FF',
           type: 'contract'
         },
         receivables: {
-          icon: 'wk wk-receivables',
+          icon: 'xiaomingcloud open-receivables',
           color: '#6995FF',
           type: 'receivables'
         },
         product: {
-          icon: 'wk wk-product',
+          icon: 'xiaomingcloud open-product',
           color: '#6995FF',
           type: 'product'
         },
         log: {
-          icon: 'wk wk-log',
+          icon: 'xiaomingcloud open-log',
           color: '#6995FF',
           type: 'log'
         },
         examine: {
-          icon: 'wk wk-approve',
+          icon: 'xiaomingcloud open-approve',
           color: '#6995FF',
           type: 'examine'
         },
         task: {
-          icon: 'wk wk-o-task',
+          icon: 'xiaomingcloud open-o-task',
           color: '#6995FF',
           type: 'task'
         },
         announcement: {
-          icon: 'wk wk-announcement',
+          icon: 'xiaomingcloud open-announcement',
           color: '#6995FF',
           type: 'announcement'
         },
         schedule: {
-          icon: 'wk wk-schedule',
+          icon: 'xiaomingcloud open-schedule',
           color: '#6995FF',
           type: 'schedule'
         },
         invoice: {
-          icon: 'wk wk-invoice',
+          icon: 'xiaomingcloud open-invoice',
           color: '#6995FF',
           type: 'invoice'
         },
         hrm: {
-          icon: 'wk wk-employees',
+          icon: 'xiaomingcloud open-employees',
           color: '#6995FF',
           type: 'hrm'
         }
@@ -426,7 +426,7 @@ export default {
     line-height: 28px;
     border-radius: 14px;
 
-    .wk {
+    .Xiaomingcloud {
       color: white;
       font-size: 13px;
     }

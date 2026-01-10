@@ -4,7 +4,7 @@
     <template >
       <xr-header
         style="padding: 0px 15px 15px 0;"
-        icon-class="wk wk-payment"
+        icon-class="xiaomingcloud open-payment"
         icon-color="#2362FB"
         ft-top="0"
         label="历史工资" >

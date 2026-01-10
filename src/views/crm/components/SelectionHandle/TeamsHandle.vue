@@ -15,7 +15,7 @@
         <div
           class="handle-item-name"
           style="margin-top: 8px;">选择团队成员：</div>
-        <wk-user-select
+        <Xiaomingcloud-user-select
           :radio="false"
           v-model="usersList"
           class="handle-item-content"
@@ -34,14 +34,14 @@
             content="支持查看详细资料、添加和查看活动中所有跟进记录"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
           </el-tooltip></el-radio>
           <el-radio :label="2">读写<el-tooltip
             style="margin-left: 3px;"
             content="支持编辑和查看详细资料、可以添加和查看活动中所有跟进记录"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
           </el-tooltip></el-radio>
         </el-radio-group>
       </flexbox>
@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import {
   crmCustomerSettingTeamSaveAPI,
   crmCustomerSettingTeamDeleteAPI
@@ -112,7 +112,7 @@ export default {
   /** 客户管理 的 勾选后的 团队成员 操作 移除操作不可移除客户负责人*/
   name: 'TeamsHandle',
   components: {
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   mixins: [],
   props: {

@@ -12,13 +12,13 @@
         <flexbox-item class="select-item">
           <flexbox>
             <span class="select-label">{{ rangeLabel }}</span>
-            <wk-user-select
+            <Xiaomingcloud-user-select
               v-if="type == 'user'"
               :radio="false"
               v-model="selectDepOrUser"
               class="select-condition"
               placeholder="选择人员" />
-            <wk-dep-select
+            <Xiaomingcloud-dep-select
               v-else
               :radio="false"
               v-model="selectDepOrUser"
@@ -116,8 +116,8 @@ import {
   crmAchievementAdd
 } from '@/api/admin/crm'
 
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 
 import moment from 'moment'
 import { floatAdd } from '@/utils'
@@ -126,8 +126,8 @@ export default {
   // 新建目标
   name: 'AddGoal',
   components: {
-    WkDepSelect,
-    WkUserSelect
+    XiaomingcloudDepSelect,
+    XiaomingcloudUserSelect
   },
   props: {
     visible: {

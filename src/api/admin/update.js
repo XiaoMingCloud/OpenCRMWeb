@@ -100,7 +100,7 @@ export function updateProgressAPI() {
  * 登录OpenCRM
  * @param {*} data
  */
-export function loginWKAPI(data) {
+export function loginXiaomingcloudAPI(data) {
   return request({
     url: 'updates/login',
     method: 'post',

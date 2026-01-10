@@ -4,7 +4,7 @@
       ref="xrHeader"
       show-search
       label="角色权限控制"
-      icon-class="wk wk-user"
+      icon-class="xiaomingcloud open-user"
       icon-color="#19B5F6"
       @search="headerSearch" />
     <div
@@ -34,7 +34,7 @@
                 effect="dark"
                 content="设置上级是否可以查看下属信息"
                 placement="top">
-                <i style="margin-left: 5px;" class="wk wk-help wk-help-tips"/>
+                <i style="margin-left: 5px;" class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
           </el-tab-pane>
@@ -126,15 +126,15 @@
                     <!-- <span class="el-icon-edit content-table-span"
                       @click="editBtn(scope.row)"></span> -->
                     <i
-                      class="wk wk-edit content-table-span"
+                      class="xiaomingcloud open-edit content-table-span"
                       title="编辑角色"
                       @click="employeeHandleClick('editRole',scope.row)"/>
                     <i
-                      class="wk wk-icon-double-note content-table-span"
+                      class="xiaomingcloud open-icon-double-note content-table-span"
                       title="复制角色"
                       @click="employeeHandleClick('copyRole',scope.row)"/>
                     <i
-                      class="wk wk-delete content-table-span"
+                      class="xiaomingcloud open-delete content-table-span"
                       title="删除"
                       @click="employeeHandleClick('delete',scope.row)"/>
                   </template>
@@ -197,11 +197,11 @@
                           :class="{ 'node-label': node.level == 1 || node.level == 2,
                                     'common-node-label': node.data.menuId === 935} ">{{ node.label }}<el-button
                                       v-if="node.level == 2 && canSetField(node.data.realm)"
-                                      icon="wk wk-manage"
+                                      icon="xiaomingcloud open-manage"
                                       type="text"
                                       @click="fieldSetClick(node)" >字段授权</el-button><!-- 下是系统管理的配置  上是客户管理的配置 --><el-button
                                         v-else-if="node.data.menuId === 935"
-                                        icon="wk wk-manage"
+                                        icon="xiaomingcloud open-manage"
                                         type="text"
                                         @click="checkRangeSetClick(node)" >配置查看范围</el-button></span>
                       </el-tree>

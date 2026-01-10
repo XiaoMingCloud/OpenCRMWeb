@@ -1,7 +1,7 @@
 <template>
   <transition name="opacity-fade">
     <div class="business-approve-flow-create">
-      <wk-backgroud-tabs
+      <Xiaomingcloud-backgroud-tabs
         :options="tabs"
         v-model="tabIndex"
       >
@@ -11,7 +11,7 @@
             class="el-icon-close create-close"
             @click="closeClick" />
         </template>
-      </wk-backgroud-tabs>
+      </Xiaomingcloud-backgroud-tabs>
       <base-info-set
         v-show="tabIndex === 'base'"
         ref="baseInfoSet"
@@ -20,9 +20,9 @@
         :fields-rules="fieldsRules"
         @change="formChange"
       />
-      <wk-approve-flow
+      <Xiaomingcloud-approve-flow
         v-show="tabIndex === 'flow'"
-        ref="wkApproveFlow"
+        ref="XiaomingcloudApproveFlow"
         :props="approveFlowConfig"
         :list="flowList"
         :send-node="sendNode" />
@@ -37,22 +37,22 @@ import {
   examinesQueryExamineFlowAPI
 } from '@/api/examine'
 
-import WkBackgroudTabs from './components/WkBackgroudTabs'
+import XiaomingcloudBackgroudTabs from './components/XiaomingcloudBackgroudTabs'
 import BaseInfoSet from './components/BaseInfoSet'
-import { WkApproveFlow } from '@/components/ApprovalFlow'
+import { XiaomingcloudApproveFlow } from '@/components/ApprovalFlow'
 
 import { getMaxIndex } from '@/utils'
 import { examineModel } from '@/components/ApprovalFlow'
 import { objDeepCopy } from '@/utils'
-import GenerateRulesMixin from '@/components/NewCom/WkForm/GenerateRules'
+import GenerateRulesMixin from '@/components/NewCom/XiaomingcloudForm/GenerateRules'
 import ExamineInfoMinxin from './mixins/ExamineInfo'
 
 export default {
   name: 'BusinessApproveFlowCreate',
   components: {
-    WkBackgroudTabs,
+    XiaomingcloudBackgroudTabs,
     BaseInfoSet,
-    WkApproveFlow
+    XiaomingcloudApproveFlow
   },
   filters: {},
   mixins: [GenerateRulesMixin, ExamineInfoMinxin],
@@ -324,7 +324,7 @@ export default {
     sendClick() {
       this.$refs.baseInfoSet.validate().then(valid => {
         if (valid) {
-          const flowParams = this.$refs.wkApproveFlow.getParams()
+          const flowParams = this.$refs.XiaomingcloudApproveFlow.getParams()
           if (flowParams.isError) {
             this.$message.error('请完善信息')
           } else {
@@ -399,7 +399,7 @@ export default {
     height: calc(100% - 100px);
   }
 
-  .wk-approve-flow-wrap {
+  .Xiaomingcloud-approve-flow-wrap {
     top: 60px;
   }
 

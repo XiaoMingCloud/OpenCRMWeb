@@ -10,9 +10,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-items
+        <Xiaomingcloud-form-items
           v-for="(children, index) in fieldList"
           :key="index"
           :field-from="fieldForm"
@@ -41,7 +41,7 @@
               @value-change="otherChange($event, data)"
             />
           </template>
-        </wk-form-items>
+        </Xiaomingcloud-form-items>
       </el-form>
     </create-sections>
   </xr-create>
@@ -53,7 +53,7 @@ import { crmReturnVisitSaveAPI } from '@/api/crm/visit'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkFormItems from '@/components/NewCom/WkForm/WkFormItems'
+import XiaomingcloudFormItems from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItems'
 import {
   CrmRelativeCell
 } from '@/components/CreateCom'
@@ -71,7 +71,7 @@ export default {
     XrCreate,
     CreateSections,
     CrmRelativeCell,
-    WkFormItems
+    XiaomingcloudFormItems
   },
 
   mixins: [CustomFieldsMixin],
@@ -346,7 +346,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wk-form {
+.Xiaomingcloud-form {
   /deep/ .el-form-item.is-product {
     flex: 0 0 100%;
     width: 0;

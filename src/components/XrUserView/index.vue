@@ -20,22 +20,22 @@
       </flexbox>
       <div class="xr-mian__bd">
         <flexbox class="info-cell">
-          <i class="wk wk-department" />
+          <i class="xiaomingcloud open-department" />
           <div class="info-cell__label">部门</div>
           <div class="info-cell__value text-one-line">{{ userData.deptName }}</div>
         </flexbox>
         <flexbox class="info-cell">
-          <i class="wk wk-tie" />
+          <i class="xiaomingcloud open-tie" />
           <div class="info-cell__label">岗位</div>
           <div class="info-cell__value text-one-line">{{ userData.post }}</div>
         </flexbox>
         <flexbox class="info-cell">
-          <i class="wk wk-b-mobile" />
+          <i class="xiaomingcloud open-b-mobile" />
           <div class="info-cell__label">手机</div>
           <div :title="userData.mobile" class="info-cell__value text-one-line">{{ userData.mobile }}</div>
         </flexbox>
         <flexbox class="info-cell">
-          <i class="wk wk-email" />
+          <i class="xiaomingcloud open-email" />
           <div class="info-cell__label">邮箱</div>
           <div :title="userData.email" class="info-cell__value text-one-line">{{ userData.email }}</div>
         </flexbox>
@@ -65,9 +65,9 @@ export default {
     sexIcon() {
       // 1 男 2 女
       if (this.userData.sex === 1) {
-        return 'wk wk-man'
+        return 'xiaomingcloud open-man'
       } else if (this.userData.sex === 2) {
-        return 'wk wk-woman'
+        return 'xiaomingcloud open-woman'
       }
       return ''
     },
@@ -139,11 +139,11 @@ export default {
         margin-left: 8px;
       }
 
-      .wk-woman {
+      .Xiaomingcloud-woman {
         color: #FF3838;
       }
 
-      .wk-man {
+      .Xiaomingcloud-man {
         color: #3875ff;
       }
     }

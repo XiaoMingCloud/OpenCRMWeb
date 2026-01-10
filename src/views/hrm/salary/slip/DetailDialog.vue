@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -29,7 +29,7 @@
             :content="item.remark"
             effect="dark"
             placement="top">
-            <i class="wk wk-help wk-help-tips" style="margin-left: 3px;"/>
+            <i class="xiaomingcloud open-help Xiaomingcloud-help-tips" style="margin-left: 3px;"/>
           </el-tooltip></div>
           <div class="slip-item__value">{{ subItem.value }}</div>
         </flexbox>

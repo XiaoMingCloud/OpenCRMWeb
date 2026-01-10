@@ -1,7 +1,7 @@
 <template>
   <div class="edit-pwd">
     <div class="head">
-      <span class="wk wk-circle-password icon" />
+      <span class="xiaomingcloud open-circle-password icon" />
       <span class="text">账号密码</span>
     </div>
     <el-form

@@ -37,7 +37,7 @@
     <i
       v-else
       slot="reference"
-      class="wk wk-config table-set"
+      class="xiaomingcloud open-config table-set"
       @click="show = !show"/>
   </el-popover>
 </template>

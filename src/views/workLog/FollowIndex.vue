@@ -11,7 +11,7 @@
         v-model="filterForm.search"
         placeholder="关键字搜索"
         prefix-icon="el-icon-search"/>
-      <wk-user-select
+      <Xiaomingcloud-user-select
         v-if="userSelectShow"
         v-model="filterForm.userIds"
         placeholder="选择人员"/>
@@ -113,7 +113,7 @@ import {
 } from '@/api/admin/employeeDep'
 
 import RecordTabHead from './components/RecordTabHead'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import TimeTypeSelect from '@/components/TimeTypeSelect'
 import LogCell from '@/views/crm/components/Activity/LogCell'
 import LogEditDialog from '@/views/crm/components/Activity/LogEditDialog'
@@ -127,7 +127,7 @@ export default {
   name: 'FollowIndex',
   components: {
     RecordTabHead,
-    WkUserSelect,
+    XiaomingcloudUserSelect,
     TimeTypeSelect,
     LogCell,
     LogEditDialog,
@@ -136,7 +136,7 @@ export default {
   },
   filters: {
     crmIconClass(type) {
-      return `wk wk-${crmTypeModel.convertTypeToKey(type)}`
+      return `xiaomingcloud open-${crmTypeModel.convertTypeToKey(type)}`
     },
 
     crmName(type) {
@@ -218,10 +218,10 @@ export default {
     moreTypes() {
       const temps = []
       if (this.followRecordAuth.excelimport) {
-        temps.push({ type: 'enter', name: '导入', icon: 'wk wk-import' })
+        temps.push({ type: 'enter', name: '导入', icon: 'xiaomingcloud open-import' })
       }
       if (this.followRecordAuth.excelexport) {
-        temps.push({ type: 'out', name: '导出', icon: 'wk wk-export' })
+        temps.push({ type: 'out', name: '导出', icon: 'xiaomingcloud open-export' })
       }
       return temps
     },
@@ -392,7 +392,7 @@ export default {
       } else if (command == 'enter') {
         const labelObj = this.options.find(item => item.value === this.requestParams.label)
 
-        this.$wkImport.import('crmFollowLog', {
+        this.$XiaomingcloudImport.import('crmFollowLog', {
           typeName: `${labelObj.label}跟进记录`,
           ownerSelectShow: false,
           repeatHandleShow: false,

@@ -18,7 +18,7 @@
           :class="{active: selectedIndex === index}"
           class="nav-list-item"
           @click="selectedIndex = index">
-          <span :class="item.icon" class="wk icon" />
+          <span :class="item.icon" class="Xiaomingcloud icon" />
           <span class="text">
             {{ item.label }}
           </span>
@@ -55,8 +55,8 @@ export default {
     ]),
     navList() {
       const navs = [
-        { label: '个人信息', icon: 'wk-user' },
-        { label: '账号密码', icon: 'wk-circle-password' }
+        { label: '个人信息', icon: 'Xiaomingcloud-user' },
+        { label: '账号密码', icon: 'Xiaomingcloud-circle-password' }
       ]
       return navs
     }

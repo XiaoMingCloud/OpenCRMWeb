@@ -19,7 +19,7 @@
     <div class="container container-hook">
       <flexbox class="filter">
         <span class="filter__label">选择部门</span>
-        <wk-dep-select
+        <Xiaomingcloud-dep-select
           v-model="deptIdValue"
           radio
           @change="deptChange" />
@@ -45,7 +45,7 @@
           <template slot-scope="scope">
             <span
               :class="{active: scope.row.status === 1}"
-              class="wk wk-focus-on focus-icon"
+              class="xiaomingcloud open-focus-on focus-icon"
               @click="toggleStar(scope.$index, scope.row.status)" />
           </template>
         </el-table-column>
@@ -94,12 +94,12 @@ import {
   toggleAttentionAPI
 } from '@/api/oa/addressBook'
 
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
 
 export default {
   name: 'AddressBookIndex',
   components: {
-    WkDepSelect
+    XiaomingcloudDepSelect
   },
   data() {
     return {

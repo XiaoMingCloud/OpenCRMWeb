@@ -34,7 +34,7 @@
                   v-if="editScheduleShow"
                   :disabled="!canEditSchedule"
                   type="text"
-                  icon="wk wk-edit"
+                  icon="xiaomingcloud open-edit"
                   @click="itemHandleClick('schedule', 'fixed', fixItem, index, form.fixedSegList)">
                   {{ (fixItem.schedule === null || fixItem.schedule === '') && canEditSchedule ? '添加进度' : `进度${fixItem.schedule || 0}%` }}</el-button>
                 <el-button type="text" disabled>
@@ -67,13 +67,13 @@
                   v-if="editScheduleShow"
                   :disabled="!canEditSchedule"
                   type="text"
-                  icon="wk wk-edit"
+                  icon="xiaomingcloud open-edit"
                   @click="itemHandleClick('schedule', 'noFixed', noFixItem, index, form.noFixedSegList)">
                   {{ (noFixItem.schedule === null || noFixItem.schedule === '') && canEditSchedule ? '添加进度' : `进度${noFixItem.schedule}%` }}</el-button>
                 <el-button
                   :disabled="form.isEmpWeight != 1"
                   type="text"
-                  icon="wk wk-edit"
+                  icon="xiaomingcloud open-edit"
                   @click="itemHandleClick('weight', 'noFixed', noFixItem, index, form.noFixedSegList)">
                   {{ noFixItem.weight === null || noFixItem.weight === '' ? '添加权重' : `权重${noFixItem.weight}%` }}
                 </el-button>

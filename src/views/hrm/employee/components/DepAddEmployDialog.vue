@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -44,7 +44,7 @@
                   v-model="row[item.field]"
                   :maxlength="100"/>
               </el-form-item>
-              <wk-dep-select
+              <Xiaomingcloud-dep-select
                 v-else-if="item.formType == 'structure'"
                 v-model="row[item.field]"
                 :options="depOptions"
@@ -52,7 +52,7 @@
                 radio
                 style="width: 100%;"
               />
-              <wk-user-select
+              <Xiaomingcloud-user-select
                 v-else-if="item.formType == 'user'"
                 v-model="row[item.field]"
                 :props="item.props"
@@ -126,7 +126,7 @@
         type="primary">保存</el-button>
     </span>
 
-    <wk-dep-user-view-dialog
+    <Xiaomingcloud-dep-user-view-dialog
       v-if="depUserViewDialogShow"
       :visible.sync="depUserViewDialogShow"
       @change="selectUserChange"
@@ -145,9 +145,9 @@ import {
   adminUserQueryDeptUserByHrmAPI
 } from '@/api/admin/user'
 
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
-import WkDepUserViewDialog from '@/components/NewCom/WkUserSelect/DepDialog'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
+import XiaomingcloudDepUserViewDialog from '@/components/NewCom/XiaomingcloudUserSelect/DepDialog'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
 import { employeeModel } from '../model/employee'
@@ -158,9 +158,9 @@ export default {
   // 从组织架构中选择
   name: 'DepAddEmployDialog',
   components: {
-    WkUserSelect,
-    WkDepSelect,
-    WkDepUserViewDialog
+    XiaomingcloudUserSelect,
+    XiaomingcloudDepSelect,
+    XiaomingcloudDepUserViewDialog
   },
   mixins: [ElDialogLoadingMixin],
   props: {

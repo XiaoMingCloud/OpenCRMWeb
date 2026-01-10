@@ -97,9 +97,9 @@
             <template v-else-if="item.prop == 'status'">
               <i
                 v-if="row.status == 2"
-                class="wk wk-circle-password customer-lock"/>
+                class="xiaomingcloud open-circle-password customer-lock"/>
             </template>
-            <wk-field-view
+            <Xiaomingcloud-field-view
               v-else
               :props="item"
               :form-type="item.formType"
@@ -108,7 +108,7 @@
               <template slot-scope="{ data }">
                 {{ fieldFormatter(row, column, row[column.property], item) }}
               </template>
-            </wk-field-view>
+            </Xiaomingcloud-field-view>
           </template>
         </el-table-column>
         <el-table-column/>
@@ -168,7 +168,7 @@ export default {
   },
   filters: {
     dealIcon(statu) {
-      return statu == 1 ? 'wk wk-success deal-suc' : 'wk wk-close deal-un'
+      return statu == 1 ? 'xiaomingcloud open-success deal-suc' : 'xiaomingcloud open-close deal-un'
     },
 
     dealName(statu) {

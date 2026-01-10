@@ -1,7 +1,7 @@
 <template>
   <div class="recycle">
     <xr-header
-      icon-class="wk wk-icon-bin"
+      icon-class="xiaomingcloud open-icon-bin"
       icon-color="#fd5b4a"
       label="回收站" />
     <div

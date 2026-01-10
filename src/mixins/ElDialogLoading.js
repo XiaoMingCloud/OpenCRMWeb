@@ -2,7 +2,7 @@ export default {
   watch: {
     loading(v) {
       if (v) {
-        const dialogPanel = this.$refs.wkDialog.$refs.dialog
+        const dialogPanel = this.$refs.XiaomingcloudDialog.$refs.dialog
         this.loadingInstance = this.$loading({
           target: dialogPanel
         })

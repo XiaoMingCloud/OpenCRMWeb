@@ -109,7 +109,7 @@ const user = {
         adminIndexAuthListAPI().then((response) => {
           const data = response.data
           Lockr.set('authList', data)
-          data.wkFirstModel = data.firstModel
+          data.XiaomingcloudFirstModel = data.firstModel
           commit('SET_ALLAUTH', data)
           commit('SET_CRM', data.crm)
           commit('SET_BI', data.bi)

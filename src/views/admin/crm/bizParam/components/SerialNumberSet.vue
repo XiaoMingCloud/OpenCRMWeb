@@ -60,7 +60,7 @@
                       content="从合同的下单时间中获取"
                       effect="dark"
                       placement="top">
-                      <i class="wk wk-help wk-help-tips"/>
+                      <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
                     </el-tooltip> -->
                   </template>
 

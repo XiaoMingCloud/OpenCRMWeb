@@ -46,7 +46,7 @@ export default {
   created() {},
 
   mounted() {
-    const visible = Lockr.get('WkApprovalFlowUpdateDialog')
+    const visible = Lockr.get('XiaomingcloudApprovalFlowUpdateDialog')
     if (!visible) {
       setTimeout(() => {
         this.visible = true
@@ -58,7 +58,7 @@ export default {
 
   methods: {
     sureClick() {
-      Lockr.set('WkApprovalFlowUpdateDialog', true)
+      Lockr.set('XiaomingcloudApprovalFlowUpdateDialog', true)
       this.visible = false
     }
   }

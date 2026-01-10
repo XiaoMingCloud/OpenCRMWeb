@@ -1,7 +1,7 @@
 <template>
   <div class="system-customer">
     <xr-header
-      icon-class="wk wk-manage"
+      icon-class="xiaomingcloud open-manage"
       icon-color="#2EC2F9"
       label="其他设置" />
     <div class="customer-content">

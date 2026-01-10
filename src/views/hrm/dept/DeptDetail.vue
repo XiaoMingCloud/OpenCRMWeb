@@ -15,7 +15,7 @@
       align="stretch"
       style="padding: 0 15px;"
       class="side-detail-main">
-      <wk-detail-header
+      <Xiaomingcloud-detail-header
         :detail-value="detailData.name"
         :dropdown-items="dropdownItems"
         :show-edit="editAuth"
@@ -34,7 +34,7 @@
           label="详细资料"
           name="baseInfo"
           lazy>
-          <wk-base-detail
+          <Xiaomingcloud-base-detail
             :list="baseList"
           />
         </el-tab-pane>
@@ -63,8 +63,8 @@ import {
 } from '@/api/hrm/dept'
 
 import SlideView from '@/components/SlideView'
-import WkDetailHeader from '@/components/WkDetailHeader'
-import WkBaseDetail from '@/components/WkBaseDetail'
+import XiaomingcloudDetailHeader from '@/components/XiaomingcloudDetailHeader'
+import XiaomingcloudBaseDetail from '@/components/XiaomingcloudBaseDetail'
 import RelativeEmployee from './components/RelativeEmployee'
 import DeptAddDialog from './components/DeptAddDialog'
 
@@ -75,8 +75,8 @@ export default {
   name: 'DeptDetail',
   components: {
     SlideView,
-    WkDetailHeader,
-    WkBaseDetail,
+    XiaomingcloudDetailHeader,
+    XiaomingcloudBaseDetail,
     RelativeEmployee,
     DeptAddDialog
   },
@@ -135,7 +135,7 @@ export default {
 
     dropdownItems() {
       return this.deleteAuth ? [{
-        icon: 'wk wk-delete',
+        icon: 'xiaomingcloud open-delete',
         label: '删除',
         command: 'delete'
       }] : []
@@ -196,8 +196,8 @@ export default {
         return ''
       }
       return {
-        1: 'wk wk-subordinate',
-        2: 'wk wk-customer-solid'
+        1: 'xiaomingcloud open-subordinate',
+        2: 'xiaomingcloud open-customer-solid'
       }[this.detailData.deptType]
     }
   },

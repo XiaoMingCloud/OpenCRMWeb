@@ -67,7 +67,7 @@
             <template v-else-if="item.prop == 'invoiceType'">
               {{ fieldFormatter(row, column, row[column.property], item) }}
             </template>
-            <wk-field-view
+            <Xiaomingcloud-field-view
               v-else
               :props="item"
               :form-type="item.formType"
@@ -76,7 +76,7 @@
               <template slot-scope="{ data }">
                 {{ fieldFormatter(row, column, row[column.property], item) }}
               </template>
-            </wk-field-view>
+            </Xiaomingcloud-field-view>
           </template>
         </el-table-column>
         <el-table-column/>
@@ -106,7 +106,7 @@
               @change="setSave"/>
           </template>
         </el-table-column>
-        <wk-empty
+        <Xiaomingcloud-empty
           slot="empty"
           :props="{
             buttonTitle: '新建发票',
@@ -180,7 +180,7 @@ import CRMAllDetail from '@/views/crm/components/CRMAllDetail'
 import ApprovalFlowUpdateDialog from '@/components/ApprovalFlow/ApprovalFlowUpdateDialog'
 
 import TableMixin from '../mixins/Table'
-import { getFormFieldShowName } from '@/components/NewCom/WkForm/utils'
+import { getFormFieldShowName } from '@/components/NewCom/XiaomingcloudForm/utils'
 
 export default {
   name: 'Invoice', // 发票

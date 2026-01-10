@@ -10,9 +10,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-items
+        <Xiaomingcloud-form-items
           v-for="(children, index) in fieldList"
           :key="index"
           :field-from="fieldForm"
@@ -49,7 +49,7 @@
                 :value="item.statusId"/>
             </el-select>
           </template>
-        </wk-form-items>
+        </Xiaomingcloud-form-items>
       </el-form>
     </create-sections>
   </xr-create>
@@ -61,7 +61,7 @@ import { crmBusinessSaveAPI } from '@/api/crm/business'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkFormItems from '@/components/NewCom/WkForm/WkFormItems'
+import XiaomingcloudFormItems from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItems'
 import {
   CrmRelativeCell
 } from '@/components/CreateCom'
@@ -80,7 +80,7 @@ export default {
     CrmRelativeCell,
     XhBusinessStatus: () => import('@/components/CreateCom/XhBusinessStatus'),
     XhProduct: () => import('@/components/CreateCom/XhProduct'),
-    WkFormItems
+    XiaomingcloudFormItems
   },
 
   mixins: [CustomFieldsMixin],
@@ -357,7 +357,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wk-form {
+.Xiaomingcloud-form {
   /deep/ .el-form-item.is-product {
     flex: 0 0 100%;
     width: 0;

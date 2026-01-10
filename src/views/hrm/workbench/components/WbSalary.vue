@@ -1,7 +1,7 @@
 
 <template>
   <wb-section
-    icon="wk wk-payment"
+    icon="xiaomingcloud open-payment"
     class="wb-salary"
     label="上月薪资概况"
   >

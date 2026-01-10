@@ -3,7 +3,7 @@
     v-loading="loading"
     class="data-statistics card">
     <flexbox class="card-title">
-      <span class="icon wk wk-data" />
+      <span class="icon xiaomingcloud open-data" />
       <div class="card-title-center text-one-ellipsis">数据汇总</div>
       <!--<div class="card-title-right">
         <span class="box">{{ filterText }}</span>

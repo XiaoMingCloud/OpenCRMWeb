@@ -10,9 +10,9 @@
         :model="fieldForm"
         :rules="fieldRules"
         :validate-on-rule-change="false"
-        class="wk-form"
+        class="Xiaomingcloud-form"
         label-position="top">
-        <wk-form-items
+        <Xiaomingcloud-form-items
           v-for="(children, index) in fieldList"
           :key="index"
           :field-from="fieldForm"
@@ -29,7 +29,7 @@
               @value-change="otherChange($event, data)"
             />
           </template>
-        </wk-form-items>
+        </Xiaomingcloud-form-items>
       </el-form>
     </create-sections>
   </xr-create>
@@ -41,7 +41,7 @@ import { crmReceivablesPlanSaveAPI } from '@/api/crm/receivables'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkFormItems from '@/components/NewCom/WkForm/WkFormItems'
+import XiaomingcloudFormItems from '@/components/NewCom/XiaomingcloudForm/XiaomingcloudFormItems'
 
 import crmTypeModel from '@/views/crm/model/crmTypeModel'
 import CustomFieldsMixin from '@/mixins/CustomFields'
@@ -54,7 +54,7 @@ export default {
     XrCreate,
     CreateSections,
     CrmRelativeCell: () => import('@/components/CreateCom/CrmRelativeCell'),
-    WkFormItems
+    XiaomingcloudFormItems
   },
 
   mixins: [CustomFieldsMixin],

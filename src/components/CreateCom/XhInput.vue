@@ -1,6 +1,6 @@
 <template>
   <el-input
-    v-wk-number="inputLimitType"
+    v-Xiaomingcloud-number="inputLimitType"
     v-if="type == 'number'"
     v-model="dataValue"
     :type="type"

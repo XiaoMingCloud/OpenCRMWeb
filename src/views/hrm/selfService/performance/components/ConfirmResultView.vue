@@ -37,7 +37,7 @@
                       <div class="des">{{ `${employee.deptName == null ? '' : employee.deptName}  ${employee.post == null ? '' : employee.post}` }}</div>
                     </el-tooltip>
                   </div>
-                  <i class="wk wk-edit" @click="editScoreClick(employee)" />
+                  <i class="xiaomingcloud open-edit" @click="editScoreClick(employee)" />
                 </flexbox>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default {
             white-space: nowrap;
           }
 
-          .wk-edit {
+          .Xiaomingcloud-edit {
             flex-shrink: 0;
             padding: 8px;
             color: #2362FB;

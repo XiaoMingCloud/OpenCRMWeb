@@ -6,7 +6,7 @@
     @close="close"
     @save="saveClick">
     <create-sections title="基本信息">
-      <wk-form
+      <Xiaomingcloud-form
         ref="crmForm"
         :model="fieldForm"
         :rules="fieldRules"
@@ -32,21 +32,21 @@
             :max="100"
             :controls="false"
             @change="formChange(data, index, $event)" />
-          <wk-plan-date
+          <Xiaomingcloud-plan-date
             v-else-if="data.formType == 'planDate'"
             v-model="fieldForm[data.field]"
             :count="fieldForm.count"
           />
         </template>
-      </wk-form>
+      </Xiaomingcloud-form>
       <el-button
         class="xr-btn--orange"
         type="primary"
         style="margin-left: 20px;"
         @click="applyClick">应用</el-button>
-      <div class="wk-table-content">
+      <div class="Xiaomingcloud-table-content">
         <el-table
-          ref="wkTable"
+          ref="XiaomingcloudTable"
           :row-height="40"
           :data="tableData"
           :height="400"
@@ -122,7 +122,7 @@
             width="60">
             <template slot-scope="{ row, column, $index }">
               <el-button
-                icon="wk wk-icon-bin" type="text" @click="deleteClick($index)"/>
+                icon="xiaomingcloud open-icon-bin" type="text" @click="deleteClick($index)"/>
             </template>
 
           </el-table-column>
@@ -144,8 +144,8 @@ import { crmReceivablesPlanBatchSaveAPI } from '@/api/crm/receivablesPlan'
 
 import XrCreate from '@/components/XrCreate'
 import CreateSections from '@/components/CreateSections'
-import WkForm from '@/components/NewCom/WkForm'
-import WkPlanDate from './components/WkPlanDate'
+import XiaomingcloudForm from '@/components/NewCom/XiaomingcloudForm'
+import XiaomingcloudPlanDate from './components/XiaomingcloudPlanDate'
 
 import CustomFieldsMixin from '@/mixins/CustomFields'
 import { objDeepCopy } from '@/utils'
@@ -159,8 +159,8 @@ export default {
     XrCreate,
     CreateSections,
     CrmRelativeCell: () => import('@/components/CreateCom/CrmRelativeCell'),
-    WkForm,
-    WkPlanDate
+    XiaomingcloudForm,
+    XiaomingcloudPlanDate
   },
 
   mixins: [CustomFieldsMixin],
@@ -499,7 +499,7 @@ export default {
     addLineClick() {
       this.tableData.push(objDeepCopy(this.lineObj))
       this.$nextTick(() => {
-        const container = this.$refs.wkTable.bodyWrapper
+        const container = this.$refs.XiaomingcloudTable.bodyWrapper
         container.scrollTop = container.scrollHeight
       })
     },
@@ -523,7 +523,7 @@ export default {
   }
 }
 
-.wk-form {
+.Xiaomingcloud-form {
   /deep/ .el-form-item.is-planDate {
     flex: 0 0 100%;
   }
@@ -541,7 +541,7 @@ export default {
   }
 }
 
-.wk-table-content {
+.Xiaomingcloud-table-content {
   margin: 20px;
   border: 1px solid #e6e6e6;
   border-radius: 3px;

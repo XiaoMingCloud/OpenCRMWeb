@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -11,7 +11,7 @@
     <div class="form-add-dialog-body">
       <el-form ref="addEmployForm" :model="form" :rules="rules" label-width="80px">
         <el-form-item label="参保人员" prop="employeeIds">
-          <wk-user-select
+          <Xiaomingcloud-user-select
             v-if="visible && id"
             v-model="form.employeeIds"
             :props="userProps"
@@ -41,13 +41,13 @@ import {
 } from '@/api/hrm/insuranceScheme'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 
 export default {
   // 添加员工
   name: 'EmployAddDialog',
   components: {
-    WkUserSelect
+    XiaomingcloudUserSelect
   },
   mixins: [ElDialogLoadingMixin],
   props: {

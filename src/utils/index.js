@@ -113,7 +113,7 @@ export function compressImage(file, quality, callback) {
  * 获取date类型展示时间
  * @param {*} time
  */
-export function getWkDateTime(time) {
+export function getXiaomingcloudDateTime(time) {
   if (time) {
     const temps = time.split(' ')
     return temps.length > 0 ? temps[0] : ''
@@ -208,12 +208,12 @@ export function canPreviewFile() {
  * 预览文件
  */
 import axios from 'axios'
-export function wkPreviewFile(path, name) {
-  window.open(wkPreviewFileUrl(path, name))
+export function XiaomingcloudPreviewFile(path, name) {
+  window.open(XiaomingcloudPreviewFileUrl(path, name))
 }
 
-export function wkPreviewFileUrl(path, name) {
-  return `${WKConfig.getLocationOrigin()}/file/preview?url=${encodeURIComponent(`${path}${path.includes('?fullfilename=') ? '' : `?fullfilename=${name || ''}`}&c=${axios.defaults.headers['Admin-Token']}`)}`
+export function XiaomingcloudPreviewFileUrl(path, name) {
+  return `${XiaomingcloudConfig.getLocationOrigin()}/file/preview?url=${encodeURIComponent(`${path}${path.includes('?fullfilename=') ? '' : `?fullfilename=${name || ''}`}&c=${axios.defaults.headers['Admin-Token']}`)}`
 }
 
 export function getFileIconWithSuffix(ext) {
@@ -672,7 +672,7 @@ export function getBaiduMap() {
       }
       const $script = document.createElement('script')
       global.document.body.appendChild($script)
-      $script.src = `https://api.map.baidu.com/api?v=3.0&ak=${WKConfig.baiduKey}&callback=_initBaiduMap`
+      $script.src = `https://api.map.baidu.com/api?v=3.0&ak=${XiaomingcloudConfig.baiduKey}&callback=_initBaiduMap`
     })
     return global.BMap._preloader
   } else if (!global.BMap._preloader) {

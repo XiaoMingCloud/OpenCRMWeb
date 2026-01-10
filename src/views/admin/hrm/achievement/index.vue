@@ -1,7 +1,7 @@
 <template>
   <div class="achivement-set">
     <xr-header
-      icon-class="wk wk-s-seas"
+      icon-class="xiaomingcloud open-s-seas"
       icon-color="#487DFF"
       label="考核模板设置" />
     <div class="achivement-content">

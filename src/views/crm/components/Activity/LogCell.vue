@@ -60,7 +60,7 @@
           align="stretch"
           class="cell">
           <div class="cell-hd first-show">
-            <i class="wk wk-file" />
+            <i class="xiaomingcloud open-file" />
           </div>
           <div class="cell-hd first-show">
             附件：
@@ -81,7 +81,7 @@
           align="stretch"
           class="cell">
           <div class="cell-hd">
-            <i class="wk wk-contacts" />
+            <i class="xiaomingcloud open-contacts" />
           </div>
           <div class="cell-bd">
             相关联系人：
@@ -100,7 +100,7 @@
           align="stretch"
           class="cell">
           <div class="cell-hd">
-            <i class="wk wk-business" />
+            <i class="xiaomingcloud open-business" />
           </div>
           <div class="cell-bd">
             相关商机：
@@ -121,7 +121,7 @@
           align="stretch"
           class="cell">
           <div class="cell-hd">
-            <i class="wk wk-time" />
+            <i class="xiaomingcloud open-time" />
           </div>
           <div class="cell-bd text-one-line">
             下次联系时间：{{ item.nextTime }}
@@ -134,7 +134,7 @@
           align="stretch"
           class="cell">
           <div class="cell-hd is-address">
-            <i class="wk wk-icon-location" />
+            <i class="xiaomingcloud open-icon-location" />
           </div>
           <div
             class="cell-bd text-one-line can-visit--underline"
@@ -224,7 +224,7 @@ export default {
   mounted() {},
   methods: {
     previewImg(list, index) {
-      this.$wkPreviewFile.preview({
+      this.$XiaomingcloudPreviewFile.preview({
         index: index,
         data: list
       })

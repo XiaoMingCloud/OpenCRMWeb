@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <xr-header
-      icon-class="wk wk-project"
+      icon-class="xiaomingcloud open-project"
       icon-color="#33D08F"
       label="自定义项目权限" />
     <div class="main-body">

@@ -38,17 +38,17 @@
         .status {
           font-size: 12px;
           font-weight: 400;
-          .wk {
+          .Xiaomingcloud {
             font-size: 12px;
             margin-right: 1px;
             margin-left: 15px;
           }
 
-          .wk-success {
+          .Xiaomingcloud-success {
             color: #20b559;
           }
 
-          .wk-close {
+          .Xiaomingcloud-close {
             color: #f95a5a;
           }
         }
@@ -99,8 +99,8 @@
 
   &.filter-control {
     padding: 8px;
-    .wk-user-select,
-    .wk-user-dep-select {
+    .Xiaomingcloud-user-select,
+    .Xiaomingcloud-user-dep-select {
       margin-right: 15px;
       width: 180px;
     }

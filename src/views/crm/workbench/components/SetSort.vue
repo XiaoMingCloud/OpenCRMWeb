@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -103,44 +103,44 @@ export default {
       data: {
         1: {
           title: '合同/回款金额目标及完成情况',
-          icon: 'wk wk-target',
+          icon: 'xiaomingcloud open-target',
           iconColor: '#4983EF',
           img: require('@/assets/img/skeleton/sort-chart.png')
         },
         2: {
           title: '数据汇总',
-          icon: 'wk wk-data',
+          icon: 'xiaomingcloud open-data',
           iconColor: '#BF80FF',
           img: require('@/assets/img/skeleton/sort-data.png')
         },
         3: {
           title: '回款金额目标及完成情况',
-          icon: 'wk wk-icon-receivable',
+          icon: 'xiaomingcloud open-icon-receivable',
           iconColor: '#FFD144',
           img: require('@/assets/img/skeleton/sort-chart.png')
         },
         4: {
           title: '业绩指标完成率',
-          icon: 'wk wk-performance',
+          icon: 'xiaomingcloud open-performance',
           iconColor: '#4983EF',
           img: require('@/assets/img/skeleton/sort-done.png')
         },
         5: {
           title: '销售漏斗',
-          icon: 'wk wk-funnel',
+          icon: 'xiaomingcloud open-funnel',
           iconColor: '#50CF9E',
           img: require('@/assets/img/skeleton/sort-funnel.png'),
           id: 5
         },
         6: {
           title: '遗忘提醒',
-          icon: 'wk wk-clock',
+          icon: 'xiaomingcloud open-clock',
           iconColor: '#ff8400',
           img: require('@/assets/img/skeleton/sort-cell.png')
         },
         7: {
           title: '排行榜',
-          icon: 'wk wk-hollow-results',
+          icon: 'xiaomingcloud open-hollow-results',
           iconColor: '#4a5bfd',
           img: require('@/assets/img/skeleton/sort-ranking.png')
         }

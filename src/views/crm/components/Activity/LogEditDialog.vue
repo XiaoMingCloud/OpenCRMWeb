@@ -76,12 +76,12 @@
         <el-button
           type="text"
           class="handle-button"
-          icon="wk wk-picture"
+          icon="xiaomingcloud open-picture"
           @click="barClick('img')">图片</el-button>
         <el-button
           type="text"
           class="handle-button"
-          icon="wk wk-file"
+          icon="xiaomingcloud open-file"
           @click="barClick('file')">附件</el-button>
         <el-popover
           v-if="showBusiness"
@@ -102,7 +102,7 @@
           <el-button
             slot="reference"
             type="text"
-            icon="wk wk-associate"
+            icon="xiaomingcloud open-associate"
             class="handle-button"
             style="margin-left: 10px;"
             @click="barClick('business')">关联商机</el-button>
@@ -420,7 +420,7 @@ export default {
      * 文件上传
      */
     uploadFileRequest(file, type, result) {
-      this.$wkUploadFile.upload({
+      this.$XiaomingcloudUploadFile.upload({
         file: file,
         params: {
           type: type,
@@ -592,7 +592,7 @@ export default {
 
   .i-cont {
     padding: 8px 0px;
-    .wk-write {
+    .Xiaomingcloud-write {
       color: $xr-border-line-color;
       font-size: 15px;
     }

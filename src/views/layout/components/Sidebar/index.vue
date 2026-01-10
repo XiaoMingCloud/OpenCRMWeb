@@ -111,7 +111,7 @@ export default {
       const route = this.$route
       const { meta, path, params } = route
 
-      let title = this.WKConfig.companyName
+      let title = this.XiaomingcloudConfig.companyName
       if (meta.title) {
         title += ' - ' + meta.title
       } else if (params && params.title) {

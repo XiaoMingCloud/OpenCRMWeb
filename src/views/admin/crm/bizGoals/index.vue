@@ -1,7 +1,7 @@
 <template>
   <div class="system-customer">
     <xr-header
-      icon-class="wk wk-customer"
+      icon-class="xiaomingcloud open-customer"
       icon-color="#2362FB"
       label="业绩目标设置" />
     <div class="customer-content">

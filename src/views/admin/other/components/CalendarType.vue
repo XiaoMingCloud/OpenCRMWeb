@@ -13,7 +13,7 @@
           <span>{{ item.typeName }}</span>
         </div>
         <i
-          class="wk wk-edit"
+          class="xiaomingcloud open-edit"
           @click="editItem(item)"/>
         <i
           class="el-icon-delete-solid"
@@ -221,7 +221,7 @@ export default {
   margin-top: 20px;
   margin-bottom: 10px;
   height: 30px;
-  .el-icon-delete-solid,.wk-edit {
+  .el-icon-delete-solid,.Xiaomingcloud-edit {
     cursor: pointer;
     margin-left: 20px;
     display: none;
@@ -233,7 +233,7 @@ export default {
     }
   }
 .input-item:hover {
-  .el-icon-delete-solid,.wk-edit {
+  .el-icon-delete-solid,.Xiaomingcloud-edit {
     display: inline;
   }
 }

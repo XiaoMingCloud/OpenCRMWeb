@@ -64,7 +64,7 @@ export default {
     },
 
     previewClick(file, fileIndex) {
-      this.$wkPreviewFile.preview({
+      this.$XiaomingcloudPreviewFile.preview({
         index: fileIndex,
         data: this.list.map(function(item) {
           return {

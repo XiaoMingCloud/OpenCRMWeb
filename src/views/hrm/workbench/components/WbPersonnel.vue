@@ -1,7 +1,7 @@
 <template>
   <wb-section
     :des="des"
-    icon="wk wk-user"
+    icon="xiaomingcloud open-user"
     class="wb-personnel"
     label="人事概况"
   >

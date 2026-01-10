@@ -1,7 +1,7 @@
 <template>
   <div class="system-customer">
     <xr-header
-      icon-class="wk wk-double-gear"
+      icon-class="xiaomingcloud open-double-gear"
       icon-color="#1CBAF5"
       label="自定义字段设置" />
     <div class="customer-content">

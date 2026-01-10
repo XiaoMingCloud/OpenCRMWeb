@@ -8,18 +8,18 @@ export default {
      */
     getXrIcon(type) {
       return {
-        leads: 'wk wk-leads',
-        customer: 'wk wk-customer',
-        contacts: 'wk wk-contacts',
-        product: 'wk wk-product',
-        business: 'wk wk-business',
-        contract: 'wk wk-contract',
-        receivables: 'wk wk-receivables',
-        invoice: 'wk wk-invoice',
-        log: 'wk wk-log',
-        examine: 'wk wk-approve',
-        task: 'wk wk-o-task',
-        record: 'wk wk-record'
+        leads: 'xiaomingcloud open-leads',
+        customer: 'xiaomingcloud open-customer',
+        contacts: 'xiaomingcloud open-contacts',
+        product: 'xiaomingcloud open-product',
+        business: 'xiaomingcloud open-business',
+        contract: 'xiaomingcloud open-contract',
+        receivables: 'xiaomingcloud open-receivables',
+        invoice: 'xiaomingcloud open-invoice',
+        log: 'xiaomingcloud open-log',
+        examine: 'xiaomingcloud open-approve',
+        task: 'xiaomingcloud open-o-task',
+        record: 'xiaomingcloud open-record'
       }[type]
     },
 

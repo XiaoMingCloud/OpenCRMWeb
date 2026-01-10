@@ -3,7 +3,7 @@
     v-loading="loading"
     class="edit-user-info">
     <div class="head">
-      <span class="wk wk-user icon" />
+      <span class="xiaomingcloud open-user icon" />
       <span class="text">个人信息</span>
     </div>
     <el-form

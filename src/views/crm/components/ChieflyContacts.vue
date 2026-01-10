@@ -18,21 +18,21 @@
             class="cell-bd__name--des">{{ contactsDetail.post }}</span>
         </p>
         <p class="cell-bd__detail">
-          <i class="wk wk-circle-iphone" />
+          <i class="xiaomingcloud open-circle-iphone" />
           <span v-if="contactsDetail.mobile">{{ contactsDetail.mobile }}</span>
           <span
             v-else
             class="no-data">暂无电话</span>
         </p>
         <p class="cell-bd__detail">
-          <i class="wk wk-circle-email" />
+          <i class="xiaomingcloud open-circle-email" />
           <span v-if="contactsDetail.email">{{ contactsDetail.email }}</span>
           <span
             v-else
             class="no-data">暂无邮箱</span>
         </p>
       </div>
-      <span class="mark"><i class="wk wk-s-contacts" />首要联系人</span>
+      <span class="mark"><i class="xiaomingcloud open-s-contacts" />首要联系人</span>
     </flexbox>
 
     <import-info-empty
@@ -283,7 +283,7 @@ export default {
     z-index: 1;
   }
 
-  .wk-phone {
+  .Xiaomingcloud-phone {
     position: absolute;
     top: 30px;
     right: 5px;
@@ -305,7 +305,7 @@ export default {
   }
 }
 
-.wk-phone {
+.Xiaomingcloud-phone {
   cursor: pointer;
   background-color: #fb9323;
   color: white;

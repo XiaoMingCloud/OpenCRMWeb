@@ -1,7 +1,7 @@
 
 <template>
   <el-dialog
-    ref="wkDialog"
+    ref="XiaomingcloudDialog"
     :visible="visible"
     :append-to-body="true"
     :close-on-click-modal="false"
@@ -33,7 +33,7 @@
             :key="set.value"
             :label="set.value">{{ set.label }}</el-radio>
         </el-radio-group>
-        <wk-dep-select
+        <Xiaomingcloud-dep-select
           v-else-if="item.formType == 'structure'"
           v-model="deptAddForm[item.field]"
           :props="{dataType: 'hrm'}"
@@ -41,7 +41,7 @@
           style="width: 100%;"
           radio
         />
-        <wk-user-select
+        <Xiaomingcloud-user-select
           v-else-if="item.formType == 'user'"
           v-model="deptAddForm[item.field]"
           :request="item.request"
@@ -71,8 +71,8 @@ import {
   hrmDeptSetDeptAPI
 } from '@/api/hrm/dept'
 
-import WkUserSelect from '@/components/NewCom/WkUserSelect'
-import WkDepSelect from '@/components/NewCom/WkDepSelect'
+import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
+import XiaomingcloudDepSelect from '@/components/NewCom/XiaomingcloudDepSelect'
 
 import ElDialogLoadingMixin from '@/mixins/ElDialogLoading'
 
@@ -81,8 +81,8 @@ export default {
   // 组织操作
   name: 'DeptAddDialog',
   components: {
-    WkUserSelect,
-    WkDepSelect
+    XiaomingcloudUserSelect,
+    XiaomingcloudDepSelect
   },
   mixins: [ElDialogLoadingMixin],
   props: {

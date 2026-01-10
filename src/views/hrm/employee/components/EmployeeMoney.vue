@@ -4,7 +4,7 @@
       :dropdown-items="cardDropdownItems"
       title="工资卡信息"
       @command-select="cardCommandSelect">
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         :list="cardList"
       />
     </create-sections>
@@ -12,7 +12,7 @@
       :dropdown-items="securityDropdownItems"
       title="社保信息"
       @command-select="securityCommandSelect">
-      <wk-base-detail-section
+      <Xiaomingcloud-base-detail-section
         :list="securityList"
       />
       <!-- <el-button
@@ -82,7 +82,7 @@ import {
 
 import CreateSections from '@/components/CreateSections'
 import FormAddDialog from './FormAddDialog'
-import WkBaseDetailSection from '@/components/WkBaseDetail/WkBaseDetailSection'
+import XiaomingcloudBaseDetailSection from '@/components/XiaomingcloudBaseDetail/XiaomingcloudBaseDetailSection'
 
 import employeeCard from '../model/employeeCard'
 import MoneyDetailDialog from './MoneyDetailDialog'
@@ -94,7 +94,7 @@ export default {
   components: {
     CreateSections,
     FormAddDialog,
-    WkBaseDetailSection,
+    XiaomingcloudBaseDetailSection,
     MoneyDetailDialog
   },
   props: {

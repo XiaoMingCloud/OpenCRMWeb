@@ -1,7 +1,7 @@
 <template>
   <div class="my-task">
     <xr-header
-      icon-class="wk wk-task"
+      icon-class="xiaomingcloud open-task"
       icon-color="#D376FF"
       placeholder="请输入任务/描述"
       show-search
@@ -18,7 +18,7 @@
         </div>
         <i
           slot="reference"
-          class="wk wk-manage set-img" />
+          class="xiaomingcloud open-manage set-img" />
       </el-popover>
       <template slot="ft">
         <el-dropdown
@@ -40,7 +40,7 @@
             </flexbox>
           </el-dropdown-menu>
         </el-dropdown>
-        <el-button type="primary" icon="wk wk-screening" class="filter-btn" @click="screeningShow = true">任务筛选</el-button>
+        <el-button type="primary" icon="xiaomingcloud open-screening" class="filter-btn" @click="screeningShow = true">任务筛选</el-button>
       </template>
     </xr-header>
     <div class="my-task-body">

@@ -24,32 +24,32 @@ emptyDirective.install = Vue => {
     if ((Object.prototype.toString.call(binding.value) === '[object Array]' && binding.value.length === 0) ||
       (Object.prototype.toString.call(binding.value) !== '[object Array]' && binding.value)) {
       Vue.nextTick(() => {
-        el.wkEmptyOriginalPosition = getStyle(el, 'position')
+        el.XiaomingcloudEmptyOriginalPosition = getStyle(el, 'position')
         insertDom(el, el, binding)
       })
     } else { // 移除效果
-      el.wkEmptyVisible = false
+      el.XiaomingcloudEmptyVisible = false
       removeClass(el, 'xs-empty-parent--relative')
       removeClass(el, 'xs-empty-parent--hidden')
-      el.wkEmptyInstance.visible = false
+      el.XiaomingcloudEmptyInstance.visible = false
     }
   }
   const insertDom = (parent, el, binding) => {
-    if (!el.wkEmptyVisible && getStyle(el, 'display') !== 'none' && getStyle(el, 'visibility') !== 'hidden') {
-      Object.keys(el.wkEmptyMaskStyle).forEach(property => {
-        el.wkEmptyMask.style[property] = el.wkEmptyMaskStyle[property]
+    if (!el.XiaomingcloudEmptyVisible && getStyle(el, 'display') !== 'none' && getStyle(el, 'visibility') !== 'hidden') {
+      Object.keys(el.XiaomingcloudEmptyMaskStyle).forEach(property => {
+        el.XiaomingcloudEmptyMask.style[property] = el.XiaomingcloudEmptyMaskStyle[property]
       })
 
-      if (el.wkEmptyOriginalPosition !== 'absolute' && el.wkEmptyOriginalPosition !== 'fixed') {
+      if (el.XiaomingcloudEmptyOriginalPosition !== 'absolute' && el.XiaomingcloudEmptyOriginalPosition !== 'fixed') {
         addClass(parent, 'xs-empty-parent--relative')
       }
-      el.wkEmptyVisible = true
+      el.XiaomingcloudEmptyVisible = true
 
-      parent.appendChild(el.wkEmptyMask)
+      parent.appendChild(el.XiaomingcloudEmptyMask)
       Vue.nextTick(() => {
-        el.wkEmptyInstance.visible = true
+        el.XiaomingcloudEmptyInstance.visible = true
       })
-      el.wkEmptyInserted = true
+      el.XiaomingcloudEmptyInserted = true
     }
   }
 
@@ -69,26 +69,26 @@ emptyDirective.install = Vue => {
           customClass: vm && vm[customClassExr] || customClassExr
         }
       })
-      el.wkEmptyInstance = mask
-      el.wkEmptyMask = mask.$el
-      el.wkEmptyMaskStyle = {}
+      el.XiaomingcloudEmptyInstance = mask
+      el.XiaomingcloudEmptyMask = mask.$el
+      el.XiaomingcloudEmptyMaskStyle = {}
 
       binding.value && toggleEmpty(el, binding)
     },
 
     update: function(el, binding) {
-      el.wkEmptyInstance.setText(el.getAttribute('xs-empty-text'))
-      el.wkEmptyInstance.setIcon(el.getAttribute('xs-empty-icon'))
+      el.XiaomingcloudEmptyInstance.setText(el.getAttribute('xs-empty-text'))
+      el.XiaomingcloudEmptyInstance.setIcon(el.getAttribute('xs-empty-icon'))
       if (binding.oldValue !== binding.value) {
         toggleEmpty(el, binding)
       }
     },
 
     unbind: function(el, binding) {
-      if (el.wkEmptyInserted) {
-        el.wkEmptyMask &&
-          el.wkEmptyMask.parentNode &&
-          el.wkEmptyMask.parentNode.removeChild(el.wkEmptyMask)
+      if (el.XiaomingcloudEmptyInserted) {
+        el.XiaomingcloudEmptyMask &&
+          el.XiaomingcloudEmptyMask.parentNode &&
+          el.XiaomingcloudEmptyMask.parentNode.removeChild(el.XiaomingcloudEmptyMask)
         toggleEmpty(el, {
           value: false,
           modifiers: binding.modifiers

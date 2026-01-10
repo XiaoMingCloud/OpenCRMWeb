@@ -13,7 +13,7 @@
         <div
           style="backgroundColor: #19B5F6"
           class="header-icon">
-          <i class="wk wk-s-seas" />
+          <i class="xiaomingcloud open-s-seas" />
         </div>
         <div>
           <div class="header-title">公海名称</div>
@@ -196,7 +196,7 @@ export default {
     line-height: 40px;
     border-radius: $xr-border-radius-base;
     margin-right: 20px;
-    .wk {
+    .Xiaomingcloud {
       color: white;
       font-size: 26px;
     }

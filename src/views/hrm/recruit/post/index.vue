@@ -4,7 +4,7 @@
     <xr-header
       style="padding: 0px 15px 15px 0;"
       ft-top="0"
-      icon-class="wk wk-office"
+      icon-class="xiaomingcloud open-office"
       icon-color="#2362FB"
       placeholder="请输入职位名称"
       label="招聘职位"
@@ -13,7 +13,7 @@
       @search="searchClick" >
       <template slot="ft">
         <el-button v-if="hasFilterContent" type="text" @click="resetFilter">清除筛选</el-button>
-        <wk-popover-filter
+        <Xiaomingcloud-popover-filter
           :width="popoverFilterWidth"
           :field-from.sync="filterObj"
           :field-list="filterList"
@@ -143,7 +143,7 @@ import {
 
 import XrHeader from '@/components/XrHeader'
 import XrTableHeader from '@/components/XrTableHeader'
-import WkPopoverFilter from '@/components/NewCom/WkPopoverFilter'
+import XiaomingcloudPopoverFilter from '@/components/NewCom/XiaomingcloudPopoverFilter'
 import PostCreateView from './Create'
 import PostDetail from './Detail'
 import StopPostDialog from './components/StopPostDialog'
@@ -157,7 +157,7 @@ export default {
   components: {
     XrHeader,
     XrTableHeader,
-    WkPopoverFilter,
+    XiaomingcloudPopoverFilter,
     PostCreateView,
     PostDetail,
     StopPostDialog
@@ -272,7 +272,7 @@ export default {
       temps.push({
         label: '删除',
         command: 'delete',
-        icon: 'wk wk-delete'
+        icon: 'xiaomingcloud open-delete'
       })
       return temps
     },
@@ -530,13 +530,13 @@ export default {
         dropdownItems.push({
           label: '停止招聘',
           command: 'stop',
-          icon: 'wk wk-remove'
+          icon: 'xiaomingcloud open-remove'
         })
       } else {
         dropdownItems.push({
           label: '启用招聘',
           command: 'start',
-          icon: 'wk wk-activation'
+          icon: 'xiaomingcloud open-activation'
         })
       }
       return dropdownItems
