@@ -15,13 +15,13 @@ const cache = {
       }
     }
 
-    if (Lockr.get('Authorization') && !axios.defaults.headers['Authorization']) {
-      /** 将用户信息放入缓存 */
-      const userInfo = Lockr.get('loginUserInfo')
-      if (userInfo) {
-        store.commit('SET_USERINFO', userInfo)
-      }
-    }
+    // if (Lockr.get('Authorization') && !axios.defaults.headers['Authorization']) {
+    //   /** 将用户信息放入缓存 */
+    //   const userInfo = Lockr.get('loginUserInfo')
+    //   if (userInfo) {
+    //     store.commit('SET_USERINFO', userInfo)
+    //   }
+    // }
     store.commit('SET_APPNAME', Lockr.get('systemName'))
     store.commit('SET_APPLOGO', Lockr.get('systemLogo'))
   },
@@ -34,7 +34,7 @@ const cache = {
    */
   updateAxiosCache: function() {
     axios.defaults.headers['Admin-Token'] = Lockr.get('Admin-Token')
-    axios.defaults.headers['Authorization'] = Lockr.get('Authorization')
+    // axios.defaults.headers['Authorization'] = Lockr.get('Authorization')
     store.dispatch('GetUserInfo')
     store.dispatch('SystemLogoAndName')
   },
@@ -45,7 +45,7 @@ const cache = {
     }
     if (newToken && axios.defaults.headers['Admin-Token'] !== newToken) {
       axios.defaults.headers['Admin-Token'] = newToken
-      axios.defaults.headers['Authorization'] = 'Bearer ' + newToken
+      // axios.defaults.headers['Authorization'] = 'Bearer ' + newToken
       return true // token 变动
     }
   },
@@ -55,7 +55,7 @@ const cache = {
    */
   rmAxiosCache: function() {
     Lockr.rm('Admin-Token')
-    Lockr.rm('Authorization')
+    // Lockr.rm('Authorization')
   }
 }
 

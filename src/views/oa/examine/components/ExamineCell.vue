@@ -226,7 +226,7 @@ export default {
       letter-spacing: 0.5px;
       line-height: 18px;
       cursor: pointer;
-      color: #2362FB;
+      color: #c5d6fd;
       .text {
         padding-bottom: 10px;
       }

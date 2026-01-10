@@ -13,32 +13,8 @@
           <div class="logo-box">
             {{ titleMap[activeCom] }}
           </div>
-
           <component
             :is="activeCom"/>
-
-          <div class="use-tip">
-            <div>
-              <span class="text">建议使用</span>
-              <img src="~@/assets/login/chrome.png" alt="" class="icon">
-              <span class="text">Chrome、</span>
-              <img src="~@/assets/login/firefox.png" alt="" class="icon">
-              <span class="text">火狐、</span>
-              <img src="~@/assets/login/safari.png" alt="" class="icon">
-              <span class="text">Safari浏览器</span>
-            </div>
-            <div>
-              <span class="text">或</span>
-              <img src="~@/assets/login/360.png" alt="" class="icon">
-              <span class="text">360、</span>
-              <img src="~@/assets/login/sougou.png" alt="" class="icon">
-              <span class="text">搜狗、</span>
-              <img src="~@/assets/login/qq.png" alt="" class="icon">
-              <span class="text">QQ等浏览器</span>
-              <img src="~@/assets/login/fast.png" alt="" class="icon">
-              <span class="text">极速模式</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -85,17 +61,11 @@ export default {
     width: 100%;
     padding: 23px 2.8% 0;
     display: flex;
+
     img {
       width: 164px;
       height: 50px;
     }
-    // @media screen and (max-width: 1550px) {
-    //   padding: 23px 2.8% 0;
-    //   img {
-    //     width: 118px;
-    //     height: 36px;
-    //   }
-    // }
   }
 
   .container {
@@ -106,6 +76,7 @@ export default {
     justify-content: center;
     overflow: auto;
     margin-top: -42px;
+
     .left {
       .title {
         font-size: 38px;
@@ -121,6 +92,7 @@ export default {
           margin-bottom: 15px;
         }
       }
+
       .mini-title {
         font-size: 28px;
         font-weight: normal;
@@ -132,6 +104,7 @@ export default {
           margin-bottom: 6px;
         }
       }
+
       .desc {
         font-size: 16px;
         color: white;
@@ -141,6 +114,7 @@ export default {
           font-size: 14px;
         }
       }
+
       .register-btn {
         width: 120px;
         height: 48px;
@@ -161,6 +135,7 @@ export default {
           margin: 10px 0 10px 50px;
         }
       }
+
       .main-pic {
         width: 560px;
         margin-bottom: 20px;
@@ -173,28 +148,33 @@ export default {
           // margin-bottom: 20px;
         }
       }
+
       .download-group {
         width: 100%;
         overflow: hidden;
+
         .download-item {
           float: left;
           border-radius: 22px;
-          background-color: #2b5db9;
+          background-color: #74a2f8;
           text-align: center;
           cursor: pointer;
           margin-right: 20px;
           padding: 8px 16px;
+
           .icon {
             width: 30px;
             height: 30px;
             vertical-align: middle;
             margin-right: 10px;
           }
+
           .text {
             font-size: 14px;
             color: white;
             vertical-align: middle;
           }
+
           @media screen and (max-width: 1550px) {
             border-radius: 18px;
             margin-right: 15px;
@@ -214,10 +194,12 @@ export default {
         }
       }
     }
+
     .right {
       width: 480px;
       margin-left: 80px;
       padding-top: 10px;
+
       .login-main-content {
         position: relative;
         width: 100%;
@@ -226,6 +208,7 @@ export default {
         background-color: white;
         border-radius: 6px;
         overflow: hidden;
+
         .logo-box {
           position: relative;
           width: 100%;
@@ -235,6 +218,7 @@ export default {
           letter-spacing: 2px;
           padding: 0 40px;
           margin: 15px 0 20px;
+
           &:before {
             position: absolute;
             top: 50%;
@@ -248,6 +232,7 @@ export default {
             display: block;
           }
         }
+
         .use-tip {
           position: absolute;
           left: 0;
@@ -256,12 +241,15 @@ export default {
           text-align: center;
           color: #999;
           font-size: 12px;
+
           div + div {
             margin-top: 3px;
           }
+
           .text {
             vertical-align: middle;
           }
+
           .icon {
             width: 15px;
             display: inline-block;
@@ -271,27 +259,27 @@ export default {
       }
 
       // @media screen and (max-width: 1550px) {
-        // width: 480px;
-        // margin-left: 80px;
-        // padding-top: 10px;
-        // .login-main-content {
-          // height: 450px;
-          // .logo-box {
-            // font-size: 20px;
-            // padding: 0 40px;
-            // margin: 15px 0 20px;
-            // &:before {
-            //   height: 16px;
-            //   left: 24px;
-            // }
-          // }
-          // .use-tip {
-          //   font-size: 12px;
-          //   .icon {
-          //     width: 15px;
-          //   }
-          // }
-        // }
+      // width: 480px;
+      // margin-left: 80px;
+      // padding-top: 10px;
+      // .login-main-content {
+      // height: 450px;
+      // .logo-box {
+      // font-size: 20px;
+      // padding: 0 40px;
+      // margin: 15px 0 20px;
+      // &:before {
+      //   height: 16px;
+      //   left: 24px;
+      // }
+      // }
+      // .use-tip {
+      //   font-size: 12px;
+      //   .icon {
+      //     width: 15px;
+      //   }
+      // }
+      // }
       // }
     }
 
@@ -308,10 +296,12 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     .qrcode {
       width: 126px;
       height: 126px;
     }
+
     .down-text {
       width: 126px;
       font-size: 12px;
@@ -331,24 +321,28 @@ export default {
         flex-wrap: wrap;
         margin-left: 34px;
         margin-top: 26px;
+
         .activity-list-item {
           width: 350px;
           display: flex;
           align-items: center;
           justify-content: flex-start;
           margin: 15px 0;
+
           .icon {
             font-size: 26px;
             color: white;
             margin-right: 10px;
             display: flex;
           }
+
           .box {
             .activity-title {
               font-size: 18px;
               color: white;
               margin-bottom: 5px;
             }
+
             .text {
               color: white;
               font-size: 14px;
@@ -356,6 +350,7 @@ export default {
           }
         }
       }
+
       @media screen and (max-width: 1550px) {
         .main-pic {
           width: 450px;
@@ -365,16 +360,20 @@ export default {
           width: 500px;
           margin-top: 5px;
           margin-left: 40px;
+
           .activity-list-item {
             width: 250px;
             margin: 6px 0;
+
             .icon {
               font-size: 20px;
             }
+
             .box {
               .activity-title {
                 font-size: 16px;
               }
+
               .text {
                 font-size: 12px;
               }
@@ -383,6 +382,7 @@ export default {
         }
       }
     }
+
     .right {
       .login-main-content {
         height: 490px;

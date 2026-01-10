@@ -88,7 +88,7 @@ export default {
               item.iconColor = temps[1]
             } else {
               item.iconClass = 'wk wk-approve'
-              item.iconColor = '#9376FF'
+              item.iconColor = '#b09cfa'
             }
             return item
           })
@@ -167,7 +167,7 @@ export default {
 }
 
 .category-label {
-  color: #333;
+  color: #807e7e;
   font-size: 14px;
   margin-top: 5px;
 }

@@ -87,7 +87,7 @@ export default {
   border-radius: $xr-border-radius-base;
   position: relative;
   margin-bottom: 5px;
-  color: #333333;
+  color: #777474;
   font-size: 12px;
 
   .cell-head {
