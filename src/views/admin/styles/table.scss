@@ -1,3 +1,65 @@
-.el-table {
-  border-top: 1px solid $xr-border-line-color;
+.main-table {
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+
+  .el-table {
+    background: transparent !important;
+  }
+
+  .el-table__header {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .el-table th {
+    background: rgba(255, 255, 255, 0.3) !important;
+    color: #333;
+    font-weight: 600;
+    border-bottom: none !important;
+  }
+
+  .el-table td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .el-table__row:hover > td {
+    background: rgba(0, 122, 255, 0.08) !important;
+    transition: all 0.25s ease;
+  }
+
+  .el-table__row.current-row > td {
+    background: rgba(0, 122, 255, 0.15) !important;
+  }
+
+  .el-table::before {
+    display: none;
+  }
+}
+
+/* 按钮改成 iOS 胶囊风格 */
+.xr-btn--orange {
+  border-radius: 999px !important;
+  padding: 8px 20px !important;
+  background: linear-gradient(135deg, #ff9f0a, #ff7a00);
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
+  transition: all 0.25s ease;
+}
+
+.xr-btn--orange:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 122, 0, 0.4);
+}
+
+/* 文本按钮柔和化 */
+.el-button--text {
+  color: #007aff;
+  font-weight: 500;
+}
+
+.el-button--text:hover {
+  color: #005ecb;
 }

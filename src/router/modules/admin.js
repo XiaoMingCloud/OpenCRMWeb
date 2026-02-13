@@ -27,19 +27,6 @@ export default [
       }
     }]
   },
-  // {
-  //   ...layout({
-  //     permissions: ['manage']
-  //   }),
-  //   children: [{
-  //     path: 'update', // 升级
-  //     component: () => import('@/views/admin/update'),
-  //     meta: {
-  //       title: '在线升级',
-  //       icon: 'data-import'
-  //     }
-  //   }]
-  // },
   {
     ...layout({
       permissions: ['manage', 'configSet', 'read']

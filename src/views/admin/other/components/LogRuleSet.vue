@@ -1,7 +1,7 @@
 <template>
-  <div v-loading="loading">
-    <div class="content-title">
-      <span>日志规则设置</span>
+  <div v-loading="loading" class="ios-page">
+    <div class="ios-header">
+      <h2>日志规则设置</h2>
       <el-tooltip
         content="您可以配置日志规则，在日志模块可以根据日志规则来统计日志完成情况"
         effect="dark"
@@ -10,22 +10,27 @@
       </el-tooltip>
       <el-button
         type="primary"
-        class="rt"
+        class="save-btn"
         size="medium"
         @click="save">保存</el-button>
     </div>
-    <div class="content-body">
-      <create-sections title="日报规则">
-        <div slot="header" :class="{ 'is-inactive': dayForm.status == 0}" class="rule-set">
-          <el-switch
-            v-model="dayForm.status"
-            :active-value="1"
-            :inactive-value="0"
-            active-color="#2362FB"/>
-          <span class="label">已启用规则</span>
+
+    <div class="ios-content">
+      <!-- 日报规则 -->
+      <div class="ios-card">
+        <div class="section-header">
+          <h3>日报规则</h3>
+          <div :class="{ 'is-inactive': dayForm.status == 0 }" class="rule-set">
+            <el-switch
+              v-model="dayForm.status"
+              :active-value="1"
+              :inactive-value="0"
+              active-color="#007AFF"/>
+            <span class="label">已启用规则</span>
+          </div>
         </div>
 
-        <el-form ref="dayForm" :model="dayForm" label-width="120px">
+        <el-form ref="dayForm" :model="dayForm" label-width="120px" class="ios-form">
           <el-form-item>
             <template slot="label">
               <span>谁需要提交</span>
@@ -43,13 +48,19 @@
           </el-form-item>
 
           <el-form-item label="需要统计的日志">
-            <el-checkbox-group v-model="dayForm.effectiveDay">
-              <el-checkbox v-for="item in weekDaysOptions" :label="item.value" :key="item.value">{{ item.label }}</el-checkbox>
+            <el-checkbox-group v-model="dayForm.effectiveDay" class="ios-checkbox-group">
+              <el-checkbox
+                v-for="item in weekDaysOptions"
+                :key="item.value"
+                :label="item.value"
+                class="ios-checkbox">
+                {{ item.label }}
+              </el-checkbox>
             </el-checkbox-group>
           </el-form-item>
 
           <el-form-item label="开始提交时间">
-            <el-select v-model="dayForm.startTime" >
+            <el-select v-model="dayForm.startTime" class="ios-select">
               <el-option
                 v-for="item in dayTimeOptions"
                 :key="item"
@@ -59,7 +70,7 @@
           </el-form-item>
 
           <el-form-item label="结束提交时间">
-            <el-select v-model="dayForm.endTime" >
+            <el-select v-model="dayForm.endTime" class="ios-select">
               <el-option
                 v-for="item in dayTimeOptions"
                 :key="item"
@@ -67,20 +78,24 @@
                 :value="item"/>
             </el-select>
           </el-form-item>
-
-
         </el-form>
-      </create-sections>
-      <create-sections title="周报规则">
-        <div slot="header" :class="{ 'is-inactive': weekForm.status == 0}" class="rule-set">
-          <el-switch
-            v-model="weekForm.status"
-            :active-value="1"
-            :inactive-value="0"
-            active-color="#2362FB"/>
-          <span class="label">已启用规则</span>
+      </div>
+
+      <!-- 周报规则 -->
+      <div class="ios-card">
+        <div class="section-header">
+          <h3>周报规则</h3>
+          <div :class="{ 'is-inactive': weekForm.status == 0 }" class="rule-set">
+            <el-switch
+              v-model="weekForm.status"
+              :active-value="1"
+              :inactive-value="0"
+              active-color="#007AFF"/>
+            <span class="label">已启用规则</span>
+          </div>
         </div>
-        <el-form ref="weekForm" :model="weekForm" label-width="120px">
+
+        <el-form ref="weekForm" :model="weekForm" label-width="120px" class="ios-form">
           <el-form-item>
             <template slot="label">
               <span>谁需要提交</span>
@@ -107,7 +122,7 @@
                 <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <el-select v-model="weekForm.startDay" >
+            <el-select v-model="weekForm.startDay" class="ios-select">
               <el-option
                 v-for="item in weekDaysOptions"
                 :key="item.value"
@@ -126,7 +141,7 @@
                 <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <el-select v-model="weekForm.endDay" >
+            <el-select v-model="weekForm.endDay" class="ios-select">
               <el-option
                 v-for="item in weekDaysOptions"
                 :key="item.value"
@@ -134,20 +149,24 @@
                 :value="parseInt(item.value)"/>
             </el-select>
           </el-form-item>
-
-
         </el-form>
-      </create-sections>
-      <create-sections title="月报规则">
-        <div slot="header" :class="{ 'is-inactive': monthForm.status == 0}" class="rule-set">
-          <el-switch
-            v-model="monthForm.status"
-            :active-value="1"
-            :inactive-value="0"
-            active-color="#2362FB"/>
-          <span class="label">已启用规则</span>
+      </div>
+
+      <!-- 月报规则 -->
+      <div class="ios-card">
+        <div class="section-header">
+          <h3>月报规则</h3>
+          <div :class="{ 'is-inactive': monthForm.status == 0 }" class="rule-set">
+            <el-switch
+              v-model="monthForm.status"
+              :active-value="1"
+              :inactive-value="0"
+              active-color="#007AFF"/>
+            <span class="label">已启用规则</span>
+          </div>
         </div>
-        <el-form ref="monthForm" :model="monthForm" label-width="120px">
+
+        <el-form ref="monthForm" :model="monthForm" label-width="120px" class="ios-form">
           <el-form-item>
             <template slot="label">
               <span>谁需要提交</span>
@@ -174,11 +193,11 @@
                 <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <el-select v-model="monthForm.startDay" >
+            <el-select v-model="monthForm.startDay" class="ios-select">
               <el-option
                 v-for="item in monthTimeOptions"
                 :key="item.value"
-                :label="`${item.label}`"
+                :label="item.label"
                 :value="item.value"/>
             </el-select>
           </el-form-item>
@@ -193,18 +212,16 @@
                 <i class="xiaomingcloud open-help Xiaomingcloud-help-tips"/>
               </el-tooltip>
             </template>
-            <el-select v-model="monthForm.endDay" >
+            <el-select v-model="monthForm.endDay" class="ios-select">
               <el-option
                 v-for="item in monthTimeOptions"
                 :key="item.value"
-                :label="`${item.label}`"
+                :label="item.label"
                 :value="item.value"/>
             </el-select>
           </el-form-item>
-
-
         </el-form>
-      </create-sections>
+      </div>
     </div>
   </div>
 </template>
@@ -219,9 +236,8 @@ import CreateSections from '@/components/CreateSections'
 import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { objDeepCopy } from '@/utils'
 
-
 export default {
-  name: 'LogRuleSet', // 日志规则设置
+  name: 'LogRuleSet',
 
   components: {
     CreateSections,
@@ -230,71 +246,35 @@ export default {
 
   data() {
     return {
-      loading: false, // 展示加载中效果
-
+      loading: false,
       weekDaysOptions: [
-        {
-          label: '周一',
-          value: '1'
-        },
-        {
-          label: '周二',
-          value: '2'
-        },
-        {
-          label: '周三',
-          value: '3'
-        },
-        {
-          label: '周四',
-          value: '4'
-        },
-        {
-          label: '周五',
-          value: '5'
-        },
-        {
-          label: '周六',
-          value: '6'
-        },
-        {
-          label: '周日',
-          value: '7'
-        }
+        { label: '周一', value: '1' },
+        { label: '周二', value: '2' },
+        { label: '周三', value: '3' },
+        { label: '周四', value: '4' },
+        { label: '周五', value: '5' },
+        { label: '周六', value: '6' },
+        { label: '周日', value: '7' }
       ],
       dayTimeOptions: [],
       monthTimeOptions: [],
-      dayForm: {
-        effectiveDay: ['1', '2', '3', '4', '5'],
-        memberUserId: []
-      },
-      weekForm: {
-        memberUserId: []
-      },
-      monthForm: {
-        memberUserId: []
-      }
+      dayForm: { effectiveDay: ['1', '2', '3', '4', '5'], memberUserId: [] },
+      weekForm: { memberUserId: [] },
+      monthForm: { memberUserId: [] }
     }
   },
 
   created() {
-    for (let index = 7; index <= 23; index++) {
-      this.dayTimeOptions.push(index < 10 ? `0${index}:00` : `${index}:00`)
+    for (let i = 7; i <= 23; i++) {
+      this.dayTimeOptions.push(i < 10 ? `0${i}:00` : `${i}:00`)
     }
-
-    for (let index = 1; index <= 31; index++) {
-      this.monthTimeOptions.push({
-        label: `每月${index}号`,
-        value: index
-      })
+    for (let i = 1; i <= 31; i++) {
+      this.monthTimeOptions.push({ label: `每月${i}号`, value: i })
     }
     this.getDetail()
   },
 
   methods: {
-    /**
-     * 获取详情
-     */
     getDetail() {
       this.loading = true
       oaLogRuleQueryAPI()
@@ -334,52 +314,29 @@ export default {
         })
     },
 
-    /**
-     * 保存操作
-     */
     save() {
       if (this.dayForm.status == 1) {
-        for (const key in this.dayForm) {
-          const value = this.dayForm[key]
-          // if (key == 'memberUser' && value.length == 0) {
-          //   this.$message.error('请选择日报谁需要提交')
-          //   return
-          // } else
-          if (key == 'weekDaysOptions' && value.length == 0) {
-            this.$message.error('请选择需要统计的日志')
-            return
-          } else if ((key == 'startTime' || key == 'endTime') && !value) {
-            this.$message.error('请选择日报规则时间')
-            return
-          }
+        if (!this.dayForm.effectiveDay || this.dayForm.effectiveDay.length === 0) {
+          this.$message.error('请选择需要统计的日志')
+          return
+        }
+        if (!this.dayForm.startTime || !this.dayForm.endTime) {
+          this.$message.error('请选择日报规则时间')
+          return
         }
       }
 
       if (this.weekForm.status == 1) {
-        for (const key in this.weekForm) {
-          const value = this.weekForm[key]
-          // if (key == 'memberUser' && value.length == 0) {
-          //   this.$message.error('请选择谁需要提交')
-          //   return
-          // } else
-          if ((key == 'startDay' || key == 'endDay') && !value) {
-            this.$message.error('请选择周报规则时间')
-            return
-          }
+        if (!this.weekForm.startDay || !this.weekForm.endDay) {
+          this.$message.error('请选择周报规则时间')
+          return
         }
       }
 
       if (this.monthForm.status == 1) {
-        for (const key in this.monthForm) {
-          const value = this.monthForm[key]
-          // if (key == 'memberUser' && value.length == 0) {
-          //   this.$message.error('请选择谁需要提交')
-          //   return
-          // } else
-          if ((key == 'startDay' || key == 'endDay') && !value) {
-            this.$message.error('请选择月报规则时间')
-            return
-          }
+        if (!this.monthForm.startDay || !this.monthForm.endDay) {
+          this.$message.error('请选择月报规则时间')
+          return
         }
       }
 
@@ -407,47 +364,135 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-.content-title {
-  padding: 10px;
-  border-bottom: 1px solid #e6e6e6;
+<style lang="scss" scoped>
+.ios-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6edff 100%);
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
 }
 
-.content-title > span {
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  margin-left: 20px;
-}
+.ios-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 0 8px;
 
-.content-body {
-  height: calc(100% - 60px);
-  padding: 15px 15px 30px;
-  overflow-y: auto;
-}
-
-.el-form-item {
-  margin-bottom: 10px;
-}
-
-.el-form {
-  margin-top: 15px;
-  width: 80%;
-}
-
-.user-container {
-  width: 200px;
-}
-
-.rule-set {
-  margin-left: 8px;
-
-  &.is-inactive {
-    color: #E2E2E2;
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1d1d1d;
+    margin: 0;
   }
 
-  .label {
-    font-size: 13px;
+  .save-btn {
+    background: linear-gradient(135deg, #007aff, #00a6ff);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
+    }
+  }
+}
+
+.ios-content {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ios-card {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1d1d1d;
+      margin: 0;
+    }
+  }
+
+  .rule-set {
+    display: flex;
+    align-items: center;
+
+    &.is-inactive {
+      opacity: 0.5;
+    }
+
+    .label {
+      font-size: 13px;
+      margin-left: 8px;
+      color: #333;
+    }
+  }
+
+  .ios-form {
+    width: 100%;
+
+    ::v-deep .el-form-item__label {
+      color: #333;
+      font-weight: 500;
+    }
+
+    ::v-deep .el-input,
+    ::v-deep .el-select {
+      .el-input__inner,
+      .el-select__input {
+        border-radius: 12px !important;
+        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        background: rgba(255, 255, 255, 0.8) !important;
+        padding: 10px 14px !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+      }
+    }
+
+    .ios-checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .ios-checkbox ::v-deep .el-checkbox__label {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ios-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .ios-card {
+    padding: 16px;
+    border-radius: 14px;
   }
 }
 </style>

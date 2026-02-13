@@ -349,44 +349,131 @@ export default {
 <style lang="scss" scoped>
 .opacity-fade-enter-active,
 .opacity-fade-leave-active {
-  transition: all 0.2s;
+  transition: all 0.25s ease;
 }
 .opacity-fade-enter,
 .opacity-fade-leave-to {
   opacity: 0;
+  transform: scale(0.98);
 }
 
+/* 整体背景 - iOS 浅灰渐变 */
 .business-approve-flow-create {
   position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background-color: #f5f5f7;
+  inset: 0;
+  overflow: hidden;
 
+  background: linear-gradient(
+      180deg,
+      #f2f3f7 0%,
+      #e9ecf3 100%
+  );
+
+  display: flex;
+  flex-direction: column;
+
+  /* 顶部导航区域毛玻璃 */
+  .Xiaomingcloud-backgroud-tabs {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    background: rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  /* 发布按钮 iOS 风格 */
+  ::v-deep .el-button--primary {
+    border-radius: 20px;
+    padding: 8px 22px;
+    font-weight: 500;
+    background: linear-gradient(135deg, #0a84ff, #4da3ff);
+    border: none;
+    box-shadow: 0 6px 18px rgba(10, 132, 255, 0.35);
+    transition: all 0.2s ease;
+  }
+
+  ::v-deep .el-button--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px rgba(10, 132, 255, 0.45);
+  }
+
+  /* 关闭按钮 */
   .create-close {
-    display: block;
-    font-size: 24px;
-    color: #909399;
+    font-size: 22px;
+    color: #8e8e93;
     padding: 10px;
-    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease;
   }
 
   .create-close:hover {
-    color: $xr-color-primary;
+    background: rgba(0, 0, 0, 0.06);
+    color: #000;
   }
 
+  /* 基础信息卡片 */
   .base-info-set {
-    width: 900px;
-    margin: 20px auto 0;
-    height: calc(100% - 100px);
+    width: 880px;
+    margin: 40px auto 0;
+    padding: 30px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.08),
+      0 2px 4px rgba(0, 0, 0, 0.05);
+
+    height: calc(100% - 140px);
+    overflow-y: auto;
   }
 
+  /* 流程区域 */
   .Xiaomingcloud-approve-flow-wrap {
-    top: 60px;
+    margin: 40px auto;
+    width: 1000px;
+
+    border-radius: 28px;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.08),
+      0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  /* 表单输入框 iOS 圆润风 */
+  ::v-deep .el-input__inner,
+  ::v-deep .el-textarea__inner {
+    border-radius: 16px;
+    background: rgba(245, 245, 247, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+  }
+
+  ::v-deep .el-input__inner:focus,
+  ::v-deep .el-textarea__inner:focus {
+    border-color: #0a84ff;
+    box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.15);
+  }
+
+  /* 下拉框 */
+  ::v-deep .el-select .el-input__inner {
+    border-radius: 16px;
+  }
+
+  /* Tabs 选中样式 iOS 蓝 */
+  ::v-deep .is-active {
+    color: #0a84ff !important;
   }
 
 }
-
-
 </style>

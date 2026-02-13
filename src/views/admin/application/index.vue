@@ -225,44 +225,48 @@ export default {
 .main {
   padding: 0 15px;
   height: 100%;
+  background-color: #f7f6f2; // iOS背景颜色风格
 }
 
 .body {
   flex: 1;
   overflow-y: auto;
   padding-top: 20px;
-  background-color: white;
-  border: 1px solid $xr-border-line-color;
-  border-radius: $xr-border-radius-base;
+  background-color: #ffffff;
+  border: 1px solid #e5e5ea; // 更柔和的边框颜色
+  border-radius: 14px; // 较大的圆角半径
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // 添加柔和阴影
 }
 
 .section-header {
-  padding: 3px 20px;
-  font-size: 12px;
-  color: #999;
+  padding: 15px 20px;
+  font-size: 17px;
+  color: #000000;
+  font-weight: 600;
 }
 
 .section-body {
   padding: 20px;
   .section-item {
-    width: auto;
-    min-width: 240px;
+    width: 100%; // 宽度调整为100%以适应iOS风格
+    min-width: unset;
     position: relative;
-    padding: 20px 35px 12px 20px;
-    border: 1px solid #ebeef5;
-    border-radius: $xr-border-radius-base;
-    margin-right: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-    vertical-align: middle;
+    padding: 15px 30px 15px 20px;
+    border: 1px solid #e5e5ea; // 更柔和的边框颜色
+    border-radius: 14px; // 较大的圆角半径
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); // 添加柔和阴影
+    display: flex;
+    align-items: center;
     .item-icon {
-      width: 40px;
-      height: 40px;
-      margin-right: 15px;
+      width: 44px;
+      height: 44px;
+      margin-right: 20px;
     }
     .item-name {
-      font-size: 14px;
-      color: #333333;
+      font-size: 17px;
+      color: #000000;
+      flex-grow: 1;
     }
   }
 }
@@ -271,12 +275,13 @@ export default {
   color: #cdcdcd;
   transform: rotate(90deg);
   cursor: pointer;
+  margin-left: auto; // 对齐图标到右侧
 }
 
 .more-menu {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 10px;
+  right: 10px;
 }
 
 .detail-button {

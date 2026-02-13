@@ -186,9 +186,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// 全局样式变量定义
+$bg-opacity: 0.95; // 背景透明度
+$blur-radius: 10px; // 毛玻璃模糊半径
+$border-radius: 12px; // 圆角半径
 .main {
-  padding: 0 15px;
+  padding: 15px;
   height: 100%;
+  background-color: rgba(255, 255, 255, $bg-opacity);
+  backdrop-filter: blur($blur-radius); // 毛玻璃效果
 }
 
 .body {
@@ -199,6 +205,8 @@ export default {
   border: 1px solid #e6e6e6;
   border-radius: $xr-border-radius-base;
   position: relative;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); // 增加阴影以增强层次感
 }
 
 // 进度信息
@@ -247,10 +255,11 @@ export default {
 }
 
 .section-title {
-  color: #333;
   font-weight: bold;
-  font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  color: #1d2129; // 使用更深一点的颜色来强调标题
+  padding-left: 10px;
+  border-radius: $border-radius;
 }
 
 .section-content {
@@ -268,11 +277,17 @@ export default {
 
 .uploader-icon {
   font-size: 28px;
-  color: #8c939d;
+  color: #a9bbd1;
   width: 300px;
   height: 80px;
   line-height: 80px;
   text-align: center;
+  border-radius: $border-radius;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(29, 127, 255, 0.05);
+  }
 }
 .upload /deep/ .el-upload-dragger {
   width: 300px;
@@ -292,9 +307,12 @@ export default {
     position: absolute;
     top: -10px;
     right: -8px;
-    color: red;
+    color: #ed4646;
     font-size: 20px;
-    display: none;
+    transition: all .2s ease-in-out;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 }
 .upload-show:hover {

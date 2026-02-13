@@ -1,24 +1,24 @@
 <template>
-  <div v-loading="loading" class="init-set">
+  <div v-loading="loading" class="ios-init-set">
     <xr-header
       icon-class="xiaomingcloud open-results-solid"
-      icon-color="#2362FB" >
-      <template slot="label">初始化数据<span class="label-des">（试用OpenCRM后需要删除测试数据，正式管理企业信息）</span></template>
+      icon-color="#2362FB">
+      <template slot="label">初始化数据<span class="label-des">（系统重置）</span></template>
     </xr-header>
-    <div class="init-set__body">
+    <div class="ios-init-set__body">
       <reminder
         :content="`提示：1、可以对单个应用或多个应用初始化，应用下的数据将全部删除；<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、注意初始化单个应用后，将影响其他应用下与此应用关联的数据；<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color: red;'>初始化的数据不可恢复，请谨慎操作！</span>`"
-        class="xr-reminder"/>
+        class="ios-reminder"/>
       <div class="init__label">初始化应用</div>
-      <div class="init__body">
-        <el-select v-model="value" multiple>
+      <div class="ios-init__body">
+        <el-select v-model="value" multiple class="ios-select">
           <el-option
             v-for="item in options"
             :key="item.value"
             :label="item.label"
             :value="item.value"/>
         </el-select>
-        <el-button :disabled="value.length == 0" type="primary" @click="saveClick">确定初始化</el-button>
+        <el-button :disabled="value.length == 0" type="primary" class="ios-btn" @click="saveClick">确定初始化</el-button>
       </div>
     </div>
   </div>
@@ -63,8 +63,7 @@ export default {
       }, {
         value: 'calendar',
         label: '日程'
-      }
-      ]
+      }]
     }
   },
   computed: {},
@@ -147,42 +146,104 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.init-set {
-  height:100%;
+.ios-init-set {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6edff 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+
+  .ios-init-set__body {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
 
   /deep/ .xr-header {
     padding: 15px 30px;
+    background: transparent;
   }
 
-  &__body {
-    height: calc(100% - 60px);
-    padding: 10px 20px;
-    background-color: white;
-    border-top: 1px solid $xr-border-line-color;
-    border-bottom: 1px solid $xr-border-line-color;
-  }
-}
-
-.label-des {
-  font-weight: normal;
-  color: $xr-color-text-placeholder;
-  font-size: 13px;
-}
-
-.init {
-  &__label {
-    margin: 30px 0 20px;
-    font-weight: bold;
+  .label-des {
+    font-weight: normal;
+    color: #999;
+    font-size: 13px;
   }
 
-  &__body {
-    .el-select {
-      width: 300px;
+  .init {
+    &__label {
+      margin: 30px 0 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    &__body {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      .ios-select {
+        width: 300px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.8);
+        padding: 10px 14px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+        .el-input__inner {
+          border: none;
+          background: transparent;
+        }
+      }
+
+      .ios-btn {
+        background: linear-gradient(135deg, #007aff, #00a6ff);
+        border: none;
+        border-radius: 12px;
+        padding: 10px 20px;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        transition: all 0.2s ease;
+
+        &:hover {
+          transform: translateY(-1px);
+          box-shadow: 0 6px 16px rgba(0, 122, 255, 0.4);
+        }
+      }
     }
   }
+
+  .ios-reminder {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
 }
 
-.xr-reminder {
-  width: auto;
+@media (max-width: 768px) {
+  .ios-init-set {
+    padding: 10px;
+  }
+
+  .ios-init-set__body {
+    padding: 16px;
+    border-radius: 14px;
+  }
 }
 </style>

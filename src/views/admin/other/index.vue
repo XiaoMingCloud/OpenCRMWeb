@@ -1,12 +1,12 @@
 <template>
-  <div class="system-customer">
+  <div class="ios-system-customer">
     <xr-header
       icon-class="xiaomingcloud open-manage"
       icon-color="#2EC2F9"
       label="其他设置" />
     <div class="customer-content">
       <!-- 客户管理导航 -->
-      <div class="system-view-nav">
+      <div class="ios-view-nav">
         <div
           v-for="(item, index) in menuList"
           :key="index"
@@ -19,7 +19,7 @@
       <keep-alive>
         <component
           :is="menuIndex"
-          class="system-view-content"/>
+          class="ios-view-content"/>
       </keep-alive>
     </div>
   </div>
@@ -53,9 +53,6 @@ export default {
     }
   },
 
-  computed: {
-  },
-
   methods: {
     /**
      * 菜单选择
@@ -67,70 +64,108 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-.system-customer {
+<style lang="scss" scoped>
+.ios-system-customer {
   height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e6edff 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
 }
+
 .customer-content {
   flex: 1;
   position: relative;
   display: flex;
   overflow: hidden;
 }
-.system-view-nav {
+
+// 导航菜单样式
+.ios-view-nav {
   min-width: 200px;
-  background: #fff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.75);
   margin-right: 10px;
   padding-top: 20px;
-  border: 1px solid $xr-border-line-color;
-  border-radius: $xr-border-radius-base;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
 
-}
-.system-view-content {
-  flex: 1;
-  border: 1px solid $xr-border-line-color;
-  border-radius: $xr-border-radius-base;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  overflow-x: auto;
-}
+  &:hover {
+    transform: translateY(-2px);
+  }
 
-// 菜单
-.menu-item {
-  color: #333;
-  font-size: 13px;
-  padding: 0 15px;
-  height: 40px;
-  line-height: 40px;
-  cursor: pointer;
-  position: relative;
-  .icon-close {
-    position: absolute;
-    top: 0;
-    right: 8px;
-    z-index: 1;
-    display: none;
+  .menu-item {
+    color: #333;
+    font-size: 14px;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s ease;
+
+    &.is-select {
+      background-color: rgba(0, 122, 255, 0.1);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background-color: transparent;
+      transition: background-color 0.2s ease;
+    }
+
+    &:hover::before,
+    &.is-select::before {
+      background-color: #007AFF;
+    }
+
+    &:hover,
+    &.is-select {
+      background-color: rgba(0, 122, 255, 0.05);
+    }
   }
 }
 
-.menu-item:hover,
-.menu-item.is-select {
-  background-color: $xr--background-color-base;
+// 内容区域样式
+.ios-view-content {
+  flex: 1;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 }
 
-.menu-item:hover::before,
-.menu-item.is-select::before {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #5383ed;
+@media (max-width: 768px) {
+  .ios-system-customer {
+    padding: 10px;
+  }
+
+  .ios-view-nav {
+    min-width: 180px;
+    border-radius: 14px;
+  }
+
+  .ios-view-content {
+    border-radius: 14px;
+  }
 }
 </style>

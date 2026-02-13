@@ -36,18 +36,25 @@
         <el-table-column
           fixed="right"
           label="操作"
-          width="100">
+          width="120">
           <template slot-scope="scope">
-            <el-button
-              :disabled="scope.row.label == 2"
-              type="text"
-              size="small"
-              @click="handleClick('edit', scope)">编辑</el-button>
-            <el-button
-              :disabled="scope.row.roleType == 5"
-              type="text"
-              size="small"
-              @click="handleClick('delete', scope)">删除</el-button>
+            <div class="action-cell">
+              <el-button
+                :disabled="scope.row.label == 2"
+                type="text"
+                size="small"
+                @click="handleClick('edit', scope)">
+                编辑
+              </el-button>
+
+              <el-button
+                :disabled="scope.row.roleType == 5"
+                type="text"
+                size="small"
+                @click="handleClick('delete', scope)">
+                删除
+              </el-button>
+            </div>
           </template>
         </el-table-column>
       </el-table>
@@ -174,36 +181,210 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main {
-  height:100%;
 
-  /deep/ .xr-header {
-    padding: 15px 30px;
+.main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  /* 顶部 Header 毛玻璃 */
+  ::v-deep .xr-header {
+    padding: 18px 30px;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    background: rgba(255,255,255,0.65);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.04);
   }
 }
+
+/* ===== 页面主体 ===== */
 
 .main-body {
-  background-color: white;
-  border-top: 1px solid $xr-border-line-color;
-  border-bottom: 1px solid $xr-border-line-color;
+  flex: 1;
+  margin: 20px;
+  padding: 0;
+  padding: 10px 10px 20px;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.72);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.08),
+    0 2px 6px rgba(0,0,0,0.04);
+
+  overflow: hidden;
 }
+
+/* ===== 表头区域 ===== */
 
 .main-table-header {
-  height: 50px;
-  background-color: white;
-  position: relative;
-  .main-table-header-button {
-    float: right;
-    margin-right: 20px;
-    margin-top: 10px;
-  }
+  height: 60px;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+
+  background: rgba(255,255,255,0.4);
 }
 
-.project-reminder {
-  width: auto;
-  float: left;
-  margin-left: 20px;
-  margin-top: 10px;
+/* 新建按钮 iOS 蓝 */
+.main-table-header-button {
+  border-radius: 20px !important;
+  padding: 8px 22px !important;
+
+  background: linear-gradient(135deg,#0A84FF,#4DA3FF) !important;
+  border: none !important;
+
+  box-shadow: 0 6px 18px rgba(10,132,255,0.35);
+  transition: all .2s ease;
 }
-@import '../styles/table.scss';
+
+.main-table-header-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(10,132,255,0.45);
+}
+
+/* ===== 提醒文字 ===== */
+
+.project-reminder {
+  font-size: 14px;
+  color: #6e6e73;
+}
+
+/* ===== 表格整体 ===== */
+
+.main-table {
+  padding: 0px;
+}
+
+/* 表格毛玻璃（⚠ 移除 overflow: hidden 解决 fixed 错位） */
+::v-deep .el-table {
+  border-radius: 18px;
+  background: rgba(255,255,255,0.6);
+}
+
+/* 移除默认底部线 */
+::v-deep .el-table::before {
+  display: none;
+}
+
+/* ===== 修复 fixed 右侧列错位 ===== */
+
+/* 让 fixed 列高度跟随主表 */
+::v-deep .el-table__fixed-right {
+  bottom: 0 !important;
+}
+
+::v-deep .el-table__fixed {
+  bottom: 0 !important;
+}
+
+::v-deep .el-table__fixed-right-patch {
+  background: transparent !important;
+}
+
+/* ===== 表头 ===== */
+
+::v-deep .el-table th {
+  background: rgba(245,245,247,0.85);
+  font-weight: 500;
+  color: #1d1d1f;
+}
+
+/* ===== 行 hover 同步主表 + fixed ===== */
+
+::v-deep .el-table__body tr:hover > td,
+::v-deep .el-table__fixed-right .el-table__body tr:hover > td {
+  background: rgba(10,132,255,0.08) !important;
+}
+
+/* ===== 选中行同步 ===== */
+
+::v-deep .el-table__body tr.current-row > td,
+::v-deep .el-table__fixed-right .el-table__body tr.current-row > td {
+  background: rgba(10,132,255,0.12) !important;
+}
+
+/* 单元格 */
+::v-deep .el-table td {
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+/* ===== 操作按钮 ===== */
+
+::v-deep .el-button--text {
+  border-radius: 12px;
+  padding: 4px 10px;
+  transition: all .2s;
+}
+
+::v-deep .el-button--text:hover {
+  background: rgba(10,132,255,0.1);
+}
+
+/* 删除按钮偏红 */
+::v-deep .el-button--text:nth-child(2) {
+  color: #ff3b30;
+}
+
+::v-deep .el-button--text:nth-child(2):hover {
+  background: rgba(255,59,48,0.1);
+}
+
+/* ===== 加载动画柔化 ===== */
+
+::v-deep .el-loading-mask {
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.6);
+}
+
+/* ===== 弹窗统一圆角 ===== */
+
+::v-deep .el-dialog {
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+::v-deep .el-dialog__header {
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ===== 滚动条 iOS 细化 ===== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* 操作列强制居中对齐 */
+::v-deep .action-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 100%;
+}
+
+/* 修复 fixed 和主表单元格高度不同步 */
+::v-deep .el-table__fixed-right td {
+  vertical-align: middle;
+}
+
 </style>

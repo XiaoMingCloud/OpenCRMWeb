@@ -1,20 +1,19 @@
 <template>
-  <div
-    class="login-wrapper">
+  <div class="login-wrapper">
     <div class="container">
       <div class="left">
         <img
           src=""
           alt=""
-          class="main-pic">
+          class="main-pic"
+        >
       </div>
       <div class="right">
         <div class="login-main-content">
           <div class="logo-box">
             {{ titleMap[activeCom] }}
           </div>
-          <component
-            :is="activeCom"/>
+          <component :is="activeCom" />
         </div>
       </div>
     </div>
@@ -36,17 +35,16 @@ export default {
         LoginByPwd: '欢迎登录'
       }
     }
-  },
-  watch: {},
-  created() {
-  },
-  methods: {}
+  }
 }
 </script>
 
 <style scoped lang="scss">
 @import 'index';
 
+/* =========================
+   整体背景（增强层次）
+========================= */
 .login-wrapper {
   position: relative;
   width: 100%;
@@ -57,15 +55,22 @@ export default {
   flex-direction: column;
   overflow: auto;
 
-  .top-nav {
-    width: 100%;
-    padding: 23px 2.8% 0;
-    display: flex;
+  /* 背景遮罩层 */
+  &:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(0, 0, 0, 0.28),
+        rgba(0, 0, 0, 0.08)
+    );
+    z-index: 0;
+  }
 
-    img {
-      width: 164px;
-      height: 50px;
-    }
+  > * {
+    position: relative;
+    z-index: 1;
   }
 
   .container {
@@ -74,127 +79,27 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: auto;
     margin-top: -42px;
 
+    /* =========================
+       左侧展示区
+    ========================= */
     .left {
-      .title {
-        font-size: 38px;
-        font-weight: normal;
-        color: white;
-        letter-spacing: 3px;
-        margin-top: 10px;
-        margin-left: 34px;
-        margin-bottom: 20px;
-        @media screen and (max-width: 1550px) {
-          font-size: 32px;
-          margin-top: 0;
-          margin-bottom: 15px;
-        }
-      }
-
-      .mini-title {
-        font-size: 28px;
-        font-weight: normal;
-        color: white;
-        margin-bottom: 12px;
-        margin-left: 34px;
-        @media screen and (max-width: 1550px) {
-          font-size: 18px;
-          margin-bottom: 6px;
-        }
-      }
-
-      .desc {
-        font-size: 16px;
-        color: white;
-        line-height: 1.5;
-        margin-left: 34px;
-        @media screen and (max-width: 1550px) {
-          font-size: 14px;
-        }
-      }
-
-      .register-btn {
-        width: 120px;
-        height: 48px;
-        font-size: 18px;
-        text-align: center;
-        line-height: 48px;
-        color: #394af3;
-        background-color: white;
-        border-radius: $xr-border-radius-base;
-        cursor: pointer;
-        margin: 15px 0 15px 34px;
-        @media screen and (max-width: 1550px) {
-          width: 100px;
-          height: 40px;
-          font-size: 16px;
-          line-height: 40px;
-          border-radius: 4px;
-          margin: 10px 0 10px 50px;
-        }
-      }
-
       .main-pic {
         width: 560px;
-        margin-bottom: 20px;
-        margin-top: 50px;
-        margin-left: -20px;
+        margin: 50px 0 20px -20px;
+        opacity: 0.96;
+        filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.25));
+
         @media screen and (max-width: 1550px) {
           width: 500px;
-          // margin-top: 10px;
-          // margin-left: -20px;
-          // margin-bottom: 20px;
-        }
-      }
-
-      .download-group {
-        width: 100%;
-        overflow: hidden;
-
-        .download-item {
-          float: left;
-          border-radius: 22px;
-          background-color: #74a2f8;
-          text-align: center;
-          cursor: pointer;
-          margin-right: 20px;
-          padding: 8px 16px;
-
-          .icon {
-            width: 30px;
-            height: 30px;
-            vertical-align: middle;
-            margin-right: 10px;
-          }
-
-          .text {
-            font-size: 14px;
-            color: white;
-            vertical-align: middle;
-          }
-
-          @media screen and (max-width: 1550px) {
-            border-radius: 18px;
-            margin-right: 15px;
-            padding: 7px 12px;
-            .icon {
-              width: 22px;
-              height: 22px;
-              vertical-align: middle;
-              margin-right: 8px;
-            }
-            .text {
-              font-size: 14px;
-              color: white;
-              vertical-align: middle;
-            }
-          }
         }
       }
     }
 
+    /* =========================
+       右侧登录区（重点）
+    ========================= */
     .right {
       width: 480px;
       margin-left: 80px;
@@ -204,35 +109,62 @@ export default {
         position: relative;
         width: 100%;
         height: 500px;
-        // height: 510px;
-        background-color: white;
-        border-radius: 6px;
+
+        /* 毛玻璃核心 */
+        background: rgba(255, 255, 255, 0.78);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        border-radius: 16px;
         overflow: hidden;
 
+        /* 高级阴影 */
+        box-shadow:
+          0 18px 40px rgba(0, 0, 0, 0.18),
+          0 4px 10px rgba(0, 0, 0, 0.08);
+
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow:
+            0 26px 60px rgba(0, 0, 0, 0.22),
+            0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        /* =========================
+           标题栏
+        ========================= */
         .logo-box {
           position: relative;
           width: 100%;
-          font-weight: bold;
           font-size: 20px;
-          color: #4c4c4c;
-          letter-spacing: 2px;
+          font-weight: 600;
+          color: #2b2b2b;
+          letter-spacing: 1px;
           padding: 0 40px;
-          margin: 15px 0 20px;
+          margin: 22px 0 26px;
 
           &:before {
-            position: absolute;
-            top: 50%;
-            left: 24px;
-            transform: translateY(-50%);
             content: '';
+            position: absolute;
+            left: 24px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 4px;
-            height: 16px;
-            background-color: #3e6bea;
-            border-radius: 2px;
-            display: block;
+            height: 18px;
+            background: linear-gradient(
+                180deg,
+                #3e6bea,
+                #6a8dff
+            );
+            border-radius: 3px;
           }
         }
 
+        /* =========================
+           底部提示
+        ========================= */
         .use-tip {
           position: absolute;
           left: 0;
@@ -246,41 +178,16 @@ export default {
             margin-top: 3px;
           }
 
-          .text {
+          .icon {
+            width: 15px;
             vertical-align: middle;
           }
 
-          .icon {
-            width: 15px;
-            display: inline-block;
+          .text {
             vertical-align: middle;
           }
         }
       }
-
-      // @media screen and (max-width: 1550px) {
-      // width: 480px;
-      // margin-left: 80px;
-      // padding-top: 10px;
-      // .login-main-content {
-      // height: 450px;
-      // .logo-box {
-      // font-size: 20px;
-      // padding: 0 40px;
-      // margin: 15px 0 20px;
-      // &:before {
-      //   height: 16px;
-      //   left: 24px;
-      // }
-      // }
-      // .use-tip {
-      //   font-size: 12px;
-      //   .icon {
-      //     width: 15px;
-      //   }
-      // }
-      // }
-      // }
     }
 
     @media screen and (max-width: 1550px) {
@@ -289,6 +196,9 @@ export default {
   }
 }
 
+/* =========================
+   下载弹窗（原样保留）
+========================= */
 .download-popover {
   .popover-box {
     width: 126px;
@@ -308,88 +218,6 @@ export default {
       text-align: center;
       color: #666;
       margin-top: 5px;
-    }
-  }
-}
-
-.create-wrapper {
-  .container {
-    .left {
-      .activity-list {
-        width: 700px;
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 34px;
-        margin-top: 26px;
-
-        .activity-list-item {
-          width: 350px;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          margin: 15px 0;
-
-          .icon {
-            font-size: 26px;
-            color: white;
-            margin-right: 10px;
-            display: flex;
-          }
-
-          .box {
-            .activity-title {
-              font-size: 18px;
-              color: white;
-              margin-bottom: 5px;
-            }
-
-            .text {
-              color: white;
-              font-size: 14px;
-            }
-          }
-        }
-      }
-
-      @media screen and (max-width: 1550px) {
-        .main-pic {
-          width: 450px;
-          margin-bottom: 5px;
-        }
-        .activity-list {
-          width: 500px;
-          margin-top: 5px;
-          margin-left: 40px;
-
-          .activity-list-item {
-            width: 250px;
-            margin: 6px 0;
-
-            .icon {
-              font-size: 20px;
-            }
-
-            .box {
-              .activity-title {
-                font-size: 16px;
-              }
-
-              .text {
-                font-size: 12px;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .right {
-      .login-main-content {
-        height: 490px;
-        // @media screen and (max-width: 1550px) {
-        //   height: 490px;
-        // }
-      }
     }
   }
 }
