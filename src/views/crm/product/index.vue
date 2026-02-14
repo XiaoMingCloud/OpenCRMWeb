@@ -169,4 +169,71 @@ export default {
 
 <style lang="scss" scoped>
 @import '../styles/table.scss';
+/* 产品管理表格 iOS 风格 */
+.crm-container {
+  background: rgba(255, 255, 255, 0.65); /* 半透明毛玻璃 */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px; /* 圆角 */
+  padding: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* 表格行高、圆角、阴影 */
+.n-table--border {
+  border-radius: 12px;
+  overflow: hidden;
+
+  .el-table__header-wrapper {
+    background: rgba(255, 255, 255, 0.5); /* 毛玻璃头部 */
+  }
+
+  .el-table__body-wrapper {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .el-table__row {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  .can-visit--underline {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+/* 分页栏左对齐 + iOS 风格按钮 */
+.p-contianer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start; /* 左对齐 */
+  background: transparent;
+
+  .p-bar {
+    background: rgba(255,255,255,0.5);
+    border-radius: 12px;
+    padding: 5px 10px;
+    font-size: 14px !important;
+  }
+}
+
+/* 搜索头、按钮圆角毛玻璃化 */
+.c-r-m-list-head {
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+
+  button, .el-button {
+    border-radius: 12px;
+  }
+}
 </style>

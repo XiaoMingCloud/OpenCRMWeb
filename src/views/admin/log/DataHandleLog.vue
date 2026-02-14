@@ -5,7 +5,8 @@
       icon-color="#2362FB"
       label="数据操作日志" />
     <div class="main-body">
-      <flexbox class="main-table-header">
+      <!-- 搜索栏 -->
+      <flexbox class="main-table-header-ios">
         <el-date-picker
           v-model="dateTime"
           type="daterange"
@@ -19,7 +20,9 @@
           placeholder="选择人员" />
         <el-select
           v-model="model"
-          @click="modelChange">
+          class="ios-select"
+          placeholder="选择模块"
+          @change="modelChange">
           <el-option
             v-for="item in modelOptions"
             :key="item.value"
@@ -29,7 +32,9 @@
         <el-select
           v-model="subModelLabels"
           multiple
-          collapse-tags>
+          collapse-tags
+          class="ios-select"
+          placeholder="选择子模块">
           <el-option
             v-for="item in subModelsOptions"
             :key="item.value"
@@ -38,16 +43,19 @@
         </el-select>
         <el-button
           type="primary"
+          class="btn-ios"
           @click="refreshList">查询</el-button>
         <el-button
-          class="main-table-header-button"
+          class="btn-ios secondary"
           @click="exportClick">导出</el-button>
       </flexbox>
+
+      <!-- 表格 -->
       <el-table
         v-loading="loading"
         :data="list"
         :height="tableHeight"
-        class="main-table"
+        class="main-table-ios"
         highlight-current-row
         style="width: 100%">
         <el-table-column
@@ -56,15 +64,16 @@
           :prop="item.prop"
           :label="item.label"
           show-overflow-tooltip/>
-        <el-table-column/>
       </el-table>
-      <div class="p-contianer">
+
+      <!-- 分页 -->
+      <div class="p-container-ios">
         <el-pagination
           :current-page="currentPage"
           :page-sizes="pageSizes"
           :page-size.sync="pageSize"
           :total="total"
-          class="p-bar"
+          class="p-bar-ios"
           background
           layout="prev, pager, next, sizes, total, jumper"
           @size-change="handleSizeChange"
@@ -79,26 +88,20 @@ import {
   querySystemLogListAPI,
   systemLogExportAPI
 } from '@/api/admin/log'
-
 import XrHeader from '@/components/XrHeader'
 import XiaomingcloudUserSelect from '@/components/NewCom/XiaomingcloudUserSelect'
 import { Loading } from 'element-ui'
 import HandleLogMixin from './mixins/HandleLog'
-
 import { downloadExcelWithResData } from '@/utils'
 
 export default {
-  // 操作日志日志
   name: 'DataHandleLog',
-  components: {
-    XrHeader,
-    XiaomingcloudUserSelect
-  },
+  components: { XrHeader, XiaomingcloudUserSelect },
   mixins: [HandleLogMixin],
   data() {
     return {
-      loading: false, // 加载动画
-      tableHeight: document.documentElement.clientHeight - 240, // 表的高度
+      loading: false,
+      tableHeight: document.documentElement.clientHeight - 240,
       dateTime: [],
       userList: [],
       model: '',
@@ -108,7 +111,6 @@ export default {
       pageSize: 10,
       pageSizes: [10, 20, 30, 40],
       total: 0,
-
       postParams: {}
     }
   },
@@ -119,11 +121,9 @@ export default {
     }
   },
   mounted() {
-    // 控制table的高度
     window.onresize = () => {
-      self.tableHeight = document.documentElement.clientHeight - 240
+      this.tableHeight = document.documentElement.clientHeight - 240
     }
-
     this.getList()
   },
   methods: {
@@ -131,125 +131,150 @@ export default {
       this.currentPage = 1
       this.getList()
     },
-
-    /**
-     * 模块change
-     */
     modelChange() {
       this.subModelLabels = []
     },
-
-    /**
-     * 获取列表数据
-     */
     getList() {
       this.loading = true
       const params = {
         page: this.currentPage,
         limit: this.pageSize,
         model: this.model,
-        type: 1 //  1 数据操作日志 2 系统操作日志
+        type: 1 // 数据操作日志
       }
-      if (this.userList && this.userList.length) {
-        params.userIds = this.userList
-      }
-
-      if (this.dateTime && this.dateTime.length) {
+      if (this.userList.length) params.userIds = this.userList
+      if (this.dateTime.length) {
         params.startTime = this.dateTime[0]
         params.endTime = this.dateTime[1]
       }
-
       params.subModelLabels = this.subModelLabels
       this.postParams = params
+
       querySystemLogListAPI(params)
         .then(res => {
-          const list = res.data.list
-          list.forEach(item => {
-            item.model = this.getModelName(item.model)
-          })
+          const list = res.data.list || []
+          list.forEach(item => { item.model = this.getModelName(item.model) })
           this.list = list
           this.total = res.data.totalRow
           this.loading = false
         })
-        .catch(() => {
-          this.loading = false
-        })
+        .catch(() => { this.loading = false })
     },
-
-    /**
-     *  添加审批流
-     */
     exportClick() {
       const loading = Loading.service({ fullscreen: true, text: '导出中...' })
       systemLogExportAPI(this.postParams)
-        .then(res => {
-          downloadExcelWithResData(res)
-          loading.close()
-        })
-        .catch(() => {
-          loading.close()
-        })
+        .then(res => { downloadExcelWithResData(res); loading.close() })
+        .catch(() => { loading.close() })
     },
-    // 更改每页展示数量
-    handleSizeChange(val) {
-      this.pageSize = val
-      this.getList()
-    },
-    // 更改当前页数
-    handleCurrentChange(val) {
-      this.currentPage = val
-      this.getList()
-    }
+    handleSizeChange(val) { this.pageSize = val; this.getList() },
+    handleCurrentChange(val) { this.currentPage = val; this.getList() }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .main {
-  height:100%;
-
+  height: 100%;
+  padding: 15px;
   /deep/ .xr-header {
+    border-radius: 16px;
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     padding: 15px 30px;
   }
 }
 
 .main-body {
-  background-color: white;
-  border-top: 1px solid $xr-border-line-color;
-  border-bottom: 1px solid $xr-border-line-color;
+  padding: 20px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
-.main-table-header {
-  height: 50px;
-  background-color: white;
-  position: relative;
-  .main-table-header-button {
-    margin-right: 20px;
-    position: absolute;
-    right: 20px;
-  }
+/* 搜索栏 iOS 风格 */
+.main-table-header-ios {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 
-  .el-date-editor--daterange {
-    width: 300px;
-    margin: 0 20px;
-  }
-
+  .el-date-editor--daterange,
   .Xiaomingcloud-user-select,
-  .el-select {
-    margin-right: 20px;
+  .ios-select {
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+  }
+
+  .btn-ios {
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    &.secondary {
+      background: rgba(0,122,255,0.15);
+      color: #007aff;
+    }
   }
 }
 
-.p-contianer {
-  position: relative;
-  background-color: white;
-  height: 44px;
-  .p-bar {
-    float: right;
-    margin: 5px 100px 0 0;
-    font-size: 14px !important;
+/* 表格 iOS 毛玻璃风格 */
+.main-table-ios {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+
+  .el-table__header {
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
+
+  th {
+    background: rgba(255,255,255,0.25) !important;
+    color: #333;
+    font-weight: 600;
+  }
+
+  td {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: #444;
+    font-size: 14px;
+  }
+
+  .el-table__row:hover > td {
+    background: rgba(0,122,255,0.06) !important;
+    transition: all 0.25s ease;
+  }
+
+  .el-table__row.current-row > td {
+    background: rgba(0,122,255,0.12) !important;
+  }
+
+  .el-table::before { display: none; }
 }
 
-@import '../styles/table.scss';
+/* 分页 iOS 风格 */
+.p-container-ios {
+  margin-top: 12px;
+  .p-bar-ios {
+    border-radius: 12px;
+    background: rgba(255,255,255,0.35);
+    padding: 4px 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+}
 </style>

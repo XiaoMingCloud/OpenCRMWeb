@@ -1,17 +1,17 @@
 <template>
-  <div class="system-customer">
+  <div class="system-customer-ios">
     <xr-header
       icon-class="xiaomingcloud open-s-seas"
       icon-color="#487DFF"
       label="业务参数设置" />
-    <div class="customer-content">
+    <div class="customer-content-ios">
       <!-- 客户管理导航 -->
-      <div class="system-view-nav">
+      <div class="system-view-nav-ios">
         <div
           v-for="(item, index) in menuList"
           :key="index"
           :class="{'is-select' : item.key == menuIndex}"
-          class="menu-item"
+          class="menu-item-ios"
           @click="menuSelect(item.key)">
           {{ item.label }}
         </div>
@@ -20,25 +20,24 @@
         <component
           :is="componentName"
           :types="types"
-          class="system-view-content"/>
+          class="system-view-content-ios"/>
       </keep-alive>
     </div>
   </div>
 </template>
 
 <script>
-import FollowLogTypeSet from './components/FollowLogTypeSet' // 跟进记录类型设置
-import BusinessGroupSet from './components/BusinessGroupSet' // 商机组设置
-import ProductCategorySet from './components/ProductCategorySet' // 产品类别设置
-import ContractExpireSet from './components/ContractExpireSet' // 合同到期提醒设置
-import CustomerLimitSet from './components/CustomerLimitSet' // 拥有/锁定客户数限制
-import VisitRemindSet from './components/VisitRemindSet' // 客户回访提醒设置
-import SerialNumberSet from './components/SerialNumberSet' // 编号规则设置
+import FollowLogTypeSet from './components/FollowLogTypeSet'
+import BusinessGroupSet from './components/BusinessGroupSet'
+import ProductCategorySet from './components/ProductCategorySet'
+import ContractExpireSet from './components/ContractExpireSet'
+import CustomerLimitSet from './components/CustomerLimitSet'
+import VisitRemindSet from './components/VisitRemindSet'
+import SerialNumberSet from './components/SerialNumberSet'
 import XrHeader from '@/components/XrHeader'
 
 export default {
-  name: 'BizParam',
-
+  name: 'BizParamIos',
   components: {
     BusinessGroupSet,
     ProductCategorySet,
@@ -49,7 +48,6 @@ export default {
     SerialNumberSet,
     XrHeader
   },
-
   data() {
     return {
       menuList: [
@@ -63,71 +61,66 @@ export default {
         { label: '编号规则设置', key: 'SerialNumberSet' }
       ],
       menuIndex: 'follow-log-type-set',
-      types: '' // 区分拥有客户 和 锁定客户
+      types: ''
     }
   },
-
   computed: {
     componentName() {
-      if (this.menuIndex == 'own' || this.menuIndex == 'lock') {
+      if (this.menuIndex === 'own' || this.menuIndex === 'lock') {
         return 'customer-limit-set'
       }
       return this.menuIndex
     }
   },
-
   methods: {
-    /**
-     * 菜单选择
-     */
-    menuSelect(i) {
-      if (i == 'own' || i == 'lock') {
-        this.types = {
-          own: 1,
-          lock: 2
-        }[i]
+    menuSelect(key) {
+      if (key === 'own' || key === 'lock') {
+        this.types = { own: 1, lock: 2 }[key]
       }
-      this.menuIndex = i
+      this.menuIndex = key
     }
   }
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-.system-customer {
+<style lang="scss" scoped>
+.system-customer-ios {
   height: 100%;
-  box-sizing: border-box;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  padding: 0 15px;
+
+  /deep/ .xr-header {
+    border-radius: 16px;
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    padding: 15px 30px;
+  }
 }
-.customer-content {
+
+.customer-content-ios {
   flex: 1;
-  position: relative;
   display: flex;
   overflow: hidden;
+  margin-top: 15px;
 }
-.system-view-nav {
+
+/* 左侧导航毛玻璃 */
+.system-view-nav-ios {
   min-width: 200px;
-  background: #fff;
-  margin-right: 10px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-right: 12px;
   padding-top: 20px;
-  border: 1px solid $xr-border-line-color;
-  border-radius: $xr-border-radius-base;
-
-}
-.system-view-content {
-  flex: 1;
-  border: 1px solid $xr-border-line-color;
-  border-radius: $xr-border-radius-base;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  overflow-x: auto;
 }
 
-// 菜单
-.menu-item {
+/* 导航菜单项 */
+.menu-item-ios {
   color: #333;
   font-size: 13px;
   padding: 0 15px;
@@ -135,28 +128,41 @@ export default {
   line-height: 40px;
   cursor: pointer;
   position: relative;
-  .icon-close {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0,122,255,0.08);
+  }
+
+  &.is-select {
+    background: rgba(0,122,255,0.15);
+    color: #007aff;
+  }
+
+  &.is-select::before {
+    content: '';
     position: absolute;
     top: 0;
-    right: 8px;
-    z-index: 1;
-    display: none;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #5383ed;
+    border-radius: 2px 0 0 2px;
   }
 }
 
-.menu-item:hover,
-.menu-item.is-select {
-  background-color: $xr--background-color-base;
-}
-
-.menu-item:hover::before,
-.menu-item.is-select::before {
-  content: ' ';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #5383ed;
+/* 右侧内容区域 */
+.system-view-content-ios {
+  flex: 1;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
 }
 </style>

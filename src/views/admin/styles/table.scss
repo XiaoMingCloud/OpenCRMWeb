@@ -1,37 +1,46 @@
+/* 表格 iOS 毛玻璃风格 */
 .main-table {
   border-radius: 20px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  transition: all 0.3s ease;
 
   .el-table {
     background: transparent !important;
+    border-radius: 20px;
   }
 
   .el-table__header {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
   }
 
-  .el-table th {
-    background: rgba(255, 255, 255, 0.3) !important;
+  th {
+    background: rgba(255, 255, 255, 0.25) !important;
     color: #333;
     font-weight: 600;
     border-bottom: none !important;
+    padding: 14px 12px;
   }
 
-  .el-table td {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 14px 12px;
+    color: #444;
+    font-size: 14px;
   }
 
   .el-table__row:hover > td {
-    background: rgba(0, 122, 255, 0.08) !important;
+    background: rgba(0, 122, 255, 0.06) !important;
     transition: all 0.25s ease;
   }
 
   .el-table__row.current-row > td {
-    background: rgba(0, 122, 255, 0.15) !important;
+    background: rgba(0, 122, 255, 0.12) !important;
   }
 
   .el-table::before {
@@ -39,27 +48,52 @@
   }
 }
 
-/* 按钮改成 iOS 胶囊风格 */
+/* iOS 胶囊按钮优化 */
 .xr-btn--orange {
   border-radius: 999px !important;
-  padding: 8px 20px !important;
-  background: linear-gradient(135deg, #ff9f0a, #ff7a00);
+  padding: 10px 24px !important;
+  background: linear-gradient(135deg, #ff9500, #ff7a00);
   border: none;
-  box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
-  transition: all 0.25s ease;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 6px 16px rgba(255, 122, 0, 0.28);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .xr-btn--orange:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(255, 122, 0, 0.4);
+  box-shadow: 0 8px 22px rgba(255, 122, 0, 0.35);
 }
 
-/* 文本按钮柔和化 */
+.xr-btn--orange:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(255, 122, 0, 0.25);
+}
+
+/* 文本按钮柔和化 iOS 风格 */
 .el-button--text {
   color: #007aff;
   font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
 }
 
 .el-button--text:hover {
   color: #005ecb;
+}
+
+/* 表格滚动条美化 */
+.main-table ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.main-table ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.main-table ::-webkit-scrollbar-track {
+  background: transparent;
 }

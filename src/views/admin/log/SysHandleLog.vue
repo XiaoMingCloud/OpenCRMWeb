@@ -5,7 +5,8 @@
       icon-color="#2362FB"
       label="系统操作日志" />
     <div class="main-body">
-      <flexbox class="main-table-header">
+      <!-- 搜索栏 -->
+      <flexbox class="main-table-header-ios">
         <el-date-picker
           v-model="dateTime"
           type="daterange"
@@ -20,8 +21,9 @@
         <el-select
           v-model="subModelLabels"
           multiple
-          style="width: 200px;"
-          collapse-tags>
+          collapse-tags
+          class="ios-select"
+          placeholder="选择模块">
           <el-option
             v-for="item in sysOptions"
             :key="item.value"
@@ -30,16 +32,19 @@
         </el-select>
         <el-button
           type="primary"
+          class="btn-ios"
           @click="refreshList">查询</el-button>
         <el-button
-          class="main-table-header-button"
+          class="btn-ios secondary"
           @click="exportClick">导出</el-button>
       </flexbox>
+
+      <!-- 表格 -->
       <el-table
         v-loading="loading"
         :data="list"
         :height="tableHeight"
-        class="main-table"
+        class="main-table-ios"
         highlight-current-row
         style="width: 100%">
         <el-table-column
@@ -48,15 +53,16 @@
           :prop="item.prop"
           :label="item.label"
           show-overflow-tooltip/>
-        <el-table-column/>
       </el-table>
-      <div class="p-contianer">
+
+      <!-- 分页 -->
+      <div class="p-container-ios">
         <el-pagination
           :current-page="currentPage"
           :page-sizes="pageSizes"
           :page-size.sync="pageSize"
           :total="total"
-          class="p-bar"
+          class="p-bar-ios"
           background
           layout="prev, pager, next, sizes, total, jumper"
           @size-change="handleSizeChange"
@@ -183,50 +189,107 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-  height:100%;
-
+  height: 100%;
+  padding: 15px;
   /deep/ .xr-header {
+    border-radius: 16px;
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     padding: 15px 30px;
   }
 }
 
 .main-body {
-  background-color: white;
-  border-top: 1px solid $xr-border-line-color;
-  border-bottom: 1px solid $xr-border-line-color;
+  padding: 20px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
 }
 
-.main-table-header {
-  height: 50px;
-  background-color: white;
-  position: relative;
-  .main-table-header-button {
-    margin-right: 20px;
-    position: absolute;
-    right: 20px;
-  }
+/* 搜索栏 iOS 风格 */
+.main-table-header-ios {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 12px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 
-  .el-date-editor--daterange {
-    width: 300px;
-    margin: 0 20px;
-  }
-
+  .el-date-editor--daterange,
   .Xiaomingcloud-user-select,
-  .el-select {
-    margin-right: 20px;
+  .ios-select {
+    border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+  }
+
+  .btn-ios {
+    border-radius: 999px;
+    padding: 8px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    &.secondary {
+      background: rgba(0,122,255,0.15);
+      color: #007aff;
+    }
   }
 }
 
-.p-contianer {
-  position: relative;
-  background-color: white;
-  height: 44px;
-  .p-bar {
-    float: right;
-    margin: 5px 100px 0 0;
-    font-size: 14px !important;
+/* 表格 iOS 毛玻璃风格 */
+.main-table-ios {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+
+  .el-table__header {
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
+
+  th {
+    background: rgba(255,255,255,0.25) !important;
+    color: #333;
+    font-weight: 600;
+  }
+
+  td {
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    color: #444;
+    font-size: 14px;
+  }
+
+  .el-table__row:hover > td {
+    background: rgba(0,122,255,0.06) !important;
+    transition: all 0.25s ease;
+  }
+
+  .el-table__row.current-row > td {
+    background: rgba(0,122,255,0.12) !important;
+  }
+
+  .el-table::before { display: none; }
 }
 
-@import '../styles/table.scss';
+/* 分页 iOS 风格 */
+.p-container-ios {
+  margin-top: 12px;
+  .p-bar-ios {
+    border-radius: 12px;
+    background: rgba(255,255,255,0.35);
+    padding: 4px 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  }
+}
 </style>

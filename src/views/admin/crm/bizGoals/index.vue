@@ -1,12 +1,12 @@
 <template>
-  <div class="system-customer">
+  <div class="system-customer-ios">
     <xr-header
       icon-class="xiaomingcloud open-customer"
       icon-color="#2362FB"
       label="业绩目标设置" />
-    <div class="customer-content">
+    <div class="customer-content-ios">
       <!-- 业绩目标设置 -->
-      <div class="system-view-table">
+      <div class="system-view-table-ios">
         <task-set-statistics/>
       </div>
     </div>
@@ -18,7 +18,7 @@ import TaskSetStatistics from './components/TaskSetStatistics' // 业绩目标�
 import XrHeader from '@/components/XrHeader'
 
 export default {
-  name: 'BizGoals', // 业绩目标设置
+  name: 'BizGoalsIOS', // 业绩目标设置
 
   components: {
     TaskSetStatistics,
@@ -26,8 +26,7 @@ export default {
   },
 
   data() {
-    return {
-    }
+    return {}
   },
 
   created() {},
@@ -37,30 +36,41 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-.system-customer {
-  /* padding: 0 20px 20px; */
+.system-customer-ios {
   height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  padding: 0 15px;
 
   /deep/ .xr-header {
-    padding: 15px 30px;
+    padding: 18px 30px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
   }
 }
-.customer-content {
+
+.customer-content-ios {
   flex: 1;
   position: relative;
   display: flex;
   overflow: hidden;
+  padding-top: 12px;
 }
 
-.system-view-table {
+.system-view-table-ios {
   flex: 1;
-  border: 1px solid #e6e6e6;
-  background: #fff;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   overflow-x: auto;
+  padding: 16px;
 }
 </style>
