@@ -1,22 +1,22 @@
 <template>
-  <flexbox align="flex-start" class="person-center">
-    <div class="left">
-      <flexbox class="user-box">
+  <flexbox align="flex-start" class="person-center-ios">
+    <!-- 左侧导航 -->
+    <div class="left-ios">
+      <flexbox class="user-box-ios">
         <xr-avatar
           :name="userInfo.realname"
           :size="50"
           :src="userInfo.img"
-          class="user-img" />
-        <span class="username">
+          class="user-img-ios"/>
+        <span class="username-ios">
           {{ userInfo.realname }}
         </span>
       </flexbox>
-      <ul class="nav-list">
+      <ul class="nav-list-ios">
         <li
           v-for="(item, index) in navList"
           :key="index"
-          :class="{active: selectedIndex === index}"
-          class="nav-list-item"
+          :class="['nav-list-item-ios', { active: selectedIndex === index }]"
           @click="selectedIndex = index">
           <span :class="item.icon" class="Xiaomingcloud icon" />
           <span class="text">
@@ -25,11 +25,13 @@
         </li>
       </ul>
     </div>
-    <div class="right">
+
+    <!-- 右侧内容 -->
+    <div class="right-ios">
       <edit-user-info
         v-if="selectedIndex === 0"
-        @change="getDetail" />
-      <edit-pwd v-if="selectedIndex === 1" />
+        @change="getDetail"/>
+      <edit-pwd v-if="selectedIndex === 1"/>
     </div>
   </flexbox>
 </template>
@@ -38,27 +40,20 @@
 import { mapGetters } from 'vuex'
 import EditUserInfo from './components/EditUserInfo'
 import EditPwd from './components/EditPwd'
+
 export default {
-  name: 'PersonCenter',
-  components: {
-    EditUserInfo,
-    EditPwd
-  },
+  name: 'PersonCenterIOS',
+  components: { EditUserInfo, EditPwd },
   data() {
-    return {
-      selectedIndex: 0 // 0 个人信息 1 账号密码 2 名片信息
-    }
+    return { selectedIndex: 0 } // 0:个人信息 1:账号密码
   },
   computed: {
-    ...mapGetters([
-      'userInfo'
-    ]),
+    ...mapGetters(['userInfo']),
     navList() {
-      const navs = [
+      return [
         { label: '个人信息', icon: 'Xiaomingcloud-user' },
         { label: '账号密码', icon: 'Xiaomingcloud-circle-password' }
       ]
-      return navs
     }
   },
   created() {
@@ -67,64 +62,103 @@ export default {
   methods: {
     getDetail() {
       this.loading = true
-      this.$store.dispatch('GetUserInfo').then(() => {
-        this.loading = false
-      }).catch(() => {
-        this.loading = false
-      })
+      this.$store.dispatch('GetUserInfo')
+        .finally(() => {
+          this.loading = false
+        })
     }
   }
 }
 </script>
 
 <style scoped lang="scss">
-  .person-center {
-    width: 1180px;
-    margin: 0 auto;
-    .left {
-      width: 300px;
-      background-color: white;
-      padding-bottom: 100px;
-      border: 1px solid #e6e6e6;
-      border-radius: $xr-border-radius-base;
-      margin-right: 20px;
-      .user-box {
-        width: 376px;
-        padding: 15px 20px 20px;
-        .user-img {
-          margin-right: 22px;
-        }
-        .username {
-          flex: 1;
-          font-size: 14px;
-          color: #666;
-        }
+.person-center-ios {
+  width: 1180px;
+  margin: 0 auto;
+  display: flex;
+
+  .left-ios {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding-bottom: 50px;
+    margin-right: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    .user-box-ios {
+      width: 100%;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+
+      .user-img-ios {
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        margin-right: 15px;
       }
-      .nav-list {
-        width: 100%;
-        &-item {
-          height: 50px;
-          color: #666;
-          padding: 0 20px;
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
-          cursor: pointer;
-          .icon {
-            margin-right: 10px;
-          }
-          &:hover, &.active {
-            color: #333;
-            background-color: #F1F5F8;
-          }
-        }
+
+      .username-ios {
+        font-size: 16px;
+        font-weight: 500;
+        color: #1c1c1e;
       }
     }
-    .right {
-      flex: 1;
-      border: 1px solid #e6e6e6;
-      border-radius: $xr-border-radius-base;
-      overflow: hidden;
+
+    .nav-list-ios {
+      width: 100%;
+      padding: 10px 0;
+      list-style: none; // 去掉默认圆点
+      margin: 0;
+
+      .nav-list-item-ios {
+        display: flex;
+        align-items: center; // 垂直居中
+        height: 60px; // 增加上下间距
+        padding: 0 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        color: #666;
+        font-size: 16px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+
+        .icon {
+          margin-right: 12px;
+          font-size: 20px;
+          display: flex;
+          align-items: center; // 图标垂直居中
+        }
+
+        .text {
+          line-height: 60px; // 文字垂直居中
+        }
+
+        &:hover, &.active {
+          color: #1c1c1e;
+          background: rgba(255, 255, 255, 0.4);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+      }
     }
   }
+
+  .right-ios {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    overflow: hidden;
+
+    /* iOS 风格输入框和按钮全局样式 */
+    input, textarea, select, button {
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+  }
+}
 </style>

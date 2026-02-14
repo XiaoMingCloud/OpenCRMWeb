@@ -168,11 +168,6 @@ export default {
         label: '基本信息',
         icon: 'xiaomingcloud open-user'
       }, {
-        command: 'help',
-        divided: true,
-        label: '帮助中心',
-        icon: 'xiaomingcloud open-help'
-      }, {
         command: 'logOut',
         divided: false,
         label: '退出登录',
@@ -500,8 +495,6 @@ export default {
         this.$router.push({
           name: 'person'
         })
-      } else if (command == 'help') {
-        window.open('')
       } else if (command == 'logOut') {
         this.$confirm('退出登录？', '提示', {
           confirmButtonText: '确定',

@@ -1,5 +1,5 @@
 <template>
-  <div class="edit-pwd">
+  <div class="edit-pwd-ios">
     <div class="head">
       <span class="xiaomingcloud open-circle-password icon" />
       <span class="text">账号密码</span>
@@ -10,27 +10,32 @@
       :model="form"
       :rules="rules"
       label-position="left"
-      label-width="120px">
+      label-width="120px"
+      class="form-ios">
       <el-form-item label="原密码" prop="oldPwd">
         <el-input
           v-model.trim="form.oldPwd"
           :maxlength="20"
-          type="password" />
+          type="password"
+          class="input-ios" />
       </el-form-item>
       <el-form-item label="新密码" prop="newPwd">
         <el-input
           v-model.trim="form.newPwd"
           :maxlength="20"
-          type="password" />
+          type="password"
+          class="input-ios" />
       </el-form-item>
       <el-form-item label="确认密码" prop="confirmPwd">
         <el-input
           v-model.trim="form.confirmPwd"
           :maxlength="20"
-          type="password" />
+          type="password"
+          class="input-ios" />
       </el-form-item>
       <el-form-item>
         <el-button
+          class="btn-ios"
           type="primary"
           @click="handleSave">保存</el-button>
       </el-form-item>
@@ -44,7 +49,7 @@ import { adminUsersResetPasswordAPI } from '@/api/user/personCenter'
 import { removeAuth } from '@/utils/auth'
 
 export default {
-  name: 'EditPwd',
+  name: 'EditPwdIOS',
   data() {
     const pwdReg = /^(?=.*[a-zA-Z])(?=.*\d).{6,20}$/
     return {
@@ -67,9 +72,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
-      'userInfo'
-    ])
+    ...mapGetters(['userInfo'])
   },
   methods: {
     validatedConfirmPwd(rule, value, callback) {
@@ -116,10 +119,68 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import "./style";
-  .edit-pwd {
-    width: 100%;
-    background-color: white;
-    padding: 22px 25px;
+.edit-pwd-ios {
+  width: 100%;
+  min-height: 100%;
+  padding: 22px 25px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 18px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  .head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    .icon {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #33D08F;
+    }
+    .text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1c1c1e;
+    }
   }
+
+  .form-ios {
+    .el-form-item {
+      margin-bottom: 16px;
+
+      .el-form-item__label {
+        color: #1c1c1e;
+        font-weight: 500;
+      }
+    }
+
+    .input-ios {
+      border: none !important;
+      border-radius: 12px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,0,0,0.1);
+      font-size: 16px;
+      color: #1c1c1e;
+
+      &::placeholder {
+        color: rgba(28,28,30,0.5);
+      }
+    }
+
+    .btn-ios {
+      width: 100%;
+      border-radius: 22px;
+      background: #4881ec;
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      height: 44px;
+      box-shadow: 0 4px 10px rgb(149, 179, 236);
+    }
+  }
+}
 </style>

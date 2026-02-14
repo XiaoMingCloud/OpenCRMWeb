@@ -1,7 +1,7 @@
 <template>
   <div
     v-loading="loading"
-    class="edit-user-info">
+    class="edit-user-info-ios">
     <div class="head">
       <span class="xiaomingcloud open-user icon" />
       <span class="text">个人信息</span>
@@ -11,9 +11,10 @@
       :model="form"
       :rules="rules"
       label-position="left"
-      label-width="120px">
+      label-width="120px"
+      class="form-ios">
       <el-form-item label="头像">
-        <flexbox class="user-box">
+        <div class="user-box">
           <xr-avatar
             :name="userInfo.realname"
             :size="70"
@@ -22,8 +23,9 @@
           <div class="change-avatar" @click="handleChangeAvatar">
             更换头像
           </div>
-        </flexbox>
+        </div>
       </el-form-item>
+
       <el-form-item
         v-for="(item, index) in fieldList"
         :key="index"
@@ -33,10 +35,12 @@
           v-if="item.type !== 'select'"
           v-model="form[item.field]"
           :maxlength="30"
-          :disabled="item.disabled" />
+          :disabled="item.disabled"
+          class="input-ios" />
         <el-select
           v-else
-          v-model="form[item.field]">
+          v-model="form[item.field]"
+          class="select-ios">
           <el-option
             v-for="option in item.setting"
             :key="option.value"
@@ -44,8 +48,9 @@
             :value="option.value" />
         </el-select>
       </el-form-item>
+
       <el-form-item>
-        <el-button type="primary" @click="handleSave">保存</el-button>
+        <el-button type="primary" class="btn-ios" @click="handleSave">保存</el-button>
       </el-form-item>
     </el-form>
 
@@ -55,6 +60,7 @@
       accept="image/png, image/jpeg, image/gif, image/jpg"
       style="display: none;"
       @change="uploadFile">
+
     <edit-image
       :show="showEditImage"
       :file="editFile"
@@ -65,19 +71,14 @@
 </template>
 
 <script>
-import {
-  adminUsersUpdateImgAPI,
-  adminUsersUpdateAPI
-} from '@/api/user/personCenter'
+import { adminUsersUpdateImgAPI, adminUsersUpdateAPI } from '@/api/user/personCenter'
 import { mapGetters } from 'vuex'
 import { regexIsCRMMobile, regexIsCRMEmail } from '@/utils'
 import EditImage from '@/components/EditImage'
 
 export default {
-  name: 'EditUserInfo',
-  components: {
-    EditImage
-  },
+  name: 'EditUserInfoIOS',
+  components: { EditImage },
   data() {
     const sexMap = [
       { label: '请选择', value: 0 },
@@ -85,18 +86,12 @@ export default {
       { label: '女', value: 2 }
     ]
     const validateCRMMobile = (rule, value, callback) => {
-      if (!value || value == '' || regexIsCRMMobile(value)) {
-        callback()
-      } else {
-        callback(new Error('手机格式有误'))
-      }
+      if (!value || value === '' || regexIsCRMMobile(value)) callback()
+      else callback(new Error('手机格式有误'))
     }
     const validateCRMEmail = (rule, value, callback) => {
-      if (!value || value == '' || regexIsCRMEmail(value)) {
-        callback()
-      } else {
-        callback(new Error('邮箱格式有误'))
-      }
+      if (!value || value === '' || regexIsCRMEmail(value)) callback()
+      else callback(new Error('邮箱格式有误'))
     }
     return {
       fieldList: [
@@ -118,96 +113,53 @@ export default {
       },
       form: {},
       loading: false,
-
       showEditImage: false,
       editFile: null,
       editImage: null
     }
   },
-  computed: {
-    ...mapGetters([
-      'userInfo'
-    ])
-  },
+  computed: { ...mapGetters(['userInfo']) },
   watch: {
     userInfo: {
-      handler() {
-        this.initData()
-      },
+      handler() { this.initData() },
       deep: true,
       immediate: true
     }
   },
   methods: {
-    initData() {
-      this.form = Object.assign({}, this.userInfo)
-    },
-    handleChangeAvatar() {
-      document.getElementById('inputFile').click()
-    },
-    /**
-     * 图片操作
-     * @param event
-     */
+    initData() { this.form = { ...this.userInfo } },
+    handleChangeAvatar() { document.getElementById('inputFile').click() },
     uploadFile(event) {
-      const files = event.target.files
-      const file = files[0]
+      const file = event.target.files[0]
       const reader = new FileReader()
-      const self = this
-      reader.onload = function(e) {
-        let result
-        if (typeof e.target.result === 'object') {
-          // 把Array Buffer转化为blob 如果是base64不需要
-          result = window.URL.createObjectURL(new Blob([e.target.result]))
-        } else {
-          result = e.target.result
-        }
-        self.editImage = result
-        self.editFile = file
-        self.showEditImage = true
+      reader.onload = e => {
+        const result = typeof e.target.result === 'object'
+          ? window.URL.createObjectURL(new Blob([e.target.result]))
+          : e.target.result
+        this.editImage = result
+        this.editFile = file
+        this.showEditImage = true
         e.target.value = ''
       }
       reader.readAsDataURL(file)
     },
-    /**
-     * 上传提交头像修改
-     * @param data
-     */
     submitImage(data) {
       this.loading = true
       const param = new FormData()
       param.append('userId', this.form.userId)
       param.append('file', data.blob, data.file.name)
-      adminUsersUpdateImgAPI(param).then(() => {
-        this.loading = false
-        this.$emit('change')
-      }).catch(() => {
-        this.loading = false
-      })
+      adminUsersUpdateImgAPI(param)
+        .then(() => { this.loading = false; this.$emit('change') })
+        .catch(() => { this.loading = false })
     },
-    /**
-     * 个人信息编辑
-     */
     handleSave() {
-      const params = {
-        realname: this.form.realname,
-        sex: this.form.sex,
-        email: this.form.email,
-        post: this.form.post,
-        username: this.form.username
-      }
+      const params = { realname: this.form.realname, sex: this.form.sex, email: this.form.email, post: this.form.post, username: this.form.username }
       this.$refs.form.validate(valid => {
         if (valid) {
           this.loading = true
-          adminUsersUpdateAPI(params).then(() => {
-            this.loading = false
-            this.$message.success('保存成功')
-            this.$emit('change')
-          }).catch(() => {
-            this.loading = false
-          })
-        } else {
-          return false
+          adminUsersUpdateAPI(params)
+            .then(() => { this.loading = false; this.$message.success('保存成功'); this.$emit('change') })
+            .catch(() => { this.loading = false })
         }
       })
     }
@@ -216,10 +168,86 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  @import "./style";
-  .edit-user-info {
-    width: 100%;
-    background-color: white;
-    padding: 22px 25px;
+.edit-user-info-ios {
+  width: 100%;
+  padding: 22px 25px;
+
+  /* iOS 毛玻璃效果 */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  .head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .icon {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #548aef;
+    }
+    .text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #1c1c1e;
+    }
   }
+
+  .form-ios {
+    .el-form-item {
+      margin-bottom: 16px;
+      .el-form-item__label {
+        color: #1c1c1e;
+        font-weight: 500;
+      }
+    }
+
+    .input-ios, .select-ios {
+      border-radius: 12px !important;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(0,0,0,0.1);
+      font-size: 16px;
+      color: #1c1c1e;
+
+      &::placeholder {
+        color: rgba(28,28,30,0.5);
+      }
+    }
+
+    .btn-ios {
+      width: 100%;
+      border-radius: 22px;
+      background: #74a2f8;
+      color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      height: 44px;
+      box-shadow: 0 4px 10px rgb(134, 156, 218);
+    }
+  }
+
+  .user-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .user-img {
+      border-radius: 50%;
+      border: 2px solid rgba(0,0,0,0.1);
+    }
+
+    .change-avatar {
+      cursor: pointer;
+      color: #8ba6f3;
+      font-weight: 500;
+    }
+  }
+}
 </style>
