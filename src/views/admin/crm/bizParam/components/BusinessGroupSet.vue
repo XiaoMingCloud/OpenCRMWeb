@@ -292,34 +292,110 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 .content-title {
-  padding: 10px;
-  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  margin: 4px 8px 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f7f9ff 0%, #fdfdff 40%, #f3f6ff 100%);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+  box-sizing: border-box;
 }
+
 .content-title > span {
-  display: inline-block;
-  height: 36px;
-  line-height: 36px;
-  margin-left: 20px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  line-height: 32px;
+  margin-left: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #1f2933;
 }
 
-/* 商机组设置 */
+.content-title > span::before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  border-radius: 999px;
+  margin-right: 8px;
+  background: linear-gradient(180deg, #4f8dff 0%, #00c2ff 100%);
+}
 
+.content-title .el-button {
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-weight: 500;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+  border: none;
+}
+
+.content-title .el-button span {
+  letter-spacing: 0.04em;
+}
+
+/* 商机组设置主卡片 */
 .business-table {
-  border: 1px solid #e6e6e6;
-  margin: 30px;
+  margin: 14px 8px 0;
+  padding: 12px 14px 4px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
   flex: 1;
   overflow: auto;
   box-sizing: border-box;
+
+  /deep/ .el-table {
+    background-color: transparent;
+  }
+
+  /deep/ .el-table__header-wrapper th {
+    background-color: transparent;
+    font-weight: 500;
+    color: #4b5563;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  }
+
+  /deep/ .el-table__body tr {
+    transition: background-color 0.2s ease, transform 0.12s ease;
+  }
+
+  /deep/ .el-table__body tr:hover > td {
+    background-color: rgba(59, 130, 246, 0.06);
+  }
+
+  /deep/ .el-table__body td {
+    border-bottom: 1px solid rgba(241, 245, 249, 0.9);
+  }
+
+  /deep/ .el-button--text {
+    padding: 0 6px;
+    border-radius: 999px;
+    color: #2563eb;
+    font-weight: 500;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.12s ease;
+  }
+
+  /deep/ .el-button--text:hover {
+    color: #1d4ed8;
+    background-color: rgba(191, 219, 254, 0.4);
+    transform: translateY(-1px);
+  }
 }
 
 .p-contianer {
   position: relative;
-  background-color: white;
+  background-color: transparent;
+  padding-top: 6px;
   height: 44px;
+
   .p-bar {
     float: right;
-    margin: 5px 100px 0 0;
-    font-size: 14px !important;
+    margin: 4px 8px 0 0;
+    font-size: 13px !important;
   }
 }
 </style>

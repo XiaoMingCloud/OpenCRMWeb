@@ -310,20 +310,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .nav-manager {
   position: absolute;
-  top: 61px;
-  right: 15px;
-  background-color: white;
-  box-shadow: 0px 8px 11px 1px rgba(0, 0, 0, 0.1);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-
-  padding: 20px 15px 40px;
+  top: 64px;
+  right: 24px;
+  z-index: 3000;
+  padding: 18px 18px 26px;
+  background: rgba(15, 23, 42, 0.05);
+  border-radius: 22px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
   &__content {
     position: relative;
+    min-width: 520px;
+    max-width: 640px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.25);
+    padding: 20px 20px 26px;
   }
 
   &__handle {
@@ -334,60 +339,73 @@ export default {
 
   .nav-section {
     &__title {
-      font-weight: bold;
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 14px;
+      color: #111827;
     }
 
     &__tips {
-      color: #ccc;
+      margin-left: 8px;
+      color: #9ca3af;
       font-weight: normal;
+      font-size: 12px;
     }
 
     &__content {
-      margin-top: 20px;
+      margin-top: 16px;
     }
   }
 
   .nav-section + .nav-section {
-    margin-top: 20px;
-    border-top: 1px solid $xr-border-line-color;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #e5e7eb;
+
     .nav-section__title {
-      margin-top: 20px;
+      margin-top: 0;
     }
   }
 
   .nav-section-item {
     text-align: center;
-    width: 70px;
-    height: 70px;
+    width: 78px;
+    height: 78px;
     margin: 10px;
     cursor: pointer;
     position: relative;
+    transition: transform 0.16s ease, box-shadow 0.16s ease;
 
     &__icon {
-      width: 40px;
-      height: 40px;
-      display: inline-block;
-      line-height: 40px;
-      border-radius: 4px;
-      background-color: #F0F0F0;
-      border-radius: 4px;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background-image: linear-gradient(135deg, #4f8dff, #00c2ff);
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.45);
 
       i {
-        font-size: 18px;
-        color: $xr-color-primary;
+        font-size: 20px;
+        color: #ffffff;
       }
     }
 
     &__label {
       font-size: 13px;
-      margin-top: 10px;
+      margin-top: 9px;
+      color: #111827;
+      white-space: nowrap;
     }
 
     .el-icon-circle-plus,
     .el-icon-remove {
-      color: #F94E4E;
+      color: #f97373;
       cursor: pointer;
     }
+
     .is-handle {
       position: absolute;
       right: 10px;
@@ -398,32 +416,32 @@ export default {
       position: absolute;
       top: -6px;
       left: 35px;
-      font-size: 12px;
-      background: #D9D9D9;
+      font-size: 11px;
+      background: #d1d5db;
       display: inline-block;
-      color: white;
-      padding: 2px 3px;
-      border-radius: 2px;
+      color: #111827;
+      padding: 2px 5px;
+      border-radius: 999px;
       white-space: nowrap;
       transform: scale(0.9);
     }
 
     &.is-future {
-      cursor: initial;
+      cursor: default;
 
       .nav-section-item__icon {
+        background-image: linear-gradient(135deg, #e5e7eb, #d1d5db);
+        box-shadow: none;
+
         i {
-          color: #999;
+          color: #6b7280;
         }
       }
 
       .nav-section-item__label {
-        color: #666;
+        color: #6b7280;
       }
     }
-
   }
 }
-
-
 </style>

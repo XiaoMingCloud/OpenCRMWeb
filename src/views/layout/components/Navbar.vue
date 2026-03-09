@@ -22,6 +22,7 @@
           ref="navManagerMenu"
           index="other">
           <i class="xiaomingcloud open-grid" />
+          <span class="nav-all-label">全部应用</span>
         </el-menu-item>
       </el-menu>
     </div>
@@ -678,6 +679,13 @@ export default {
   }
 }
 
+.nav-all-label {
+  margin-left: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5ebff;
+}
+
 .el-menu-item:hover {
   background-color: rgba(255, 255, 255, 0.18);
 
@@ -732,8 +740,8 @@ export default {
 }
 
 // 系统消息
-.Xiaomingcloud-announcement,
-.Xiaomingcloud-bell {
+.xiaomingcloud.open-announcement,
+.xiaomingcloud.open-bell {
   color: #e0e6ff;
   cursor: pointer;
   font-size: 20px;
@@ -743,8 +751,8 @@ export default {
   margin-right: 20px;
 }
 
-.Xiaomingcloud-announcement:hover,
-.Xiaomingcloud-bell:hover {
+.xiaomingcloud.open-announcement:hover,
+.xiaomingcloud.open-bell:hover {
   color: #ffffff;
 }
 
