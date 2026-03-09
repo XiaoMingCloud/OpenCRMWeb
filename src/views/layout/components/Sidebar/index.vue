@@ -166,7 +166,9 @@ export default {
   width: auto;
   height: 100%;
   position: relative;
+  /* 浅色侧边栏背景，弱化深色感，与主体内容区做区分 */
   background-color: $menuBg;
+  border-right: 1px solid #e5e7eb;
   overflow: auto;
   flex-shrink: 0;
 

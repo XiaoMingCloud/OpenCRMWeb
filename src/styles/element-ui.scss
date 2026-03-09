@@ -38,13 +38,15 @@
  //   color: #333333;
  // }
 
- .el-input .el-input__inner {
-   padding: 0 8px;
- }
+.el-input .el-input__inner {
+  padding: 0 10px;
+  border-radius: 999px;
+}
 
- .el-textarea .el-textarea__inner {
-   padding: 5px 8px;
- }
+.el-textarea .el-textarea__inner {
+  padding: 8px 10px;
+  border-radius: 14px;
+}
 
  .el-radio .el-radio__label {
    padding-left: 8px;
@@ -68,20 +70,20 @@ table {
 }
 
  // 弹窗样式
- .el-dialog__footer {
-   padding: 10px !important;
-   background-color: #F7F8FA;
-   border-top: 1px solid $xr-border-line-color;
- }
+.el-dialog__footer {
+  padding: 10px !important;
+  background-color: rgba(247, 248, 250, 0.95);
+  border-top: 1px solid $xr-border-line-color;
+}
 
  .el-dialog__close {
    font-weight: 600 !important;
    font-size: 18px !important;
  }
 
- .el-dialog__title {
-   font-weight: 600 !important;
- }
+.el-dialog__title {
+  font-weight: 600 !important;
+}
 
  // 消息框
  .el-message-box__title {
@@ -93,27 +95,27 @@ table {
    font-size: 18px !important;
  }
 
- .el-message-box {
-   padding: 0 !important;
- }
+.el-message-box {
+  padding: 0 !important;
+}
 
- .el-message-box__btns {
-   padding: 8px 15px !important;
-   background-color: #F7F8FA;
-   border-top: 1px solid $xr-border-line-color;
- }
+.el-message-box__btns {
+  padding: 8px 15px !important;
+  background-color: rgba(247, 248, 250, 0.95);
+  border-top: 1px solid $xr-border-line-color;
+}
 
  .el-message-box__content {
    padding-bottom: 20px !important;
  }
 
- .el-checkbox .el-checkbox__label,
- .el-checkbox__input.is-checked + .el-checkbox__label,
- .el-radio__input.is-checked + .el-radio__label,
- .el-radio .el-radio__label {
+.el-checkbox .el-checkbox__label,
+.el-checkbox__input.is-checked + .el-checkbox__label,
+.el-radio__input.is-checked + .el-radio__label,
+.el-radio .el-radio__label {
   color: #333 !important;
- }
- .el-upload-list__item {
+}
+.el-upload-list__item {
   transition: none !important;
 }
 
@@ -124,4 +126,70 @@ table {
   .el-menu-item + .el-menu-item {
     margin-top: 10px;
   }
+}
+
+/* =============== 通用 iOS 风格 =============== */
+
+/* 渐变圆角主按钮 */
+.el-button--primary {
+  border-radius: 999px;
+  background-image: linear-gradient(135deg, #357cfb, #4f8dff);
+  border-color: transparent;
+  box-shadow: 0 8px 18px rgba(53, 124, 251, 0.35);
+}
+
+.el-button--primary:hover,
+.el-button--primary:focus {
+  background-image: linear-gradient(135deg, #296cf7, #4a84ff);
+  box-shadow: 0 10px 22px rgba(53, 124, 251, 0.45);
+}
+
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:hover,
+.el-button--primary.is-disabled:focus {
+  background-image: none;
+  background-color: #a8c3ff;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* 次级按钮圆角与弱化边框 */
+.el-button--default {
+  border-radius: 999px;
+  border-color: rgba(0, 0, 0, 0.06);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.el-button--default:hover,
+.el-button--default:focus {
+  border-color: rgba(53, 124, 251, 0.22);
+  background-color: rgba(255, 255, 255, 0.98);
+}
+
+/* 卡片＆弹窗毛玻璃 */
+.el-card,
+.el-dialog,
+.el-message-box {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 18px 45px rgba(15, 35, 90, 0.16),
+    0 4px 14px rgba(15, 35, 90, 0.08);
+}
+
+/* 输入框轻微阴影和填充感 */
+.el-input__inner,
+.el-textarea__inner {
+  box-shadow: 0 0 0 1px rgba(15, 35, 90, 0.02);
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.el-input__inner:focus,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px rgba(53, 124, 251, 0.4);
+  background-color: rgba(255, 255, 255, 1);
 }

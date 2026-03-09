@@ -18,7 +18,9 @@ body {
   font-family: 'MicrosoftYaHei', 'Avenir', Helvetica, Arial, sans-serif;
   color: #333;
   font-size: 14px;
-  background: #f5f6f9;
+  /* 更偏 iOS 的柔和浅色渐变背景 */
+  background:
+    radial-gradient(circle at top left, #e7f0ff 0, #f5f7ff 35%, #f9fbff 55%, #f5f6f9 100%);
 }
 
 // 滚动条样式

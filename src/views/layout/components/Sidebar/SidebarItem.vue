@@ -140,8 +140,8 @@ export default {
   height: auto;
   line-height: normal;
   padding: 0 14px;
-  background-color: #001529 !important;
-  color: #bebec0;
+  background-color: transparent !important;
+  color: $menuText;
 }
 
 .el-menu-item:not(.is-select) {

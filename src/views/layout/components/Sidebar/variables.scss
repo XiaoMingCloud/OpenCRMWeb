@@ -1,13 +1,14 @@
 // sidebar
-$menuText:#bebec0;
-$menuActiveText:#fff;
-$subMenuActiveText:#f4f4f5; //https://github.com/ElemeFE/element/issues/12951
+// 侧边导航改为浅色系，提升与主内容区域的区分度
+$menuText:#4b5563;
+$menuActiveText:#2362fb;
+$subMenuActiveText:#2362fb; //https://github.com/ElemeFE/element/issues/12951
 
-$menuBg:#001529;
-$menuHover:#263445;
+$menuBg:#f5f7fb;
+$menuHover:#e1e9ff;
 
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
+$subMenuBg:#f0f3fa;
+$subMenuHover:#e1e9ff;
 
 $sideBarWidth: 210px;
 

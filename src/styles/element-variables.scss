@@ -1,10 +1,12 @@
-/* 改变主题色变量 */
-$--color-primary: #2362FB;
+/* 改变主题色变量（整体偏 iOS 渐变蓝系） */
+$--color-primary: #3478F6;
 
 /** border */
 $--border-color-base: #e6e6e6;
-$--border-radius-base: 4px;
-$--font-size-base: 13px;
+/* 更圆润的基础圆角 */
+$--border-radius-base: 10px;
+/* 略大一点的基础字号，提升易读性 */
+$--font-size-base: 14px;
 
 $--color-text-primary: #333;
 $--color-text-regular: #666;
@@ -14,7 +16,8 @@ $--color-text-secondary: #999;
 /** input */
 // $--input-border-radius: 3px;
 $--input-height: 34px;
-$--input-border-radius:3px;
+/* 输入框圆角与整体保持一致 */
+$--input-border-radius: 10px;
 
 /** button */
 $--button-padding-vertical: 8px;

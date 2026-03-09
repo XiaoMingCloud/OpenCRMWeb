@@ -586,18 +586,22 @@ export default {
 .navbar {
   height: 60px;
   min-height: 60px;
-  background-color: white;
   display: flex;
   align-items: center;
   position: relative;
   padding: 0 30px;
+  /* 顶部渐变 + 毛玻璃 */
+  background-image: linear-gradient(120deg, rgba(21, 74, 235, 0.9), rgba(85, 149, 255, 0.9));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 14px 28px rgba(18, 52, 120, 0.22);
   .logo {
     width: 150px;
     height: 40px;
     display: block;
     flex-shrink: 0;
     margin-right: 15px;
-    background-color: white;
+    background-color: transparent;
     cursor: pointer;
   }
   .nav-items-container {
@@ -624,10 +628,8 @@ export default {
     }
   }
 
-  .user-container:hover {
-    .mark {
-      color: #2486e4;
-    }
+  .user-container:hover .mark {
+    color: #e2ebff;
   }
 }
 
@@ -658,33 +660,42 @@ export default {
 
 .el-menu.el-menu--horizontal {
   border-bottom: none;
+  background-color: transparent;
 }
 
 .el-menu-item {
-  padding: 0;
-  margin: 0 20px;
+  padding: 0 18px;
+  margin: 0 8px;
   font-size: 16px;
   font-weight: 500;
-  color: #2a304d;
+  color: #f0f3ff;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
   i {
-    color: #5c6075;
+    color: #d3ddff;
+    margin-right: 4px;
   }
 }
 
 .el-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+
   i {
-    color: $xr-color-primary;
+    color: #ffffff;
   }
 }
 
 .el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
-  color: $xr-color-primary;
+  color: #ffffff;
 }
 
 .el-menu-item.is-active {
-  border-width: 3px;
+  background-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+
   i {
-    color: $xr-color-primary;
+    color: #ffffff;
   }
 }
 
@@ -723,7 +734,7 @@ export default {
 // 系统消息
 .Xiaomingcloud-announcement,
 .Xiaomingcloud-bell {
-  color: #9DA9C2;
+  color: #e0e6ff;
   cursor: pointer;
   font-size: 20px;
 }
@@ -734,7 +745,7 @@ export default {
 
 .Xiaomingcloud-announcement:hover,
 .Xiaomingcloud-bell:hover {
-  color: $xr-color-primary;
+  color: #ffffff;
 }
 
 .el-dropdown-menu {
